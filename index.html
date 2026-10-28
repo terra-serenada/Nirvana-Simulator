@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#071b1b">
-<title>Dunia Simulasi Kehidupan · MVP 0.1</title>
+<title>Dunia Simulasi Kehidupan · MVP 0.2</title>
 <style>
 :root{color-scheme:dark;--bg:#061514;--panel:#0d2422;--panel2:#102d2a;--line:#244743;--text:#e7f4ed;--muted:#9bbab0;--mint:#78f0ba;--lime:#c9f279;--gold:#f5c86b;--blue:#83d8ee;--pink:#f59db4;--danger:#ff8b7c;--shadow:0 14px 38px #0004}
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:radial-gradient(ellipse at 10% -10%,#16433c 0,transparent 40%),radial-gradient(ellipse at 100% 20%,#112d37 0,transparent 34%),var(--bg);color:var(--text);font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}body{padding:18px 14px 36px}.shell{max-width:1440px;margin:auto}.header{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin:4px 0 18px}.eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--mint);font-weight:800}.title{font-size:clamp(27px,4vw,43px);line-height:1.05;letter-spacing:-.04em;margin:8px 0 8px}.subtitle{color:var(--muted);font-size:14px;line-height:1.55;max-width:760px}.badge-row{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}.badge{border:1px solid var(--line);background:#0b2522cc;color:#ccebe0;border-radius:999px;font-size:11px;font-weight:700;padding:6px 9px}.badge.good{border-color:#357f60;color:#a7ffd1}.badge.warn{border-color:#896f3d;color:#ffe0a2}.version{white-space:nowrap;color:#83a89e;font-size:11px;font-weight:800;letter-spacing:.1em;padding-top:7px}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:12px}.stat,.panel{background:linear-gradient(145deg,#102a27ef,#0b201fef);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}.stat{padding:14px 15px;min-height:90px}.stat-label{font-size:11px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;font-weight:750}.stat-value{font-size:clamp(22px,3vw,31px);font-weight:800;letter-spacing:-.04em;margin:6px 0 2px;font-variant-numeric:tabular-nums}.stat-sub{color:#8cafa3;font-size:11px}.layout{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(300px,.75fr);gap:12px;align-items:start}.panel{padding:14px;min-width:0}.panel-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:12px}.panel-title{font-size:15px;font-weight:800;letter-spacing:-.01em;margin:0}.panel-desc{font-size:11px;line-height:1.5;color:var(--muted);margin-top:4px}.controls{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin-bottom:11px}.btn,select{border:1px solid #315852;background:#173b36;color:var(--text);border-radius:10px;padding:10px 12px;font:inherit;font-size:12px;font-weight:750;cursor:pointer;min-height:38px}.btn:hover,select:hover{filter:brightness(1.13)}.btn.primary{color:#042017;background:linear-gradient(135deg,var(--mint),#b7f2a0);border-color:transparent}.btn.subtle{background:#0e2a26}.btn.danger{border-color:#814f4b;color:#ffc0b1;background:#351c1b}.btn:disabled{opacity:.4;cursor:not-allowed}select{padding:9px 10px}.world-wrap{position:relative;overflow:hidden;border-radius:13px;border:1px solid #28534b;background:#061715}.world-wrap canvas{display:block;width:100%;height:auto;aspect-ratio:960/570;touch-action:manipulation}.world-legend{display:flex;flex-wrap:wrap;gap:13px;padding:10px 2px 0;color:var(--muted);font-size:11px}.legend-item{display:inline-flex;gap:6px;align-items:center}.dot{width:8px;height:8px;display:inline-block;border-radius:50%}.notice{border:1px solid #3b5e54;background:#0c2924;border-radius:12px;padding:10px 12px;font-size:11px;line-height:1.55;color:#b4d1c5;margin-top:11px}.notice strong{color:#edfff6}.side-stack{display:grid;gap:12px}.resource-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.resource{padding:10px;background:#0b211f;border:1px solid #1e403b;border-radius:11px;min-width:0}.res-top{display:flex;align-items:center;gap:7px;font-size:11px;color:var(--muted)}.res-val{font-size:20px;font-weight:800;margin-top:7px;font-variant-numeric:tabular-nums}.res-unit{font-size:10px;color:#78998e}.res-bar{height:4px;background:#1c3833;border-radius:99px;overflow:hidden;margin-top:8px}.res-bar>span{display:block;height:100%;width:0;border-radius:99px;background:var(--mint)}.tiny-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.tiny-card{padding:10px;border-radius:10px;background:#0a211e;border:1px solid #1d4038}.tiny-label{font-size:10px;color:var(--muted)}.tiny-value{font-size:17px;font-weight:800;margin-top:4px}.lower-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}.chart{display:block;width:100%;height:180px}.audit-list{display:grid;gap:8px}.audit-row{display:flex;align-items:flex-start;gap:9px;border:1px solid #1d403a;background:#0a211e;border-radius:10px;padding:9px 10px}.audit-icon{flex:0 0 20px;height:20px;border-radius:50%;display:grid;place-items:center;font-size:11px;font-weight:900;background:#183b31;color:#9effc7}.audit-icon.fail{background:#462522;color:#ffb0a2}.audit-name{font-size:11px;font-weight:750}.audit-detail{font-size:10px;color:var(--muted);line-height:1.4;margin-top:3px;overflow-wrap:anywhere}.cell-info{display:grid;gap:10px}.cell-top{display:flex;align-items:center;gap:12px}.cell-avatar{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 30% 25%,#baffca,#48c88d 52%,#1b7458);box-shadow:0 0 22px #55d59a55;border:3px solid #b3f6c5;color:#063020;font-weight:900;font-size:14px;flex-shrink:0}.cell-name{font-weight:800}.cell-meta{font-size:11px;color:var(--muted);margin-top:3px}.trait-list{display:grid;gap:8px}.trait{display:grid;grid-template-columns:104px 1fr 42px;gap:8px;align-items:center;font-size:10px}.trait-label{color:#a7c4b9}.trait-bar{height:6px;background:#173a34;border-radius:99px;overflow:hidden}.trait-bar span{height:100%;display:block;background:linear-gradient(90deg,#44c98d,#c4f28d);border-radius:99px}.trait-number{text-align:right;color:#e6f9ed;font-variant-numeric:tabular-nums}.genome{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;overflow-wrap:anywhere;line-height:1.9;color:#a8f0c9;font-size:11px;letter-spacing:.06em;background:#071a18;border:1px solid #204039;border-radius:9px;padding:9px}.log{display:grid;gap:0;max-height:260px;overflow:auto}.log-item{display:grid;grid-template-columns:45px 1fr;gap:8px;padding:8px 0;border-bottom:1px solid #1c3a35;font-size:11px;line-height:1.4}.log-item:last-child{border-bottom:0}.log-time{color:#779c90;font-variant-numeric:tabular-nums}.log-text{color:#cce2d8}.log-text b{color:#eafff1}.empty{font-size:12px;color:var(--muted);padding:14px 0}.footer{margin-top:14px;color:#7fa195;font-size:10px;line-height:1.65}.footer a{color:#9feac3;text-decoration:none}.footer a:hover{text-decoration:underline}.footer details{margin-top:7px;border:1px solid #244640;background:#0a201e;border-radius:12px;padding:10px 12px}.footer summary{color:#c9e8dc;cursor:pointer;font-weight:750}.footer p{margin:8px 0}.hidden{display:none!important}.pill{font-size:10px;border-radius:99px;padding:4px 7px;background:#163b32;color:#aef2cc;border:1px solid #2b6750}.progress-track{height:5px;border-radius:99px;background:#193b35;overflow:hidden;margin-top:7px}.progress-track span{display:block;height:100%;background:linear-gradient(90deg,#5ee2ae,#c9ef89);width:0}.small-btn{min-height:28px;padding:5px 8px;font-size:10px;border-radius:7px}.toast{position:fixed;bottom:16px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#e5fff0;color:#083122;border-radius:10px;padding:10px 14px;font-size:12px;font-weight:800;box-shadow:var(--shadow);transition:all .2s;z-index:10;max-width:calc(100vw - 24px)}.toast.show{transform:translate(-50%,0);opacity:1}.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-variant-numeric:tabular-nums}.section-label{font-size:10px;color:#8eafa3;font-weight:800;text-transform:uppercase;letter-spacing:.1em;margin:13px 0 7px}.method-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.energy-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.method{padding:10px;border:1px solid #22463f;background:#091f1c;border-radius:10px}.method strong{display:block;color:#cceee0;font-size:11px;margin-bottom:5px}.method span{display:block;color:#94b4a8;font-size:10px;line-height:1.45}
@@ -18,10 +18,10 @@
     <div>
       <div class="eyebrow">Eksperimen kehidupan digital</div>
       <h1 class="title">Dunia Simulasi Kehidupan</h1>
-      <div class="subtitle">Mulai dari satu sel. Amati bagaimana metabolisme, sumber daya terbatas, pewarisan, dan mutasi memengaruhi populasi dari generasi ke generasi.</div>
-      <div class="badge-row"><span class="badge good">Offline · mandiri</span><span class="badge">Model kimia hibrida</span><span class="badge">MVP 0.1</span><span id="runBadge" class="badge warn">Dijeda</span></div>
+      <div class="subtitle">Mulai dari satu sel. Amati metabolisme, sumber daya terbatas, pewarisan, mutasi, kematian, dan kemungkinan evolusi pemakan bangkai.</div>
+      <div class="badge-row"><span class="badge good">Offline · mandiri</span><span class="badge">Model kimia hibrida</span><span class="badge">MVP 0.2 · Evolusi pemakan bangkai</span><span class="badge">Mutasi dipercepat · 1,5%/basa</span><span id="runBadge" class="badge warn">Dijeda</span></div>
     </div>
-    <div class="version">DESAIN v0.5<br>SIMULATOR v0.1</div>
+    <div class="version">DESAIN v0.6<br>SIMULATOR v0.2</div>
   </header>
 
   <section class="stats" aria-label="Statistik dunia">
@@ -44,15 +44,15 @@
       </div>
       <div class="world-wrap"><canvas id="worldCanvas" width="960" height="570" aria-label="Dunia mikroskopis berisi sel dan partikel lingkungan"></canvas></div>
       <div class="world-legend"><span class="legend-item"><i class="dot" style="background:#76e8ac"></i>Sel hidup</span><span class="legend-item"><i class="dot" style="background:#f1c86d"></i>Glukosa</span><span class="legend-item"><i class="dot" style="background:#78d9ed"></i>Oksigen</span><span class="legend-item"><i class="dot" style="background:#db9eff"></i>Prekursor genom</span><span class="legend-item"><i class="dot" style="background:#ff8278"></i>Sel mati</span></div>
-      <div class="notice"><strong>Catatan ruang:</strong> tampilan bersifat 2D, tetapi kimia pada MVP ini memakai <em>medium tercampur</em>: semua sel berbagi reservoir yang sama. Gerak sel untuk visualisasi dan interaksi antargaris keturunan; difusi serta konsentrasi lokal belum dimodelkan.</div>
+      <div class="notice"><strong>Catatan ruang:</strong> tampilan bersifat 2D, tetapi kimia pada MVP ini memakai <em>medium tercampur</em>: semua sel berbagi reservoir yang sama. Gerak sel untuk visualisasi dan interaksi antargaris keturunan; difusi serta konsentrasi lokal belum dimodelkan. Pemanfaatan bangkai juga bersifat global, belum memerlukan kontak fisik atau kedekatan posisi.</div>
       <div class="section-label">Neraca energi</div>
       <div class="energy-grid">
-        <div class="method"><strong>Energi dari glukosa</strong><span id="energySource">0.0 UE dilepas</span></div>
+        <div class="method"><strong>Energi dari substrat</strong><span id="energySource">0.0 UE dilepas</span></div>
         <div class="method"><strong>Energi tersimpan</strong><span id="energyStored">12.0 UE dalam ATP</span></div>
         <div class="method"><strong>Energi untuk kerja</strong><span id="energyWork">0.0 UE dipakai</span></div>
         <div class="method"><strong>Energi terdisipasi</strong><span id="energyDissipated">0.0 UE</span></div>
       </div>
-      <div class="notice" id="energyNotice">Model energi awal: 1 unit glukosa yang teroksidasi melepaskan 100 UE; 30 UE ditangkap sebagai ATP dan 70 UE masuk ke disipasi. Angka ini adalah parameter model, bukan klaim efisiensi universal pada organisme nyata.</div>
+      <div class="notice" id="energyNotice">Model energi: satu unit glukosa atau biomassa bangkai yang dioksidasi melepaskan 100 UE; 30 UE ditangkap sebagai ATP dan 70 UE didisipasikan. Untuk bangkai, ini parameter model, bukan nilai termodinamika biologis yang tervalidasi.</div>
     </main>
 
     <aside class="side-stack">
@@ -69,12 +69,15 @@
           <div class="tiny-card"><div class="tiny-label">Pirofosfat (PPi)</div><div class="tiny-value" id="resPpi">0.0</div></div>
           <div class="tiny-card"><div class="tiny-label">Air dalam dunia</div><div class="tiny-value" id="resWater">100,000</div></div>
           <div class="tiny-card"><div class="tiny-label">Glukosa dioksidasi</div><div class="tiny-value" id="resOxidized">0.0</div></div>
+          <div class="tiny-card"><div class="tiny-label">Amonia (NH₃) · limbah</div><div class="tiny-value" id="resNH3">0.0</div></div>
+          <div class="tiny-card"><div class="tiny-label">Biomassa bangkai terpakai</div><div class="tiny-value" id="resCorpseUsed">0.0</div></div>
+          <div class="tiny-card"><div class="tiny-label">Residu organik Rₒ</div><div class="tiny-value" id="resRorg">0.0</div></div>
         </div>
         <div class="panel-desc" style="margin-top:10px">Tombol “Tambah nutrien” adalah masukan materi dari luar dunia dan dicatat sebagai sumber eksternal dalam audit atom.</div>
       </section>
 
       <section class="panel">
-        <div class="panel-head"><div><h2 class="panel-title">Sel terpilih</h2><div class="panel-desc">Sifat berasal dari enam lokus genom digital.</div></div><span id="cellStatus" class="pill">Hidup</span></div>
+        <div class="panel-head"><div><h2 class="panel-title">Sel terpilih</h2><div class="panel-desc">Sembilan lokus genom digital: enam sifat dasar dan tiga sifat pemanfaatan bangkai.</div></div><span id="cellStatus" class="pill">Hidup</span></div>
         <div id="cellInspector" class="cell-info"><div class="empty">Pilih sel pada kanvas untuk melihat detail.</div></div>
       </section>
 
@@ -99,16 +102,19 @@
       <div class="method"><strong>R3 · Perakitan biomassa</strong><span class="mono">Bₘ + ATP + H₂O → B + ADP + Pi</span><span style="margin-top:6px">Bₘ dan B memakai komposisi empiris pseudokomponen yang sama, C₆H₁₁O₃N; bentuk strukturalnya dibedakan secara fungsional.</span></div>
       <div class="method"><strong>R4 · Penambahan residu DNA</strong><span class="mono">dNTP → residu DNA + PPi</span><span style="margin-top:6px">Untuk setiap A/C/G/T, komposisi dNTP = residu DNA + H₄P₂O₇. Rumus menggunakan konvensi asam netral.</span></div>
       <div class="method"><strong>R5 · Transport</strong><span class="mono">Zat luar → zat dalam</span><span style="margin-top:6px">Hanya memindahkan zat antar-kompartemen; tidak mengubah jumlah atom total.</span></div>
-      <div class="method"><strong>Genetika</strong><span>Genom adalah urutan A/C/G/T 30 basa. Mutasi dapat mengubah enam parameter fenotipe. Nukleotida yang benar-benar dipakai menjadi residu DNA dan PPi.</span></div>
+      <div class="method"><strong>R6 · Pengambilan biomassa bangkai</strong><span class="mono">B (bangkai) → Bₘ (prekursor)</span><span style="margin-top:6px">Pemindahan materi setara unsur. Hanya lokus pengambilan yang aktif dapat memindahkan biomassa; DNA dan residu internal bangkai belum diuraikan.</span></div>
+      <div class="method"><strong>R7 · Oksidasi aerob biomassa bangkai</strong><span class="mono">B + 6,5 O₂ + 30 ADP + 30 Pi → 6 CO₂ + 34 H₂O + NH₃ + 30 ATP</span><span style="margin-top:6px">Reaksi seimbang secara unsur. Hasil energi 100 UE = 30 UE ditangkap + 70 UE didisipasikan adalah asumsi model.</span></div>
+      <div class="method"><strong>R8 · Jalur anaerobik pemakan bangkai</strong><span class="mono">B + 5 ADP + 5 Pi → CO₂ + Rₒ (C₅H₆) + NH₃ + 6 H₂O + 5 ATP</span><span style="margin-top:6px">Jalur model berdaya hasil rendah: 50 UE = 5 UE ditangkap + 45 UE didisipasikan. Rₒ adalah pseudokomponen residu, bukan klaim molekul atau jalur biologis spesifik.</span></div>
+      <div class="method"><strong>Genetika</strong><span>Genom adalah urutan A/C/G/T 45 basa: sembilan lokus berukuran lima basa. Enam lokus awal mengatur sifat dasar; tiga lokus tambahan mengatur pengenalan, pengambilan, dan katabolisme biomassa bangkai.</span></div>
     </div>
   </section>
 
   <div class="footer">
-    <strong>Batas ilmiah MVP:</strong> ini bukan simulasi biokimia lengkap atau klaim kehidupan buatan yang realistis. Jalur energi menggunakan hasil tangkapan ATP tetap (30 unit ATP per unit glukosa; 100 UE energi sumber, 70 UE terdisipasi) sebagai parameter model. dNTP dan prekursor biomassa tersedia dari “sup kimia” eksternal; sintesis de novo dari glukosa belum dimodelkan. Energi bebas dari penambahan nukleotida tidak dikreditkan ke kolam ATP; biaya ATP yang dicatat terutama mewakili kerja mesin replikasi. Pseudokomponen biomassa adalah pendekatan, bukan satu molekul tertentu. Semua angka merupakan unit model, bukan konsentrasi sel nyata.
+    <strong>Batas ilmiah MVP:</strong> ini bukan simulasi biokimia lengkap atau klaim kehidupan buatan yang realistis. Jalur energi menggunakan parameter model: glukosa/aerobik 100 UE = 30 ATP + 70 UE terdisipasi; jalur anaerobik bangkai 50 UE = 5 ATP + 45 UE terdisipasi. Jalur anaerobik dan Rₒ adalah abstraksi pembukuan, bukan klaim jalur enzimatik atau ΔG nyata. Laju mutasi disetel 1,5% per basa per replikasi untuk memperlihatkan evolusi dalam eksperimen singkat; ini bukan klaim laju mutasi organisme nyata. dNTP dan prekursor biomassa tersedia dari “sup kimia” eksternal; sintesis de novo dari glukosa belum dimodelkan. Biomassa bangkai hanya dapat dipindahkan menjadi prekursor atau dimetabolisme oleh sel yang memiliki sifat sesuai; DNA dan zat internal bangkai tidak otomatis didaur ulang. Residu organik Rₒ belum dimanfaatkan dalam tahap ini. Energi bebas dari penambahan nukleotida tidak dikreditkan ke kolam ATP; biaya ATP yang dicatat terutama mewakili kerja mesin replikasi. Pseudokomponen biomassa adalah pendekatan, bukan satu molekul tertentu. Semua angka merupakan unit model, bukan konsentrasi sel nyata.
     <details><summary>Metode dan referensi formula</summary>
       <p>Rumus molekul dATP, dCTP, dGTP, dTTP, ADP, ATP, fosfat, pirofosfat, glukosa, karbon dioksida, dan air memakai konvensi rumus asam/netral untuk audit komposisi. Bentuk ion aktual bergantung pada pH dan spesiasi; MVP belum memodelkan pH, muatan, difusi, atau potensial membran.</p>
       <p>Referensi formula dATP dan dCTP: <a href="https://pubchem.ncbi.nlm.nih.gov/compound/dATP" target="_blank" rel="noopener">PubChem dATP</a> · <a href="https://pubchem.ncbi.nlm.nih.gov/compound/65091" target="_blank" rel="noopener">PubChem dCTP</a> · <a href="https://pubchem.ncbi.nlm.nih.gov/compound/5_-Adp" target="_blank" rel="noopener">PubChem ADP</a>. Formula untuk residu DNA diturunkan dalam model dengan mengurangi satu molekul pirofosfat netral, H₄P₂O₇, dari masing-masing dNTP.</p>
-      <p>Audit “seimbang” mengacu pada neraca unsur dalam model stoikiometri, bukan validasi jalur enzimatik, nilai ΔG aktual, atau simulasi kinetika molekuler.</p>
+      <p>Audit “seimbang” mengacu pada neraca unsur dalam model stoikiometri, bukan validasi jalur enzimatik, nilai ΔG aktual, atau simulasi kinetika molekuler. Rₒ (C₅H₆) hanya komponen pembukuan untuk menjaga atom tetap tercatat.</p>
     </details>
   </div>
 </div>
@@ -121,8 +127,10 @@
   const BASES = ['A','C','G','T'];
   const BASE_VALUE = {A:0,C:1,G:2,T:3};
   const ELEMENTS = ['C','H','N','O','P'];
+  const GENOME_LENGTH = 45;
+  const SCAVENGE_RECOGNITION_THRESHOLD = 0.145;
   const FORMULA = {
-    glucose:{C:6,H:12,O:6}, O2:{O:2}, CO2:{C:1,O:2}, H2O:{H:2,O:1},
+    glucose:{C:6,H:12,O:6}, O2:{O:2}, CO2:{C:1,O:2}, H2O:{H:2,O:1}, NH3:{H:3,N:1}, RORG:{C:5,H:6},
     ATP:{C:10,H:16,N:5,O:13,P:3}, ADP:{C:10,H:15,N:5,O:10,P:2}, PI:{H:3,O:4,P:1}, PPI:{H:4,O:7,P:2},
     BMONO:{C:6,H:11,O:3,N:1}, B:{C:6,H:11,O:3,N:1},
     dATP:{C:10,H:16,N:5,O:12,P:3}, dCTP:{C:9,H:16,N:3,O:13,P:3}, dGTP:{C:10,H:16,N:5,O:13,P:3}, dTTP:{C:10,H:17,N:2,O:14,P:3},
@@ -134,10 +142,14 @@
     {name:'Oksidasi glukosa + penangkapan ATP',react:{glucose:1,O2:6,ADP:30,PI:30},prod:{CO2:6,H2O:36,ATP:30}},
     {name:'Hidrolisis ATP',react:{ATP:1,H2O:1},prod:{ADP:1,PI:1}},
     {name:'Perakitan biomassa',react:{BMONO:1,ATP:1,H2O:1},prod:{B:1,ADP:1,PI:1}},
-    ...BASES.map(b=>({name:'Polimerisasi DNA '+b,react:{['d'+b+'TP']:1},prod:{['DNA_'+b]:1,PPI:1}}))
+    ...BASES.map(b=>({name:'Polimerisasi DNA '+b,react:{['d'+b+'TP']:1},prod:{['DNA_'+b]:1,PPI:1} })),
+    {name:'Transfer biomassa bangkai ke prekursor',react:{B:1},prod:{BMONO:1}},
+    {name:'Oksidasi aerob biomassa bangkai',react:{B:1,O2:6.5,ADP:30,PI:30},prod:{CO2:6,H2O:34,NH3:1,ATP:30}},
+    {name:'Metabolisme anaerob biomassa bangkai',react:{B:1,ADP:5,PI:5},prod:{CO2:1,RORG:1,NH3:1,H2O:6,ATP:5}}
   ];
   const ENERGY_PER_GLUCOSE=100, ATP_YIELD=30, DISSIPATION_PER_GLUCOSE=70;
-  const MAX_POPULATION=140, MAX_CELL_RECORDS=600, MIN_BIOMASS=5.5, MUTATION_RATE=0.0025, DEFAULT_SEED=20261028;
+  const ENERGY_PER_ANAEROBIC_BIOMASS=50, ATP_YIELD_ANAEROBIC_BIOMASS=5, DISSIPATION_PER_ANAEROBIC_BIOMASS=45;
+  const MAX_POPULATION=140, MAX_CELL_RECORDS=600, MIN_BIOMASS=5.5, MUTATION_RATE=0.015, DEFAULT_SEED=20261028;
   const WORLD_W=960,WORLD_H=570;
   const worldCanvas=$('worldCanvas'),ctx=worldCanvas.getContext('2d');
   const historyCanvas=$('historyCanvas'),hctx=historyCanvas.getContext('2d');
@@ -161,7 +173,7 @@
   function shuffle(arr){for(let i=arr.length-1;i>0;i--){const j=Math.floor(rng()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]];}return arr;}
   function genomeValue(segment){let n=0;for(const b of segment)n=n*4+BASE_VALUE[b];return n/1023;}
   function traitsFor(genome){
-    const values=[];for(let i=0;i<6;i++)values.push(genomeValue(genome.slice(i*5,i*5+5)));
+    const values=[];for(let i=0;i<9;i++)values.push(genomeValue(genome.slice(i*5,i*5+5)));
     return {
       uptakeScale:0.7+0.8*values[0],
       catabolismRate:0.04+0.12*values[1],
@@ -169,6 +181,9 @@
       replicationSpeed:3+Math.floor(values[3]*6),
       repair:0.25+0.7*values[4],
       divisionThreshold:12+Math.floor(values[5]*5),
+      carcassRecognition:values[6],
+      carcassUptakeRate:0.24*values[7],
+      carcassCatabolismRate:0.10*values[8],
       raw:values
     };
   }
@@ -181,15 +196,15 @@
     cell.traits=traitsFor(genome);return cell;
   }
   function newState(seed=DEFAULT_SEED){
-    rng=seeded(seed);const founderGenome='CGTACCGTACCGTACCGTACCGTACCGTAC';
+    rng=seeded(seed);const founderGenome='CGTACCGTACCGTACCGTACCGTACCGTACAGATTAGATTAGATT';
     const founder=makeCell(1,null,0,founderGenome,WORLD_W*0.5,WORLD_H*0.5);
-    return {seed,tick:0,nextId:2,cells:[founder],env:{glucose:180,O2:1080,CO2:0,H2O:100000,BMONO:180,ntp:{A:250,C:250,G:250,T:250},PPI:0},
-      counters:{divisions:0,deaths:0,mutationsCreated:0,mutationsInherited:0,glucoseOxidized:0,energyReleased:0,energyCaptured:0,energyDissipated:0,workUsed:0},
+    return {seed,tick:0,nextId:2,cells:[founder],env:{glucose:180,O2:1080,CO2:0,H2O:100000,NH3:0,RORG:0,BMONO:180,ntp:{A:250,C:250,G:250,T:250},PPI:0},
+      counters:{divisions:0,deaths:0,mutationsCreated:0,mutationsInherited:0,glucoseOxidized:0,biomassOxidized:0,biomassFermented:0,corpseBiomassAssimilated:0,energyReleased:0,energyCaptured:0,energyDissipated:0,workUsed:0},
       initialEnergy:12,baselineAtoms:null,externalInputAtoms:zeroAtoms(),maxGeneration:0,history:[],seededRng:seed};
   }
   function allAtoms(){
     const a=zeroAtoms(),e=state.env;
-    addAtoms(a,FORMULA.glucose,e.glucose);addAtoms(a,FORMULA.O2,e.O2);addAtoms(a,FORMULA.CO2,e.CO2);addAtoms(a,FORMULA.H2O,e.H2O);
+    addAtoms(a,FORMULA.glucose,e.glucose);addAtoms(a,FORMULA.O2,e.O2);addAtoms(a,FORMULA.CO2,e.CO2);addAtoms(a,FORMULA.H2O,e.H2O);addAtoms(a,FORMULA.NH3,e.NH3);addAtoms(a,FORMULA.RORG,e.RORG);
     addAtoms(a,FORMULA.BMONO,e.BMONO);addAtoms(a,FORMULA.PPI,e.PPI);
     for(const b of BASES)addAtoms(a,NTP_FORMULA[b],e.ntp[b]);
     for(const c of state.cells){
@@ -209,12 +224,16 @@
   function auditChecks(){
     const reactionResults=REACTIONS.map(r=>({name:r.name,...reactionBalance(r)}));
     const reactionOk=reactionResults.every(r=>r.ok);
-    const energyOk=Math.abs(ENERGY_PER_GLUCOSE-ATP_YIELD-DISSIPATION_PER_GLUCOSE)<1e-9;
+    const energyOk=Math.abs(ENERGY_PER_GLUCOSE-ATP_YIELD-DISSIPATION_PER_GLUCOSE)<1e-9&&Math.abs(ENERGY_PER_ANAEROBIC_BIOMASS-ATP_YIELD_ANAEROBIC_BIOMASS-DISSIPATION_PER_ANAEROBIC_BIOMASS)<1e-9;
     const residueOk=BASES.every(b=>{const l=zeroAtoms(),r=zeroAtoms();addAtoms(l,NTP_FORMULA[b],1);addAtoms(r,DNA_FORMULA[b],1);addAtoms(r,FORMULA.PPI,1);return ELEMENTS.every(e=>Math.abs(l[e]-r[e])<1e-9);});
-    const genomeOk=state.cells.some(c=>c.genome.length===30);
+    const genomeOk=state.cells.length>0&&state.cells.every(c=>c.genome.length===GENOME_LENGTH&&c.traits.raw.length===9);
+    const carcassReactionOk=reactionResults.filter(r=>r.name==='Oksidasi aerob biomassa bangkai').every(r=>r.ok)&&reactionResults.filter(r=>r.name==='Metabolisme anaerob biomassa bangkai').every(r=>r.ok)&&reactionResults.filter(r=>r.name==='Transfer biomassa bangkai ke prekursor').every(r=>r.ok);
+    let starvationStress=0,starvationSteps=0;while(starvationStress<1&&starvationSteps<200){starvationStress+=0.012+(1-0.95)*0.012;starvationSteps++;}
+    const deathMechanicsOk=starvationStress>=1&&starvationSteps<200;
+    const anaerobicEnergyOk=Math.abs(ENERGY_PER_ANAEROBIC_BIOMASS-ATP_YIELD_ANAEROBIC_BIOMASS-DISSIPATION_PER_ANAEROBIC_BIOMASS)<1e-9;
     const ar=atomResidual(),atomsOk=maxAbs(ar)<1e-5;
     const er=energyResidual(),ledgerOk=Math.abs(er)<1e-6;
-    return {reactionResults,reactionOk,energyOk,residueOk,genomeOk,atomsOk,ledgerOk,atomResidual:ar,energyResidual:er};
+    return {reactionResults,reactionOk,energyOk,residueOk,genomeOk,carcassReactionOk,deathMechanicsOk,anaerobicEnergyOk,atomsOk,ledgerOk,atomResidual:ar,energyResidual:er};
   }
   function pushLog(type,text){
     logs.unshift({tick:state.tick,type,text});if(logs.length>100)logs.pop();renderLog();
@@ -238,6 +257,12 @@
       const target=4.0*scale;
       for(const b of BASES){const take=Math.min(Math.max(0,target-cell.ntp[b]),env.ntp[b],2.0*scale);if(take>0){env.ntp[b]-=take;cell.ntp[b]+=take;}}
     }
+    // Scavenger respiration can acquire oxygen even when glucose is absent. Oxygen is still removed from the shared reservoir.
+    if(t.carcassRecognition>=SCAVENGE_RECOGNITION_THRESHOLD&&t.carcassCatabolismRate>0&&state.cells.some(c=>!c.alive&&c.biomass>1e-9)){
+      const targetO2=t.carcassCatabolismRate*6.5;
+      const takeO2=Math.min(env.O2,Math.max(0,targetO2-cell.oxygen));
+      if(takeO2>0){env.O2-=takeO2;cell.oxygen+=takeO2;}
+    }
   }
   function metabolize(cell){
     const t=cell.traits;
@@ -249,6 +274,52 @@
     if(Math.abs(cell.glucose)<1e-10)cell.glucose=0;if(Math.abs(cell.oxygen)<1e-10)cell.oxygen=0;
     if(Math.abs(cell.ADP)<1e-9)cell.ADP=0;if(Math.abs(cell.PI)<1e-9)cell.PI=0;
     return x;
+  }
+  function scavengeCorpse(cell){
+    const t=cell.traits;
+    if(!cell.alive||t.carcassRecognition<SCAVENGE_RECOGNITION_THRESHOLD)return {assimilated:0,oxidized:0,fermented:0};
+    const corpse=state.cells.filter(c=>!c.alive&&c.biomass>1e-9).sort((a,b)=>b.biomass-a.biomass)[0];
+    if(!corpse)return {assimilated:0,oxidized:0,fermented:0};
+    let assimilated=0,oxidized=0,fermented=0;
+    // Choose aerobic metabolism when enough oxygen exists for the intended work; otherwise allow the lower-yield anaerobic route.
+    const intendedAerobicAmount=Math.min(corpse.biomass,t.carcassCatabolismRate);
+    const oxygenLimited=cell.oxygen+state.env.O2+1e-9<intendedAerobicAmount*6.5;
+    // A corpse can become available after this cell's normal resource-uptake phase; acquire oxygen now if needed.
+    const targetO2=intendedAerobicAmount*6.5;
+    const takeO2=Math.min(state.env.O2,Math.max(0,targetO2-cell.oxygen));
+    if(takeO2>0){state.env.O2-=takeO2;cell.oxygen+=takeO2;}
+    // Route A: transfer corpse biomass into the scavenger's precursor pool, up to a small storage cap.
+    const uptake=Math.min(corpse.biomass,t.carcassUptakeRate,Math.max(0,2.5-cell.bPrecursor));
+    if(uptake>1e-10){
+      corpse.biomass-=uptake;cell.bPrecursor+=uptake;assimilated=uptake;
+      state.counters.corpseBiomassAssimilated+=uptake;
+      corpse.lastEvent='Biomassa dikonsumsi sebagian';cell.lastEvent='Mengambil biomassa bangkai';
+    }
+    // Route B: aerobic oxidation when oxygen is available.
+    const x=Math.max(0,Math.min(corpse.biomass,cell.oxygen/6.5,cell.ADP/30,cell.PI/30,t.carcassCatabolismRate));
+    if(x>1e-10){
+      corpse.biomass-=x;cell.oxygen-=6.5*x;cell.ADP-=30*x;cell.PI-=30*x;cell.ATP+=30*x;
+      state.env.CO2+=6*x;state.env.H2O+=34*x;state.env.NH3+=x;
+      state.counters.biomassOxidized+=x;state.counters.energyReleased+=ENERGY_PER_GLUCOSE*x;
+      state.counters.energyCaptured+=ATP_YIELD*x;state.counters.energyDissipated+=DISSIPATION_PER_GLUCOSE*x;
+      oxidized=x;corpse.lastEvent='Biomassa bangkai dioksidasi aerobik';cell.lastEvent='Mengoksidasi biomassa bangkai';
+      if(Math.abs(cell.oxygen)<1e-9)cell.oxygen=0;if(Math.abs(cell.ADP)<1e-9)cell.ADP=0;if(Math.abs(cell.PI)<1e-9)cell.PI=0;
+    }
+    // Route C: low-yield anaerobic fallback so a scavenger can use carcass biomass after O₂ is depleted.
+    // RORG (C5H6) is a bookkeeping pseudocomponent, not a claim about an actual cellular pathway.
+    const y=oxygenLimited?Math.max(0,Math.min(corpse.biomass,cell.ADP/5,cell.PI/5,t.carcassCatabolismRate)):0;
+    if(y>1e-10){
+      corpse.biomass-=y;cell.ADP-=5*y;cell.PI-=5*y;cell.ATP+=5*y;
+      state.env.CO2+=y;state.env.RORG+=y;state.env.NH3+=y;state.env.H2O+=6*y;
+      state.counters.biomassFermented+=y;state.counters.energyReleased+=ENERGY_PER_ANAEROBIC_BIOMASS*y;
+      state.counters.energyCaptured+=ATP_YIELD_ANAEROBIC_BIOMASS*y;state.counters.energyDissipated+=DISSIPATION_PER_ANAEROBIC_BIOMASS*y;
+      fermented=y;corpse.lastEvent='Biomassa bangkai dimetabolisme anaerobik';cell.lastEvent='Memetabolisme bangkai anaerobik';
+      if(Math.abs(cell.ADP)<1e-9)cell.ADP=0;if(Math.abs(cell.PI)<1e-9)cell.PI=0;
+    }
+    if(state.tick%12===0&&(assimilated>1e-10||oxidized>1e-10||fermented>1e-10)){
+      pushLog('scavenge',`Sel #${cell.id} memanfaatkan bangkai #${corpse.id}: ${fmt(assimilated,3)} unit menjadi prekursor, ${fmt(oxidized,3)} dioksidasi aerobik, ${fmt(fermented,3)} dimetabolisme anaerobik.`);
+    }
+    return {assimilated,oxidized,fermented};
   }
   function assembleBiomass(cell){
     // Cap growth just above the division threshold so a stalled replication cannot consume the entire broth as oversized biomass.
@@ -310,16 +381,19 @@
     if(cell.x<18||cell.x>WORLD_W-18)cell.x=clamp(cell.x,18,WORLD_W-18);
     if(cell.y<18||cell.y>WORLD_H-18)cell.y=clamp(cell.y,18,WORLD_H-18);
   }
-  function killCell(cell,reason){cell.alive=false;cell.lastEvent=reason;/* Keep any partial copied DNA in the corpse so its atoms remain in the ledger. */state.counters.deaths++;pushLog('death',`Sel <b>#${cell.id}</b> mati: ${reason}. Materinya tetap tercatat sebagai bangkai; dekomposisi belum dimodelkan.`);}
+  function killCell(cell,reason){if(!cell.alive)return;cell.alive=false;cell.lastEvent=reason;/* DNA and internal pools remain in a residue; only the B biomass fraction may be consumed by evolved scavengers. */state.counters.deaths++;pushLog('death',`Sel <b>#${cell.id}</b> mati: ${reason}. Biomassa, DNA, dan zat internal tetap tercatat; hanya fraksi biomassa B dapat dimanfaatkan oleh sel yang berevolusi sesuai.`);}
   function tick(){
     if(!state)return;state.tick++;
     const living=shuffle(activeCells().slice());
     for(const cell of living){
       if(!cell.alive)continue;cell.age++;moveCell(cell);takeResources(cell);metabolize(cell);
-      // Maintenance demand consumes ATP. If ATP is unavailable, stress rises instead.
-      const demand=cell.traits.maintenanceRate;
+      // First perform maintenance. Delay any stress penalty until after scavenging has had a chance to restore ATP.
+      const demand=cell.traits.maintenanceRate;let maintenanceShortfall=false;
       if(cell.ATP+1e-9>=demand&&state.env.H2O>=demand){hydrolyze(cell,demand,'pemeliharaan');cell.stress=Math.max(0,cell.stress-cell.traits.repair*0.004);}
-      else{const used=Math.min(cell.ATP,state.env.H2O);if(used>0)hydrolyze(cell,used,'pemeliharaan parsial');cell.stress+=0.012+(1-cell.traits.repair)*0.012;}
+      else{const used=Math.min(cell.ATP,state.env.H2O);if(used>0)hydrolyze(cell,used,'pemeliharaan parsial');maintenanceShortfall=true;}
+      // Scavenging runs after maintenance so fresh ADP/Pi from ATP hydrolysis can be used in the same tick.
+      scavengeCorpse(cell);
+      if(maintenanceShortfall){if(cell.ATP+1e-9<demand)cell.stress+=0.012+(1-cell.traits.repair)*0.012;else cell.stress=Math.max(0,cell.stress-cell.traits.repair*0.004);}
       // Assembly is a material-balanced, ATP-coupled coarse-grained process.
       assembleBiomass(cell);assembleBiomass(cell);
       maybeStartReplication(cell);replicateStep(cell);
@@ -378,7 +452,7 @@
     const c=state.cells.find(x=>x.id===selectedId);const box=$('cellInspector');
     if(!c){box.innerHTML='<div class="empty">Tidak ada sel terpilih. Ketuk sel hidup atau bangkai pada kanvas.</div>';$('cellStatus').textContent='—';return;}
     $('cellStatus').textContent=c.alive?'Hidup':'Mati';$('cellStatus').style.color=c.alive?'#aef2cc':'#ffb5a8';
-    const t=c.traits;const traitData=[['Transport',t.uptakeScale,0.7,1.5,2],['Laju katabolisme',t.catabolismRate,0.04,0.16,3],['Kebutuhan pemeliharaan',t.maintenanceRate,0.025,0.1,3],['Kecepatan replikasi',t.replicationSpeed,3,8,0],['Perbaikan sel',t.repair,0.25,0.95,2],['Ambang pembelahan',t.divisionThreshold,12,16,0]];
+    const t=c.traits;const traitData=[['Transport',t.uptakeScale,0.7,1.5,2],['Laju katabolisme glukosa',t.catabolismRate,0.04,0.16,3],['Kebutuhan pemeliharaan',t.maintenanceRate,0.025,0.1,3],['Kecepatan replikasi',t.replicationSpeed,3,8,0],['Perbaikan sel',t.repair,0.25,0.95,2],['Ambang pembelahan',t.divisionThreshold,12,16,0],['Pengenalan bangkai',t.carcassRecognition,0,1,3],['Laju pengambilan bangkai',t.carcassUptakeRate,0,0.24,3],['Katabolisme bangkai',t.carcassCatabolismRate,0,0.1,3]];
     const traitHtml=traitData.map(([name,val,min,max,d])=>`<div class="trait"><span class="trait-label">${name}</span><span class="trait-bar"><span style="width:${clamp((val-min)/(max-min)*100,0,100)}%"></span></span><span class="trait-number">${Number(val).toFixed(d)}</span></div>`).join('');
     const copied=c.replication?`<div style="margin-top:8px"><div class="panel-desc">Replikasi ${c.replication.copy.length}/${c.genome.length} basa · ${c.replication.mutations} mutasi pada salinan</div><div class="progress-track"><span style="width:${100*c.replication.copy.length/c.genome.length}%"></span></div></div>`:'';
     box.innerHTML=`<div class="cell-top"><div class="cell-avatar" style="filter:${c.alive?'none':'grayscale(1)'}">#${c.id}</div><div><div class="cell-name">Sel ${c.id}${c.alive?'':' · bangkai'}</div><div class="cell-meta">${c.parentId?`Induk #${c.parentId}`:'Sel pendiri'} · Generasi ${c.generation} · Umur ${c.age} langkah</div><div class="cell-meta">Biomassa ${fmt(c.biomass,2)} B · ATP ${fmt(c.ATP,2)} · ADP ${fmt(c.ADP,2)} · Pi ${fmt(c.PI,2)}</div></div></div><div class="section-label">Fenotipe dari genom</div><div class="trait-list">${traitHtml}</div><div class="section-label">Genom DNA · ${c.genome.length} basa</div><div class="genome">${c.genome.match(/.{1,10}/g).join('<br>')}</div>${copied}<div class="panel-desc">Mutasi terbentuk: ${c.mutationsBorn} · Mutasi diwariskan dalam garis ini: ${c.mutationsInherited} · Stres ${fmt(c.stress*100,1)}%</div>`;
@@ -390,8 +464,12 @@
   function renderAudit(){
     const a=auditChecks();const checks=[
       {ok:a.reactionOk,name:'Neraca unsur reaksi',detail:`${a.reactionResults.filter(r=>r.ok).length}/${a.reactionResults.length} persamaan seimbang secara atom.`},
+      {ok:a.genomeOk,name:'Struktur genom',detail:`Semua sel memiliki ${GENOME_LENGTH} basa dan sembilan lokus.`},
+      {ok:a.carcassReactionOk,name:'Reaksi pemanfaatan bangkai',detail:'Transfer B → Bₘ, oksidasi aerobik, dan jalur anaerobik seimbang secara unsur.'},
+      {ok:a.anaerobicEnergyOk,name:'Neraca energi anaerobik',detail:'50 UE sumber = 5 UE ditangkap ATP + 45 UE terdisipasi.'},
+      {ok:a.deathMechanicsOk,name:'Mekanisme kematian',detail:'Stres tanpa energi pemeliharaan terus naik hingga ambang kematian terlampaui.'},
       {ok:a.residueOk,name:'Neraca residu DNA',detail:'Untuk A, C, G, T: dNTP → residu DNA + PPi seimbang.'},
-      {ok:a.energyOk,name:'Pemeriksaan energi model',detail:'100 UE sumber = 30 UE ditangkap ATP + 70 UE terdisipasi per unit glukosa.'},
+      {ok:a.energyOk,name:'Pemeriksaan energi model',detail:'Aerobik: 100 UE = 30 ATP + 70 UE terdisipasi. Anaerobik bangkai: 50 UE = 5 ATP + 45 UE terdisipasi.'},
       {ok:a.atomsOk,name:'Neraca atom dunia',detail:`Maksimum selisih setelah masukan eksternal tercatat: ${fmt(maxAbs(a.atomResidual),8)} atom-unit.`},
       {ok:a.ledgerOk,name:'Neraca energi berjalan',detail:`Sisa neraca: ${fmt(a.energyResidual,8)} UE; ATP awal + energi hasil katabolisme = ATP tersimpan + kerja + disipasi.`}
     ];
@@ -407,7 +485,7 @@
     $('statPopulation').textContent=fmtInt(living.length);$('statPopulationSub').textContent=`${fmtInt(state.cells.length-living.length)} bangkai tersimpan`;
     $('statGeneration').textContent=fmtInt(maxGen);$('statGenerationSub').textContent=`${fmtInt(state.counters.divisions)} pembelahan total`;
     $('statBiomass').textContent=fmt(activeBiomass(),1);$('statMutations').textContent=fmtInt(state.counters.mutationsInherited);$('statMutationsSub').textContent=`${fmtInt(state.counters.mutationsCreated)} mutasi terbentuk`;
-    const e=state.env;$('resGlucose').textContent=fmt(e.glucose,1);$('resOxygen').textContent=fmt(e.O2,1);$('resBiomass').textContent=fmt(e.BMONO,1);$('resNtp').textContent=fmtInt(Object.values(e.ntp).reduce((a,b)=>a+b,0));$('resCO2').textContent=fmt(e.CO2,1);$('resPpi').textContent=fmt(e.PPI,1);$('resWater').textContent=fmt(e.H2O,0);$('resOxidized').textContent=fmt(state.counters.glucoseOxidized,2);
+    const e=state.env;$('resGlucose').textContent=fmt(e.glucose,1);$('resOxygen').textContent=fmt(e.O2,1);$('resBiomass').textContent=fmt(e.BMONO,1);$('resNtp').textContent=fmtInt(Object.values(e.ntp).reduce((a,b)=>a+b,0));$('resCO2').textContent=fmt(e.CO2,1);$('resPpi').textContent=fmt(e.PPI,1);$('resWater').textContent=fmt(e.H2O,0);$('resOxidized').textContent=fmt(state.counters.glucoseOxidized,2);$('resNH3').textContent=fmt(e.NH3,3);$('resRorg').textContent=fmt(e.RORG,3);$('resCorpseUsed').textContent=fmt(state.counters.corpseBiomassAssimilated+state.counters.biomassOxidized+state.counters.biomassFermented,3);
     const bars=[['barGlucose',e.glucose,300],['barOxygen',e.O2,1800],['barBiomass',e.BMONO,300],['barNtp',Object.values(e.ntp).reduce((a,b)=>a+b,0),1000]];for(const [id,v,m] of bars)$(id).style.width=`${clamp(v/m*100,0,100)}%`;
     $('resourceState').textContent=(e.glucose<10||e.BMONO<5)?'Menipis':'Terbatas';$('resourceState').style.color=(e.glucose<10||e.BMONO<5)?'#ffd59d':'#aef2cc';
     $('energySource').textContent=`${fmt(state.counters.energyReleased,1)} UE dilepas`;$('energyStored').textContent=`${fmt(totalATP(),1)} UE dalam ATP`;$('energyWork').textContent=`${fmt(state.counters.workUsed,1)} UE dipakai`;$('energyDissipated').textContent=`${fmt(state.counters.energyDissipated,1)} UE`;
@@ -422,16 +500,19 @@
   function runInternalTests(){
     const reactionResults=REACTIONS.map(r=>({name:r.name,...reactionBalance(r)}));
     const energyResidual=ENERGY_PER_GLUCOSE-ATP_YIELD-DISSIPATION_PER_GLUCOSE;
+    const anaerobicEnergyResidual=ENERGY_PER_ANAEROBIC_BIOMASS-ATP_YIELD_ANAEROBIC_BIOMASS-DISSIPATION_PER_ANAEROBIC_BIOMASS;
     const dnaOk=BASES.every(b=>{const left=zeroAtoms(),right=zeroAtoms();addAtoms(left,NTP_FORMULA[b],1);addAtoms(right,DNA_FORMULA[b],1);addAtoms(right,FORMULA.PPI,1);return ELEMENTS.every(e=>Math.abs(left[e]-right[e])<1e-9);});
-    const seed='CGTACCGTACCGTACCGTACCGTACCGTAC';
-    const checks=[{ok:reactionResults.every(r=>r.ok),name:'Stoikiometri awal',detail:reactionResults.map(r=>`${r.name}: ${r.ok?'seimbang':'gagal'}`).join(' · ')},{ok:Math.abs(energyResidual)<1e-9,name:'Neraca energi parameter',detail:`100 = 30 + 70; residual ${energyResidual}`},{ok:dnaOk,name:'Residu DNA',detail:'Keempat dNTP dapat dipecah menjadi residu DNA + PPi tanpa selisih unsur.'},{ok:seed.length===30&&[...seed].every(b=>BASES.includes(b)),name:'Genom pendiri',detail:`${seed.length} basa dan alfabet valid.`}];
+    const seed='CGTACCGTACCGTACCGTACCGTACCGTACAGATTAGATTAGATT';
+    const checks=[{ok:reactionResults.every(r=>r.ok),name:'Stoikiometri awal',detail:reactionResults.map(r=>`${r.name}: ${r.ok?'seimbang':'gagal'}`).join(' · ')},{ok:Math.abs(energyResidual)<1e-9&&Math.abs(anaerobicEnergyResidual)<1e-9,name:'Neraca energi parameter',detail:`Aerobik residual ${energyResidual}; anaerobik residual ${anaerobicEnergyResidual}`},{ok:dnaOk,name:'Residu DNA',detail:'Keempat dNTP dapat dipecah menjadi residu DNA + PPi tanpa selisih unsur.'},{ok:seed.length===GENOME_LENGTH&&[...seed].every(b=>BASES.includes(b))&&traitsFor(seed).raw.length===9,name:'Genom pendiri',detail:`${seed.length} basa, sembilan lokus, dan alfabet valid.`},
+      {ok:reactionResults.filter(r=>r.name==='Oksidasi aerob biomassa bangkai').every(r=>r.ok)&&reactionResults.filter(r=>r.name==='Metabolisme anaerob biomassa bangkai').every(r=>r.ok),name:'Stoikiometri pemanfaatan bangkai',detail:'Jalur aerobik dan anaerobik seimbang; Rₒ dihitung sebagai C₅H₆.'},
+      {ok:(()=>{let stress=0,steps=0;while(stress<1&&steps<200){stress+=0.012+(1-0.95)*0.012;steps++;}return stress>=1&&steps<200;})(),name:'Ambang kematian karena stres',detail:'Stres yang terus meningkat tanpa energi pemeliharaan akhirnya melewati ambang kematian.'}];
     return checks;
   }
   function init(){
     const tests=runInternalTests();const failed=tests.filter(t=>!t.ok);if(failed.length){$('auditBadge').textContent='Uji gagal';$('auditBadge').classList.add('warn');console.error('Internal model tests failed',failed);}
     resetWorld();
     // Show static model tests in the log after reset without implying a full biology validation.
-    pushLog('audit',`Audit awal: ${tests.filter(t=>t.ok).length}/${tests.length} pemeriksaan desain internal lulus (stoikiometri, parameter energi, residu DNA, genom pendiri).`);
+    pushLog('audit',`Audit awal: ${tests.filter(t=>t.ok).length}/${tests.length} pemeriksaan desain internal lulus (stoikiometri, energi, residu DNA, genom 9 lokus, pemanfaatan bangkai, dan ambang kematian).`);
   }
   init();
 })();
