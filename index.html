@@ -1,0 +1,588 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Terra Chemica — Neraca Karbon & Hidrogen v1.9</title>
+<style>
+:root{--bg:#081512;--panel:#10211d;--panel2:#142a24;--edge:#29483d;--text:#e7f1e9;--muted:#9eb8aa;--green:#8ee0b2;--lime:#c9e9a1;--amber:#f0c878;--red:#ff9b8d;--blue:#8bcbd8;--radius:16px;--shadow:0 14px 34px #0003}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 16% 0%,#18392f 0%,transparent 38%),var(--bg);color:var(--text);font:14px/1.5 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,select{font:inherit}button{border:1px solid var(--edge);background:#1a342b;color:var(--text);padding:10px 13px;border-radius:11px;cursor:pointer;transition:background .15s,border .15s}button:hover{background:#244639;border-color:#477763}button:disabled{opacity:.5;cursor:not-allowed}.primary{background:#276046;border-color:#498668;color:#f3fff6}.primary:hover{background:#327755}.quiet{background:transparent}.danger{border-color:#794c46;color:#ffc5b9}.wrap{max-width:1440px;margin:auto;padding:20px}.topbar{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:18px}.brandline{display:flex;align-items:center;gap:10px;color:var(--green);font-size:12px;font-weight:800;letter-spacing:.13em;text-transform:uppercase}.orb{width:35px;height:35px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 25%,#d4f9c8,#5cb68c 46%,#1b5b43 77%);box-shadow:0 0 22px #67b98a38;color:#062418;font-size:17px}.title{font-size:clamp(25px,4vw,36px);letter-spacing:-.035em;margin:9px 0 5px;font-weight:760}.subtitle{color:var(--muted);max-width:760px}.tagrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px}.tag,.pill{border:1px solid var(--edge);padding:4px 8px;border-radius:999px;color:var(--muted);font-size:11px;font-weight:750;letter-spacing:.03em}.pill.good{color:var(--green);border-color:#356b50;background:#163125}.pill.warn{color:var(--amber);border-color:#74603a;background:#302817}.pill.bad{color:var(--red);border-color:#76463e;background:#351e1c}.toolbar{display:flex;gap:8px;flex-wrap:wrap}.banner{border:1px solid #6b5934;background:linear-gradient(110deg,#302817,#1b241b);border-radius:14px;padding:12px 15px;margin-bottom:16px;color:#f6e4bb}.banner strong{color:#ffdda0}.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:14px}.panel{background:linear-gradient(160deg,#12251f,#0e1e19);border:1px solid var(--edge);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow);min-width:0}.span-12{grid-column:span 12}.span-8{grid-column:span 8}.span-7{grid-column:span 7}.span-6{grid-column:span 6}.span-5{grid-column:span 5}.span-4{grid-column:span 4}.sectionhead{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:14px}.sectionhead h2{margin:0;font-size:16px;letter-spacing:-.015em}.eyebrow{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.12em;font-weight:800;margin-bottom:4px}.sectionnote{color:var(--muted);font-size:12px;margin-top:4px}.metric-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.metric{border:1px solid #29463b;background:#142a23;border-radius:13px;padding:12px;min-width:0}.metric .label{font-size:11px;color:var(--muted);margin-bottom:7px}.metric .value{font-size:clamp(19px,2.5vw,27px);font-weight:780;letter-spacing:-.035em;overflow-wrap:anywhere}.metric .sub{font-size:11px;color:var(--muted);margin-top:4px}.two-cols{display:grid;grid-template-columns:1fr 1fr;gap:12px}.poolbox{border:1px solid #254238;border-radius:13px;padding:12px;background:#0e201a}.poolbox h3{margin:0 0 9px;font-size:13px}.poolrow{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px solid #203b31}.poolrow:last-child{border-bottom:0}.poolrow span:first-child{color:var(--muted)}.num{font-variant-numeric:tabular-nums;font-weight:700;text-align:right;overflow-wrap:anywhere}.small{font-size:12px;color:var(--muted)}.tablewrap{overflow-x:auto;border:1px solid var(--edge);border-radius:12px}table{border-collapse:collapse;width:100%;min-width:780px;font-size:12px}th,td{text-align:left;padding:10px 11px;vertical-align:top;border-bottom:1px solid #213b31}th{background:#193128;color:#bed7c7;font-size:10px;letter-spacing:.08em;text-transform:uppercase;position:sticky;top:0}tr:last-child td{border-bottom:0}.eq{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:#d8eee0;white-space:normal}.balance{color:var(--green);font-weight:800}.pending{color:var(--amber);font-weight:800}.smallreason{color:var(--muted);margin-top:4px;max-width:260px}.auditgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}.check{border:1px solid var(--edge);border-radius:12px;background:#10231c;padding:11px}.check .checktitle{font-size:12px;color:var(--muted)}.check .checkvalue{font-weight:800;font-size:14px;margin-top:4px}.check.pass .checkvalue{color:var(--green)}.check.caution .checkvalue{color:var(--amber)}.check.fail .checkvalue{color:var(--red)}canvas{width:100%;height:190px;display:block;border:1px solid #244137;border-radius:12px;background:#0b1b15}.chartlabel{display:flex;justify-content:space-between;gap:8px;color:var(--muted);font-size:11px;margin:10px 2px 6px}.log{display:flex;flex-direction:column;gap:7px;max-height:260px;overflow:auto}.logrow{display:grid;grid-template-columns:70px 1fr;gap:8px;padding:8px 9px;background:#0d1d17;border:1px solid #213b30;border-radius:9px;font-size:12px}.logtime{color:var(--green);font-variant-numeric:tabular-nums}.auditdetail{margin-top:10px;border-radius:11px;background:#0a1914;border:1px solid #234035;padding:11px;color:var(--muted);font-size:12px;white-space:pre-wrap}.source-list{display:grid;gap:8px}.water-ledger{font-variant-numeric:tabular-nums}.source{padding:10px 11px;border:1px solid #254338;border-radius:10px;background:#10221b}.source a{color:var(--green);text-decoration:none;font-weight:750}.source a:hover{text-decoration:underline}.source p{margin:4px 0 0;color:var(--muted);font-size:12px}.env-controls{display:grid;grid-template-columns:minmax(0,1fr);gap:6px;margin-bottom:12px;max-width:620px}.env-controls label{font-size:12px;font-weight:800;color:#bed7c7}.env-controls select{width:100%;border:1px solid #356b50;background:#0b1b15;color:var(--text);padding:11px;border-radius:10px;min-height:44px}.env-description{border:1px solid #31513f;border-radius:12px;background:#0d2018;padding:12px;margin-top:12px}.env-metrics{margin-top:10px}.footer{padding:22px 2px 10px;color:var(--muted);font-size:11px}.bar{height:6px;background:#20372e;border-radius:10px;overflow:hidden;margin-top:8px}.bar>i{height:100%;display:block;background:linear-gradient(90deg,#4aa77a,#b5e79b);border-radius:10px}.runstatus{display:flex;align-items:center;gap:8px}.dot{width:8px;height:8px;border-radius:100%;background:#81d9a4;box-shadow:0 0 10px #81d9a455}.statusline{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}.hidden{display:none!important}
+@media(max-width:1000px){.span-8,.span-7,.span-6,.span-5,.span-4{grid-column:span 12}.metric-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.auditgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.wrap{padding:12px}.panel{padding:12px}.two-cols{grid-template-columns:1fr}.toolbar{width:100%}.toolbar button{flex:1 1 auto}.metric-grid{gap:8px}.metric{padding:10px}.auditgrid{grid-template-columns:1fr 1fr}.sectionhead{flex-wrap:wrap}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="topbar">
+  <div>
+    <div class="brandline"><span class="orb">⚗</span> Terra Chemica / Lab Abiotik</div>
+    <h1 class="title">Dunia Kimia Sebelum Kehidupan</h1>
+    <div class="subtitle">Build 1.9 · neraca hidrogen dan inventaris karbon ditampilkan untuk mengaudit syarat kimia prebiotik. Sintesis organik tetap terkunci sampai katalis, kondisi lokal, dan energi bebas dapat dimodelkan.</div>
+    <div class="tagrow"><span class="tag">TANPA SEL</span><span class="tag">TANPA DNA / ATP BIOLOGIS</span><span class="tag">STOK AWAL TERDEFINISI · TANPA PLAFON GLOBAL</span><span class="tag">SIKLUS AIR</span><span class="tag">AUDIT CHNOPS</span><span class="tag">SUMBER MINERAL</span><span class="tag">AUDIT SUHU & pH</span></div>
+  </div>
+  <div class="toolbar" aria-label="Kontrol simulasi">
+    <button id="autoBtn" class="primary">▶ Mulai otomatis</button><button id="stepBtn">1 langkah</button><button id="run1000Btn">Jalankan 1.000 jam</button><button id="stressBtn" class="primary">Uji tekanan 20.000 jam</button><button id="resetBtn" class="quiet">Reset dunia</button><button id="exportBtn" class="quiet">Ekspor audit JSON</button>
+  </div>
+</header>
+<div class="banner"><strong>CATATAN BUILD 1.9:</strong> tidak ada plafon global buatan untuk H₂ maupun karbon. Stok awal geologis adalah kondisi awal skenario, bukan batas maksimum; perubahan stok ditentukan oleh sumber, transfer, reaksi, dan ketersediaan pereaksi/energi. Laju dasar reduksi pirit tetap 0,01 SU/jam. Neraca hidrogen dan karbon kini ditampilkan terpisah. Suhu atmosfer, suhu/pH samudra, serta suhu/pH antarmuka batuan–air disimpan terpisah sebagai kondisi skenario. Suhu dan pH antarmuka memodulasi laju proksi mineral. Ini bukan model kesetimbangan geokimia penuh: tekanan, fugasitas H₂, luas permukaan mineral, spesiasi, aktivitas ion, dan energi bebas reaksi belum dihitung. Jalur yang berada di luar rentang kinetika yang dinyatakan akan dijeda, bukan diekstrapolasi. Gerbang pembentukan HCOOH hanya diaudit dan tetap terkunci; tidak ada sintesis organik aktif. Ambang fluida 120.000 SU dan sirkulasi air dipertahankan.</div>
+<section class="grid">
+  <div class="panel span-12">
+    <div class="sectionhead">
+      <div><div class="eyebrow">Status dunia</div><h2>Simulasi abiotik mandiri</h2><div class="sectionnote">Waktu simulasi dihitung per jam. Jalur kimia hanya berjalan bila diaktifkan dan semua pereaksi, reservoir, serta anggaran internal mencukupi.</div></div>
+      <div class="statusline"><span id="runPill" class="pill good">SIAP · DIJEDA</span><span id="tickPill" class="pill">Langkah 0 · jam 0</span><span class="pill">0 sel hidup</span></div>
+    </div>
+    <div class="metric-grid">
+      <div class="metric"><div class="label">H₂ total (laut + atmosfer)</div><div id="metricH2" class="value">0</div><div class="sub">SU · produk abiotik utama aktif</div><div class="bar"><i id="barH2" style="width:0%"></i></div></div>
+      <div class="metric"><div class="label">CO₂ lingkungan</div><div id="metricCO2" class="value">1.800</div><div class="sub">SU · atmosfer + laut</div><div class="bar"><i id="barCO2" style="width:69%"></i></div></div>
+      <div class="metric"><div class="label">Air H₂O bebas total</div><div id="metricWater" class="value">300.000</div><div class="sub">SU · samudra + uap + reservoir fluida geologi</div><div class="bar"><i id="barWater" style="width:100%"></i></div></div>
+      <div class="metric"><div class="label">Fayalit reaktif</div><div id="metricFayalite" class="value">300.000</div><div class="sub">SU · Fe₂SiO₄</div><div class="bar"><i id="barFayalite" style="width:100%"></i></div></div>
+    </div>
+  </div>
+  <div class="panel span-12" id="waterCyclePanel">
+    <div class="sectionhead"><div><div class="eyebrow">Siklus hidrologi + pertukaran geologi</div><h2>Ke mana air bergerak?</h2><div class="sectionnote">Perubahan fase memindahkan H₂O; reaksi kimia dapat mengubahnya menjadi spesies lain. Semua perpindahan harus masuk ke neraca, tanpa menciptakan air.</div></div><span id="waterLedgerPill" class="pill good">NERACA AIR TERTUTUP</span></div>
+    <div class="metric-grid">
+      <div class="metric"><div class="label">Air cair · samudra</div><div id="waterOceanVal" class="value">100.000</div><div class="sub">SU H₂O · ambang aliran 120.000 SU</div></div>
+      <div class="metric"><div class="label">Uap · atmosfer</div><div id="waterVaporVal" class="value">0</div><div class="sub">SU H₂O</div></div>
+      <div class="metric"><div class="label">Fluida · reservoir geologi</div><div id="waterGeoVal" class="value">200.000</div><div class="sub">SU H₂O tersedia untuk pertukaran</div></div>
+      <div class="metric"><div class="label">H₂O yang telah bereaksi</div><div id="waterConsumedVal" class="value">0</div><div class="sub">SU ekuivalen H₂O · bukan air cair</div></div>
+    </div>
+    <div class="metric-grid" style="margin-top:12px">
+      <div class="metric"><div class="label">Ambang aliran fluida</div><div id="oceanFlowThresholdVal" class="value">120.000</div><div class="sub">SU · aliran geologis jeda saat level mencapai ambang</div></div>
+      <div class="metric"><div class="label">Level samudera vs ambang</div><div id="oceanFlowThresholdPercent" class="value">83,3%</div><div class="sub">100% = 120.000 SU; boleh melewati 100% karena hujan</div><div class="bar"><i id="barOceanCapacity" style="width:83.3%"></i></div></div>
+      <div class="metric"><div class="label">Jarak terhadap ambang</div><div id="oceanFreeCapacityVal" class="value">20.000 SU di bawah ambang</div><div class="sub">Nilai negatif berarti level sudah melewati ambang</div></div>
+      <div class="metric"><div class="label">Pengembalian hidrotermal</div><div id="hydrothermalStatusVal" class="value" style="font-size:16px">AKTIF · di bawah ambang</div><div id="hydrothermalStatusSub" class="sub">maks. 0,8 SU/jam; jeda sementara saat level samudera ≥ 120.000 SU</div></div>
+    </div>
+    <div class="two-cols" style="margin-top:12px">
+      <div class="poolbox"><h3>Jalur perpindahan per jam</h3><div class="poolrow"><span>Evaporasi laut → atmosfer</span><span class="num">maks. 0,5 SU</span></div><div class="poolrow"><span>Infiltrasi laut → kerak</span><span class="num">maks. 0,12 SU</span></div><div class="poolrow"><span>Sirkulasi hidrotermal → laut</span><span class="num">maks. 0,8 SU; jeda pada ambang</span></div><div class="poolrow"><span>Presipitasi</span><span class="num">tiap 24 jam · 80% uap</span></div></div>
+      <div class="poolbox"><h3>Neraca air molekuler</h3><div class="poolrow"><span>Air bebas + H₂O yang bereaksi</span><span id="waterLedgerTotal" class="num">300.000 SU</span></div><div class="poolrow"><span>Stok air molekuler awal</span><span id="waterLedgerInitial" class="num">300.000 SU</span></div><div class="poolrow"><span>Residual neraca air</span><span id="waterLedgerResidual" class="num">0 SU</span></div><div id="waterCycleNote" class="small" style="margin-top:8px">Neraca air akan diperbarui saat simulasi bergerak.</div></div>
+    </div>
+    <div class="chartlabel"><span>Riwayat air H₂O bebas (samudra + uap + fluida geologi)</span><span id="historyWaterLabel">300.000 SU</span></div><canvas id="chartWater" width="760" height="230" aria-label="Grafik total H2O bebas"></canvas>
+    <div class="auditdetail">Batas interpretasi: 120.000 SU adalah ambang penghentian sementara aliran fluida geologis, bukan batas keras volume samudra. Hujan tetap masuk seluruhnya, sehingga level boleh melampaui ambang. Tidak ada air yang dibuang atau ditahan sebagai uap hanya karena ambang tercapai.</div>
+    <div class="auditdetail">Batas interpretasi: reservoir air geologi 200.000 SU adalah parameter skenario, bukan hasil pengukuran massa air Bumi purba. Evaporasi, presipitasi, infiltrasi, dan sirkulasi hidrotermal di sini masih model ringkas; belum menghitung awan, temperatur, tekanan, salinitas, atau siklus mantel penuh. Reaksi serpentinisasi tetap merupakan sink kimia bersih untuk H₂O pada build ini.</div>
+  </div>
+  <div class="panel span-7">
+    <div class="sectionhead"><div><div class="eyebrow">Reservoir materi</div><h2>Inventaris per kompartemen</h2><div class="sectionnote">SU = satuan simulasi, bukan estimasi massa global Bumi.</div></div><span class="pill">Atom tetap dilacak lintas-pool</span></div>
+    <div class="two-cols">
+      <div class="poolbox"><h3>Atmosfer</h3><div id="atmPools"></div></div>
+      <div class="poolbox"><h3>Samudra</h3><div id="oceanPools"></div></div>
+      <div class="poolbox"><h3>Geologi & mineral</h3><div id="geoPools"></div></div>
+      <div class="poolbox"><h3>Zona lokal batuan–air</h3><div id="localPools"></div></div>
+      <div class="poolbox"><h3>Energi internal</h3><div id="energyPools"></div></div>
+    </div>
+  </div>
+  <div class="panel span-12" id="chemistryInventoryPanel">
+    <div class="sectionhead"><div><div class="eyebrow">Tahap 1.4 · Pelepasan mineral terbatas</div><h2>Inventaris unsur sebelum kimia organik</h2><div class="sectionnote">Atom dihitung lintas-reservoir. Pelepasan P dan S berlangsung bertahap menurut laju skenario dan stok yang tersedia.</div></div><span id="inventoryPill" class="pill good">CHNOPS TERLACAK</span></div>
+    <div class="metric-grid">
+      <div class="metric"><div class="label">Apatit · sumber fosfor</div><div id="apatiteVal" class="value">10.000</div><div class="sub">SU mineral · Ca₅(PO₄)₃F · placeholder skenario</div></div>
+      <div class="metric"><div class="label">Pirit · sumber sulfur</div><div id="pyriteVal" class="value">10.000</div><div class="sub">SU mineral · FeS₂ · placeholder skenario</div></div>
+      <div class="metric"><div class="label">Fosfat terlarut</div><div id="phosphateAqVal" class="value">0</div><div class="sub">SU H₃PO₄ formal · laju skenario</div></div>
+      <div class="metric"><div class="label">Sulfida terlarut</div><div id="sulfideAqVal" class="value">0</div><div class="sub">SU H₂S · bergantung pada H₂ tersedia</div></div>
+    </div>
+    <div class="tablewrap" style="margin-top:12px"><table style="min-width:720px"><thead><tr><th>Unsur</th><th>Atom-equivalent saat ini</th><th>Sumber / reservoir terwakili</th><th>Status model</th></tr></thead><tbody id="elementInventoryRows"></tbody></table></div>
+    <div class="auditdetail">Batas model: apatit mengikuti pembukuan formal Ca₅(PO₄)₃F + 10 H₂O → 3 H₃PO₄ + 5 Ca(OH)₂ + HF; pirit mengikuti FeS₂ + H₂ → FeS + H₂S. Kedua jalur menjaga atom, tetapi produk apatit adalah carrier formal—bukan hasil prediksi spesiasi larutan. Laju awal 0,02 SU/jam untuk apatit dan 0,01 SU/jam untuk reduksi pirit adalah parameter skenario. Suhu, pH, tekanan, muatan, kesetimbangan dan energi reaksi mineral-air belum dimodelkan, sehingga hasil bukan prediksi Bumi purba. Nilai 10.000 SU untuk masing-masing mineral hanyalah stok awal skenario. Unsur Ca, F dan FeS ikut dilacak. Pool HCOOH bernilai awal nol untuk audit gerbang Build 1.7 dan tidak diproduksi oleh mesin.</div>
+  </div>
+  <div class="panel span-12" id="environmentAuditPanel">
+    <div class="sectionhead">
+      <div><div class="eyebrow">Tahap 1.6 · Kondisi reservoir dan kinetika</div><h2>Suhu, pH, dan konteks reservoir</h2><div class="sectionnote">Profil menerapkan nilai skenario secara terpisah ke atmosfer, samudra permukaan, dan antarmuka batuan–air. Nilai default bukan rekonstruksi pasti Bumi purba.</div></div>
+      <span id="environmentCouplingPill" class="pill warn">BELUM TERHUBUNG KE KINETIKA</span>
+    </div>
+    <div class="env-controls">
+      <label for="environmentScenarioSelect">Profil lingkungan referensi</label>
+      <select id="environmentScenarioSelect" aria-describedby="environmentSelectNote">
+        <option value="early-ocean">Samudra awal Bumi · perkiraan luas</option>
+        <option value="serpentinization">Fluida serpentinisasi · analog modern</option>
+        <option value="acidic-vent">Vent hidrotermal asam · analog modern</option>
+      </select>
+      <div id="environmentSelectNote" class="small">Mengganti profil mengubah kondisi yang dipakai pada langkah berikutnya, bukan mengubah stok secara retroaktif. Semua nilai adalah parameter skenario.</div>
+    </div>
+    <div class="metric-grid env-metrics">
+      <div class="metric"><div class="label">Atmosfer · suhu skenario</div><div id="environmentAtmosphereTemp" class="value">20 °C</div><div class="sub">Tidak ada pH untuk fase gas; hukum gas belum dimodelkan</div></div>
+      <div class="metric"><div class="label">Samudra permukaan · T / pH</div><div id="environmentOceanConditions" class="value">25 °C / pH 6,5</div><div class="sub">Satu pool samudra; pH belum dihitung dari kesetimbangan</div></div>
+      <div class="metric"><div class="label">Antarmuka batuan–air · T / pH</div><div id="environmentInterfaceConditions" class="value">90 °C / pH 7,5</div><div class="sub">Zona reaksi lokal yang mengatur proksi mineral aktif</div></div>
+      <div class="metric"><div class="label">Laju efektif mineral</div><div id="environmentKinetics" class="value">—</div><div id="environmentKineticsNote" class="sub">Dipengaruhi suhu/pH dalam rentang skenario yang dinyatakan</div></div>
+    </div>
+    <div class="env-description" id="environmentInterpretation">Nilai kondisi tiap reservoir adalah parameter skenario. Memilih profil akan memengaruhi laju proksi mineral pada langkah berikutnya.</div>
+    <div class="auditdetail" id="environmentGapAudit">Kesenjangan model: atmosfer, samudra dan antarmuka memiliki nilai kondisi terpisah, tetapi materi cair samudra dan produk mineral masih berada di pool global yang sama. Tekanan, fugasitas H₂, luas permukaan mineral, kesetimbangan asam-basa, alkalinitas, aktivitas ion/spesiasi, pencampuran, serta neraca energi bebas reaksi belum dimodelkan. Nilai laju adalah respons skenario, bukan prediksi geokimia penuh.</div>
+    <div class="source-list" style="margin-top:12px" id="environmentSources">
+      <div class="source"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5910859/" target="_blank" rel="noopener">Model suhu dan pH samudra awal Bumi</a><p>Model geologi memperkirakan samudra awal yang relatif temperate dan pH rata-rata yang berubah; hasil tetap bergantung asumsi model.</p></div>
+    </div>
+  </div>
+  <div class="panel span-12" id="localReactionZonePanel">
+    <div class="sectionhead"><div><div class="eyebrow">Tahap 1.8 · Reservoir lokal</div><h2>Zona antarmuka batuan–air</h2><div class="sectionnote">CO₂, H₂, H₂O, dan mineral yang terpapar dipisahkan dari pool samudra/geologi global. Perpindahan adalah model pencampuran skenario; belum berupa simulasi aliran fluida 3D.</div></div><span id="localZonePill" class="pill warn">MENUNGGU KOLOKASI</span></div>
+    <div class="metric-grid env-metrics">
+      <div class="metric"><div class="label">CO₂ lokal</div><div id="localCO2Val" class="value">0 SU</div><div class="sub">Terbawa dari pool samudra</div></div>
+      <div class="metric"><div class="label">H₂ lokal</div><div id="localH2Val" class="value">0 SU</div><div class="sub">Terbawa dari pool samudra</div></div>
+      <div class="metric"><div class="label">Air lokal</div><div id="localWaterVal" class="value">0 SU</div><div class="sub">Reservoir air antarmuka terpisah</div></div>
+      <div class="metric"><div class="label">Magnetit terpapar</div><div id="localMagnetiteVal" class="value">0 SU</div><div id="localSurfaceVal" class="sub">Luas permukaan relatif belum tersedia</div></div>
+    </div>
+    <div id="localZoneAuditDetails" class="auditdetail">Zona lokal adalah model pencampuran terbatas. Kehadiran CO₂ dan H₂ lokal belum berarti HCOOH boleh terbentuk.</div>
+  </div>
+  <div class="panel span-12" id="prebioticGatePanel">
+    <div class="sectionhead">
+      <div><div class="eyebrow">Tahap 1.7 · Gerbang kimia prebiotik</div><h2>Gerbang pembentukan formate / asam format</h2><div class="sectionnote">HCOOH hanya disediakan sebagai pool produk nol untuk pelacakan. Reaksi belum dieksekusi; panel ini mengaudit apa yang masih harus dimodelkan.</div></div>
+      <span id="formateGatePill" class="pill warn">KANDIDAT TERKUNCI</span>
+    </div>
+    <div class="env-description">
+      <div class="eq" style="font-size:16px;font-weight:800">CO₂ + H₂ → HCOOH</div>
+      <p class="small" style="margin-bottom:0">Reaksi netto atom-seimbang dan transfer 2 elektron seimbang. Namun, pada keadaan standar, estimasi ΔG° sekitar <strong>+31,6 kJ/mol</strong> untuk CO₂(g) + H₂(g) → HCOOH(l). Nilai referensi ini bukan ΔG pada setiap kondisi hidrotermal.</p>
+    </div>
+    <div class="metric-grid env-metrics">
+      <div class="metric"><div class="label">Audit stoikiometri</div><div id="formateStoichVal" class="value">—</div><div id="formateStoichSub" class="sub">Atom & elektron</div></div>
+      <div class="metric"><div class="label">Bahan baku di pool samudra global</div><div id="formateFeedsVal" class="value">—</div><div id="formateFeedsSub" class="sub">CO₂ dan H₂</div></div>
+      <div class="metric"><div class="label">Zona lokal / katalis</div><div id="formateCatalystVal" class="value">BELUM</div><div class="sub">Kolokasi dimodelkan; aktivitas katalitik dan luas permukaan belum dikalibrasi</div></div>
+      <div class="metric"><div class="label">Energi bebas dan laju</div><div id="formateEnergyVal" class="value">TERKUNCI</div><div class="sub">UE belum terhubung ke kJ/mol; laju belum dikalibrasi</div></div>
+    </div>
+    <div id="formateGateDetails" class="auditdetail">Gerbang akan diperiksa setelah simulasi bergerak.</div>
+    <div class="toolbar" style="margin-top:10px"><button id="formateGateCheckBtn" type="button">Periksa kesiapan gerbang</button><span class="small" style="align-self:center">Tombol ini hanya mengaudit; tidak mengaktifkan pembentukan HCOOH.</span></div>
+    <div class="source-list" style="margin-top:12px">
+      <div class="source"><a href="https://www.rsc.org/suppdata/c7/ee/c7ee01764b/c7ee01764b1.pdf" target="_blank" rel="noopener">Data energi bebas pembentukan CO₂ dan asam format</a><p>Perkiraan ΔG° +31,6 kJ/mol berasal dari perbedaan energi bebas pembentukan standar spesies pada keadaan yang ditabulasikan; berlaku sebagai titik acuan, bukan model aktivitas/tekanan kondisi simulasi.</p></div>
+      <div class="source"><a href="https://onlinelibrary.wiley.com/doi/full/10.1002/ese3.1064" target="_blank" rel="noopener">Ulasan reduksi hidrotermal CO₂ menjadi asam format</a><p>Menjelaskan bahwa hasil reduksi bergantung pada reduktan/katalis, suhu, pH, waktu reaksi, dan kondisi hidrotermal. Build ini belum mempunyai model katalis yang sesuai untuk mengaktifkan jalur.</p></div>
+    </div>
+  </div>
+  <div class="panel span-12" id="materialLedgerPanel">
+    <div class="sectionhead"><div><div class="eyebrow">Build 1.9 · audit cadangan dan aliran</div><h2>Neraca hidrogen & inventaris karbon</h2><div class="sectionnote">Tidak ada angka plafon global. Nilai stok yang terlihat adalah keadaan dunia saat ini; perubahan hanya terjadi melalui proses yang dimodelkan.</div></div><span id="materialLedgerPill" class="pill good">NERACA TERTUTUP</span></div>
+    <div class="metric-grid">
+      <div class="metric"><div class="label">H₂ tersedia · seluruh kompartemen</div><div id="ledgerH2Current" class="value">0 SU</div><div class="sub">Atmosfer + samudra + zona lokal</div></div>
+      <div class="metric"><div class="label">H₂ dihasilkan · serpentinisasi</div><div id="ledgerH2Produced" class="value">0 SU</div><div class="sub">Akumulasi sumber sejak awal simulasi</div></div>
+      <div class="metric"><div class="label">H₂ dikonsumsi · reduksi pirit</div><div id="ledgerH2Consumed" class="value">0 SU</div><div class="sub">Akumulasi sink reaksi sejak awal</div></div>
+      <div class="metric"><div class="label">Residual neraca H₂</div><div id="ledgerH2Residual" class="value">0 SU</div><div class="sub">Awal + produksi − konsumsi − stok kini</div></div>
+    </div>
+    <div class="metric-grid" style="margin-top:12px">
+      <div class="metric"><div class="label">Inventaris karbon saat ini</div><div id="ledgerCarbonCurrent" class="value">0 atom-eq</div><div class="sub">Semua kompartemen dan spesies karbon terlacak</div></div>
+      <div class="metric"><div class="label">Inventaris karbon awal</div><div id="ledgerCarbonInitial" class="value">0 atom-eq</div><div class="sub">Kondisi awal dunia simulasi</div></div>
+      <div class="metric"><div class="label">CO₂ geologis tersisa</div><div id="ledgerGeoCO2" class="value">0 SU</div><div class="sub">Reservoir karbon geologis saat ini</div></div>
+      <div class="metric"><div class="label">Residual neraca karbon</div><div id="ledgerCarbonResidual" class="value">0 atom-eq</div><div class="sub">Karbon kini − karbon awal</div></div>
+    </div>
+    <div id="materialLedgerDetails" class="auditdetail">Neraca materi akan diperbarui setiap langkah simulasi.</div>
+    <div class="auditdetail">Catatan interpretasi: stok awal CO₂ geologis 100.000.000 SU adalah parameter kondisi awal yang dapat diganti pada skenario, bukan plafon maksimum karbon Bumi. Tidak ada batas total H₂ atau karbon yang menghentikan proses. Pada model aktif saat ini, H₂ dihasilkan oleh serpentinisasi dan dikonsumsi oleh reduksi pirit; pertukaran atmosfer–samudra–zona lokal hanya memindahkan H₂ antar-kompartemen. Karbon berpindah antar-kompartemen melalui outgassing dan pertukaran gas; tidak ada reaksi karbon aktif yang mengonsumsi atau menciptakan karbon.</div>
+  </div>
+  <div class="panel span-5">
+    <div class="sectionhead"><div><div class="eyebrow">Audit langsung</div><h2>Gerbang validasi</h2><div class="sectionnote">Lulus artinya konsistensi internal simulasi, bukan otomatis bukti proses geologi nyata.</div></div><span id="auditPill" class="pill good">LULUS</span></div>
+    <div class="auditgrid">
+      <div id="atomCheck" class="check pass"><div class="checktitle">Neraca atom global</div><div id="atomCheckVal" class="checkvalue">0 residual</div></div>
+      <div id="energyCheck" class="check pass"><div class="checktitle">Neraca energi model</div><div id="energyCheckVal" class="checkvalue">0 residual</div></div>
+      <div id="poolCheck" class="check pass"><div class="checktitle">Stok negatif / NaN</div><div id="poolCheckVal" class="checkvalue">0 ditemukan</div></div>
+      <div id="stoichCheck" class="check pass"><div class="checktitle">Reaksi seimbang atom</div><div id="stoichCheckVal" class="checkvalue">—</div></div>
+      <div id="activeCheck" class="check pass"><div class="checktitle">Jalur transformasi aktif</div><div id="activeCheckVal" class="checkvalue">1 jalur</div></div>
+      <div id="bioCheck" class="check pass"><div class="checktitle">Objek biologis</div><div id="bioCheckVal" class="checkvalue">0 sel / 0 genom</div></div>
+      <div id="oceanCapCheck" class="check pass"><div class="checktitle">Aturan ambang aliran fluida</div><div id="oceanCapCheckVal" class="checkvalue">jeda saat ≥ 120.000 SU</div></div>
+      <div id="inventoryCheck" class="check pass"><div class="checktitle">Inventaris CHNOPS + mineral</div><div id="inventoryCheckVal" class="checkvalue">10 unsur dilacak</div></div>
+      <div id="h2LedgerCheck" class="check pass"><div class="checktitle">Neraca hidrogen molekuler</div><div id="h2LedgerCheckVal" class="checkvalue">0 residual</div></div>
+      <div id="carbonLedgerCheck" class="check pass"><div class="checktitle">Neraca inventaris karbon</div><div id="carbonLedgerCheckVal" class="checkvalue">0 residual</div></div>
+    </div>
+    <div id="auditDetails" class="auditdetail">Audit akan diperbarui setelah simulasi bergerak.</div>
+  </div>
+  <div class="panel span-6">
+    <div class="sectionhead"><div><div class="eyebrow">Riwayat simulasi</div><h2>H₂ yang terbentuk</h2><div class="sectionnote">Jumlah H₂ di semua kompartemen; tidak mengasumsikan H₂ pasti digunakan kehidupan.</div></div><span id="historyH2Label" class="pill">0 SU</span></div>
+    <canvas id="chartH2" width="760" height="230" aria-label="Grafik H2"></canvas>
+  </div>
+  <div class="panel span-6">
+    <div class="sectionhead"><div><div class="eyebrow">Riwayat simulasi</div><h2>CO₂ lingkungan</h2><div class="sectionnote">CO₂ atmosfer dan terlarut; karbon geologis ditampilkan terpisah.</div></div><span id="historyCO2Label" class="pill">1.800 SU</span></div>
+    <canvas id="chartCO2" width="760" height="230" aria-label="Grafik CO2"></canvas>
+  </div>
+  <div class="panel span-12">
+    <div class="sectionhead"><div><div class="eyebrow">Katalog kimia</div><h2>Reaksi, status, dan alasan gerbang</h2><div class="sectionnote">Semua persamaan di katalog diperiksa secara aljabar atom. Status kandidat berarti belum dijalankan karena kondisi termodinamika, katalis, atau kinetika belum dimodelkan cukup baik.</div></div><div class="statusline"><span class="pill good">AKTIF = 3</span><span class="pill warn">KANDIDAT TERKUNCI</span></div></div>
+    <div class="tablewrap"><table><thead><tr><th>Jalur</th><th>Persamaan reaksi</th><th>Status</th><th>Audit atom & elektron</th><th>Energi / gerbang / alasan</th></tr></thead><tbody id="reactionRows"></tbody></table></div>
+    <div class="auditdetail">Aturan penting: reaksi seimbang secara atom belum tentu berlangsung spontan atau cepat. Reaksi kandidat tidak akan otomatis aktif hanya karena rumusnya seimbang. Untuk membuka kandidat, model perlu data suhu, aktivitas spesies, pH/tekanan bila relevan, katalis, laju, dan biaya/hasil energi yang konsisten.</div>
+  </div>
+  <div class="panel span-7">
+    <div class="sectionhead"><div><div class="eyebrow">Catatan peristiwa</div><h2>Log lingkungan</h2><div class="sectionnote">Catatan produksi, transfer, dan hasil audit terbaru.</div></div><button id="clearLogBtn" class="quiet">Bersihkan tampilan log</button></div>
+    <div id="eventLog" class="log"></div>
+  </div>
+  <div class="panel span-5">
+    <div class="sectionhead"><div><div class="eyebrow">Uji terpisah</div><h2>Uji tekanan 20.000 jam</h2><div class="sectionnote">Berjalan pada salinan dunia baru dan tidak mengubah simulasi utama.</div></div></div>
+    <div id="stressResult" class="auditdetail">Belum dijalankan. Uji ini memeriksa seluruh reaksi katalog, residual atom/energi sepanjang lintasan, nilai stok, serta apakah sel tetap tidak ada.</div>
+    <div class="source-list" style="margin-top:12px">
+      <div class="source"><a href="https://www.nature.com/articles/s44453-026-00046-9" target="_blank" rel="noopener">Serpentinisasi dan produksi H₂</a><p>Persamaan fayalit–air–magnetit–silika dan pengaruh komposisi mineral. Laju dalam simulasi ini tetap parameter model, bukan fluks terukur dari studi tersebut.</p></div>
+      <div class="source"><a href="https://kitchingroup.cheme.cmu.edu/blog/2013/02/01/Water-gas-shift-equilibria-via-the-NIST-Webbook/" target="_blank" rel="noopener">Water-gas shift dan termodinamika</a><p>Memberi contoh bahwa arah/laju reaksi harus diperiksa terhadap termodinamika dan kondisi, sehingga jalur tersebut dikunci di build ini.</p></div>
+      <div class="source"><a href="https://pubmed.ncbi.nlm.nih.gov/17811121/" target="_blank" rel="noopener">Fiksasi nitrogen oleh petir</a><p>Rujukan untuk peran petir dalam kimia nitrogen atmosfer purba. Reaksi netto sederhana yang dicantumkan di katalog belum dianggap model kuantitatif yang tervalidasi.</p></div>
+      <div class="source"><a href="https://museum.wales/mineralogy-of-wales/database/?mineral=37" target="_blank" rel="noopener">Apatit sebagai sumber fosfor mineral</a><p>Basis formula kelompok apatit; untuk pembukuan tetap, model memilih satu anggota spesifik, fluoroapatit Ca₅(PO₄)₃F, bukan seluruh variasi komposisi apatit alam.</p></div>
+      <div class="source"><a href="https://www.mdpi.com/2304-6704/9/8/65" target="_blank" rel="noopener">Pelarutan fluoroapatit dan spesiasi</a><p>Menunjukkan pelarutan apatit bergantung pada medium, keasaman, dan spesiasi; persamaan Build 1.4 disederhanakan untuk pembukuan atom saja.</p></div>
+      <div class="source"><a href="https://pubchem.ncbi.nlm.nih.gov/compound/Pyrite" target="_blank" rel="noopener">Pirit sebagai pembawa sulfur</a><p>Formula pirit FeS₂; massa stok di simulasi adalah placeholder dan tidak merepresentasikan kelimpahan global Bumi purba.</p></div>
+      <div class="source"><a href="https://www.hyuspre.eu/wp-content/uploads/2024/06/HyUSPRe_D2.2_Hydrogen-sulphide-generation-from-abiotic-pyrite-reduction_2023.12.21.pdf" target="_blank" rel="noopener">Reduksi abiotik pirit oleh H₂</a><p>Dokumen membahas FeS₂ + H₂ → FeS + H₂S sebagai salah satu jalur yang bergantung pada kondisi; laju build ini bukan diambil dari dokumen tersebut.</p></div>
+    </div>
+  </div>
+</section>
+<footer class="footer">Terra Chemica · Build 1.9. Build ini menambahkan pool materi zona lokal antarmuka batuan–air yang terpisah dan pertukaran reversibel dengan samudra. Model pertukaran dan luas permukaan magnetit adalah parameter skenario, bukan model aliran atau katalisis terkalibrasi. Suhu/pH antarmuka memodulasi laju proksi pelarutan apatit dan reduksi pirit; model menahan reaksi di luar rentang parameter kinetika yang dipakai. Pool samudra tetap satu reservoir global; zona lokal memakai kotak pencampuran fraksional, bukan geometri atau aliran spasial. Tekanan, spesiasi, fugasitas H₂, luas permukaan fisik mineral, serta energi bebas reaksi belum dihitung. Siklus air dan ambang jeda aliran fluida 120.000 SU dipertahankan. Kandidat HCOOH tetap terkunci dan tidak dieksekusi. Tidak ada sintesis organik aktif, sel, DNA, ATP biologis, fotosintesis, atau pembelahan di dalam file ini.</footer>
+</div>
+<script>
+'use strict';
+/*
+  ABIOTIC MODEL CONTRACT
+  - Every transformation that is currently active has an atom-balanced equation.
+  - The active serpentinization pathway uses a finite Fayalite + H2O pool and transfers
+    a finite, explicitly modelled redox-energy budget into the chemical-energy account of H2.
+  - Solar energy is an explicit external input. Weather losses, phase-change latent energy,
+    and modelled volcanic work are accounted for. Energy coefficients are internal UE, not kJ/mol.
+  - Gas dissolution/outgassing and all water-cycle flows are pool-to-pool transfers; they do not create atoms.
+  - Free geological water is a finite scenario reservoir; infiltration and hydrothermal return are explicit transfers.
+  - H2O consumed by serpentinization is counted in a water-equivalent ledger, while H and O remain conserved in molecules/minerals.
+  - Phase changes account for latent energy: evaporation stores it in vapor; condensation returns it to the weather-energy pool.
+  - Candidate reactions are catalogued/audited but NEVER executed.
+  - Mineral release is a bounded stoichiometric proxy. Its rates and mineral-water energetics are scenario placeholders, not calibrated geochemical kinetics.
+  - Charged aqueous species, pH, activity coefficients and full mineral equilibrium are not yet modelled.
+  - The rock-water interface has separate local pools. Exchange with the global ocean is a reversible mixing-share scenario, not a spatial fluid-dynamics model.
+  - A local magnetite inventory is an exposed-solid proxy; its relative surface-area value is uncalibrated and cannot unlock prebiotic reactions.
+*/
+const ELEMENTS=['C','H','N','O','P','S','Fe','Si','Ca','F'];
+const F={
+  N2:{N:2},H2:{H:2},H2O:{H:2,O:1},CO2:{C:1,O:2},CO:{C:1,O:1},NO:{N:1,O:1},NH3:{N:1,H:3},CH4:{C:1,H:4},
+  HCOOH:{C:1,H:2,O:2},ACETIC_ACID:{C:2,H:4,O:2},PHOSPHATE_AQ:{H:3,P:1,O:4},H2S:{H:2,S:1},CALCIUM_AQ:{Ca:1,H:2,O:2},HF_AQ:{H:1,F:1},IRON_SULFIDE:{Fe:1,S:1},
+  FAYALITE:{Fe:2,Si:1,O:4},MAGNETITE:{Fe:3,O:4},SILICA:{Si:1,O:2},FEO:{Fe:1,O:1},APATITE:{Ca:5,P:3,O:12,F:1},PYRITE:{Fe:1,S:2}
+};
+const P={
+  solarUEPerHour:8.0,
+  backgroundHeatLossUEPerHour:4.45,
+  vaporLatentUEPerSU:2.3,
+  evaporationSUPerHour:0.5,
+  waterVaporCapacitySU:1500,
+  oceanFlowThresholdSU:120000, // Ambang jeda aliran fluida geologis menuju samudra; hujan tetap boleh menaikkan level.
+  rainFractionPerEvent:0.80,
+  rainIntervalHours:24,
+  crustInfiltrationSUPerHour:0.12,
+  hydrothermalWaterReturnSUPerHour:0.80,
+  waterReturnEnergyUEPerSU:0.02,
+  volcanicOutgasMaxSUPerEvent:60,
+  ambientCO2TargetSU:2600,
+  volcanicWorkUEPerCO2:0.005,
+  serpentinizationMaxExtentPerHour:2.0,
+  // Laju pelepasan mineral adalah parameter skenario, bukan konstanta kinetika empiris.
+  apatiteDissolutionMaxExtentPerHour:0.02,
+  pyriteReductionMaxExtentPerHour:0.01,
+  lightningIntervalHours:12,
+  gasExchangeRatePerHour:0.03,
+  // Build 1.8: zona lokal adalah kotak pencampuran numerik, bukan volume geologi terukur.
+  localZoneTargetShare:0.015,
+  localZoneMixingFractionPerHour:0.015,
+  localMineralTargetShare:0.01,
+  localMineralExposureFractionPerHour:0.01,
+  magnetiteSurfaceProxyPerSU:0.01, // unit luas relatif (RSU/SU), parameter skenario tak terkalibrasi
+  gasAtmosphericShare:{H2:0.60,CO2:0.35,CO:0.45,NO:0.20},
+  energy:{H2:9.25,CO:12.0,NO:2.0},
+  // APATITE dan PYRITE masing-masing 10.000 SU adalah parameter skenario, bukan taksiran massa Bumi purba.
+  initial:{atmosphere:{N2:40000000,CO2:1800,CO:0,NO:0,H2:0,H2O:0},ocean:{H2O:100000,H2:0,CO2:0,CO:0,NO:0,HCOOH:0,PHOSPHATE_AQ:0,H2S:0,CALCIUM_AQ:0,HF_AQ:0},geology:{H2O:200000,CO2:100000000,FAYALITE:300000,MAGNETITE:0,SILICA:0,APATITE:10000,PYRITE:10000,IRON_SULFIDE:0,redoxEnergy:1000000,geothermalEnergy:10000}}
+};
+const KINETIC_MODEL={
+  gasConstantJPerMolK:8.314462618,
+  // Energi aktivasi 30 kJ/mol untuk sensitivitas pelarutan apatit adalah parameter skenario,
+  // bukan fit khusus mineral dari kondisi Bumi purba. Faktor respons dibatasi agar tidak meledak.
+  apatite:{activationEnergyJPerMol:30000,referenceTempC:25,referencePH:6.5,acidReactionOrder:0.613,maxTempC:150,maxMultiplier:6},
+  // Parameter pyrite mengacu pada bentuk U/V Arrhenius yang diuji di eksperimen reduksi pirit.
+  // Laju absolut studi tidak langsung dipakai karena SU bukan konsentrasi, luas permukaan, atau tekanan H2.
+  pyrite:{activationEnergyJPerMol:29400,referenceTempC:90,referencePH:7.5,hydrogenHalfSaturationSU:100,minTempC:60,maxTempC:120,minPH:4.1,maxPH:8.6},
+  serpentinization:{referenceTempC:90,minTempC:25,maxTempC:150,minMultiplier:0.25,maxMultiplier:2.0}
+};
+const REACTIONS=[
+ {id:'apatite-dissolution',name:'Pelarutan apatit (proksi pembukuan)',equation:'Ca₅(PO₄)₃F + 10 H₂O → 3 H₃PO₄ + 5 Ca(OH)₂ + HF',react:{APATITE:1,H2O:10},prod:{PHOSPHATE_AQ:3,CALCIUM_AQ:5,HF_AQ:1},electrons:{donated:0,accepted:0},status:'active proxy',active:true,redox:'Bukan jalur redoks dalam pembukuan formal ini.',energy:'Laju dasar 0,02 extent/jam dimodulasi sensitivitas suhu/pH; energi bebas reaksi belum dihitung.',reason:'Aktif hanya sebagai proksi konservasi atom. Ca(OH)₂ dan HF adalah carrier formal, bukan spesiasi atau prediksi kesetimbangan larutan; faktor suhu/pH adalah skenario dengan batas rentang.'},
+ {id:'pyrite-reduction',name:'Reduksi pirit oleh H₂ (proksi terbatas)',equation:'FeS₂ + H₂ → FeS + H₂S',react:{PYRITE:1,H2:1},prod:{IRON_SULFIDE:1,H2S:1},electrons:{donated:2,accepted:2},status:'active proxy',active:true,redox:'Transfer elektron formal: H₂ menyumbang 2 e⁻; sulfur menerima 2 e⁻.',energy:'Energi H₂ model dialihkan ke pool cuaca sebagai pembukuan; energi bebas/entalpi reaksi nyata belum dimodelkan.',reason:'Jalur tetap proksi yang masih diperdebatkan secara mekanistik. Laju dasar 0,01 extent/jam dimodulasi T/pH/H₂; dijeda di luar 60–120 °C dan pH 4,1–8,6, bukan prediksi geokimia final.'},
+ {id:'serpentinization',name:'Serpentinisasi fayalit',equation:'3 Fe₂SiO₄ + 2 H₂O → 2 Fe₃O₄ + 3 SiO₂ + 2 H₂',react:{FAYALITE:3,H2O:2},prod:{MAGNETITE:2,SILICA:3,H2:2},electrons:{donated:4,accepted:4},status:'active',active:true,redox:'Fe²⁺ pada fayalit teroksidasi; hidrogen dari air menerima 4 e⁻.',energy:'Redox geologis internal −18,5 UE/extent; H₂ bertambah +18,5 UE. Koefisien UE adalah skala internal, bukan nilai termokimia empiris.',reason:'Aktif sebagai uji geokimia terkendali. Stoikiometri didukung reaksi fayalit; laju maksimum 2 extent/jam hanya parameter uji yang perlu kalibrasi.'},
+ {id:'lightning',name:'Reaksi netto petir (formal)',equation:'N₂ + 2 CO₂ → 2 NO + 2 CO',react:{N2:1,CO2:2},prod:{NO:2,CO:2},electrons:{donated:4,accepted:4},status:'candidate',active:false,redox:'N₂ melepas 4 e⁻; dua karbon CO₂ menerima total 4 e⁻.',energy:'Produk bernilai 28 UE/extent menurut koefisien internal lama; pembentukan harus dibayar oleh energi listrik plasma.',reason:'Terkunci: persamaan netto adalah pembukuan stoikiometri sederhana, bukan model mekanisme, hasil, spektrum produk, dan kinetika petir yang tervalidasi.'},
+ {id:'wgs',name:'Water-gas shift',equation:'CO + H₂O ⇌ CO₂ + H₂',react:{CO:1,H2O:1},prod:{CO2:1,H2:1},electrons:{donated:2,accepted:2},status:'candidate',active:false,redox:'C pada CO teroksidasi; hidrogen air direduksi.',energy:'Eksotermis pada keadaan standar 298,15 K (ΔH° sekitar −41,15 kJ/mol), tetapi arah/equilibrium berubah menurut kondisi.',reason:'Terkunci: belum ada aktivitas spesies, suhu/tekanan lokal, konstanta kesetimbangan, dan kinetika katalitik yang sesuai dengan pool model.'},
+ {id:'no-reduction',name:'Reduksi NO menjadi amonia',equation:'2 NO + 5 H₂ → 2 NH₃ + 2 H₂O',react:{NO:2,H2:5},prod:{NH3:2,H2O:2},electrons:{donated:10,accepted:10},status:'candidate',active:false,redox:'Reduksi N menerima 10 e⁻; 5 H₂ menyediakan 10 e⁻.',energy:'Tidak diberi koefisien energi aktif pada build ini.',reason:'Terkunci: memerlukan model spesiasi nitrogen, kondisi redoks/pH, laju, serta anggaran energi pada kondisi lingkungan simulasi.'},
+ {id:'methanation',name:'Metanasi CO₂',equation:'CO₂ + 4 H₂ → CH₄ + 2 H₂O',react:{CO2:1,H2:4},prod:{CH4:1,H2O:2},electrons:{donated:8,accepted:8},status:'candidate',active:false,redox:'Karbon turun dari +4 ke −4; empat H₂ melepas total 8 e⁻.',energy:'Tidak diberi koefisien energi aktif pada build ini.',reason:'Terkunci: memerlukan katalis mineral/logam, suhu, tekanan, aktivitas gas terlarut dan kinetika yang eksplisit.'},
+ {id:'formate',name:'Pembentukan asam format (gerbang prebiotik)',equation:'CO₂ + H₂ → HCOOH',react:{CO2:1,H2:1},prod:{HCOOH:1},electrons:{donated:2,accepted:2},status:'candidate',active:false,redox:'Karbon menerima 2 e⁻ dari H₂; neraca elektron formal seimbang.',energy:'ΔG° langsung diperkirakan sekitar +31,6 kJ/mol pada keadaan standar (CO₂ gas + H₂ gas → HCOOH cair); tidak ada konversi UE↔kJ/mol dalam model.',reason:'Gerbang terkunci: belum ada zona reaksi lokal, katalis dengan inventaris/lokasi, spesiasi formiat/formic acid, laju yang terkalibrasi, tekanan/fugasitas, atau neraca energi bebas. Persamaan seimbang bukan bukti reaksi berjalan.'},
+ {id:'acetate',name:'Pembentukan asam asetat',equation:'2 CO₂ + 4 H₂ → CH₃COOH + 2 H₂O',react:{CO2:2,H2:4},prod:{ACETIC_ACID:1,H2O:2},electrons:{donated:8,accepted:8},status:'candidate',active:false,redox:'Dua karbon CO₂ menerima total 8 e⁻; empat H₂ melepas 8 e⁻.',energy:'Tidak diberi koefisien energi aktif pada build ini.',reason:'Terkunci: tidak boleh menjadi jalur otomatis hanya karena produk asetat penting untuk kehidupan. Butuh kondisi termodinamika, katalis, dan kinetika yang teruji.'},
+ {id:'steam-reforming',name:'Reformasi uap metana',equation:'CH₄ + H₂O → CO + 3 H₂',react:{CH4:1,H2O:1},prod:{CO:1,H2:3},electrons:{donated:6,accepted:6},status:'candidate',active:false,redox:'Karbon metana teroksidasi; hidrogen air direduksi.',energy:'Memerlukan input panas pada kondisi lazim; belum diaktifkan.',reason:'Terkunci: membutuhkan sumber panas, suhu, katalis, dan anggaran panas yang sesuai.'},
+ {id:'acetate-iron',name:'Oksidasi asetat oleh magnetit (formal)',equation:'CH₃COOH + 4 Fe₃O₄ → 2 CO₂ + 12 FeO + 2 H₂O',react:{ACETIC_ACID:1,MAGNETITE:4},prod:{CO2:2,FEO:12,H2O:2},electrons:{donated:8,accepted:8},status:'candidate',active:false,redox:'Oksidasi karbon asetat dipasangkan dengan reduksi Fe(III) dalam magnetit.',energy:'Tidak diberi koefisien energi aktif pada build ini.',reason:'Terkunci: persamaan formal atom-seimbang, tetapi spesiasi/valensi mineral, fase padat-cair, dan termodinamika perlu ditentukan.'}
+];
+const ENVIRONMENT_PROFILES={
+ 'early-ocean':{
+  name:'Samudra awal + antarmuka geologis dasar · skenario awal',
+  conditions:{atmosphereTempC:20,oceanTempC:25,oceanPH:6.5,interfaceTempC:90,interfacePH:7.5},
+  temperature:'Samudra 25 °C · antarmuka 90 °C',temperatureNote:'Nilai representatif skenario, bukan rentang pasti atau rekonstruksi tunggal',ph:'Samudra pH 6,5 · antarmuka pH 7,5',phNote:'Nilai kerja untuk memulai model; ketidakpastian kondisi purba tinggi',pressure:'Belum dimodelkan',kinetics:'Terhubung dalam rentang model',
+  interpretation:'Profil awal memisahkan air permukaan yang relatif sejuk dari zona batuan–air yang lebih panas. Nilai 90 °C dan pH 7,5 pada antarmuka hanyalah skenario kerja agar mekanisme kinetika dapat diuji; bukan klaim bahwa semua lingkungan awal Bumi memiliki kondisi ini.',
+  kineticsNote:'Laju mineral berubah sesuai suhu/pH antarmuka; belum memperhitungkan tekanan, luas permukaan, atau kesetimbangan.',
+  sources:[{label:'Constraining the climate and ocean pH of the early Earth',url:'https://pmc.ncbi.nlm.nih.gov/articles/PMC5910859/',note:'Model iklim dan pH samudra awal bergantung pada asumsi CO₂, pelapukan, dan siklus geologi; gunakan sebagai konteks, bukan satu angka pasti.'},{label:'USGS: mineral-water interaction kinetic parameters',url:'https://pubs.usgs.gov/of/2004/1068/OFR_2004_1068_old.pdf',note:'Kompilasi parameter kinetika pelarutan mineral fosfat; kondisi eksperimen dan spesies mineral penting, sehingga laju di sini masih dinormalisasi sebagai skenario.'},{label:'Eksperimen kinetika reduksi pirit oleh H₂',url:'https://www.sciencedirect.com/science/article/pii/S001670372500715X',note:'Studi melaporkan ketergantungan suhu, tekanan parsial H₂ dan pH. Rentang pemakaian salah satu hukum laju sekitar 60–120 °C dan pH 4,1–8,6; laju absolutnya tidak dipindahkan langsung ke unit SU.'}]
+ },
+ 'serpentinization':{
+  name:'Fluida serpentinisasi · analog modern',
+  conditions:{atmosphereTempC:20,oceanTempC:25,oceanPH:6.5,interfaceTempC:60,interfacePH:8.3},
+  temperature:'Samudra 25 °C · antarmuka 60 °C',temperatureNote:'Pasangan nilai 60 °C/pH 8,3 adalah skenario dalam rentang umum, bukan satu sampel vent tertentu',ph:'Samudra pH 6,5 · antarmuka pH 8,3',phNote:'Nilai antarmuka dipilih sebagai kasus sensitivitas, bukan pengukuran lokasi tertentu',pressure:'Belum dimodelkan',kinetics:'Terhubung dalam rentang model',
+  interpretation:'Ini analog lokal untuk zona serpentinisasi, bukan kondisi global samudra purba. Nilai 60 °C dan pH 8,3 dipakai sebagai pasangan skenario yang berada dalam rentang umum fluida Lost City, bukan klaim keduanya berasal dari satu sampel; sistem nyata berubah dengan suhu dan lokasi.',
+  kineticsNote:'Pelarutan apatit dan proksi reduksi pirit menggunakan nilai antarmuka; spesiasi/pencampuran belum dihitung.',
+  sources:[{label:'Habitability of the marine serpentinite subsurface: Lost City',url:'https://pmc.ncbi.nlm.nih.gov/articles/PMC7015304/',note:'Fluida Lost City dilaporkan 40–116 °C; pH yang dikoreksi ke kondisi in situ untuk fluida terpanas sekitar 8–8,5.'},{label:'Multi-stage evolution of the Lost City hydrothermal vent fluids',url:'https://www.sciencedirect.com/science/article/pii/S0016703722003155',note:'Komposisi fluida beragam antar-vent dan sepanjang evolusi sistem; nilai satu profil tidak boleh dianggap universal.'},{label:'Eksperimen kinetika reduksi pirit oleh H₂',url:'https://www.sciencedirect.com/science/article/pii/S001670372500715X',note:'Model kinetika pirit tidak divalidasi untuk semua kondisi Lost City; rentang validitas model di sini tetap diperiksa secara eksplisit.'},{label:'Evaluasi mekanistik reduksi pirit oleh H₂ (2026)',url:'https://www.sciencedirect.com/science/article/pii/S2666759226000934',note:'Evaluasi terbaru menyoroti bahwa interpretasi mekanisme dan neraca reaksi pirit masih diperdebatkan; karena itu jalur ini tetap proksi yang dikunci pada rentang tertentu, bukan kesimpulan mekanistik final.'}]
+ },
+ 'acidic-vent':{
+  name:'Vent hidrotermal asam · analog modern',
+  conditions:{atmosphereTempC:20,oceanTempC:25,oceanPH:6.5,interfaceTempC:350,interfacePH:2.5},
+  temperature:'Samudra 25 °C · antarmuka 350 °C',temperatureNote:'Suhu tinggi mewakili fluida vent dalam tekanan laut dalam; tekanan belum dimodelkan',ph:'Samudra pH 6,5 · antarmuka pH 2,5',phNote:'Kasus asam tertentu; bukan sifat semua vent',pressure:'Belum dimodelkan',kinetics:'Mineral dijeda di luar rentang kalibrasi',
+  interpretation:'Profil ini menguji batas model, bukan kondisi yang dianggap bisa langsung bereaksi. Pada 350 °C, sistem tidak diekstrapolasi dari hukum laju mineral yang hanya diuji pada suhu lebih rendah; tekanan, fase fluida, dan pencampuran harus dimodelkan lebih dulu.',
+  kineticsNote:'Pelarutan apatit proksi dijeda di atas 150 °C; reduksi pirit dijeda di luar 60–120 °C atau pH 4,1–8,6. Ini batas model, bukan pernyataan bahwa reaksi mustahil di alam.',
+  sources:[{label:'NOAA: What is a hydrothermal vent?',url:'https://oceanservice.noaa.gov/facts/vents.html',note:'Fluida vent laut dalam dapat sangat panas karena tekanan sekitar mencegah pendidihan biasa; simulasi perlu memasangkan temperatur dengan tekanan.'},{label:'Karakteristik vent asam dan alkali',url:'https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2023GC011011',note:'Vent black smoker cenderung lebih panas dan asam daripada sistem Lost City yang lebih sejuk dan alkali; keduanya tidak boleh dicampurkan menjadi satu kondisi.'}]
+ }
+};const TOL=1e-5,MAX_HISTORY=500;
+function fmt(n,d=1){if(!Number.isFinite(n))return String(n);return new Intl.NumberFormat('id-ID',{maximumFractionDigits:d,minimumFractionDigits:0}).format(n);}
+function fmtSigned(n,d=7){return (n>0?'+':'')+fmt(n,d);}
+function newWorld(){
+ const w={tick:0,environmentProfile:'early-ocean',environment:{...ENVIRONMENT_PROFILES['early-ocean'].conditions},atmosphere:{...P.initial.atmosphere},ocean:{...P.initial.ocean},geology:{...P.initial.geology},interfaceZone:{CO2:0,H2:0,H2O:0,HCOOH:0,MAGNETITE:0},energy:{weather:0},counters:{solarInput:0,energyDissipated:0,serpentinizationExtent:0,h2FromSerpentinization:0,apatiteDissolutionExtent:0,phosphateReleased:0,pyriteReductionExtent:0,sulfideReleased:0,volcanicCO2:0,volcanicWork:0,evaporatedWater:0,rainfallWater:0,condensationHeatReleased:0,waterConsumedByReaction:0,geologicWaterReturned:0,waterInfiltrated:0,lightningEvents:0,gasTransfers:0,localCO2Exchange:0,localH2Exchange:0,localWaterExchange:0,localMagnetiteExposure:0},history:[],maxAtomDrift:0,maxEnergyDrift:0,maxWaterDrift:0,minPoolSeen:Infinity,maxOceanSeen:P.initial.ocean.H2O,log:[]};
+ w.initialAtoms=atomTotals(w);w.initialH2Molecular=(w.atmosphere.H2||0)+(w.ocean.H2||0)+(w.interfaceZone.H2||0);w.initialEnergy=storedEnergy(w);w.initialWaterEquivalent=waterMoleculeStocks(w);w.history.push(snapshot(w));pushLog(w,'world','Dunia abiotik dibuat. Tidak ada sel, DNA, ATP biologis, atau metabolisme.');return w;
+}
+function addFormula(total,key,q){const f=F[key];if(!f)throw new Error('Formula tidak ditemukan: '+key);for(const [el,n] of Object.entries(f))total[el]=(total[el]||0)+n*q;}
+function atomTotals(w){const a=Object.fromEntries(ELEMENTS.map(e=>[e,0]));for(const [k,q] of Object.entries(w.atmosphere))if(F[k])addFormula(a,k,q);for(const [k,q] of Object.entries(w.ocean))if(F[k])addFormula(a,k,q);for(const [k,q] of Object.entries(w.geology))if(F[k])addFormula(a,k,q);for(const [k,q] of Object.entries(w.interfaceZone||{}))if(F[k])addFormula(a,k,q);return a;}
+const INVENTORY_META=[
+ {symbol:'C',name:'Karbon',source:'CO₂/CO atmosfer dan samudra; CO₂ geologis; HCOOH pool kandidat (awal nol)',status:'Pool HCOOH dilacak, tetapi gerbang sintesis tetap terkunci'},
+ {symbol:'H',name:'Hidrogen',source:'H₂O, H₂, dan spesies yang mengandung H',status:'Sumber air dan H₂ dimodelkan'},
+ {symbol:'N',name:'Nitrogen',source:'N₂ atmosfer dan NO; NH₃ baru berada di katalog kandidat',status:'N₂ tersedia; fiksasi nitrogen belum aktif'},
+ {symbol:'O',name:'Oksigen',source:'H₂O, CO₂, CO, NO, serta oksida mineral',status:'Terlacak; O₂ bebas tidak diasumsikan tersedia'},
+ {symbol:'P',name:'Fosfor',source:'Apatit geologis dan fosfat-AQ formal',status:'Pelepasan bertahap dengan laju skenario; spesiasi ion belum dimodelkan'},
+ {symbol:'S',name:'Sulfur',source:'Pirit, FeS geologis, dan H₂S-AQ',status:'Reduksi pirit terbatas pada H₂ tersedia; kinetika belum dikalibrasi'},
+ {symbol:'Fe',name:'Besi',source:'Fayalit, magnetit, pirit, dan FeS',status:'Mineral besi tersedia sebagai pool geologi'},
+ {symbol:'Si',name:'Silikon',source:'Fayalit dan silika',status:'Mineral silikat tersedia sebagai pool geologi'},
+ {symbol:'Ca',name:'Kalsium',source:'Apatit dan carrier Ca(OH)₂ formal',status:'Ikut dilacak; spesiasi kalsium terlarut belum dimodelkan'},
+ {symbol:'F',name:'Fluorin',source:'Apatit dan HF-AQ formal',status:'Ikut dilacak dalam carrier formal; bukan target reaksi organik'}
+];
+function chemistryInventory(w){const totals=atomTotals(w);return INVENTORY_META.map(m=>({ ...m,atoms:totals[m.symbol]||0 }));}
+function inventoryAudit(w){const totals=atomTotals(w),bad=ELEMENTS.filter(e=>!Number.isFinite(totals[e])||totals[e]<-1e-7);const hasCore=['C','H','N','O','P','S'].every(e=>ELEMENTS.includes(e)&&Number.isFinite(totals[e]));const sourcePools=['APATITE','PYRITE','IRON_SULFIDE'].every(k=>Object.prototype.hasOwnProperty.call(w.geology,k)&&Number.isFinite(w.geology[k])&&w.geology[k]>=-1e-7);const energyKeys=['redoxEnergy','geothermalEnergy'];const unmapped=[];for(const [zone,obj] of [['atmosfer',w.atmosphere],['samudra',w.ocean],['geologi',w.geology],['zona-lokal',w.interfaceZone||{}]])for(const [key,value] of Object.entries(obj))if(!F[key]&&!(zone==='geologi'&&energyKeys.includes(key))&&Math.abs(value)>1e-12)unmapped.push({zone,key,value});return{ok:hasCore&&sourcePools&&bad.length===0&&unmapped.length===0,hasCore,sourcePools,bad,unmapped,trackedElements:ELEMENTS.length,atoms:totals,apatite:w.geology.APATITE||0,pyrite:w.geology.PYRITE||0,aqueousPhosphate:w.ocean.PHOSPHATE_AQ||0,aqueousSulfide:w.ocean.H2S||0};}
+function carbonHydrogenLedger(w){
+ const z=w.interfaceZone||{},h2Current=(w.atmosphere.H2||0)+(w.ocean.H2||0)+(z.H2||0);
+ const h2Initial=Number.isFinite(w.initialH2Molecular)?w.initialH2Molecular:0;
+ const h2Produced=w.counters.h2FromSerpentinization||0,h2Consumed=w.counters.pyriteReductionExtent||0;
+ const h2Residual=h2Initial+h2Produced-h2Consumed-h2Current;
+ const atoms=atomTotals(w),carbonInitial=(w.initialAtoms&&w.initialAtoms.C)||0,carbonCurrent=atoms.C||0,carbonResidual=carbonCurrent-carbonInitial;
+ return{h2:{initial:h2Initial,produced:h2Produced,consumed:h2Consumed,current:h2Current,residual:h2Residual,closed:Math.abs(h2Residual)<TOL},carbon:{initial:carbonInitial,current:carbonCurrent,residual:carbonResidual,geologicCO2:w.geology.CO2||0,geologicCO2Initial:P.initial.geology.CO2,closed:Math.abs(carbonResidual)<TOL}};
+}
+function renderMaterialLedgers(){
+ const l=carbonHydrogenLedger(world),ok=l.h2.closed&&l.carbon.closed;
+ $('ledgerH2Current').textContent=fmt(l.h2.current,3)+' SU';$('ledgerH2Produced').textContent=fmt(l.h2.produced,3)+' SU';$('ledgerH2Consumed').textContent=fmt(l.h2.consumed,3)+' SU';$('ledgerH2Residual').textContent=fmtSigned(l.h2.residual,10)+' SU';
+ $('ledgerCarbonCurrent').textContent=fmt(l.carbon.current,3)+' atom-eq';$('ledgerCarbonInitial').textContent=fmt(l.carbon.initial,3)+' atom-eq';$('ledgerGeoCO2').textContent=fmt(l.carbon.geologicCO2,3)+' SU';$('ledgerCarbonResidual').textContent=fmtSigned(l.carbon.residual,10)+' atom-eq';
+ $('materialLedgerPill').className='pill '+(ok?'good':'bad');$('materialLedgerPill').textContent=ok?'NERACA TERTUTUP':'RESIDUAL TERDETEKSI';
+ $('materialLedgerDetails').textContent=`H₂: stok awal ${fmt(l.h2.initial,3)} + sumber serpentinisasi ${fmt(l.h2.produced,3)} − sink reduksi pirit ${fmt(l.h2.consumed,3)} = stok kini ${fmt(l.h2.current,3)} SU. Transfer antar-kompartemen tidak mengubah total H₂. Karbon: ${fmt(l.carbon.current,3)} atom-equivalent kini dibanding ${fmt(l.carbon.initial,3)} atom-equivalent pada awal; CO₂ geologis tersisa ${fmt(l.carbon.geologicCO2,3)} SU dari stok awal skenario ${fmt(l.carbon.geologicCO2Initial,3)} SU. Residual H₂ ${fmtSigned(l.h2.residual,10)} SU; residual karbon ${fmtSigned(l.carbon.residual,10)} atom-equivalent.`;
+}
+function waterMoleculeStocks(w){return (w.atmosphere.H2O||0)+(w.ocean.H2O||0)+(w.geology.H2O||0)+((w.interfaceZone||{}).H2O||0);}
+function waterLedgerResidual(w){return waterMoleculeStocks(w)+(w.counters.waterConsumedByReaction||0)-(w.initialWaterEquivalent||0);}
+function stoichAudit(r){const lhs=Object.fromEntries(ELEMENTS.map(e=>[e,0])),rhs={...lhs};for(const [k,q] of Object.entries(r.react))addFormula(lhs,k,q);for(const [k,q] of Object.entries(r.prod))addFormula(rhs,k,q);const delta={};for(const el of ELEMENTS)delta[el]=rhs[el]-lhs[el];return{lhs,rhs,delta,ok:ELEMENTS.every(el=>Math.abs(delta[el])<1e-9)};}
+function storedEnergy(w){const g=w.geology,a=w.atmosphere,o=w.ocean,z=w.interfaceZone||{};return g.redoxEnergy+g.geothermalEnergy+w.energy.weather+P.energy.H2*(a.H2+o.H2+(z.H2||0))+P.energy.CO*(a.CO+o.CO+(z.CO||0))+P.energy.NO*(a.NO+o.NO+(z.NO||0))+P.vaporLatentUEPerSU*a.H2O;}
+function energyResidual(w){return storedEnergy(w)+w.counters.energyDissipated-w.initialEnergy-w.counters.solarInput;}
+function atomResidual(w){const now=atomTotals(w),out={};for(const el of ELEMENTS)out[el]=now[el]-w.initialAtoms[el];return out;}
+function allPools(w){const out=[];for(const [zone,ob] of [['atmosfer',w.atmosphere],['samudra',w.ocean],['geologi',w.geology],['zona-lokal',w.interfaceZone||{}],['energi',w.energy]])for(const [k,v] of Object.entries(ob))out.push({zone,key:k,value:v});return out;}
+function maxAbs(o){return Math.max(0,...Object.values(o).map(v=>Math.abs(v)));}
+function minPool(w){return Math.min(...allPools(w).map(x=>x.value));}
+function pushLog(w,type,message){w.log.unshift({tick:w.tick,type,message});if(w.log.length>160)w.log.pop();}
+function transfer(source,target,key,amount){const q=Math.max(0,Math.min(source[key]||0,amount));source[key]-=q;target[key]=(target[key]||0)+q;return q;}
+function clamp(x,min,max){return Math.max(min,Math.min(max,x));}
+function arrheniusMultiplier(tempC,activationEnergyJPerMol,referenceTempC){
+ const t=tempC+273.15,tr=referenceTempC+273.15;
+ if(!(t>0&&tr>0))return 0;
+ return Math.exp(-activationEnergyJPerMol/KINETIC_MODEL.gasConstantJPerMolK*(1/t-1/tr));
+}
+function apatiteKinetics(w){
+ const e=w.environment||ENVIRONMENT_PROFILES['early-ocean'].conditions,T=e.interfaceTempC,pH=e.interfacePH,m=KINETIC_MODEL.apatite;
+ if(!Number.isFinite(T)||!Number.isFinite(pH)||T<0||T>m.maxTempC||pH<0||pH>14)return{enabled:false,multiplier:0,rate:0,reason:'di luar rentang skenario 0–150 °C atau pH 0–14'};
+ const temp=arrheniusMultiplier(T,m.activationEnergyJPerMol,m.referenceTempC);
+ // Hukum asam fluorapatit hanya digunakan sebagai faktor sensitivitas sampai pH referensi;
+ // pada pH lebih tinggi dipakai plateau netral sederhana, bukan spesiasi terperinci.
+ const ph=pH<m.referencePH?Math.pow(10,m.acidReactionOrder*(m.referencePH-pH)):1;
+ const multiplier=clamp(temp*ph,0,m.maxMultiplier);
+ return{enabled:true,multiplier,rate:P.apatiteDissolutionMaxExtentPerHour*multiplier,temperatureFactor:temp,pHFactor:ph,reason:'faktor Arrhenius + sensitivitas pH skenario'};
+}
+function pyriteKinetics(w,h2Stock=null){
+ const e=w.environment||ENVIRONMENT_PROFILES['early-ocean'].conditions,T=e.interfaceTempC,pH=e.interfacePH,m=KINETIC_MODEL.pyrite;
+ if(!Number.isFinite(T)||!Number.isFinite(pH)||T<m.minTempC||T>m.maxTempC||pH<m.minPH||pH>m.maxPH)return{enabled:false,multiplier:0,rate:0,reason:'di luar rentang kinetika pirit yang dipakai (60–120 °C; pH 4,1–8,6)'};
+ const temp=arrheniusMultiplier(T,m.activationEnergyJPerMol,m.referenceTempC);
+ // Orde H+ diambil dari salah satu fit V; absolute rate is not used because SU lacks pressure/area units.
+ const ph=Math.pow(10,0.13*(m.referencePH-pH));
+ const h2=Math.max(0,h2Stock===null?0:h2Stock),h2Factor=h2/(h2+m.hydrogenHalfSaturationSU);
+ const multiplier=temp*ph*h2Factor;
+ return{enabled:true,multiplier,rate:P.pyriteReductionMaxExtentPerHour*multiplier,temperatureFactor:temp,pHFactor:ph,h2Factor,reason:'faktor Arrhenius + pH + ketersediaan H₂; laju absolut tetap parameter skenario'};
+}
+function serpentinizationKinetics(w){
+ const T=(w.environment||ENVIRONMENT_PROFILES['early-ocean'].conditions).interfaceTempC,m=KINETIC_MODEL.serpentinization;
+ if(!Number.isFinite(T)||T<m.minTempC||T>m.maxTempC)return{enabled:false,multiplier:0,rate:0,reason:'di luar sensitivitas skenario 25–150 °C; tidak diekstrapolasi'};
+ const raw=arrheniusMultiplier(T,29400,m.referenceTempC),multiplier=clamp(raw,m.minMultiplier,m.maxMultiplier);
+ return{enabled:true,multiplier,rate:P.serpentinizationMaxExtentPerHour*multiplier,reason:'sensitivitas suhu terbatas; pH belum masuk ke hukum laju serpentinisasi'};
+}
+function environmentKineticsAudit(w){
+ const ap=apatiteKinetics(w),py=pyriteKinetics(w,(w.ocean.H2||0)),serp=serpentinizationKinetics(w);
+ return{apatite:ap,pyrite:py,serpentinization:serp,ok:[ap,py,serp].every(x=>Number.isFinite(x.multiplier)&&x.multiplier>=0)};
+}
+function kineticScenarioTest(){
+ const base=newWorld(),baseA=apatiteKinetics(base),baseP=pyriteKinetics(base,1000);
+ const alk=newWorld();alk.environmentProfile='serpentinization';alk.environment={...ENVIRONMENT_PROFILES.serpentinization.conditions};
+ const alkA=apatiteKinetics(alk),alkP=pyriteKinetics(alk,1000);
+ const acid=newWorld();acid.environmentProfile='acidic-vent';acid.environment={...ENVIRONMENT_PROFILES['acidic-vent'].conditions};
+ const acidA=apatiteKinetics(acid),acidP=pyriteKinetics(acid,1000),acidS=serpentinizationKinetics(acid);
+ const baseAtom=maxAbs(atomResidual(base))<TOL,baseWater=Math.abs(waterLedgerResidual(base))<TOL;
+ return{passed:baseA.enabled&&baseP.enabled&&alkA.enabled&&alkP.enabled&&!acidA.enabled&&!acidP.enabled&&!acidS.enabled&&baseA.multiplier!==alkA.multiplier&&Number.isFinite(alkP.multiplier)&&baseAtom&&baseWater,defaultApatite:baseA,defaultPyrite:baseP,alkalineApatite:alkA,alkalinePyrite:alkP,acidicApatite:acidA,acidicPyrite:acidP,acidicSerpentinization:acidS,defaultAtomClosed:baseAtom,defaultWaterClosed:baseWater};
+}
+function exchangeGas(w,key,atmShare){const a=w.atmosphere,o=w.ocean,total=Math.max(0,(a[key]||0)+(o[key]||0));const want=total*atmShare;const delta=(want-(a[key]||0))*P.gasExchangeRatePerHour;if(delta>0){const q=transfer(o,a,key,delta);if(q>1e-12)w.counters.gasTransfers+=q;}else if(delta<0){const q=transfer(a,o,key,-delta);if(q>1e-12)w.counters.gasTransfers+=q;}}
+function solarAndBackground(w){w.energy.weather+=P.solarUEPerHour;w.counters.solarInput+=P.solarUEPerHour;const q=Math.min(P.backgroundHeatLossUEPerHour,w.energy.weather);w.energy.weather-=q;w.counters.energyDissipated+=q;}
+function evaporate(w){const a=w.atmosphere,o=w.ocean;const cap=P.waterVaporCapacitySU;const q=Math.max(0,Math.min(P.evaporationSUPerHour,o.H2O,Math.max(0,cap-a.H2O),w.energy.weather/P.vaporLatentUEPerSU));if(q<=1e-12)return 0;const latent=q*P.vaporLatentUEPerSU;o.H2O-=q;a.H2O+=q;w.energy.weather-=latent;w.counters.evaporatedWater+=q;return q;}
+function oceanFreeCapacity(w){return P.oceanFlowThresholdSU-(w.ocean.H2O||0);}
+function hydrothermalReturnState(w){const g=w.geology,o=w.ocean,level=o.H2O||0;const energyLimited=Math.max(0,(g.geothermalEnergy||0)/P.waterReturnEnergyUEPerSU);const potential=Math.max(0,Math.min(P.hydrothermalWaterReturnSUPerHour,g.H2O||0,energyLimited));const margin=oceanFreeCapacity(w),room=Math.max(0,margin);const paused=level>=P.oceanFlowThresholdSU;const q=paused?0:Math.max(0,Math.min(potential,room));let status='AKTIF · di bawah ambang';if(paused)status='JEDA SEMENTARA · ambang tercapai';else if((g.H2O||0)<=1e-12)status='BERHENTI · fluida geologi habis';else if(energyLimited<=1e-12)status='BERHENTI · energi geotermal habis';else if(q+1e-12<potential)status='TERBATAS · mendekati ambang';return{amount:q,potential,room,margin,paused,status};}
+function infiltrateWater(w){const g=w.geology,o=w.ocean;const q=transfer(o,g,'H2O',P.crustInfiltrationSUPerHour);if(q>1e-12)w.counters.waterInfiltrated+=q;return q;}
+function hydrothermalWaterReturn(w){const g=w.geology,o=w.ocean,state=hydrothermalReturnState(w),q=state.amount;if(q<=1e-12)return 0;const work=q*P.waterReturnEnergyUEPerSU;g.H2O-=q;o.H2O+=q;g.geothermalEnergy-=work;w.energy.weather+=work;w.counters.geologicWaterReturned+=q;return q;}
+function rain(w){const a=w.atmosphere,o=w.ocean;const water=Math.min(a.H2O||0,(a.H2O||0)*P.rainFractionPerEvent);if(water>0){a.H2O-=water;o.H2O+=water;const latent=water*P.vaporLatentUEPerSU;/* Latent heat is released back into the weather-energy pool, not destroyed. */w.energy.weather+=latent;w.counters.condensationHeatReleased+=latent;w.counters.rainfallWater+=water;}const co2=transfer(a,o,'CO2',(a.CO2||0)*0.80);const no=transfer(a,o,'NO',(a.NO||0)*0.85);const co=transfer(a,o,'CO',(a.CO||0)*0.20);if(water+co2+no+co>1e-12)pushLog(w,'weather',`Presipitasi: H₂O ${fmt(water,3)} SU masuk ke samudera tanpa dibatasi ambang aliran fluida. CO₂ ${fmt(co2,3)}, NO ${fmt(no,3)}, CO ${fmt(co,3)} berpindah ke laut.`);}
+function volcanicOutgassing(w){const g=w.geology,a=w.atmosphere,o=w.ocean;const ambient=a.CO2+o.CO2;const gap=Math.max(0,P.ambientCO2TargetSU-ambient);const energyCapacity=g.geothermalEnergy/P.volcanicWorkUEPerCO2;const q=Math.max(0,Math.min(P.volcanicOutgasMaxSUPerEvent,g.CO2,gap,energyCapacity));if(q<=1e-12)return 0;g.CO2-=q;a.CO2+=q;const work=q*P.volcanicWorkUEPerCO2;g.geothermalEnergy-=work;w.counters.energyDissipated+=work;w.counters.volcanicCO2+=q;w.counters.volcanicWork+=work;pushLog(w,'geology',`Degassing vulkanik memindahkan ${fmt(q,3)} SU CO₂ dari geologi ke atmosfer; cadangan geologis berkurang.`);return q;}
+function serpentinization(w){const g=w.geology,o=w.ocean,kin=serpentinizationKinetics(w);if(!kin.enabled)return 0;const ePerExtent=2*P.energy.H2;const extent=Math.max(0,Math.min(kin.rate,g.FAYALITE/3,g.H2O/2,g.redoxEnergy/ePerExtent));if(extent<=1e-12)return 0;g.FAYALITE-=3*extent;g.H2O-=2*extent;w.counters.waterConsumedByReaction+=2*extent;g.MAGNETITE+=2*extent;g.SILICA+=3*extent;o.H2+=2*extent;g.redoxEnergy-=ePerExtent*extent;w.counters.serpentinizationExtent+=extent;w.counters.h2FromSerpentinization+=2*extent;if(w.tick===1||w.tick%240===0)pushLog(w,'reaction',`Serpentinisasi extent ${fmt(extent,3)}: H₂ +${fmt(2*extent,3)} SU; memakai fayalit, air, dan anggaran redoks yang terbatas.`);return extent;}
+function apatiteDissolution(w){
+ const g=w.geology,o=w.ocean,kin=apatiteKinetics(w);
+ if(!kin.enabled)return 0;
+ const extent=Math.max(0,Math.min(kin.rate,g.APATITE||0,(o.H2O||0)/10));
+ if(extent<=1e-12)return 0;
+ g.APATITE-=extent;o.H2O-=10*extent;w.counters.waterConsumedByReaction+=10*extent;
+ o.PHOSPHATE_AQ=(o.PHOSPHATE_AQ||0)+3*extent;o.CALCIUM_AQ=(o.CALCIUM_AQ||0)+5*extent;o.HF_AQ=(o.HF_AQ||0)+extent;
+ w.counters.apatiteDissolutionExtent+=extent;w.counters.phosphateReleased+=3*extent;
+ if(w.tick===1||w.tick%240===0)pushLog(w,'mineral',`Pelarutan apatit proksi: extent ${fmt(extent,4)}; fosfat formal +${fmt(3*extent,4)} SU; pengali suhu/pH ${fmt(kin.multiplier,3)}×. Laju dasar dan respons pH tetap parameter model.`);
+ return extent;
+}
+function pyriteReduction(w){
+ const g=w.geology,o=w.ocean,kin=pyriteKinetics(w,o.H2||0);
+ if(!kin.enabled)return 0;
+ const extent=Math.max(0,Math.min(kin.rate,g.PYRITE||0,o.H2||0));
+ if(extent<=1e-12)return 0;
+ g.PYRITE-=extent;o.H2-=extent;g.IRON_SULFIDE=(g.IRON_SULFIDE||0)+extent;o.H2S=(o.H2S||0)+extent;
+ // Pembukuan energi model: energi proxy H₂ dipindah ke pool cuaca, bukan klaim energi reaksi nyata.
+ const proxyEnergy=extent*P.energy.H2;w.energy.weather+=proxyEnergy;
+ w.counters.pyriteReductionExtent+=extent;w.counters.sulfideReleased+=extent;
+ if(w.tick===1||w.tick%240===0)pushLog(w,'mineral',`Reduksi pirit proksi: extent ${fmt(extent,4)}; H₂S +${fmt(extent,4)} SU; pengali efektif ${fmt(kin.multiplier,5)}×. Laju absolut belum terkalibrasi untuk unit SU.`);
+ return extent;
+}
+function mineralReleaseScenarioTest(){
+ const w=newWorld();w.geology.APATITE=1;w.geology.PYRITE=1;w.ocean.H2O=20;w.ocean.H2=1;
+ w.initialAtoms=atomTotals(w);w.initialWaterEquivalent=waterMoleculeStocks(w);w.initialEnergy=storedEnergy(w);
+ const p=apatiteDissolution(w),s=pyriteReduction(w),atomClosed=maxAbs(atomResidual(w))<TOL,waterClosed=Math.abs(waterLedgerResidual(w))<TOL,energyClosed=Math.abs(energyResidual(w))<TOL;
+ const pools=allPools(w),poolsOk=pools.every(x=>Number.isFinite(x.value)&&x.value>=-1e-7);
+ const products=w.ocean.PHOSPHATE_AQ>0&&w.ocean.H2S>0&&w.ocean.CALCIUM_AQ>0&&w.ocean.HF_AQ>0&&w.geology.IRON_SULFIDE>0;
+ return{passed:p>0&&s>0&&atomClosed&&waterClosed&&energyClosed&&poolsOk&&products,apatiteExtent:p,pyriteExtent:s,atomClosed,waterClosed,energyClosed,poolsOk,products,atomResidual:atomResidual(w),waterResidual:waterLedgerResidual(w),energyResidual:energyResidual(w)};
+}
+function auditTick(w){const ar=atomResidual(w),er=Math.abs(energyResidual(w)),wr=Math.abs(waterLedgerResidual(w));w.maxAtomDrift=Math.max(w.maxAtomDrift,maxAbs(ar));w.maxEnergyDrift=Math.max(w.maxEnergyDrift,er);w.maxWaterDrift=Math.max(w.maxWaterDrift,wr);w.minPoolSeen=Math.min(w.minPoolSeen,minPool(w));w.maxOceanSeen=Math.max(w.maxOceanSeen,w.ocean.H2O||0);}
+const FORMATE_GATE={
+  standardDeltaG_kJPerMol:31.6,
+  referenceState:'CO₂(g) + H₂(g) → HCOOH(l), keadaan standar sebagai acuan kasar',
+  requiredButUnmodelled:['aktivitas katalitik dan luas permukaan mineral yang terukur/terkalibrasi','spesiasi HCOOH/HCOO⁻ dan kesetimbangan asam-basa','model tekanan/fugasitas dan ΔG pada kondisi lokal','pemetaan energi bebas ke UE serta neraca energi reaksi','rentang kinetika dan laju yang tervalidasi untuk kondisi yang dipilih']
+};
+function formateGateAudit(w){
+ const r=REACTIONS.find(x=>x.id==='formate'),sa=stoichAudit(r),electronOk=!!r.electrons&&r.electrons.donated===r.electrons.accepted;
+ const h2=Math.max(0,w.ocean.H2||0),co2=Math.max(0,w.ocean.CO2||0),z=localZoneAudit(w),product=Math.max(0,(w.ocean.HCOOH||0)+(w.interfaceZone.HCOOH||0));
+ const feedstocksPresent=h2>1e-9&&co2>1e-9,productPoolTracked=Object.prototype.hasOwnProperty.call(w.ocean,'HCOOH')&&Object.prototype.hasOwnProperty.call(w.interfaceZone,'HCOOH');
+ const localPoolsAvailable=z.coLocated,catalystModelled=false,thermodynamicsCalibrated=false,kineticsCalibrated=false,energyMappingCalibrated=false,speciationModelled=false;
+ const unresolved=[...(localPoolsAvailable?[]:['CO₂, H₂, dan air belum sama-sama terdeteksi di zona lokal']),...FORMATE_GATE.requiredButUnmodelled,'tekanan/fugasitas H₂ dan ΔG kondisi lokal'];
+ const readyToExecute=sa.ok&&electronOk&&feedstocksPresent&&productPoolTracked&&localPoolsAvailable&&catalystModelled&&thermodynamicsCalibrated&&kineticsCalibrated&&energyMappingCalibrated&&speciationModelled;
+ const heldLocked=!r.active&&product<=1e-12;
+ return{passed:sa.ok&&electronOk&&productPoolTracked&&heldLocked,readyToExecute,heldLocked,stoichOk:sa.ok,electronOk,feedstocksPresent,h2,co2,product,productPoolTracked,localPoolsAvailable,local:z,catalystModelled,thermodynamicsCalibrated,kineticsCalibrated,energyMappingCalibrated,speciationModelled,standardDeltaG_kJPerMol:FORMATE_GATE.standardDeltaG_kJPerMol,unresolved};
+}
+function formateGateScenarioTest(w){
+ const a=formateGateAudit(w),r=REACTIONS.find(x=>x.id==='formate');
+ return{passed:a.passed&&!a.readyToExecute&&!r.active&&Math.abs(a.product)<1e-12,lockedCorrectly:a.heldLocked,stoichOk:a.stoichOk,electronOk:a.electronOk,localPoolsAvailable:a.localPoolsAvailable,catalystModelled:a.catalystModelled,readyToExecute:a.readyToExecute,formatePool:a.product,unresolvedCount:a.unresolved.length,gate:a};
+}
+function snapshot(w){return{tick:w.tick,environmentProfile:w.environmentProfile||'early-ocean',environment:{...(w.environment||ENVIRONMENT_PROFILES['early-ocean'].conditions)},H2:w.atmosphere.H2+w.ocean.H2+(w.interfaceZone.H2||0),CO2:w.atmosphere.CO2+w.ocean.CO2+(w.interfaceZone.CO2||0),HCOOH:(w.ocean.HCOOH||0)+(w.interfaceZone.HCOOH||0),localH2:w.interfaceZone.H2||0,localCO2:w.interfaceZone.CO2||0,localH2O:w.interfaceZone.H2O||0,localMagnetite:w.interfaceZone.MAGNETITE||0,geologicCO2:w.geology.CO2,water:w.ocean.H2O,oceanFlowThreshold:P.oceanFlowThresholdSU,oceanLevelPercent:100*(w.ocean.H2O||0)/P.oceanFlowThresholdSU,oceanThresholdMargin:oceanFreeCapacity(w),vapor:w.atmosphere.H2O,geologicWater:w.geology.H2O||0,waterConsumed:w.counters.waterConsumedByReaction,freeWaterTotal:waterMoleculeStocks(w),waterLedgerResidual:waterLedgerResidual(w),fayalite:w.geology.FAYALITE,redox:w.geology.redoxEnergy};}
+function exchangeLocalZone(w){
+ const z=w.interfaceZone,o=w.ocean,g=w.geology;
+ // A fixed fractional share is a deliberately simple, reversible mixing box—not a measured local volume.
+ for(const key of ['CO2','H2','H2O']){
+  const total=Math.max(0,(o[key]||0)+(z[key]||0)),target=total*P.localZoneTargetShare,diff=target-(z[key]||0);
+  const amount=Math.abs(diff)*P.localZoneMixingFractionPerHour;
+  if(diff>1e-12){const q=transfer(o,z,key,amount);if(key==='CO2')w.counters.localCO2Exchange+=q;else if(key==='H2')w.counters.localH2Exchange+=q;else w.counters.localWaterExchange+=q;}
+  else if(diff< -1e-12){const q=transfer(z,o,key,amount);if(key==='CO2')w.counters.localCO2Exchange+=q;else if(key==='H2')w.counters.localH2Exchange+=q;else w.counters.localWaterExchange+=q;}
+ }
+ // Expose a finite fraction of existing/generated magnetite at the local interface; no catalyst is consumed by this allocation.
+ const mineralTotal=Math.max(0,(g.MAGNETITE||0)+(z.MAGNETITE||0)),mineralTarget=mineralTotal*P.localMineralTargetShare,mineralDiff=mineralTarget-(z.MAGNETITE||0),mineralAmount=Math.abs(mineralDiff)*P.localMineralExposureFractionPerHour;
+ if(mineralDiff>1e-12)w.counters.localMagnetiteExposure+=transfer(g,z,'MAGNETITE',mineralAmount);
+ else if(mineralDiff< -1e-12)w.counters.localMagnetiteExposure+=transfer(z,g,'MAGNETITE',mineralAmount);
+ return localZoneAudit(w);
+}
+function localZoneAudit(w){
+ const z=w.interfaceZone||{},co2=Math.max(0,z.CO2||0),h2=Math.max(0,z.H2||0),water=Math.max(0,z.H2O||0),magnetite=Math.max(0,z.MAGNETITE||0);
+ const surfaceProxy=magnetite*P.magnetiteSurfaceProxyPerSU;
+ return{co2,h2,water,magnetite,surfaceProxy,coLocated:co2>1e-9&&h2>1e-9&&water>1e-9,catalystProxyPresent:magnetite>1e-9&&surfaceProxy>1e-9,share:P.localZoneTargetShare,mixingFractionPerHour:P.localZoneMixingFractionPerHour,interpretation:'Pool antarmuka terpisah; share, laju pencampuran, dan luas permukaan relatif adalah parameter skenario, bukan ukuran fisik terkalibrasi.'};
+}
+function localZoneScenarioTest(){
+ const w=newWorld();runHours(w,1500);const z=localZoneAudit(w),atoms=maxAbs(atomResidual(w))<TOL,energy=Math.abs(energyResidual(w))<TOL,water=Math.abs(waterLedgerResidual(w))<TOL,pools=allPools(w).every(x=>Number.isFinite(x.value)&&x.value>=-1e-7),inventory=inventoryAudit(w).ok;
+ return{passed:z.coLocated&&z.catalystProxyPresent&&atoms&&energy&&water&&pools&&inventory,coLocated:z.coLocated,catalystProxyPresent:z.catalystProxyPresent,atomsClosed:atoms,energyClosed:energy,waterClosed:water,poolsOk:pools,inventoryOk:inventory,ticks:w.tick,zone:z,residual:{atoms:atomResidual(w),energy:energyResidual(w),water:waterLedgerResidual(w)}};
+}
+function stepWorld(w){
+ w.tick++;solarAndBackground(w);
+ /* Jika ambang telah tercapai pada awal langkah, pengembalian hidrotermal jeda; infiltrasi tetap berjalan. */
+ hydrothermalWaterReturn(w);infiltrateWater(w);serpentinization(w);apatiteDissolution(w);pyriteReduction(w);
+ if(w.tick%24===0)volcanicOutgassing(w);
+ evaporate(w);
+ if(w.tick%P.lightningIntervalHours===0){/* Lightning chemistry is deliberately locked; only the candidate reaction is catalogued. */}
+ for(const [key,share] of Object.entries(P.gasAtmosphericShare))exchangeGas(w,key,share);
+ if(w.tick%P.rainIntervalHours===18)rain(w);
+ exchangeLocalZone(w);
+ if(w.tick%24===0||w.tick===1){w.history.push(snapshot(w));if(w.history.length>MAX_HISTORY)w.history.shift();}
+ auditTick(w);return w;
+}
+function runHours(w,hours){for(let i=0;i<hours;i++)stepWorld(w);return w;}
+function flowThresholdRuleOk(w){const level=w.ocean.H2O||0,state=hydrothermalReturnState(w),margin=oceanFreeCapacity(w);if(level>=P.oceanFlowThresholdSU)return state.amount<=1e-12&&state.paused;return state.amount<=Math.max(0,margin)+1e-9&&(level+state.amount)<=P.oceanFlowThresholdSU+1e-7;}
+function thresholdScenarioTest(){const w=newWorld();w.ocean.H2O=P.oceanFlowThresholdSU;w.atmosphere.H2O=100;w.initialAtoms=atomTotals(w);w.initialWaterEquivalent=waterMoleculeStocks(w);w.initialEnergy=storedEnergy(w);const pausedAtThreshold=hydrothermalWaterReturn(w)<=1e-12&&hydrothermalReturnState(w).paused;const beforeRain=w.ocean.H2O;rain(w);const rainOceanLevel=w.ocean.H2O;const rainLands=rainOceanLevel>beforeRain&&rainOceanLevel>P.oceanFlowThresholdSU;const rainWaterClosed=Math.abs(waterLedgerResidual(w))<TOL;const beforeInfiltration=w.ocean.H2O;const infiltrated=infiltrateWater(w);const infiltrationContinues=infiltrated>0&&w.ocean.H2O<beforeInfiltration;const remainsPaused=hydrothermalReturnState(w).amount<=1e-12;w.ocean.H2O=P.oceanFlowThresholdSU-1;w.initialAtoms=atomTotals(w);w.initialWaterEquivalent=waterMoleculeStocks(w);w.initialEnergy=storedEnergy(w);const resumedAmount=hydrothermalWaterReturn(w);const resumesBelowThreshold=resumedAmount>0&&w.ocean.H2O<=P.oceanFlowThresholdSU+1e-7;const waterClosed=Math.abs(waterLedgerResidual(w))<TOL;return{passed:pausedAtThreshold&&rainLands&&rainWaterClosed&&infiltrationContinues&&remainsPaused&&resumesBelowThreshold&&waterClosed,pausedAtThreshold,rainLands,rainWaterClosed,infiltrationContinues,remainsPaused,resumesBelowThreshold,waterClosed,rainOceanLevel,threshold:P.oceanFlowThresholdSU};}
+function modelAudit(w){const ar=atomResidual(w),er=energyResidual(w),pools=allPools(w);const invalid=pools.filter(x=>!Number.isFinite(x.value)||x.value < -1e-7);const reactions=REACTIONS.map(r=>({reaction:r,audit:stoichAudit(r)}));const unbalanced=reactions.filter(x=>!x.audit.ok);const redoxFailures=reactions.filter(x=>!x.reaction.electrons||!Number.isInteger(x.reaction.electrons.donated)||!Number.isInteger(x.reaction.electrons.accepted)||x.reaction.electrons.donated<0||x.reaction.electrons.accepted<0||x.reaction.electrons.donated!==x.reaction.electrons.accepted);const biologicalObjectCount=['cells','genomes','dna','DNA','ATP','metabolites','biomass'].reduce((n,k)=>{const v=w[k];return n+(Array.isArray(v)?v.length:(v&&typeof v==='object'?Object.keys(v).length:(v===undefined||v===null?0:1)));},0);return{atoms:ar,maxAtom:maxAbs(ar),energy:er,maxEnergy:Math.abs(er),water:waterLedgerResidual(w),maxWater:Math.abs(waterLedgerResidual(w)),invalid,minimum:minPool(w),reactions,unbalanced,redoxFailures,biologicalObjectCount};}
+function stressTest(){const w=newWorld();runHours(w,20000);const a=modelAudit(w);const inv=inventoryAudit(w);const allReactionsBalanced=a.unbalanced.length===0&&a.redoxFailures.length===0;const atomClosed=a.maxAtom<TOL&&w.maxAtomDrift<TOL;const energyClosed=a.maxEnergy<TOL&&w.maxEnergyDrift<TOL;const poolsOk=a.invalid.length===0&&a.minimum>=-1e-7;const waterClosed=a.maxWater<TOL&&w.maxWaterDrift<TOL;const bioOk=a.biologicalObjectCount===0;const oceanFlowRuleOk=flowThresholdRuleOk(w),thresholdScenario=thresholdScenarioTest(),mineralReleaseScenario=mineralReleaseScenarioTest(),kineticsScenario=kineticScenarioTest(),localZoneScenario=localZoneScenarioTest(),formateGate=formateGateScenarioTest(w),formateGateOk=formateGate.passed,inventoryOk=inv.ok,materialLedgers=carbonHydrogenLedger(w),h2LedgerOk=materialLedgers.h2.closed,carbonLedgerOk=materialLedgers.carbon.closed;return{passed:allReactionsBalanced&&atomClosed&&energyClosed&&waterClosed&&poolsOk&&bioOk&&oceanFlowRuleOk&&thresholdScenario.passed&&mineralReleaseScenario.passed&&kineticsScenario.passed&&localZoneScenario.passed&&formateGateOk&&inventoryOk&&h2LedgerOk&&carbonLedgerOk,materialLedgers,h2LedgerOk,carbonLedgerOk,thresholdScenario,mineralReleaseScenario,kineticsScenario,localZoneScenario,formateGate,formateGateOk,inventory:inv,inventoryOk,ticks:w.tick,allReactionsBalanced,redoxBalanced:a.redoxFailures.length===0,atomClosed,energyClosed,waterClosed,poolsOk,bioOk,oceanFlowRuleOk,oceanFlowThreshold:P.oceanFlowThresholdSU,maxOceanSeen:w.maxOceanSeen,maxAtomDrift:w.maxAtomDrift,maxEnergyDrift:w.maxEnergyDrift,maxWaterDrift:w.maxWaterDrift,minimumPool:w.minPoolSeen,final:snapshot(w),unbalanced:a.unbalanced.map(x=>x.reaction.name),invalid:a.invalid};}
+function auditStatic(){return REACTIONS.map(r=>({reaction:r,audit:stoichAudit(r)}));}
+let world=newWorld(),runner=null,stressLast=null;
+const $=id=>document.getElementById(id);
+function rows(obj,keys,labels={}){return keys.map(k=>`<div class="poolrow"><span>${labels[k]||k}</span><span class="num">${fmt(obj[k]||0,3)}</span></div>`).join('');}
+function renderPools(){const w=world; $('atmPools').innerHTML=rows(w.atmosphere,['N2','CO2','CO','NO','H2','H2O'],{N2:'N₂',CO2:'CO₂',CO:'CO',NO:'NO',H2:'H₂',H2O:'H₂O (uap)'});$('oceanPools').innerHTML=rows(w.ocean,['H2O','H2','CO2','CO','NO','HCOOH','PHOSPHATE_AQ','H2S','CALCIUM_AQ','HF_AQ'],{H2O:'H₂O cair',H2:'H₂',CO2:'CO₂ terlarut',CO:'CO terlarut',NO:'NO terlarut',HCOOH:'HCOOH · pool kandidat (belum aktif)',PHOSPHATE_AQ:'Fosfat-AQ formal (H₃PO₄)',H2S:'Sulfida-AQ (H₂S)',CALCIUM_AQ:'Carrier Ca formal · Ca(OH)₂',HF_AQ:'Carrier F formal · HF'});const g=w.geology;$('geoPools').innerHTML=rows(g,['H2O','CO2','FAYALITE','MAGNETITE','SILICA','APATITE','PYRITE','IRON_SULFIDE'],{H2O:'Fluida H₂O geologi',CO2:'CO₂ geologis',FAYALITE:'Fayalit · Fe₂SiO₄',MAGNETITE:'Magnetit · Fe₃O₄',SILICA:'Silika · SiO₂',APATITE:'Apatit · Ca₅(PO₄)₃F',PYRITE:'Pirit · FeS₂',IRON_SULFIDE:'FeS · sulfida besi hasil proksi'});$('localPools').innerHTML=rows(w.interfaceZone,['CO2','H2','H2O','MAGNETITE','HCOOH'],{CO2:'CO₂ zona lokal',H2:'H₂ zona lokal',H2O:'H₂O zona lokal',MAGNETITE:'Magnetit terpapar · katalis proksi',HCOOH:'HCOOH lokal · pool produk terkunci'});$('energyPools').innerHTML=rows({redox:g.redoxEnergy,geothermal:g.geothermalEnergy,weather:w.energy.weather,solar:w.counters.solarInput,dissipated:w.counters.energyDissipated},['redox','geothermal','weather','solar','dissipated'],{redox:'Potensi redoks batuan (UE)',geothermal:'Energi kerja geologi (UE)',weather:'Energi cuaca tersedia (UE)',solar:'Masukan surya kumulatif (UE)',dissipated:'Energi terdisipasi kumulatif (UE)'});}
+function renderInventory(){const w=world,r=inventoryAudit(w);$('apatiteVal').textContent=fmt(w.geology.APATITE,3);$('pyriteVal').textContent=fmt(w.geology.PYRITE,3);$('phosphateAqVal').textContent=fmt(w.ocean.PHOSPHATE_AQ,3);$('sulfideAqVal').textContent=fmt(w.ocean.H2S,3);$('elementInventoryRows').innerHTML=chemistryInventory(w).map(m=>`<tr><td><strong>${m.symbol}</strong><div class="smallreason">${m.name}</div></td><td class="num">${fmt(m.atoms,3)} atom-equivalent</td><td>${m.source}</td><td>${m.status}</td></tr>`).join('');$('inventoryPill').className='pill '+(r.ok?'good':'bad');$('inventoryPill').textContent=r.ok?'CHNOPS TERLACAK':'INVENTARIS GAGAL';}
+function setCheck(id,kind,text){const el=$(id);el.className='check '+kind;$(id+'Val').textContent=text;}
+function renderAudit(){const a=modelAudit(world),active=REACTIONS.filter(r=>r.active),inv=inventoryAudit(world);const atomOk=a.maxAtom<TOL,energyOk=a.maxEnergy<TOL,waterOk=a.maxWater<TOL,poolOk=a.invalid.length===0&&a.minimum>=-1e-7,stoichOk=a.unbalanced.length===0,oceanOk=flowThresholdRuleOk(world);setCheck('atomCheck',atomOk?'pass':'fail',fmt(a.maxAtom,10)+' max');setCheck('energyCheck',energyOk?'pass':'fail',fmt(a.maxEnergy,10)+' UE');setCheck('poolCheck',poolOk?'pass':'fail',a.invalid.length+' stok invalid');setCheck('stoichCheck',stoichOk?'pass':'fail',`${REACTIONS.length-a.unbalanced.length}/${REACTIONS.length} reaksi`);setCheck('activeCheck','pass',`${active.length} jalur`);setCheck('bioCheck','pass','0 sel / 0 genom');setCheck('oceanCapCheck',oceanOk?'pass':'fail',hydrothermalReturnState(world).status);setCheck('inventoryCheck',inv.ok?'pass':'fail',`${inv.trackedElements} unsur · pool P/S ${inv.sourcePools?'terpetakan':'bermasalah'}`);const ledgers=carbonHydrogenLedger(world),h2LedgerOk=ledgers.h2.closed,carbonLedgerOk=ledgers.carbon.closed;setCheck('h2LedgerCheck',h2LedgerOk?'pass':'fail',fmtSigned(ledgers.h2.residual,10)+' SU');setCheck('carbonLedgerCheck',carbonLedgerOk?'pass':'fail',fmtSigned(ledgers.carbon.residual,10)+' atom-eq');const all=atomOk&&energyOk&&waterOk&&poolOk&&stoichOk&&oceanOk&&inv.ok&&h2LedgerOk&&carbonLedgerOk;$('auditPill').className='pill '+(all?'good':'bad');$('auditPill').textContent=all?'NERACA INTERNAL LULUS':'AUDIT GAGAL';$('atomCheckVal').title=ELEMENTS.map(e=>`${e}: ${fmtSigned(a.atoms[e],10)}`).join('\n');$('auditDetails').textContent=`Residual neraca air molekuler: ${fmtSigned(a.water,10)} SU (drift maksimum ${fmt(world.maxWaterDrift,10)} SU)\nResidual atom per unsur: ${ELEMENTS.map(e=>`${e} ${fmtSigned(a.atoms[e],10)}`).join(' · ')}\nInventaris: CHNOPS + Fe/Si/Ca/F; apatit ${fmt(inv.apatite,3)} SU; pirit ${fmt(inv.pyrite,3)} SU; fosfat-AQ ${fmt(inv.aqueousPhosphate,3)}; H₂S-AQ ${fmt(inv.aqueousSulfide,3)}.\nResidual energi model: ${fmtSigned(a.energy,10)} UE\nDrift maksimum sepanjang simulasi: atom ${fmt(a.maxAtomDrift,10)} · energi ${fmt(a.maxEnergyDrift,10)} UE\nStok terendah yang teramati: ${fmt(world.minPoolSeen,10)}\nCatatan: laju mineral adalah placeholder skenario; profil suhu/pH memengaruhi proksi mineral; gerbang formate Build 1.7 tetap dikunci. Muatan ion, spesiasi, kesetimbangan dan energi reaksi mineral-air belum dimodelkan. Energi H₂ yang dipakai reduksi pirit hanya dialihkan ke pool cuaca sebagai pembukuan internal, bukan klaim termokimia. Hasil belum prediktif untuk Bumi purba.`;}
+function renderMetrics(){const w=world,s=snapshot(w),g=w.geology,ambientCO2=s.CO2;const H2=s.H2;const airWater=w.atmosphere.H2O;const water=waterMoleculeStocks(w);$('metricH2').textContent=fmt(H2,2);$('metricCO2').textContent=fmt(ambientCO2,2);$('metricWater').textContent=fmt(water,2);$('metricFayalite').textContent=fmt(g.FAYALITE,2);$('barH2').style.width=Math.min(100,H2/100000*100)+'%';$('barCO2').style.width=Math.min(100,ambientCO2/P.ambientCO2TargetSU*100)+'%';$('barWater').style.width=Math.min(100,water/300000*100)+'%';$('barFayalite').style.width=Math.min(100,g.FAYALITE/300000*100)+'%';$('tickPill').textContent=`Langkah ${fmt(w.tick,0)} · ${fmt(w.tick,0)} jam`;$('historyH2Label').textContent=fmt(H2,2)+' SU';$('historyCO2Label').textContent=fmt(ambientCO2,2)+' SU';$('historyWaterLabel').textContent=fmt(water,2)+' SU';}
+function drawChart(canvasId,key,label){const c=$(canvasId),ctx=c.getContext('2d'),dpr=window.devicePixelRatio||1,rect=c.getBoundingClientRect();if(rect.width>0&&c.width!==Math.round(rect.width*dpr)){c.width=Math.round(rect.width*dpr);c.height=Math.round(230*dpr);}const W=c.width,H=c.height;ctx.clearRect(0,0,W,H);const m={l:55*dpr,r:14*dpr,t:16*dpr,b:28*dpr},pw=W-m.l-m.r,ph=H-m.t-m.b;const data=world.history.map(x=>({x:x.tick,y:x[key]}));if(data.length===0)return;const maxY=Math.max(1,...data.map(x=>x.y))*1.08;ctx.strokeStyle='#29463a';ctx.lineWidth=1*dpr;ctx.fillStyle='#9eb8aa';ctx.font=`${11*dpr}px system-ui`;ctx.textAlign='right';ctx.textBaseline='middle';for(let i=0;i<=4;i++){const y=m.t+ph*i/4;ctx.beginPath();ctx.moveTo(m.l,y);ctx.lineTo(W-m.r,y);ctx.stroke();ctx.fillText(fmt(maxY*(1-i/4),0),m.l-7*dpr,y);}ctx.textAlign='left';ctx.textBaseline='top';ctx.fillText('jam',m.l,H-18*dpr);ctx.textAlign='right';ctx.fillText(fmt(data[data.length-1].x,0),W-m.r,H-18*dpr);ctx.strokeStyle='#8ee0b2';ctx.lineWidth=2.2*dpr;ctx.beginPath();data.forEach((p,i)=>{const x=m.l+(data.length===1?0:i/(data.length-1))*pw,y=m.t+ph-(p.y/maxY)*ph;if(i===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);});ctx.stroke();ctx.fillStyle='#8ee0b2';ctx.beginPath();const last=data[data.length-1],lx=m.l+(data.length===1?0:pw),ly=m.t+ph-(last.y/maxY)*ph;ctx.arc(lx,ly,3*dpr,0,Math.PI*2);ctx.fill();}
+function renderWaterCycle(){const w=world,free=waterMoleculeStocks(w),consumed=w.counters.waterConsumedByReaction||0,res=waterLedgerResidual(w),ok=Math.abs(res)<TOL,fill=100*(w.ocean.H2O||0)/P.oceanFlowThresholdSU,margin=oceanFreeCapacity(w),hydro=hydrothermalReturnState(w);$('waterOceanVal').textContent=fmt(w.ocean.H2O,3);$('waterVaporVal').textContent=fmt(w.atmosphere.H2O,3);$('waterGeoVal').textContent=fmt(w.geology.H2O||0,3);$('waterConsumedVal').textContent=fmt(consumed,3);$('oceanFlowThresholdVal').textContent=fmt(P.oceanFlowThresholdSU,0);$('oceanFlowThresholdPercent').textContent=fmt(fill,1)+'%';$('barOceanCapacity').style.width=Math.max(0,Math.min(100,fill))+'%';$('oceanFreeCapacityVal').textContent=margin>=0?`${fmt(margin,3)} SU di bawah ambang`:`${fmt(-margin,3)} SU di atas ambang`;$('hydrothermalStatusVal').textContent=hydro.status;$('hydrothermalStatusSub').textContent=`aliran potensial ${fmt(hydro.potential,3)} SU/jam; jeda otomatis saat level samudera ≥ ${fmt(P.oceanFlowThresholdSU,0)} SU`;$('waterLedgerTotal').textContent=fmt(free+consumed,6)+' SU';$('waterLedgerInitial').textContent=fmt(w.initialWaterEquivalent,6)+' SU';$('waterLedgerResidual').textContent=fmtSigned(res,10)+' SU';$('waterLedgerPill').className='pill '+(ok?'good':'bad');$('waterLedgerPill').textContent=ok?'NERACA AIR TERTUTUP':'NERACA AIR GAGAL';$('waterCycleNote').textContent=`Air molekuler bebas ${fmt(free,3)} SU (termasuk zona lokal ${fmt(w.interfaceZone.H2O||0,3)} SU); ${fmt(consumed,3)} SU ekuivalen telah masuk ke reaksi. Ambang aliran fluida ${fmt(P.oceanFlowThresholdSU,0)} SU; level samudera ${fmt(fill,2)}% terhadap ambang (${margin>=0?fmt(margin,3)+' SU di bawah ambang':fmt(-margin,3)+' SU di atas ambang'}). Hujan tetap masuk ke samudera. Perpindahan kumulatif: evaporasi ${fmt(w.counters.evaporatedWater,2)}, presipitasi ${fmt(w.counters.rainfallWater,2)}, infiltrasi ${fmt(w.counters.waterInfiltrated,2)}, kembali dari geologi ${fmt(w.counters.geologicWaterReturned,2)} SU. Residual ${fmtSigned(res,10)} SU.`;}
+function renderCharts(){drawChart('chartH2','H2','H₂');drawChart('chartCO2','CO2','CO₂');drawChart('chartWater','freeWaterTotal','H₂O bebas');}
+function renderReactions(){
+ const staticAudit=auditStatic();
+ $('reactionRows').innerHTML=staticAudit.map(({reaction:r,audit:a})=>{
+  let note='Reaksi disimpan untuk audit, bukan dieksekusi.';
+  if(r.id==='serpentinization')note='Sumber H₂ abiotik aktif.';
+  else if(r.id==='apatite-dissolution')note='P dilepas sebagai carrier formal; laju skenario.';
+  else if(r.id==='pyrite-reduction')note='S dilepas sebagai H₂S; membutuhkan H₂.';
+  else if(r.id==='formate')note='Gerbang kimia prebiotik Build 1.7; HCOOH tetap nol sampai syarat energi, katalis, lokasi, dan kinetika dimodelkan.';
+  return `<tr><td><strong>${r.name}</strong><div class="smallreason">${note}</div></td><td><div class="eq">${r.equation}</div></td><td><span class="${r.active?'balance':'pending'}">${r.active?'AKTIF · PROXY':'KANDIDAT · TERKUNCI'}</span></td><td><span class="${a.ok?'balance':'pending'}">${a.ok?'SEIMBANG':'GAGAL'}</span><div class="smallreason">${ELEMENTS.map(e=>`${e} ${fmtSigned(a.delta[e],0)}`).join(' · ')}</div><div class="smallreason ${r.electrons&&r.electrons.donated===r.electrons.accepted?'balance':'pending'}">e⁻: ${r.electrons?`${r.electrons.donated} = ${r.electrons.accepted}`:'belum diaudit'}</div></td><td><strong>${r.redox}</strong><div class="smallreason">${r.energy}</div><div class="smallreason">${r.reason}</div></td></tr>`;
+ }).join('');
+ $('stoichCheckVal').textContent=`${staticAudit.filter(x=>x.audit.ok).length}/${staticAudit.length} atom · ${REACTIONS.filter(r=>r.electrons&&r.electrons.donated===r.electrons.accepted).length}/${REACTIONS.length} redoks`;
+}
+function renderLog(){const logs=world.log.slice(0,70);$('eventLog').innerHTML=logs.map(l=>`<div class="logrow"><span class="logtime">t=${fmt(l.tick,0)} · ${l.type}</span><span>${l.message}</span></div>`).join('')||'<div class="small">Belum ada peristiwa.</div>';}
+function renderEnvironment(){
+ const id=world.environmentProfile||'early-ocean',p=ENVIRONMENT_PROFILES[id]||ENVIRONMENT_PROFILES['early-ocean'],e=world.environment||p.conditions;
+ const select=$('environmentScenarioSelect');if(select&&select.value!==id)select.value=id;
+ $('environmentAtmosphereTemp').textContent=fmt(e.atmosphereTempC,1)+' °C';
+ $('environmentOceanConditions').textContent=`${fmt(e.oceanTempC,1)} °C / pH ${fmt(e.oceanPH,2)}`;
+ $('environmentInterfaceConditions').textContent=`${fmt(e.interfaceTempC,1)} °C / pH ${fmt(e.interfacePH,2)}`;
+ const k=environmentKineticsAudit(world),ap=k.apatite,py=k.pyrite,ss=k.serpentinization;
+ const activeN=[ap.enabled,py.enabled,ss.enabled].filter(Boolean).length;
+ $('environmentKinetics').textContent=`${activeN}/3 jalur dalam rentang`;
+ $('environmentKineticsNote').textContent=`Apatit ${ap.enabled?fmt(ap.multiplier,2)+'×':'JEDA'} · pirit ${py.enabled?fmt(py.multiplier,3)+'×':'JEDA'} · serpentinisasi ${ss.enabled?fmt(ss.multiplier,2)+'×':'JEDA'}`;
+ const allEnabled=activeN===3;$('environmentCouplingPill').className='pill '+(allEnabled?'good':'warn');$('environmentCouplingPill').textContent=allEnabled?'KINETIKA TERHUBUNG':'SEBAGIAN JALUR DIJEDA';
+ $('environmentInterpretation').textContent=p.interpretation;
+ $('environmentGapAudit').textContent=`Kondisi aktif: atmosfer ${fmt(e.atmosphereTempC,1)} °C; samudra ${fmt(e.oceanTempC,1)} °C / pH ${fmt(e.oceanPH,2)}; antarmuka batuan–air ${fmt(e.interfaceTempC,1)} °C / pH ${fmt(e.interfacePH,2)}. Apatit: ${ap.enabled?'aktif pada faktor '+fmt(ap.multiplier,3)+'×':'dijeda — '+ap.reason}. Pirit: ${py.enabled?'aktif pada faktor '+fmt(py.multiplier,5)+'×':'dijeda — '+py.reason}. Serpentinisasi: ${ss.enabled?'aktif pada faktor '+fmt(ss.multiplier,3)+'×':'dijeda — '+ss.reason}. Faktor ini adalah sensitivitas skenario, bukan prediksi laju absolut. Tekanan, fugasitas H₂, luas permukaan mineral, pH yang dihitung dari kesetimbangan, aktivitas ion, dan energi bebas reaksi belum dimodelkan; pool global kini dipisahkan dari kotak zona lokal dengan pertukaran reversibel berbasis fraksi-skenario; belum ada aliran fluida spasial, volume geometris, atau pencampuran berdasarkan difusi/adveksi.`;
+ $('environmentSources').innerHTML=p.sources.map(s=>`<div class="source"><a href="${s.url}" target="_blank" rel="noopener">${s.label}</a><p>${s.note}</p></div>`).join('');
+}
+function selectEnvironmentProfile(id){if(!ENVIRONMENT_PROFILES[id])return;world.environmentProfile=id;world.environment={...ENVIRONMENT_PROFILES[id].conditions};renderEnvironment();pushLog(world,'environment',`Profil diterapkan: ${ENVIRONMENT_PROFILES[id].name}. Kondisi reservoir diperbarui; laju proksi mineral akan memakai kondisi baru pada langkah simulasi berikutnya. Stok dan energi tidak diubah langsung.`);renderLog();}
+function renderLocalZone(){
+ const z=localZoneAudit(world),pill=$('localZonePill');
+ $('localCO2Val').textContent=fmt(z.co2,4)+' SU';$('localH2Val').textContent=fmt(z.h2,4)+' SU';$('localWaterVal').textContent=fmt(z.water,3)+' SU';$('localMagnetiteVal').textContent=fmt(z.magnetite,4)+' SU';$('localSurfaceVal').textContent=`Luas permukaan relatif ${fmt(z.surfaceProxy,5)} RSU · belum dikalibrasi`;
+ pill.className='pill '+(z.coLocated?'good':'warn');pill.textContent=z.coLocated?'BAHAN BAKU TERKOLOKASI':'MENUNGGU KOLOKASI';
+ $('localZoneAuditDetails').textContent=`CO₂ dan H₂ lokal ${z.coLocated?'sama-sama terdeteksi':'belum sama-sama terdeteksi'}; air lokal ${fmt(z.water,3)} SU; magnetit terpapar ${fmt(z.magnetite,4)} SU. Target bagian lokal ${fmt(z.share*100,2)}% dari stok gabungan samudra+zona, dengan laju penyesuaian ${fmt(z.mixingFractionPerHour*100,2)}%/jam. Perpindahan zat dihitung sebagai transfer antarpool dan tidak membuat atom baru. Magnetit adalah proksi permukaan mineral; nilai RSU bukan luas m² terukur. Tidak ada reaksi HCOOH yang dijalankan.`;
+}
+function renderFormateGate(){
+ const a=formateGateAudit(world),pill=$('formateGatePill');
+ pill.className='pill '+(a.readyToExecute?'good':'warn');pill.textContent=a.readyToExecute?'GERBANG SIAP DIUJI':'KANDIDAT TERKUNCI';
+ $('formateStoichVal').textContent=a.stoichOk&&a.electronOk?'SEIMBANG':'PERIKSA';
+ $('formateStoichSub').textContent=`atom ${a.stoichOk?'OK':'gagal'} · e⁻ ${a.electronOk?'OK':'gagal'}`;
+ $('formateFeedsVal').textContent=(a.feedstocksPresent?'TERDETEKSI':'BELUM LENGKAP');
+ $('formateFeedsSub').textContent=`CO₂ samudra ${fmt(a.co2,3)} SU · H₂ samudra ${fmt(a.h2,3)} SU`;
+ $('formateCatalystVal').textContent=a.localPoolsAvailable?'ZONA AKTIF':'ZONA BELUM';
+ $('formateEnergyVal').textContent=a.energyMappingCalibrated?'TERUKUR':'TERKUNCI';
+ const checks=[
+   `Stoikiometri: ${a.stoichOk?'seimbang':'gagal'}. Neraca elektron formal: ${a.electronOk?'seimbang':'gagal'}.`,
+   `Pool samudra global: CO₂ ${fmt(a.co2,4)} SU dan H₂ ${fmt(a.h2,4)} SU; keduanya harus tersedia di lokasi yang sama.`,
+   `Kolokasi antarmuka: ${a.localPoolsAvailable?'CO₂, H₂, dan H₂O tersedia bersama':'belum lengkap'}. Magnetit lokal ${fmt(a.local.magnetite,4)} SU dengan luas relatif ${fmt(a.local.surfaceProxy,5)} RSU; aktivitas katalitik dan luas permukaan nyata belum dikalibrasi.`,
+   `Termodinamika lokal, spesiasi HCOOH/HCOO⁻, kinetika, dan pemetaan energi bebas ke UE: belum dikalibrasi. Acuan ΔG° standar: +${fmt(a.standardDeltaG_kJPerMol,1)} kJ/mol.`,
+   `HCOOH pada stok saat ini: ${fmt(a.product,6)} SU. Status reaksi katalog: tetap kandidat, tidak dieksekusi.`
+ ];
+ $('formateGateDetails').textContent=`HASIL GERBANG: ${a.readyToExecute?'SIAP UNTUK UJI TERKENDALI':'TERKUNCI — BELUM BOLEH DIEKSEKUSI'}\n${checks.join('\n')}\n\nPenghalang yang harus diselesaikan: ${a.unresolved.join('; ')}.`;
+}
+function renderAll(){renderMetrics();renderPools();renderInventory();renderMaterialLedgers();renderAudit();renderWaterCycle();renderEnvironment();renderLocalZone();renderFormateGate();renderCharts();renderLog();}
+function pause(){if(runner!==null){clearInterval(runner);runner=null;}$('runPill').className='pill good';$('runPill').textContent='DIJEDA';$('autoBtn').textContent='▶ Mulai otomatis';$('autoBtn').classList.add('primary');}
+function start(){if(runner!==null){pause();return;}$('runPill').className='pill warn';$('runPill').textContent='BERJALAN';$('autoBtn').textContent='Ⅱ Jeda otomatis';$('autoBtn').classList.remove('primary');runner=setInterval(()=>{for(let i=0;i<12;i++)stepWorld(world);renderAll();},60);}
+function runChunk(n){pause();runHours(world,n);renderAll();pushLog(world,'test',`Dunia utama dimajukan ${fmt(n,0)} jam.`);renderLog();}
+function showStressResult(r){$('stressResult').textContent=`HASIL: ${r.passed?'LULUS':'GAGAL'}\nLangkah selesai: ${fmt(r.ticks,0)}\nSeluruh reaksi katalog atom-seimbang: ${r.allReactionsBalanced?'YA':'TIDAK'}\nNeraca elektron redoks: ${r.redoxBalanced?'YA':'TIDAK'}\nNeraca atom tertutup sepanjang uji: ${r.atomClosed?'YA':'TIDAK'} · drift maksimum ${fmt(r.maxAtomDrift,12)}\nNeraca energi internal tertutup sepanjang uji: ${r.energyClosed?'YA':'TIDAK'} · drift maksimum ${fmt(r.maxEnergyDrift,12)} UE\nNeraca air molekuler tertutup: ${r.waterClosed?'YA':'TIDAK'} · drift maksimum ${fmt(r.maxWaterDrift,12)} SU\nSemua stok finite dan nonnegatif: ${r.poolsOk?'YA':'TIDAK'} · minimum ${fmt(r.minimumPool,10)}\nDunia tetap tanpa objek biologis: ${r.bioOk?'YA':'TIDAK'}\nInventaris CHNOPS + mineral: ${r.inventoryOk?'LULUS':'GAGAL'} · apatit ${fmt(r.inventory&&r.inventory.apatite||0,3)} SU · pirit ${fmt(r.inventory&&r.inventory.pyrite||0,3)} SU\nNeraca H₂: ${r.h2LedgerOk?'LULUS':'GAGAL'} · sumber ${fmt(r.materialLedgers.h2.produced,3)} − sink ${fmt(r.materialLedgers.h2.consumed,3)} − stok kini ${fmt(r.materialLedgers.h2.current,3)} = residual ${fmtSigned(r.materialLedgers.h2.residual,10)} SU\nNeraca karbon: ${r.carbonLedgerOk?'LULUS':'GAGAL'} · ${fmt(r.materialLedgers.carbon.current,3)} atom-eq kini · residual ${fmtSigned(r.materialLedgers.carbon.residual,10)}\nAturan ambang aliran fluida: ${r.oceanFlowRuleOk?'LULUS':'GAGAL'}\nSkenario ambang (hujan melewati ambang, infiltrasi tetap, aliran jeda lalu aktif lagi): ${r.thresholdScenario&&r.thresholdScenario.passed?'LULUS':'GAGAL'}\nUji pengaruh suhu/pH dan penguncian di luar rentang: ${r.kineticsScenario&&r.kineticsScenario.passed?'LULUS':'GAGAL'}\nUji zona lokal (kolokasi, katalis proksi, neraca): ${r.localZoneScenario&&r.localZoneScenario.passed?'LULUS':'GAGAL'}\nGerbang formate tetap terkunci dan HCOOH tidak terbentuk: ${r.formateGateOk?'LULUS':'GAGAL'}\nH₂ akhir: ${fmt(r.final.H2,3)} SU\nHCOOH akhir: ${fmt(r.final.HCOOH,3)} SU (harus 0; gerbang terkunci)\nCO₂ zona lokal akhir: ${fmt(r.final.localCO2,3)} SU · H₂ zona lokal akhir: ${fmt(r.final.localH2,3)} SU · magnetit lokal: ${fmt(r.final.localMagnetite,3)} SU\nCO₂ lingkungan akhir: ${fmt(r.final.CO2,3)} SU\nCadangan CO₂ geologis akhir: ${fmt(r.final.geologicCO2,3)} SU\nAir cair samudra akhir: ${fmt(r.final.water,3)} SU\nUap atmosfer akhir: ${fmt(r.final.vapor,3)} SU\nFluida geologi akhir: ${fmt(r.final.geologicWater,3)} SU\nAir ekuivalen yang bereaksi: ${fmt(r.final.waterConsumed,3)} SU\nResidual neraca air akhir: ${fmt(r.final.waterLedgerResidual,12)} SU\nFayalit akhir: ${fmt(r.final.fayalite,3)} SU\nEnergi redoks tersisa: ${fmt(r.final.redox,3)} UE${r.unbalanced.length?'\nReaksi gagal: '+r.unbalanced.join(', '):''}${r.invalid.length?'\nStok invalid: '+JSON.stringify(r.invalid):''}\nUji dilakukan pada salinan dunia baru; simulasi utama tidak berubah.`;$('stressResult').style.borderColor=r.passed?'#356b50':'#76463e';$('stressResult').style.color=r.passed?'#b8f0cb':'#ffb7a9';}
+function exportAudit(){const a=modelAudit(world);const payload={name:'Terra Chemica — Audit Dunia Abiotik',version:'1.9',generatedAt:new Date().toISOString(),scope:'Dunia abiotik; tidak ada model sel/biologi.',modelParameters:P,environmentAudit:{selectedProfile:world.environmentProfile||'early-ocean',profile:ENVIRONMENT_PROFILES[world.environmentProfile||'early-ocean'],profiles:ENVIRONMENT_PROFILES,kineticCoupling:'scenario response multipliers applied to mineral proxy rates; not a full thermodynamic model',environmentConditions:world.environment,kineticModel:KINETIC_MODEL,kineticAudit:environmentKineticsAudit(world),kineticScenarioTest:kineticScenarioTest(),formateGate:formateGateAudit(world),knownGaps:['dynamic temperature/heat transfer','pressure and H2 fugacity','mineral surface area','aqueous acid-base equilibrium','alkalinity','ion activities/speciation','dynamic temperature/heat transfer','pressure and H2 fugacity','aqueous acid-base equilibrium','alkalinity','ion activities/speciation','spatial advection/diffusion and geometric zone volume','calibrated mineral surface area and catalytic activity','reaction free energy and calibrated absolute rates']},world:{tick:world.tick,snapshot:snapshot(world),atmosphere:world.atmosphere,ocean:world.ocean,geology:world.geology,interfaceZone:world.interfaceZone,energy:world.energy,counters:world.counters,initialAtoms:world.initialAtoms,currentAtoms:atomTotals(world),elementInventory:chemistryInventory(world),inventoryAudit:inventoryAudit(world),materialLedgers:carbonHydrogenLedger(world),atomResidual:a.atoms,initialWaterEquivalent:world.initialWaterEquivalent,freeWaterEquivalent:waterMoleculeStocks(world),waterConsumedEquivalent:world.counters.waterConsumedByReaction,waterLedgerResidual:waterLedgerResidual(world),initialEnergy:world.initialEnergy,currentEnergy:storedEnergy(world),energyDissipated:world.counters.energyDissipated,energyInput:world.counters.solarInput,energyResidual:energyResidual(world),maxAtomDrift:world.maxAtomDrift,maxEnergyDrift:world.maxEnergyDrift,maxWaterDrift:world.maxWaterDrift,maxOceanSeen:world.maxOceanSeen,oceanFlowThresholdSU:P.oceanFlowThresholdSU},reactions:REACTIONS.map(r=>({id:r.id,name:r.name,equation:r.equation,status:r.active?'active proxy':'candidate locked',reactants:r.react,products:r.prod,audit:stoichAudit(r),electronAudit:r.electrons,energyTreatment:r.energy,reason:r.reason})),lastStressTest:stressLast,localZoneScenarioTest:localZoneScenarioTest(),localZoneModel:{targetShare:P.localZoneTargetShare,mixingFractionPerHour:P.localZoneMixingFractionPerHour,mineralTargetShare:P.localMineralTargetShare,mineralExposureFractionPerHour:P.localMineralExposureFractionPerHour,magnetiteSurfaceProxyPerSU:P.magnetiteSurfaceProxyPerSU,validation:'scenario parameters; not a physical volume/flow/surface-area calibration'},mineralReleaseScenarioTest:mineralReleaseScenarioTest(),formateGateScenarioTest:formateGateScenarioTest(world),formateGateSpecification:FORMATE_GATE,sources:[{url:'https://www.nature.com/articles/s44453-026-00046-9',topic:'Serpentinization mineralogy and hydrogen'}, {url:'https://kitchingroup.cheme.cmu.edu/blog/2013/02/01/Water-gas-shift-equilibria-via-the-NIST-Webbook/',topic:'Water-gas shift thermodynamics'}, {url:'https://pubmed.ncbi.nlm.nih.gov/17811121/',topic:'Prebiotic atmospheric nitrogen fixation'}, {url:'https://museum.wales/mineralogy-of-wales/database/?mineral=37',topic:'Apatite mineral formula'}, {url:'https://pubchem.ncbi.nlm.nih.gov/compound/Pyrite',topic:'Pyrite FeS2 formula'}, {url:'https://www.sciencedirect.com/science/article/pii/S001670372500715X',topic:'Pyrite reduction kinetic measurements and domain of applicability'}, {url:'https://www.sciencedirect.com/science/article/pii/S2666759226000934',topic:'2026 mechanistic critique of hydrogen-induced pyrite reduction'}, {url:'https://www.rsc.org/suppdata/c7/ee/c7ee01764b/c7ee01764b1.pdf',topic:'Formation Gibbs energies for CO2 and formic acid, used for a standard-state estimate'}, {url:'https://onlinelibrary.wiley.com/doi/full/10.1002/ese3.1064',topic:'Hydrothermal CO2 reduction to formic acid: catalyst and condition dependence'}]};const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});const u=URL.createObjectURL(blob),aTag=document.createElement('a');aTag.href=u;aTag.download=`terra-chemica-audit-t${world.tick}.json`;aTag.click();URL.revokeObjectURL(u);}
+function initUI(){renderReactions();renderAll();$('environmentScenarioSelect').addEventListener('change',e=>selectEnvironmentProfile(e.target.value));$('formateGateCheckBtn').addEventListener('click',()=>{renderFormateGate();const g=formateGateAudit(world);pushLog(world,'audit',`Gerbang formate diperiksa: ${g.readyToExecute?'siap uji terkontrol':'tetap terkunci'}; HCOOH ${fmt(g.product,6)} SU; tidak ada reaksi yang diaktifkan.`);renderLog();});$('autoBtn').addEventListener('click',start);$('stepBtn').addEventListener('click',()=>{pause();stepWorld(world);renderAll();});$('run1000Btn').addEventListener('click',()=>runChunk(1000));$('resetBtn').addEventListener('click',()=>{pause();world=newWorld();stressLast=null;$('stressResult').textContent='Dunia utama direset. Uji tekanan belum dijalankan pada Build 1.9.';$('stressResult').style.borderColor='';$('stressResult').style.color='';renderAll();});$('stressBtn').addEventListener('click',()=>{pause();$('stressBtn').disabled=true;$('stressBtn').textContent='Menjalankan uji…';setTimeout(()=>{try{stressLast=stressTest();showStressResult(stressLast);pushLog(world,'audit',`Uji tekanan 20.000 jam Build 1.9: ${stressLast.passed?'LULUS':'GAGAL'}; atom drift ${fmt(stressLast.maxAtomDrift,10)}, energi drift ${fmt(stressLast.maxEnergyDrift,10)} UE.`);renderLog();}catch(e){$('stressResult').textContent='Uji gagal dijalankan: '+e.message;}finally{$('stressBtn').disabled=false;$('stressBtn').textContent='Uji tekanan 20.000 jam';}} ,20);});$('exportBtn').addEventListener('click',exportAudit);$('clearLogBtn').addEventListener('click',()=>{world.log=[];renderLog();});window.addEventListener('resize',renderCharts);}
+if(typeof document!=='undefined')initUI();
+if(typeof globalThis!=='undefined')globalThis.__TERRA_CHEMICA_TEST_API__={P,F,ELEMENTS,INVENTORY_META,REACTIONS,ENVIRONMENT_PROFILES,newWorld,stepWorld,runHours,stressTest,carbonHydrogenLedger,atomTotals,chemistryInventory,inventoryAudit,stoichAudit,storedEnergy,energyResidual,atomResidual,waterMoleculeStocks,waterLedgerResidual,modelAudit,snapshot,oceanFreeCapacity,hydrothermalReturnState,flowThresholdRuleOk,thresholdScenarioTest,infiltrateWater,hydrothermalWaterReturn,apatiteDissolution,pyriteReduction,mineralReleaseScenarioTest,rain,KINETIC_MODEL,apatiteKinetics,pyriteKinetics,serpentinizationKinetics,environmentKineticsAudit,kineticScenarioTest,FORMATE_GATE,formateGateAudit,formateGateScenarioTest,exchangeLocalZone,localZoneAudit,localZoneScenarioTest};
+</script>
+</body>
+</html>
