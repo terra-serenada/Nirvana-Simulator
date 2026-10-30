@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#0b1719">
-<title>Terra Chemica — World Arkean v1.2 · Regional Geothermal Engine + Global Chemistry</title>
+<title>Terra Chemica — World Arkean v1.3 · Regional Geothermal + Hydrological + Atmospheric Dynamics</title>
 <style>
 :root{--bg:#091315;--panel:#122427;--panel2:#172e31;--line:rgba(185,220,209,.13);--text:#e9f2ed;--muted:#9bb2aa;--mint:#83d6b2;--gold:#e6bd75;--blue:#82c9da;--coral:#dd967a;--purple:#b4a3da;--red:#d88c83;--r:18px}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(900px 560px at 80% -12%,rgba(59,125,108,.19),transparent 60%),#091315;color:var(--text);font:14px/1.55 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}.app{max-width:1450px;margin:auto;padding:22px 25px 46px}.top{display:flex;justify-content:space-between;gap:16px;align-items:center;margin-bottom:22px}.brand{display:flex;gap:12px;align-items:center}.logo{height:42px;width:42px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(145deg,#a0e5b6,#347c70);color:#123d39;font-size:23px;font-weight:900}.brand strong{font-size:12px;letter-spacing:.16em}.brand small{display:block;color:var(--muted);font-size:10px}.pills{display:flex;gap:8px;flex-wrap:wrap}.pill{border:1px solid var(--line);background:#112326;border-radius:30px;padding:6px 10px;font-size:10px;color:#c6d9d0}.dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--mint);margin-right:6px}.hero{border:1px solid rgba(153,213,190,.18);border-radius:24px;padding:27px 29px;background:linear-gradient(112deg,#193832,#132f32 58%,#132930);display:grid;grid-template-columns:1.2fr .8fr;gap:20px;align-items:center;position:relative;overflow:hidden}.eyebrow{font-size:10px;letter-spacing:.17em;text-transform:uppercase;color:var(--mint);font-weight:800}.hero h1{font-size:clamp(27px,4vw,42px);line-height:1.08;letter-spacing:-.04em;margin:10px 0}.hero p{font-size:13px;color:#bed0c7;max-width:720px;margin:0}.hero-tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:17px}.tag{font-size:10px;padding:5px 8px;border:1px solid rgba(190,226,207,.18);border-radius:8px;color:#d6e9df}.earth-wrap{display:grid;place-items:center;min-height:155px}.earth{height:150px;width:150px;border-radius:50%;background:radial-gradient(circle at 29% 27%,#8ec5a7,#3c8a7e 35%,#1e5359 70%,#0d2934);box-shadow:inset -22px -18px 34px #061d2680,0 0 38px #6db99c25;position:relative}.earth:before{content:"";position:absolute;inset:20px 22px 26px 18px;border-radius:48%;background:#a8b68a88;clip-path:polygon(12% 5%,52% 0,67% 18%,91% 17%,100% 48%,77% 62%,83% 83%,48% 100%,25% 79%,0 59%,14% 35%)}.earth:after{content:"";position:absolute;inset:-10px;border:1px solid #a8e0c440;border-radius:50%;transform:rotate(-18deg) scaleY(.31)}.nav{display:flex;gap:5px;overflow:auto;margin:18px 0;padding:6px;border:1px solid var(--line);border-radius:13px;background:#0d1c1e}.nav button{border:0;background:none;color:#9db4aa;padding:10px 14px;border-radius:9px;white-space:nowrap;font-weight:650;font-size:11px}.nav button.active{background:#83d6b21b;color:#d4f2df;box-shadow:inset 0 0 0 1px #83d6b236}.page{display:none}.page.active{display:block}.grid{display:grid;gap:14px}.kpis{grid-template-columns:repeat(4,minmax(0,1fr));margin-bottom:14px}.card{background:linear-gradient(155deg,#142a2d,#102124);border:1px solid var(--line);border-radius:var(--r);padding:17px;min-width:0}.klabel{font-size:10px;color:var(--muted)}.kvalue{font-size:26px;font-weight:780;letter-spacing:-.035em;margin:7px 0 1px;font-variant-numeric:tabular-nums}.knote{font-size:10px;color:#8da69b}.green{color:var(--mint)}.blue{color:var(--blue)}.gold{color:var(--gold)}.purple{color:var(--purple)}.two{grid-template-columns:1.1fr .9fr}.head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:14px}.head h2{font-size:17px;margin:0}.head p{font-size:10px;color:var(--muted);margin:4px 0 0}.smallcaps{font-size:9px;text-transform:uppercase;letter-spacing:.15em;color:var(--muted);font-weight:750}.metric-line{margin:12px 0}.line-label{display:flex;justify-content:space-between;gap:8px;font-size:10px;color:#c9d9d2;margin-bottom:5px}.track{height:8px;background:#233a3b;border-radius:20px;overflow:hidden}.fill{height:100%;border-radius:20px;background:linear-gradient(90deg,#69a98f,#b2dfb5)}.fill.gold{background:linear-gradient(90deg,#9c7c4a,#ebc47b)}.fill.blue{background:linear-gradient(90deg,#4f91a1,#9ad6e2)}.note{background:#54401f26;border:1px solid #e6bd7535;border-radius:12px;padding:12px 14px;color:#c9bea2;font-size:10px;margin-top:13px}.note strong{color:#f1d39a}.good{color:#9ee3be}.warn{color:#e9c47e}.bad{color:#e69b8a}.page-title{margin:7px 0 17px}.page-title h2{font-size:24px;margin:0;letter-spacing:-.03em}.page-title p{color:var(--muted);font-size:11px;margin:4px 0 0}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:13px}table{width:100%;border-collapse:collapse;min-width:690px;background:#0e2022a8}th,td{font-size:10px;padding:11px 12px;border-bottom:1px solid #bad4c51a;text-align:left}th{background:#193336;color:#a9c2b6;text-transform:uppercase;letter-spacing:.08em;font-size:9px;position:sticky;top:0}td{color:#d8e6df}tr:last-child td{border-bottom:0}.num{text-align:right;font-variant-numeric:tabular-nums}.formula{font-family:ui-monospace,Consolas,monospace;color:#a9cbbc}.barrow{display:grid;grid-template-columns:60px 1fr 110px;gap:10px;align-items:center;margin:10px 0}.barrow strong{font-size:11px}.barrow small{display:block;color:var(--muted);font-size:9px}.tag-status{display:inline-block;font-size:9px;padding:4px 7px;border-radius:20px;background:#d9ad5a17;border:1px solid #d9ad5a36;color:#e9c47e}.tag-off{background:#9ac5d11a;border-color:#9ac5d133;color:#b5d9e2}.energy-grid{grid-template-columns:1fr 1fr}.energy-card{position:relative;overflow:hidden}.energy-card .big{font-size:31px;font-weight:800;letter-spacing:-.04em}.energy-symbol{font-size:24px;color:var(--mint)}.flowbox{border:1px solid var(--line);border-radius:13px;padding:13px;background:#0b1b1d}.flowbox h3{font-size:12px;margin:0 0 5px}.flowbox p{font-size:10px;color:var(--muted);margin:0}.arrow{text-align:center;color:#78978a;font-size:19px;padding:4px}.rx-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.rx{border:1px solid var(--line);background:linear-gradient(155deg,#13292b,#102124);border-radius:15px;padding:15px}.rx h3{font-size:13px;margin:0 0 7px}.equation{padding:10px;background:#09191b;border-radius:9px;color:#d5e8dd;font-family:ui-monospace,Consolas,monospace;font-size:12px;overflow-wrap:anywhere;margin:10px 0}.rx p{font-size:10px;color:var(--muted);margin:6px 0}.rx-foot{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}.chip{font-size:9px;color:#bfd4c8;background:#84bba51a;border:1px solid #84bba52a;border-radius:20px;padding:4px 7px}.assumptions{display:grid;grid-template-columns:1fr 1fr;gap:12px}.assumption{background:#0d1f21;border:1px solid var(--line);border-radius:12px;padding:13px}.assumption strong{font-size:11px;display:block;margin-bottom:4px}.assumption p{font-size:10px;color:var(--muted);margin:0}.filters{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:12px}.filters input{background:#0b1b1d;border:1px solid var(--line);border-radius:9px;padding:9px 11px;color:var(--text);min-width:180px;flex:1}.filters button{background:#132a2d;border:1px solid var(--line);border-radius:8px;color:#b6c9c0;padding:8px 10px;font-size:10px}.filters button.active{border-color:#83d6b255;color:#cff3df;background:#83d6b21a}.source{padding:10px 0;border-bottom:1px solid #bad4c51a}.source:last-child{border-bottom:0}.source a{color:#a9ddc5;font-size:11px;text-decoration:none}.source a:hover{text-decoration:underline}.source p{font-size:10px;color:var(--muted);margin:4px 0 0}.range-wrap{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;margin:12px 0}.range-wrap input{width:100%;accent-color:var(--mint)}.range-value{font-size:19px;font-weight:800;color:var(--mint);font-variant-numeric:tabular-nums;white-space:nowrap}.footer{color:#718b80;font-size:9px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:9px;padding:18px 3px 0}@media(max-width:900px){.kpis{grid-template-columns:repeat(2,1fr)}.two,.energy-grid{grid-template-columns:1fr}.rx-grid{grid-template-columns:1fr}.hero{grid-template-columns:1fr .35fr}}@media(max-width:600px){.app{padding:13px}.hero{grid-template-columns:1fr;padding:20px}.earth-wrap{min-height:125px;order:-1}.earth{width:120px;height:120px}.hero h1{font-size:28px}.kvalue{font-size:22px}.kpis{gap:9px}.card{padding:13px}.assumptions{grid-template-columns:1fr}.nav button{padding:9px 11px}}
@@ -121,7 +121,7 @@
 @media(max-width:700px){.caldera-layout,.caldera-output-grid{grid-template-columns:1fr}.caldera-side-stack{grid-template-columns:1fr}.caldera-side-stack>.caldera-action-card{grid-column:auto}.caldera-image{aspect-ratio:1.15;object-fit:cover}.caldera-actions{grid-template-columns:1fr 1fr}.caldera-impact-list>div{grid-template-columns:28px minmax(0,1fr)}.impact-state{grid-column:2;justify-self:start}}
 
 
-/* World Arkean v1.2 — regional geothermal model and global chemistry dashboard */
+/* World Arkean v1.3 — regional geothermal model and global chemistry dashboard */
 .world-reservoir-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
 .world-reservoir{border:1px solid var(--line);border-radius:12px;background:#0b1c1e;padding:12px;min-width:0}
 .world-reservoir span{display:block;color:var(--muted);font-size:9px}
@@ -144,10 +144,34 @@
 @media(max-width:900px){.world-product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.world-reservoir-grid,.world-mini-state{grid-template-columns:1fr 1fr}.world-product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.world-gas-table td{padding:7px 5px}}
 
+
+/* Earth Systems v0.1 */
+.earth-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:14px}
+.earth-kpi{background:#0b1c1e;border:1px solid var(--line);border-radius:12px;padding:12px;min-width:0}
+.earth-kpi span{display:block;color:var(--muted);font-size:9px}
+.earth-kpi strong{display:block;font-size:19px;letter-spacing:-.03em;margin-top:5px;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.earth-kpi small{display:block;color:#8da69b;font-size:8px;margin-top:3px}
+.earth-stage{display:flex;align-items:center;gap:10px;border:1px solid var(--line);background:#0b1b1d;border-radius:12px;padding:12px;margin:8px 0}
+.earth-stage b{font-size:11px}.earth-stage p{font-size:9px;color:var(--muted);margin:2px 0 0}
+.earth-bullet{width:28px;height:28px;flex:0 0 auto;border-radius:9px;display:grid;place-items:center;background:#83d6b218;color:var(--mint);font-weight:800}
+.earth-controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.earth-control{background:#0b1b1d;border:1px solid var(--line);border-radius:11px;padding:11px}
+.earth-control label{display:block;color:#c9d9d2;font-size:10px;margin-bottom:5px}
+.earth-control input{width:100%;background:#071719;border:1px solid #54736b77;border-radius:8px;color:var(--text);padding:8px;font-size:11px}
+.earth-control small{display:block;color:var(--muted);font-size:8px;margin-top:5px}
+.earth-table{width:100%;border-collapse:collapse;min-width:0}
+.earth-table td,.earth-table th{padding:9px 10px;font-size:9px;border-bottom:1px solid #bad4c51a}
+.earth-table th{background:#193336;color:#a9c2b6;text-align:left}
+.earth-table td:last-child{text-align:right;font-variant-numeric:tabular-nums}
+.earth-state{font-size:9px;border-radius:20px;padding:4px 8px;border:1px solid #83d6b244;color:#bfe9d4;background:#83d6b218;display:inline-block}
+.earth-state.wait{border-color:#d9ad5a36;color:#e9c47e;background:#d9ad5a17}
+@media(max-width:900px){.earth-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.earth-controls{grid-template-columns:1fr}.earth-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.earth-kpi strong{font-size:16px}}
+
 </style></head><body><div class="app">
-<header class="top"><div class="brand"><div class="logo">◈</div><div><strong>TERRA CHEMICA</strong><small>World archive · Archean geochemical model</small></div></div><div class="pills"><span class="pill"><i class="dot"></i>World Arkean v1.2</span><span class="pill"><i class="dot" style="background:var(--gold)"></i>Energy + hydrosphere + reaction engine</span><span class="pill">MSAB regional v0.6 + Solar Engine v0.1</span></div></header>
+<header class="top"><div class="brand"><div class="logo">◈</div><div><strong>TERRA CHEMICA</strong><small>World archive · Archean geochemical model</small></div></div><div class="pills"><span class="pill"><i class="dot"></i>World Arkean v1.3</span><span class="pill"><i class="dot" style="background:var(--gold)"></i>Energy + hydrosphere + reaction engine</span><span class="pill">MSAB regional v0.7 + Earth Systems v0.1</span></div></header>
 <section class="hero"><div><div class="eyebrow">Eoarchean baseline · 4,0 Ga</div><h1>Energi memasuki dunia purba.</h1><p>World Arkean menghubungkan samudera, atmosfer, reaksi hidrotermal, dan fotokimia. Halaman ini merangkum jumlah zat utama di dunia serta produk kimia yang terbentuk selama simulasi.</p><div class="hero-tags"><span class="tag">1 SU = 10¹⁵ mol</span><span class="tag">Atmosfer anoksik</span><span class="tag">Solar + geothermal</span><span class="tag">H₂O cair · baseline 1,0 OM</span><span class="tag">Mesin reaksi · 12 jam/tick</span></div></div><div class="earth-wrap"><div class="earth" aria-label="Ilustrasi konseptual Bumi Arkean"></div></div></section>
-<nav class="nav"><button class="active" data-page="caldera">Kawah geothermal</button><button data-page="overview">Ringkasan dunia</button><button data-page="energy">Energi</button><button data-page="solar">Mesin Matahari</button><button data-page="candidates">Kandidat reaksi</button><button data-page="atmosphere">Atmosfer</button><button data-page="hydrosphere">Hidrosfer</button><button data-page="world">Geografi & stok</button><button data-page="circulation">Sirkulasi air–batuan</button><button data-page="geometry">Geometri zona</button><button data-page="simulation">Simulasi</button><button data-page="minerals">Mineral</button><button data-page="notes">Asumsi & sumber</button></nav>
+<nav class="nav"><button class="active" data-page="caldera">Kawah geothermal</button><button data-page="overview">Ringkasan dunia</button><button data-page="energy">Energi</button><button data-page="solar">Mesin Matahari</button><button data-page="candidates">Kandidat reaksi</button><button data-page="atmosphere">Atmosfer</button><button data-page="hydrosphere">Hidrosfer</button><button data-page="hydrology-cycle">Siklus air</button><button data-page="ocean-circ">Sirkulasi samudera</button><button data-page="atmos-dynamics">Dinamika atmosfer</button><button data-page="electrical">Petir & listrik</button><button data-page="volcanism">Aktivitas vulkanik</button><button data-page="world">Geografi & stok</button><button data-page="circulation">Sirkulasi air–batuan</button><button data-page="geometry">Geometri zona</button><button data-page="simulation">Simulasi</button><button data-page="minerals">Mineral</button><button data-page="notes">Asumsi & sumber</button></nav>
 <main>
 <section class="page active" id="page-caldera">
   <div class="page-title caldera-title">
@@ -213,13 +237,14 @@
       <div class="head"><div><div class="smallcaps">Atmosfer awal dan perubahan sulfur</div><h2>Gas utama dunia</h2><p>Tekanan parsial awal; hanya SO₂ yang saat ini memiliki jalur perubahan aktif.</p></div></div>
       <div class="table-wrap" style="border:0">
         <table class="world-gas-table"><tbody>
-          <tr><td><strong>N₂</strong> · nitrogen</td><td>0,30 bar</td><td>Stok awal</td></tr>
-          <tr><td><strong>CO₂</strong> · karbon dioksida</td><td>0,10 bar</td><td>Belum bereaksi</td></tr>
+          <tr><td><strong>N₂</strong> · nitrogen</td><td id="world-n2">0,30 bar</td><td id="world-n2-note">Stok awal</td></tr>
+          <tr><td><strong>CO₂</strong> · karbon dioksida</td><td id="world-co2-gas">0,10 bar</td><td id="world-co2-note">Stok awal</td></tr>
           <tr><td><strong>H₂</strong> · hidrogen</td><td>0,004 bar</td><td>Stok awal</td></tr>
           <tr><td><strong>CH₄</strong> · metana</td><td>0,0001 bar</td><td>Stok awal</td></tr>
-          <tr><td><strong>CO</strong> · karbon monoksida</td><td>0,00004 bar</td><td>Stok awal</td></tr>
+          <tr><td><strong>CO</strong> · karbon monoksida</td><td id="world-co">0,00004 bar</td><td id="world-co-note">Stok awal</td></tr>
+          <tr><td><strong>NO</strong> · nitrogen monoksida</td><td id="world-no">≈ 0 bar</td><td id="world-no-note">Menunggu petir</td></tr>
           <tr><td><strong>H₂S</strong> · hidrogen sulfida</td><td>0,000001 bar</td><td>Stok awal</td></tr>
-          <tr><td><strong>SO₂</strong> · sulfur dioksida</td><td>1 × 10⁻⁷ bar</td><td id="world-so2-state">Menunggu fotolisis</td></tr>
+          <tr><td><strong>SO₂</strong> · sulfur dioksida</td><td id="world-so2">1 × 10⁻⁷ bar</td><td id="world-so2-state">Menunggu fotolisis</td></tr>
           <tr><td><strong>O₂</strong> · oksigen bebas</td><td>≈ 0</td><td>Anoksik</td></tr>
         </tbody></table>
       </div>
@@ -237,6 +262,10 @@
         <div class="world-product"><span>O atomik</span><strong id="world-o-atom">0 kg</strong><small>Bukan O₂</small></div>
         <div class="world-product"><span>H₂O dikonsumsi</span><strong id="world-water-used">0 kg</strong><small>Reaksi hidrotermal</small></div>
         <div class="world-product"><span>H₂ tersimpan di samudera</span><strong id="world-h2-stored">0 kg</strong><small>Pool hasil transfer fluida</small></div>
+        <div class="world-product"><span>Hujan kumulatif</span><strong id="world-rain-total">0 mm</strong><small>Presipitasi global terakumulasi</small></div>
+        <div class="world-product"><span>Pelepasan petir</span><strong id="world-lightning-total">0</strong><small>Flash ekuivalen terhitung</small></div>
+        <div class="world-product"><span>NO terbentuk</span><strong id="world-no-made">0 mol</strong><small>Kimia plasma petir</small></div>
+        <div class="world-product"><span>Air uap atmosfer</span><strong id="world-vapor">0 kg</strong><small>Kolom atmosfer model</small></div>
       </div>
       <div class="note"><strong>Unsur yang terikat dalam produk:</strong> Mg terutama berada pada serpentin dan brusit; Fe pada magnetit; Si pada silika dan serpentin; sulfur serta oksigen berada pada produk fotokimia. Unsur-unsur ini tidak dicatat lagi sebagai atom bebas.</div>
     </article>
@@ -269,7 +298,7 @@
  <div class="barrow"><strong>Geotermal</strong><div class="track"><div class="fill blue" style="width:0.068%"></div></div><div class="num">61,2 TW</div></div>
  <p style="color:var(--muted);font-size:10px;margin:10px 0 0">*Daya surya terserap global dihitung dari fluks rata-rata global dan albedo asumsi. Skala ini tidak berarti seluruh daya surya dapat menggerakkan reaksi; fotokimia terutama bergantung pada foton UV yang diserap oleh molekul tertentu.</p>
 </article>
-<div class="footer"><span>World Arkean v1.2 · reaktor hidrotermal regional + kimia global</span><span>Preset TINGGI · samudera 90% · footprint aktif 1.000 km² · reaktor regional agregat</span></div>
+<div class="footer"><span>World Arkean v1.3 · reaktor hidrotermal regional + kimia global</span><span>Preset TINGGI · samudera 90% · footprint aktif 1.000 km² · reaktor regional agregat</span></div>
 </section>
 
 <section class="page" id="page-energy"><div class="page-title"><div class="eyebrow">Environmental drivers</div><h2>Energi Matahari & panas internal</h2><p>Masukan energi pada level fisik. Mesin Matahari mencatat serapan radiasi global dan menjalankan fotolisis SO₂; mesin geotermal menjalankan reaksi air–batuan.</p></div>
@@ -374,20 +403,20 @@
 <div class="note" style="margin-top:14px"><strong>Belum tersedia:</strong> fiksasi nitrogen, HCN, formamida, asam amino, nukleotida dan polimer. Atmosfer saat ini belum memiliki nitrogen reaktif yang dibukukan, dan petir/aktivasi N₂ belum diimplementasikan.</div>
 </section>
 
-<section class="page" id="page-atmosphere"><div class="page-title"><div class="eyebrow">Reservoir atmosfer</div><h2>Atmosfer awal Arkean</h2><p>Kondisi awal skenario 4,0 Ga. SO₂ kini memiliki jalur fotolisis dinamis; gas lain masih berupa stok awal sampai sumber, sink, dan transfernya diimplementasikan.</p></div>
+<section class="page" id="page-atmosphere"><div class="page-title"><div class="eyebrow">Reservoir atmosfer</div><h2>Atmosfer awal Arkean</h2><p>Kondisi awal skenario 4,0 Ga. SO₂ kini memiliki jalur fotolisis dinamis; N₂, CO₂ dan CO kini dapat berubah melalui kimia plasma petir; gas lainnya tetap mengikuti status kandidat masing-masing.</p></div>
 <div class="grid kpis" style="grid-template-columns:repeat(3,minmax(0,1fr))"><article class="card"><div class="klabel">Tekanan gas kering</div><div class="kvalue blue">0,40414 bar</div></article><article class="card"><div class="klabel">Uap air permukaan</div><div class="kvalue">0,0222 bar</div><div class="knote">25°C · RH 70% · belum jadi stok kolom</div></article><article class="card"><div class="klabel">Oksigen bebas</div><div class="kvalue gold">≈ 0</div><div class="knote">Kondisi anoksik</div></article></div>
-<article class="card"><div class="table-wrap"><table><thead><tr><th>Gas</th><th>Nama</th><th class="num">Tekanan parsial</th><th class="num">Stok awal</th><th>Peran</th></tr></thead><tbody><tr><td><strong>N₂</strong></td><td>Nitrogen</td><td class="num">0.3 bar</td><td class="num">55,624.8712 SU</td><td>Gas utama</td></tr><tr><td><strong>CO₂</strong></td><td>Karbon dioksida</td><td class="num">0.1 bar</td><td class="num">11,802.3136 SU</td><td>Karbon anorganik</td></tr><tr><td><strong>H₂</strong></td><td>Hidrogen</td><td class="num">0.004 bar</td><td class="num">10,306.4453 SU</td><td>Reduktan</td></tr><tr><td><strong>CH₄</strong></td><td>Metana</td><td class="num">0.0001 bar</td><td class="num">32.3774 SU</td><td>Karbon tereduksi</td></tr><tr><td><strong>CO</strong></td><td>Karbon monoksida</td><td class="num">4e-05 bar</td><td class="num">7.4175 SU</td><td>Karbon tereduksi</td></tr><tr><td><strong>H₂S</strong></td><td>Hidrogen sulfida</td><td class="num">1e-06 bar</td><td class="num">0.1524 SU</td><td>Sulfur tereduksi</td></tr><tr><td><strong>SO₂</strong></td><td>Sulfur dioksida</td><td class="num">1e-07 bar</td><td class="num">0.0081 SU</td><td>Sulfur vulkanik</td></tr><tr><td><strong>H₂O</strong></td><td>Uap air</td><td class="num">0,0222 bar</td><td class="num">Belum dihitung</td><td>Kondisi permukaan · RH 70%</td></tr><tr><td><strong>O₂</strong></td><td>Oksigen</td><td class="num">≈ 0</td><td class="num">Tidak ditetapkan</td><td>Atmosfer anoksik</td></tr></tbody></table></div><article class="card" style="margin-top:12px;background:#0d1f21"><div class="head"><div><div class="smallcaps">Kolam fotokimia dinamis</div><h2>SO₂ → SO + O(³P)</h2><p>Perbarui menurut tick simulasi Mesin Matahari.</p></div><span class="tag-status" id="atmo-photo-state">MENUNGGU TICK</span></div><div class="assumptions"><div class="assumption"><strong>SO₂ tersisa</strong><p id="atmo-so2-left">0,0081 SU</p></div><div class="assumption"><strong>SO terbentuk</strong><p id="atmo-so-made">0 SU</p></div><div class="assumption"><strong>O atomik terbentuk</strong><p id="atmo-o-made">0 SU atom</p></div><div class="assumption"><strong>Konversi SO₂</strong><p id="atmo-so2-conversion">0%</p></div></div></article><div class="note"><strong>H₂O uap:</strong> 0,0222 bar adalah tekanan uap permukaan pada 25°C dan RH 70%. Stok kolom memerlukan profil kelembapan vertikal. O₂ mendekati nol.</div></article></section>
+<article class="card"><div class="table-wrap"><table><thead><tr><th>Gas</th><th>Nama</th><th class="num">Tekanan parsial</th><th class="num">Stok awal</th><th>Peran</th></tr></thead><tbody><tr><td><strong>N₂</strong></td><td>Nitrogen</td><td class="num" id="atmo-n2-pressure">0.3 bar</td><td class="num" id="atmo-n2-stock">55,624.8712 SU</td><td>Gas utama</td></tr><tr><td><strong>CO₂</strong></td><td>Karbon dioksida</td><td class="num" id="atmo-co2-pressure">0.1 bar</td><td class="num" id="atmo-co2-stock">11,802.3136 SU</td><td>Karbon anorganik</td></tr><tr><td><strong>H₂</strong></td><td>Hidrogen</td><td class="num">0.004 bar</td><td class="num">10,306.4453 SU</td><td>Reduktan</td></tr><tr><td><strong>CH₄</strong></td><td>Metana</td><td class="num">0.0001 bar</td><td class="num">32.3774 SU</td><td>Karbon tereduksi</td></tr><tr><td><strong>CO</strong></td><td>Karbon monoksida</td><td class="num" id="atmo-co-pressure">4e-05 bar</td><td class="num" id="atmo-co-stock">7.4175 SU</td><td>Karbon tereduksi</td></tr><tr><td><strong>NO</strong></td><td>Nitrogen monoksida</td><td class="num" id="atmo-no-pressure">≈ 0 bar</td><td class="num" id="atmo-no-stock">0 SU</td><td>Produk petir · dinamis</td></tr><tr><td><strong>H₂S</strong></td><td>Hidrogen sulfida</td><td class="num">1e-06 bar</td><td class="num">0.1524 SU</td><td>Sulfur tereduksi</td></tr><tr><td><strong>SO₂</strong></td><td>Sulfur dioksida</td><td class="num" id="atmo-so2-pressure">1e-07 bar</td><td class="num" id="atmo-so2-stock">0.0081 SU</td><td>Sulfur vulkanik</td></tr><tr><td><strong>H₂O</strong></td><td>Uap air</td><td class="num">0,0222 bar</td><td class="num">Belum dihitung</td><td>Kondisi permukaan · RH 70%</td></tr><tr><td><strong>O₂</strong></td><td>Oksigen</td><td class="num">≈ 0</td><td class="num">Tidak ditetapkan</td><td>Atmosfer anoksik</td></tr></tbody></table></div><article class="card" style="margin-top:12px;background:#0d1f21"><div class="head"><div><div class="smallcaps">Kolam fotokimia dinamis</div><h2>SO₂ → SO + O(³P)</h2><p>Perbarui menurut tick simulasi Mesin Matahari.</p></div><span class="tag-status" id="atmo-photo-state">MENUNGGU TICK</span></div><div class="assumptions"><div class="assumption"><strong>SO₂ tersisa</strong><p id="atmo-so2-left">0,0081 SU</p></div><div class="assumption"><strong>SO terbentuk</strong><p id="atmo-so-made">0 SU</p></div><div class="assumption"><strong>O atomik terbentuk</strong><p id="atmo-o-made">0 SU atom</p></div><div class="assumption"><strong>Konversi SO₂</strong><p id="atmo-so2-conversion">0%</p></div></div></article><div class="note"><strong>H₂O uap:</strong> 0,0222 bar adalah tekanan uap permukaan pada 25°C dan RH 70%. Stok kolom memerlukan profil kelembapan vertikal. O₂ mendekati nol.</div></article></section>
 
 <section class="page" id="page-hydrosphere"><div class="page-title"><div class="eyebrow">Reservoir air cair</div><h2>Hidrosfer awal</h2><p>Air cair permukaan dicatat sebagai reservoir tersendiri; jangan disamakan dengan uap air atmosfer atau OH yang terikat dalam mineral.</p></div>
 <div class="grid kpis" style="grid-template-columns:repeat(4,minmax(0,1fr))"><article class="card"><div class="klabel">Massa air cair</div><div class="kvalue blue" id="water-mass">1,400 × 10²¹ <small style="font-size:11px">kg</small></div><div class="knote">Ocean-mass equivalent</div></article><article class="card"><div class="klabel">Jumlah molekul</div><div class="kvalue" id="water-moles">7,771 × 10²² <small style="font-size:11px">mol</small></div></article><article class="card"><div class="klabel">Stok H₂O cair</div><div class="kvalue green" id="water-su">77,712 <small style="font-size:11px">ribu SU</small></div><div class="knote">1 SU = 10¹⁵ mol molekul</div></article><article class="card"><div class="klabel">Lapisan ekuivalen global</div><div class="kvalue" id="water-layer">2.745 <small style="font-size:11px">m</small></div><div class="knote">Bukan kedalaman laut setempat</div></article></div>
 <div class="grid kpis" style="grid-template-columns:repeat(3,minmax(0,1fr));margin-top:0"><article class="card"><div class="klabel">Cakupan samudera skenario</div><div class="kvalue blue">90%</div><div class="knote">51,006 juta km² daratan/pulau sebagai sisa permukaan</div></article><article class="card"><div class="klabel">Luas samudera</div><div class="kvalue" id="ocean-area-value">459,058 <small style="font-size:11px">juta km²</small></div><div class="knote">90% dari luas permukaan Bumi</div></article><article class="card"><div class="klabel">Kedalaman rata-rata geometris</div><div class="kvalue green" id="mean-ocean-depth">3.050 <small style="font-size:11px">m</small></div><div class="knote">Berdasarkan 1,0 OM / luas samudera 90%</div></article></div>
 <div class="grid two"><article class="card"><div class="head"><div><div class="smallcaps">Parameter skenario</div><h2>Jumlah air cair awal</h2><p>Ubah ekuivalen massa samudra modern untuk menguji sensitivitas.</p></div></div><div class="range-wrap"><div><input id="ocean-equivalent" type="range" min="0.5" max="2.3" step="0.1" value="1.0" aria-label="Ekuivalen massa samudra"/><div class="line-label"><span>0,5 OM</span><span>2,3 OM</span></div></div><div class="range-value"><span id="ocean-value">1,0</span> OM</div></div><div class="note"><strong>Baseline model:</strong> 1,0 OM = 1,4 × 10²¹ kg air cair. Dengan cakupan samudera 90%, ini memberi kedalaman rata-rata geometris sekitar 3,05 km. Angka itu bukan kedalaman batimetri lokal dan bukan klaim rekonstruksi pasti untuk 4,0 Ga.</div><p style="font-size:10px;color:var(--muted)">OM = ocean mass equivalent. Rentang kontrol 0,5–2,3 OM adalah rentang eksplorasi model, bukan interval kepercayaan statistik atau batas pasti hasil pengukuran.</p></article>
-<article class="card"><div class="head"><div><div class="smallcaps">Pemisahan reservoir</div><h2>Air bukan satu pool tunggal</h2></div></div><div class="assumption"><strong>H₂O cair · hidrosfer</strong><p>Stok global yang dihitung pada halaman ini. Digunakan sebagai reservoir total, bukan otomatis seluruhnya dapat mencapai zona reaksi.</p></div><div class="assumption"><strong>H₂O uap · atmosfer</strong><p>Tekanan parsial permukaan tetap 0,0222 bar pada asumsi 25°C dan RH 70%. Stok kolom atmosfer masih belum dihitung.</p></div><div class="assumption"><strong>H dan OH struktural · mineral</strong><p>Air/OH yang menjadi bagian dari struktur amfibol, biotit, serpentin dan mineral hidrat lain harus dicatat pada fase mineral, tidak digabungkan dengan H₂O cair.</p></div></article></div>
+<article class="card"><div class="head"><div><div class="smallcaps">Pemisahan reservoir</div><h2>Air bukan satu pool tunggal</h2></div></div><div class="assumption"><strong>H₂O cair · hidrosfer</strong><p>Stok global yang dihitung pada halaman ini. Digunakan sebagai reservoir total, bukan otomatis seluruhnya dapat mencapai zona reaksi.</p></div><div class="assumption"><strong>H₂O uap · atmosfer</strong><p>Tekanan parsial permukaan tetap 0,0222 bar pada asumsi 25°C dan RH 70%. Stok kolom atmosfer kini dihitung memakai skala tinggi uap 2 km sebagai asumsi eksplisit v1.3.</p></div><div class="assumption"><strong>H dan OH struktural · mineral</strong><p>Air/OH yang menjadi bagian dari struktur amfibol, biotit, serpentin dan mineral hidrat lain harus dicatat pada fase mineral, tidak digabungkan dengan H₂O cair.</p></div></article></div>
 <article class="card" style="margin-top:14px"><div class="head"><div><div class="smallcaps">Batas akses reaksi</div><h2>Stok global tidak sama dengan air yang dapat bereaksi</h2></div><span class="tag-status">Pool pori hidrotermal regional dihitung</span></div><div class="grid two"><div class="flowbox"><h3>Reservoir air global</h3><p>Inventaris total H₂O cair pada permukaan Bumi dalam skenario OM terpilih.</p></div><div class="flowbox"><h3>Zona air–batuan</h3><p>Baseline footprint aktif menyediakan 54 km³ volume pori; debit aliran dihitung dari komposit matriks–rekahan dan dibatasi oleh daya panas regional.</p></div></div><div class="note"><strong>Aturan neraca:</strong> reaksi mendatang tidak boleh langsung mengonsumsi seluruh stok hidrosfer global. Model kini memiliki pool air pori regional, aliran masuk-keluar, dan transfer antara samudera dan reaktor. Konsumsi air mengurangi inventaris cair melalui neraca massa eksplisit.</div></article>
 <article class="card" style="margin-top:14px"><div class="head"><div><div class="smallcaps">Dasar geologi</div><h2>Apa yang diketahui untuk sekitar 4,0 Ga?</h2></div></div><div class="assumption"><strong>Siklus hidrologi</strong><p>Studi zirkon Jack Hills terbitan 2024 menyimpulkan interaksi air meteorik dengan kerak dangkal kemungkinan sudah terjadi pada atau sebelum 4,0 Ga. Ini mendukung keberadaan air permukaan dan siklus hidrologi, tetapi tidak menentukan massa total samudra secara presisi.</p></div><div class="assumption"><strong>Volume samudra</strong><p>Estimasi berbeda menurut asumsi penyimpanan air di mantel dan evolusi hidrosfer. Satu studi isotop memperkirakan samudra Arkean dapat sampai sekitar 26% lebih besar daripada sekarang; model lain mendapatkan minimum sekitar 1,27–2,27 massa samudra modern pada asumsi tertentu.</p></div><div class="assumption"><strong>Keputusan model</strong><p>Gunakan 90% cakupan samudera dan 1,0 OM sebagai baseline kerja. Luas samudera tetap terpisah dari volume air: slider OM mengubah massa dan kedalaman rata-rata, bukan luas samudera. Keduanya merupakan parameter skenario, bukan rekonstruksi final.</p></div></article></section>
 
 <section class="page" id="page-world">
-  <div class="page-title"><div class="eyebrow">World geometry · regional stock ledger</div><h2>Geografi samudera & alokasi stok kerak</h2><p>Baseline spasial World Arkean v1.2. Inventaris regional dihitung sebagai subset inventaris kerak global, bukan stok baru.</p></div>
+  <div class="page-title"><div class="eyebrow">World geometry · regional stock ledger</div><h2>Geografi samudera & alokasi stok kerak</h2><p>Baseline spasial World Arkean v1.3. Inventaris regional dihitung sebagai subset inventaris kerak global, bukan stok baru.</p></div>
   <div class="grid kpis" style="grid-template-columns:repeat(4,minmax(0,1fr))">
     <article class="card"><div class="klabel">Luas samudera (90%)</div><div class="kvalue blue">459,058 <small style="font-size:11px">juta km²</small></div><div class="knote">Sisa 51,006 juta km² berupa daratan/pulau</div></article>
     <article class="card"><div class="klabel">Provinsi geothermal agregat</div><div class="kvalue gold">10.000 <small style="font-size:11px">km²</small></div><div class="knote">Gabungan pusat/kawah hidrotermal purba</div></article>
@@ -676,7 +705,7 @@
 
 <section class="page" id="page-simulation">
   <div class="page-title">
-    <div class="eyebrow">MSAB regional v0.6 + Solar Engine v0.1 · integrated reaction engine</div>
+    <div class="eyebrow">MSAB regional v0.7 + Earth Systems v0.1 · integrated reaction engine</div>
     <h2>Simulasi reaksi hidrotermal</h2>
     <p>Satu reaktor agregat mewakili seluruh footprint aktif 1.000 km². Stok mineral, pori, debit, dan cadangan panas dihitung pada skala regional; ini model lumped-zone, belum berupa 1.000 sel spasial independen. Satu tick = 12 jam; dua tick = 24 jam.</p>
   </div>
@@ -777,7 +806,7 @@
         <div class="assumption"><strong>Neraca cadangan panas</strong><p id="sim-audit-heat">Belum dijalankan</p></div>
         <div class="assumption"><strong>Neraca stok mineral global</strong><p id="sim-audit-mineral">Belum dijalankan</p></div>
         <div class="assumption"><strong>Neraca H₂ hasil reaksi</strong><p id="sim-audit-hydrogen">Belum dijalankan</p></div>
-        <div class="assumption"><strong>Neraca fotokimia SO₂</strong><p id="sim-audit-solar">Menunggu tick</p></div>
+        <div class="assumption"><strong>Neraca fotokimia SO₂</strong><p id="sim-audit-solar">Menunggu tick</p></div><div class="assumption"><strong>Neraca siklus hidrologi + sistem atmosfer</strong><p id="sim-audit-earth">Menunggu tick</p></div>
       </div>
       <div class="note"><strong>Aturan konservasi:</strong> stok global tersisa = pool global yang belum dialokasikan + stok di sel. Reaksi hanya mengurangi mineral lokal yang dialokasikan. Transfer air dan H₂ antara samudra dan sel bersifat internal; konsumsi H₂O oleh mineral mengurangi H₂O bebas total.</div>
     </article>
@@ -811,6 +840,71 @@
   </article>
 </section>
 
+
+<section class="page" id="page-hydrology-cycle">
+  <div class="page-title"><div class="eyebrow">Earth Systems v0.1 · water transfer</div><h2>Siklus hidrologi global</h2><p>Air berpindah antara samudera, atmosfer, awan, daratan dan air tanah. Semua perpindahan memakai stok air yang sudah ada; tidak ada air yang diciptakan saat hujan.</p></div>
+  <div class="earth-grid">
+    <div class="earth-kpi"><span>Uap air atmosfer</span><strong id="hydro-vapor">—</strong><small id="hydro-vapor-surface">Profil vertikal eksplisit</small></div>
+    <div class="earth-kpi"><span>Air dalam awan</span><strong id="hydro-cloud">—</strong><small>Liquid + ice + graupel</small></div>
+    <div class="earth-kpi"><span>Hujan kumulatif</span><strong id="hydro-rain-cum">—</strong><small id="hydro-rain-rate">Laju presipitasi saat ini</small></div>
+    <div class="earth-kpi"><span>Air tersimpan di darat</span><strong id="hydro-land-store">—</strong><small>Permukaan + air tanah</small></div>
+  </div>
+  <div class="grid two">
+    <article class="card"><div class="head"><div><div class="smallcaps">Rangkaian perpindahan air</div><h2>Reservoir dan proses</h2><p>Setiap tick berlangsung selama 12 jam.</p></div><span class="earth-state" id="hydro-status">MENUNGGU SIMULASI</span></div>
+      <div class="earth-stage"><div class="earth-bullet">1</div><div><b>Evaporasi samudera</b><p>Energi radiasi yang dialokasikan ke laten mengubah H₂O cair menjadi uap.</p></div></div>
+      <div class="earth-stage"><div class="earth-bullet">2</div><div><b>Transportasi dan konveksi</b><p>Uap dibawa ke atas; parcel udara mendingin mengikuti profil suhu vertikal.</p></div></div>
+      <div class="earth-stage"><div class="earth-bullet">3</div><div><b>Kondensasi dan pembentukan awan</b><p>Uap berpindah menjadi tetesan; pada lapisan dingin sebagian membeku menjadi kristal es.</p></div></div>
+      <div class="earth-stage"><div class="earth-bullet">4</div><div><b>Presipitasi</b><p>Tetesan dan partikel es tumbuh lalu jatuh sebagai hujan; pada baseline hangat, presipitasi mencapai permukaan sebagai hujan.</p></div></div>
+      <div class="earth-stage"><div class="earth-bullet">5</div><div><b>Runoff, infiltrasi dan baseflow</b><p>Air di daratan meresap, tersimpan sementara, lalu sebagian mengalir kembali ke samudera.</p></div></div>
+    </article>
+    <article class="card"><div class="head"><div><div class="smallcaps">Parameter penutupan model</div><h2>Energi dan atmosfer</h2></div></div>
+      <table class="earth-table"><tbody>
+        <tr><td>Luas samudera</td><td>459,058 juta km²</td></tr><tr><td>Energi laten evaporasi samudera</td><td>40 W/m² · asumsi</td></tr><tr><td>Panas laten penguapan</td><td>2,45 MJ/kg</td></tr><tr><td>Suhu permukaan skenario</td><td>25 °C</td></tr><tr><td>RH permukaan awal</td><td>70%</td></tr><tr><td>Skala tinggi uap air</td><td>2 km · asumsi</td></tr><tr><td>Laju susut suhu lingkungan</td><td>8 K/km · asumsi</td></tr><tr><td>Fraksi daratan</td><td>10%</td></tr><tr><td>Liquid dalam awan</td><td id="hydro-cloud-liquid">—</td></tr><tr><td>Kristal es</td><td id="hydro-cloud-ice">—</td></tr><tr><td>Graupel</td><td id="hydro-cloud-graupel">—</td></tr>
+      </tbody></table>
+      <div class="note"><strong>Catatan ilmiah:</strong> 0,0222 bar adalah tekanan uap di permukaan, bukan total kolom. Model mengubahnya menjadi stok atmosfer menggunakan densitas uap ideal-gas dan skala tinggi 2 km yang dinyatakan secara terbuka sebagai asumsi, bukan pengukuran Arkean.</div>
+    </article>
+  </div>
+  <div class="grid two" style="margin-top:14px">
+    <article class="card"><div class="head"><div><div class="smallcaps">Anggaran per tick</div><h2>Perpindahan massa air</h2></div></div><table class="earth-table"><tbody>
+      <tr><td>Evaporasi samudera</td><td id="hydro-evap-tick">—</td></tr><tr><td>Kondensasi</td><td id="hydro-cond-tick">—</td></tr><tr><td>Hujan total</td><td id="hydro-rain-tick">—</td></tr><tr><td>Hujan langsung ke samudera</td><td id="hydro-rain-ocean">—</td></tr><tr><td>Infiltrasi</td><td id="hydro-infiltration">—</td></tr><tr><td>Runoff + baseflow ke samudera</td><td id="hydro-return">—</td></tr>
+    </tbody></table></article>
+    <article class="card"><div class="head"><div><div class="smallcaps">Konservasi</div><h2>Neraca air siklus</h2></div><span class="earth-state" id="hydro-audit">MENUNGGU TICK</span></div><p style="font-size:10px;color:var(--muted)">Audit membandingkan jumlah air di samudera, uap, awan, air permukaan daratan dan air tanah sebelum serta sesudah perpindahan satu tick. Reaksi hidrotermal yang mengikat air ke mineral diaudit terpisah oleh MSAB.</p><div class="earth-kpi"><span>Residual neraca air tick terakhir</span><strong id="hydro-residual">—</strong><small>Idealnya mendekati nol</small></div></article>
+  </div>
+</section>
+
+<section class="page" id="page-ocean-circ">
+  <div class="page-title"><div class="eyebrow">Ocean–geothermal coupling</div><h2>Sirkulasi termal samudera</h2><p>Panas geotermal menggerakkan sirkulasi lokal di dasar samudera. Air panas naik sebagai plume, bercampur dan menyebarkan panas serta zat terlarut; volume air tidak bertambah karena plume adalah air samudera yang bersirkulasi ulang.</p></div>
+  <div class="earth-grid"><div class="earth-kpi"><span>Daya geotermal regional</span><strong>30 GW</strong><small>Footprint aktif 1.000 km²</small></div><div class="earth-kpi"><span>Debit fluida hidrotermal</span><strong id="ocean-circ-flow">—</strong><small>m³/detik · setelah batas panas</small></div><div class="earth-kpi"><span>Volume sirkulasi kumulatif</span><strong id="ocean-circ-volume">—</strong><small>Air yang melewati reaktor</small></div><div class="earth-kpi"><span>Plume hidrotermal</span><strong id="ocean-circ-temp">—</strong><small>Suhu saat keluar dari reaktor</small></div></div>
+  <div class="grid two"><article class="card"><div class="head"><div><div class="smallcaps">Lintasan samudera</div><h2>Recharge → reaktor → discharge</h2></div></div>
+    <div class="earth-stage"><div class="earth-bullet">A</div><div><b>Recharge air laut</b><p>Air samudera masuk melalui sesar dan rekahan yang terhubung.</p></div></div><div class="earth-stage"><div class="earth-bullet">B</div><div><b>Pemanasan dan reaksi batuan</b><p>30 GW adalah batas daya termal regional; Fo dan Fa bereaksi di zona panas.</p></div></div><div class="earth-stage"><div class="earth-bullet">C</div><div><b>Plume dan pencampuran</b><p>Fluida panas lebih ringan, naik, bercampur dengan air laut sekitar, lalu menyebar.</p></div></div>
+    </article><article class="card"><div class="head"><div><div class="smallcaps">Dampak skala</div><h2>Pengaruh lokal vs global</h2></div></div><table class="earth-table"><tbody><tr><td>Volume pori reaktor</td><td>54 km³</td></tr><tr><td>Waktu pergantian pori baseline</td><td>≈61 tahun</td></tr><tr><td>Energi panas per tick</td><td id="ocean-circ-heat">—</td></tr><tr><td>Perkiraan ΔT rata-rata seluruh samudera per tick</td><td id="ocean-circ-global-dt">—</td></tr><tr><td>Akumulasi massa air disirkulasikan</td><td id="ocean-circ-water-mass">—</td></tr></tbody></table><div class="note"><strong>Interpretasi:</strong> pemanasan global samudera dari 30 GW sangat kecil; efek pentingnya bersifat lokal—plume, gradien suhu, pencampuran air dalam, dan transfer produk reaksi.</div></article></div>
+</section>
+
+<section class="page" id="page-atmos-dynamics">
+  <div class="page-title"><div class="eyebrow">Atmospheric convection</div><h2>Dinamika atmosfer dan awan</h2><p>Konveksi dimodelkan sebagai indeks kestabilan kolom atmosfer, kelembapan, dan profil suhu. Awan badai hanya dapat memasuki fase listrik jika konveksi cukup dalam dan lapisan campuran air–es tersedia.</p></div>
+  <div class="earth-grid"><div class="earth-kpi"><span>Kelembapan relatif model</span><strong id="atm-rh">—</strong><small>Terhadap kapasitas uap pada 25°C</small></div><div class="earth-kpi"><span>Dasar awan (LCL proxy)</span><strong id="atm-cloud-base">—</strong><small>km di atas permukaan</small></div><div class="earth-kpi"><span>Puncak awan proxy</span><strong id="atm-cloud-top">—</strong><small>km di atas permukaan</small></div><div class="earth-kpi"><span>Indeks konveksi</span><strong id="atm-conv-index">—</strong><small>0 = stabil · 1 = kuat pada skema</small></div></div>
+  <div class="grid two"><article class="card"><div class="head"><div><div class="smallcaps">Profil vertikal baseline</div><h2>Struktur termal kolom udara</h2></div></div><table class="earth-table"><tbody><tr><td>Suhu permukaan</td><td id="atm-surface-temp">25 °C</td></tr><tr><td>Lapse rate lingkungan</td><td>8 K/km · asumsi</td></tr><tr><td>Lapse rate adiabatik lembap acuan</td><td>6,5 K/km · pendekatan</td></tr><tr><td>Suhu pada puncak awan proxy</td><td id="atm-cloudtop-temp">—</td></tr><tr><td>Kecepatan updraft skala</td><td id="atm-updraft">—</td></tr><tr><td>Fase awan</td><td id="atm-cloud-phase">—</td></tr><tr><td>Air awan pada area badai proxy</td><td id="atm-storm-cloud">—</td></tr></tbody></table></article>
+    <article class="card"><div class="head"><div><div class="smallcaps">Pemicu hujan dan badai</div><h2>Kondisi fisik</h2></div></div><div class="earth-stage"><div class="earth-bullet">1</div><div><b>Udara lembap naik</b><p>Udara mendingin mengikuti lapse rate dan mencapai titik kondensasi.</p></div></div><div class="earth-stage"><div class="earth-bullet">2</div><div><b>Awan tumbuh vertikal</b><p>Indeks konveksi dan suplai uap menentukan kedalaman awan proxy.</p></div></div><div class="earth-stage"><div class="earth-bullet">3</div><div><b>Lapisan campuran</b><p>Jika awan mencapai −15 hingga −25°C dan mengandung air superdingin, es serta graupel, pemisahan muatan dapat berjalan.</p></div></div><div class="note"><strong>Batas model:</strong> ini skema global rata-rata dengan penutupan konveksi, bukan model cuaca 3D. Awan dan hujan merupakan hasil perpindahan massa; tidak ada air baru diciptakan.</div></article></div>
+</section>
+
+<section class="page" id="page-electrical">
+  <div class="page-title"><div class="eyebrow">Atmospheric electrical engine</div><h2>Listrik atmosfer dan petir</h2><p>Petir badai membutuhkan awan konvektif dengan tetesan superdingin, kristal es dan graupel. Tumbukan dan perbedaan gerak hidrometeor memisahkan muatan; pelepasan listrik hanya terjadi setelah energi muatan terakumulasi.</p></div>
+  <div class="earth-grid"><div class="earth-kpi"><span>Kondisi awan campuran</span><strong id="elec-mixed-ready">—</strong><small>Air cair + es + graupel</small></div><div class="earth-kpi"><span>Energi pemisahan muatan</span><strong id="elec-charge-energy">—</strong><small>Reservoir energi listrik proxy</small></div><div class="earth-kpi"><span>Petir tick terakhir</span><strong id="elec-strikes-tick">—</strong><small>Pelepasan ekuivalen</small></div><div class="earth-kpi"><span>Petir kumulatif</span><strong id="elec-strikes-total">—</strong><small>Jumlah pelepasan terhitung</small></div></div>
+  <div class="grid two"><article class="card"><div class="head"><div><div class="smallcaps">Urutan listrik badai</div><h2>Pemisahan muatan</h2></div><span class="earth-state" id="elec-status">MENUNGGU AWAN</span></div><div class="earth-stage"><div class="earth-bullet">+</div><div><b>Kristal es ringan</b><p>Cenderung memperoleh muatan positif dan terbawa ke bagian atas awan.</p></div></div><div class="earth-stage"><div class="earth-bullet">−</div><div><b>Graupel lebih berat</b><p>Cenderung memperoleh muatan negatif dan tertahan atau jatuh ke bagian tengah-bawah.</p></div></div><div class="earth-stage"><div class="earth-bullet">⚡</div><div><b>Pelepasan listrik</b><p>Terjadi saat reservoir energi pemisahan muatan mencapai energi ambang satu pelepasan pada skema.</p></div></div></article>
+    <article class="card"><div class="head"><div><div class="smallcaps">Kimia plasma petir</div><h2>Karbon dan nitrogen</h2></div></div><div class="equation">N₂ + 2 CO₂ → 2 NO + 2 CO</div><table class="earth-table"><tbody><tr><td>Energi efektif per extent neto</td><td>≈746,5 kJ/mol</td></tr><tr><td>Efisiensi energi kimia plasma</td><td>0,01% · parameter proxy</td></tr><tr><td>CO₂ yang bereaksi</td><td id="elec-co2-used">—</td></tr><tr><td>N₂ yang bereaksi</td><td id="elec-n2-used">—</td></tr><tr><td>NO terbentuk kumulatif</td><td id="elec-no-made">—</td></tr><tr><td>CO terbentuk dari petir</td><td id="elec-co-made">—</td></tr></tbody></table><div class="note"><strong>Penyederhanaan:</strong> persamaan adalah reaksi neto yang setara atom, bukan urutan elementer plasma. Efisiensi 0,01% dan energi per extent adalah parameter model yang belum dikalibrasi untuk atmosfer 4,0 Ga. NOx tetap diprediksi sebagai gas jejak dalam banyak model atmosfer Arkean.</div></article></div>
+</section>
+
+<section class="page" id="page-volcanism">
+  <div class="page-title"><div class="eyebrow">Volcanic activity engine</div><h2>Aktivitas vulkanik dan petir vulkanik</h2><p>Ruang magma yang sama menyimpan panas, tetapi erupsi memerlukan kondisi tambahan: tekanan berlebih, volatil terlarut/terbebaskan, dan jalur kegagalan kerak. Mesin tidak akan mengarang erupsi tanpa inventaris volatil dan kondisi tekanan.</p></div>
+  <div class="earth-grid"><div class="earth-kpi"><span>Status vulkanik</span><strong id="volcano-status">DORMAN</strong><small>Menunggu kondisi pemicu</small></div><div class="earth-kpi"><span>Jumlah erupsi</span><strong id="volcano-count">0</strong><small>Peristiwa tercatat</small></div><div class="earth-kpi"><span>Abu terakumulasi</span><strong id="volcano-ash">0 kg</strong><small>Potensi aerosol / CCN</small></div><div class="earth-kpi"><span>Petir vulkanik</span><strong id="volcano-lightning">0</strong><small>Ekuivalen pelepasan</small></div></div>
+  <div class="grid two"><article class="card"><div class="head"><div><div class="smallcaps">Parameter reservoir magma</div><h2>Input volatil dan tekanan</h2><p>Default volatil nol karena inventaris gas magma Arkean belum disepakati.</p></div></div>
+    <div class="earth-controls"><div class="earth-control"><label for="volc-h2o">H₂O volatil magma (SU)</label><input id="volc-h2o" type="number" min="0" step="0.001" value="0"><small>Masuk ke atmosfer sebagai uap saat degassing.</small></div><div class="earth-control"><label for="volc-co2">CO₂ volatil magma (SU)</label><input id="volc-co2" type="number" min="0" step="0.001" value="0"><small>Menambah stok CO₂ atmosfer saat erupsi.</small></div><div class="earth-control"><label for="volc-so2">SO₂ volatil magma (SU)</label><input id="volc-so2" type="number" min="0" step="0.000001" value="0"><small>Menambah pool SO₂ Mesin Matahari.</small></div><div class="earth-control"><label for="volc-overpressure">Tekanan berlebih saat ini (MPa)</label><input id="volc-overpressure" type="number" min="0" step="0.1" value="0"><small>Input kondisi reservoir; belum dihitung dari dinamika mantel.</small></div><div class="earth-control"><label for="volc-overpressure-rate">Laju kenaikan tekanan (MPa/tahun)</label><input id="volc-overpressure-rate" type="number" min="0" step="0.01" value="0"><small>Parameter skenario; default nol karena suplai magma/stress belum dimodelkan.</small></div><div class="earth-control"><label for="volc-threshold">Ambang kegagalan (MPa)</label><input id="volc-threshold" type="number" min="1" step="1" value="10"><small>Nilai kerja yang dapat diubah; bukan ambang universal kerak purba.</small></div></div>
+    <button class="sim-btn secondary" id="volc-apply" style="margin-top:12px">Terapkan parameter vulkanik</button><p id="volc-config-note" style="font-size:9px;color:var(--muted);margin:8px 0 0">Parameter hanya dapat diubah sebelum simulasi dimulai atau setelah reset.</p>
+  </article>
+  <article class="card"><div class="head"><div><div class="smallcaps">Mekanisme erupsi</div><h2>Rantai kondisi</h2></div></div><div class="earth-stage"><div class="earth-bullet">1</div><div><b>Tekanan magma meningkat</b><p>Tekanan berlebih harus melampaui ambang kegagalan jalur kerak.</p></div></div><div class="earth-stage"><div class="earth-bullet">2</div><div><b>Volatil keluar dari magma</b><p>H₂O, CO₂, dan SO₂ dipindahkan dari inventaris magma ke atmosfer.</p></div></div><div class="earth-stage"><div class="earth-bullet">3</div><div><b>Partikel abu dan plume</b><p>Abu dapat menyediakan inti kondensasi awan; efeknya memakai koefisien CCN sederhana.</p></div></div><div class="earth-stage"><div class="earth-bullet">4</div><div><b>Petir vulkanik</b><p>Fragmentasi dan tumbukan partikel memisahkan muatan; bukan mekanisme petir badai biasa.</p></div></div><div class="note"><strong>Batas penting:</strong> model saat ini tidak menghitung dinamika dapur magma, viskositas magma, kandungan kristal, geometri konduit, ukuran butir abu, maupun distribusi volatil. Erupsi adalah event bersyarat dengan parameter eksplisit.</div></article></div>
+  <article class="card" style="margin-top:14px"><div class="head"><div><div class="smallcaps">Ledger magmatik</div><h2>Volatil yang tersisa</h2></div></div><table class="earth-table"><tbody><tr><td>H₂O magma tersisa</td><td id="volcano-h2o-left">0 SU</td></tr><tr><td>CO₂ magma tersisa</td><td id="volcano-co2-left">0 SU</td></tr><tr><td>SO₂ magma tersisa</td><td id="volcano-so2-left">0 SU</td></tr><tr><td>Tekanan reservoir terkini</td><td id="volcano-pressure">0 MPa</td></tr><tr><td>Enhancement CCN abu (proxy)</td><td id="volcano-ccn">1,00×</td></tr><tr><td>Gas total terlepas</td><td id="volcano-gas-released">0 SU</td></tr></tbody></table></article>
+</section>
+
 <section class="page" id="page-minerals"><div class="page-title"><div class="eyebrow">Inventaris kerak</div><h2>Stok mineral bulk & reaktif</h2><p>Inventaris berasal dari model shell kerak global 37,5 km dengan domain mafik, ultramafik dan felsik.</p></div><div class="grid kpis" style="grid-template-columns:repeat(3,minmax(0,1fr))"><article class="card"><div class="klabel">Stok bulk</div><div class="kvalue">295,365 <small style="font-size:12px">juta SU</small></div></article><article class="card"><div class="klabel">Pool reaktif</div><div class="kvalue green">7,787 <small style="font-size:12px">juta SU</small></div></article><article class="card"><div class="klabel">Bagian reaktif</div><div class="kvalue gold">2,636%</div></article></div><article class="card"><div class="filters"><input id="mineral-search" type="search" placeholder="Cari mineral / formula..."><button class="active" data-filter="all">Semua</button><button data-filter="Silikat">Silikat</button><button data-filter="Oksida">Oksida</button><button data-filter="Sulfida">Sulfida</button><button data-filter="Fosfat">Fosfat</button><button data-filter="Aksesori">Aksesori</button></div><div class="table-wrap"><table><thead><tr><th>Mineral</th><th>Formula</th><th>Kelas</th><th class="num">Bulk (SU)</th><th class="num">Reaktif (SU)</th><th class="num">Reaktif/bulk</th></tr></thead><tbody id="mineral-table"></tbody></table></div></article>
 <article class="card" style="margin-top:14px"><div class="head"><div><div class="smallcaps">Stoikiometri endmember</div><h2>Olivin dipisahkan menjadi Fo dan Fa</h2><p>Angka endmember dari workbook v0.1; pool reaktif tetap mengikuti faktor akses domain awal.</p></div></div><div class="table-wrap"><table><thead><tr><th>Domain</th><th>Endmember</th><th class="num">Stok bulk (SU)</th><th class="num">Akses</th><th class="num">Stok reaktif (SU)</th></tr></thead><tbody>
 <tr><td>Mafik</td><td>Forsterit · Fo</td><td class="num">21.694.217,41</td><td class="num">2%</td><td class="num good">433.884,35</td></tr>
@@ -821,15 +915,16 @@
 <tr><td><strong>Total Fa</strong></td><td>Fayalit</td><td class="num"><strong>7.498.437,87</strong></td><td class="num">—</td><td class="num good"><strong>274.461,77</strong></td></tr>
 </tbody></table></div><div class="note"><strong>Batas teoritis jalur fayalit:</strong> jika seluruh Fa reaktif bereaksi menurut persamaan ideal, maksimal 182.974,51 SU H₂ terbentuk dan 182.974,51 SU H₂O dikonsumsi. Nilai ini hanya batas stoikiometrik; bukan prediksi bahwa pool akan bereaksi seluruhnya.</div></article></section>
 
-<section class="page" id="page-notes"><div class="page-title"><div class="eyebrow">Parameter & batas</div><h2>Asumsi energi dan validasi</h2><p>Parameter kerja yang bisa diubah dalam iterasi berikutnya; belum seluruhnya merupakan pengukuran Bumi 4,0 Ga.</p></div><div class="grid two"><article class="card"><h2 style="font-size:15px">Sumber energi</h2><div class="assumption"><strong>Matahari</strong><p>0,741 dari luminositas modern sebagai asumsi titik 4,0 Ga. Model klasik menempatkan Matahari 25–30% lebih redup pada sekitar 4 Ga.</p></div><div class="assumption"><strong>Geografi samudera</strong><p>Cakupan samudera 90% dan daratan/pulau 10% adalah baseline skenario untuk simulasi, bukan rekonstruksi pasti luas daratan Arkean.</p></div><div class="assumption"><strong>Provinsi geothermal</strong><p>Agregat 10.000 km², footprint aktif 1.000 km² dan penetrasi 1,2 km. Stok reaktan pada footprint dialokasikan dari inventaris kerak memakai normalisasi shell 37,5 km. Reaktor adalah model regional lumped-zone.</p></div><div class="assumption"><strong>Albedo 0,30</strong><p>Asumsi awal untuk menghitung energi terserap. Albedo Arkean sesungguhnya bergantung awan, laut, aerosol, daratan dan spektrum bintang.</p></div><div class="assumption"><strong>Panas bumi 0,12 W/m²</strong><p>Baseline kerja global, rentang 0,08–0,20 W/m². Bukan pengukuran global langsung pada 4,0 Ga; perlu diganti dengan model thermal evolution terkalibrasi.</p></div><div class="assumption"><strong>Panas internal</strong><p>Gabungan panas primordial, pendinginan interior dan peluruhan radioaktif U, Th, K. Pembagian kontribusi belum dihitung.</p></div></article><article class="card"><h2 style="font-size:15px">Batas yang belum dimodelkan</h2><div class="assumption"><strong>Spektrum UV</strong><p>Belum ada irradiansi spektral dan transfer radiasi per panjang gelombang. Nilai total solar tidak boleh dipakai langsung sebagai energi fotokimia.</p></div><div class="assumption"><strong>Distribusi panas dan aliran</strong><p>Baseline regional memakai daya transfer 30 GW dan jaringan komposit matriks–rekahan. Variasi suhu, tekanan, permeabilitas, dan debit di antara ventilasi individual belum dipetakan.</p></div><div class="assumption"><strong>Termodinamika</strong><p>Belum ada perhitungan ΔG, aktivitas spesies, fugasitas atau kesetimbangan untuk kandidat reaksi.</p></div><div class="assumption"><strong>Kinetika</strong><p>Belum ada luas permukaan mineral, energi aktivasi, katalis efektif maupun konstanta laju.</p></div></article></div>
+<section class="page" id="page-notes"><div class="page-title"><div class="eyebrow">Parameter & batas</div><h2>Asumsi energi dan validasi</h2><p>Parameter kerja yang bisa diubah dalam iterasi berikutnya; belum seluruhnya merupakan pengukuran Bumi 4,0 Ga.</p></div><div class="grid two"><article class="card"><h2 style="font-size:15px">Sumber energi</h2><div class="assumption"><strong>Matahari</strong><p>0,741 dari luminositas modern sebagai asumsi titik 4,0 Ga. Model klasik menempatkan Matahari 25–30% lebih redup pada sekitar 4 Ga.</p></div><div class="assumption"><strong>Geografi samudera</strong><p>Cakupan samudera 90% dan daratan/pulau 10% adalah baseline skenario untuk simulasi, bukan rekonstruksi pasti luas daratan Arkean.</p></div><div class="assumption"><strong>Provinsi geothermal</strong><p>Agregat 10.000 km², footprint aktif 1.000 km² dan penetrasi 1,2 km. Stok reaktan pada footprint dialokasikan dari inventaris kerak memakai normalisasi shell 37,5 km. Reaktor adalah model regional lumped-zone.</p></div><div class="assumption"><strong>Albedo 0,30</strong><p>Asumsi awal untuk menghitung energi terserap. Albedo Arkean sesungguhnya bergantung awan, laut, aerosol, daratan dan spektrum bintang.</p></div><div class="assumption"><strong>Panas bumi 0,12 W/m²</strong><p>Baseline kerja global, rentang 0,08–0,20 W/m². Bukan pengukuran global langsung pada 4,0 Ga; perlu diganti dengan model thermal evolution terkalibrasi.</p></div><div class="assumption"><strong>Panas internal</strong><p>Gabungan panas primordial, pendinginan interior dan peluruhan radioaktif U, Th, K. Pembagian kontribusi belum dihitung.</p></div></article><article class="card"><h2 style="font-size:15px">Batas yang belum dimodelkan</h2><div class="assumption"><strong>Spektrum UV</strong><p>Belum ada irradiansi spektral dan transfer radiasi per panjang gelombang. Nilai total solar tidak boleh dipakai langsung sebagai energi fotokimia.</p></div><div class="assumption"><strong>Distribusi panas dan aliran</strong><p>Baseline regional memakai daya transfer 30 GW dan jaringan komposit matriks–rekahan. Variasi suhu, tekanan, permeabilitas, dan debit di antara ventilasi individual belum dipetakan.</p></div><div class="assumption"><strong>Termodinamika</strong><p>Belum ada perhitungan ΔG, aktivitas spesies, fugasitas atau kesetimbangan untuk kandidat reaksi.</p></div><div class="assumption"><strong>Kinetika</strong><p>Belum ada luas permukaan mineral, energi aktivasi, katalis efektif maupun konstanta laju.</p></div><div class="assumption"><strong>Siklus hidrologi</strong><p>Energi laten samudera 40 W/m², skala tinggi uap 2 km, lapse rate 8 K/km, dan parameter konveksi merupakan penutupan skenario; bukan rekonstruksi cuaca global 4,0 Ga.</p></div><div class="assumption"><strong>Petir</strong><p>Pelepasan listrik hanya berjalan pada awan proxy campuran air superdingin–es–graupel. Area badai 100.000 km² dan daya pemisahan muatan 0,0002 W/m² adalah parameter representatif. Kimia petir diringkas sebagai reaksi neto N₂ + 2CO₂ → 2NO + 2CO.</p></div><div class="assumption"><strong>Vulkanisme</strong><p>Inventaris volatil magma awal belum ditetapkan, sehingga default erupsi nonaktif. Tekanan, laju kenaikan, dan fraksi gas yang dilepas perlu dikalibrasi. Abu/CCN dan petir vulkanik adalah proxy.</p></div></article></div>
 <article class="card" style="margin-top:14px"><div class="head"><div><div class="smallcaps">Sumber rujukan</div><h2>Dasar angka dan asumsi</h2></div></div><div class="source"><a href="https://jpldataeval.jpl.nasa.gov/pdf/JPL_Publication_15-10.pdf" target="_blank" rel="noopener">NASA/JPL · Chemical Kinetics and Photochemical Data for Use in Atmospheric Studies</a><p>Reaksi SO₂ + hν → SO + O(³P), ambang sekitar 217 nm, serta data absorpsi UV SO₂. Nilai J efektif pada model tetap belum dikalibrasi terhadap spektrum atmosfer Arkean.</p></div><div class="source"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7043912/" target="_blank" rel="noopener">Catling & Zahnle · The Archean atmosphere (2020)</a><p>Model Matahari Arkean 25–30% lebih redup dan konteks atmosfer awal.</p></div><div class="source"><a href="https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2006JE002784" target="_blank" rel="noopener">Cnossen et al. · Solar X-ray and UV radiation at Earth's surface, 4–3.5 Ga</a><p>Aktivitas UV/X-ray Matahari muda lebih tinggi; radiasi permukaan bergantung pada transmisi atmosfer.</p></div><div class="source"><a href="https://comptes-rendus.academie-sciences.fr/geoscience/articles/10.1016/j.crte.2019.07.002/" target="_blank" rel="noopener">Secular cooling and crystallization of partially molten Archaean continental crust</a><p>Model geotermal kraton Arkean dan estimasi komponen radiogenik kerak, termasuk sekitar 81,4 mW/m² pada model 3,5 Ga.</p></div><div class="source"><a href="https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2006JB004464" target="_blank" rel="noopener">Michaut & Jaupart · Transient geotherms in Archean continental lithosphere</a><p>Model geoterm dan kontribusi panas radiogenik dalam litosfer Arkean.</p></div><div class="source"><a href="https://www.nature.com/articles/s41561-024-01450-0" target="_blank" rel="noopener">Gamaleldien et al. · Onset of the Earth’s hydrological cycle four billion years ago or earlier (2024)</a><p>Bukti isotop zirkon mendukung interaksi air meteorik dengan kerak dangkal pada atau sebelum 4,0 Ga.</p></div><div class="source"><a href="https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2021GC009827" target="_blank" rel="noopener">Ueda et al. · Chemical Nature of Hydrothermal Fluids Generated by Serpentinization and Carbonation of Komatiite (2021)</a><p>Mengulas kemungkinan kerak samudra Arkean lebih tebal, paparan peridotit mantel yang lebih terbatas, dan peran komatiit sebagai batuan ultramafik yang lebih mungkin tersingkap di dasar laut.</p></div><div class="source"><a href="https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2001JB001727" target="_blank" rel="noopener">Jarrard et al. · Physical properties of upper oceanic crust (2003)</a><p>Analogi modern untuk profil permeabilitas kerak samudra: 500 m teratas sekitar 10⁻¹⁴–10⁻¹³ m² dan 700 m berikutnya sekitar 10⁻¹⁷ m². Nilai ini dipakai sebagai analog jalur, bukan pengukuran Arkean.</p></div><div class="source"><a href="https://www.nature.com/articles/s41561-023-01316-x" target="_blank" rel="noopener">Tamblyn & Hermann · Geological evidence for high H₂ production from komatiites in the Archaean (2023)</a><p>Bukti serpentinisasi dan pembentukan magnetit pada komatiit dekat dasar laut Arkean. Mendukung prioritas host komatiit dalam preset TINGGI, tetapi tidak menetapkan luas globalnya.</p></div><div class="source"><a href="https://www.annualreviews.org/content/journals/10.1146/annurev-earth-040722-093345" target="_blank" rel="noopener">Chowdhury et al. · Subaerial Emergence of Continents on Archean Earth (2025)</a><p>Meninjau ketidakpastian luas dan keberlangsungan daratan yang muncul di atas permukaan laut pada Arkean.</p></div><div class="source"><a href="https://www.nature.com/articles/s41467-026-74874-4" target="_blank" rel="noopener">Qiu et al. · Links between the Archean hydrosphere and Earth’s interior (2026)</a><p>Bukti transfer air permukaan ke mantel setidaknya sekitar 3,6 Ga; tidak membuktikan geometri tektonik modern pada 4,0 Ga.</p></div><div class="source"><a href="https://pubmed.ncbi.nlm.nih.gov/22392985/" target="_blank" rel="noopener">Pope et al. · Isotope composition and volume of Earth’s early oceans (2012)</a><p>Estimasi berbasis isotop memperkirakan samudra awal dapat sampai sekitar 26% lebih besar daripada samudra modern.</p></div><div class="source"><a href="https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2020AV000323" target="_blank" rel="noopener">Dong et al. · Constraining the Volume of Earth’s Early Oceans (2021)</a><p>Model volume samudra Arkean; kisaran minimum sekitar 1,27–2,27 OM muncul pada asumsi tertentu tentang kandungan air mantel saat ini.</p></div>
 <div class="source"><a href="https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2011JB008842" target="_blank" rel="noopener">Malvoisin et al. · Serpentinization of oceanic peridotites: 2. Kinetics and processes (2012)</a><p>Eksperimen olivin alami pada 250–350°C dan 500 bar; laju bergantung kuat pada temperatur serta ukuran butir. Digunakan sebagai jangkar laju awal, bukan konstanta universal.</p></div>
 <div class="source"><a href="https://www.sciencedirect.com/science/article/pii/S0016703716300941" target="_blank" rel="noopener">McCollom et al. · Temperature trends for reaction rates and hydrogen generation (2016)</a><p>Menunjukkan laju H₂ dan serpentinisasi bervariasi dengan temperatur dan dapat lebih lambat daripada perkiraan eksperimen lama.</p></div>
 <div class="source"><a href="https://www.sciencedirect.com/science/article/pii/S0009254122001632" target="_blank" rel="noopener">Hydrothermal flow-through experiments at 260–300°C (2022)</a><p>Eksperimen aliran menunjukkan hubungan terkopel antara pelarutan olivin dan presipitasi serpentin.</p></div>
 <div class="source"><a href="https://www.nature.com/articles/s41561-023-01316-x" target="_blank" rel="noopener">Tamblyn & Hermann · Geological evidence for high H₂ production from komatiites in the Archaean (2023)</a><p>Bukti alami magnetit dan hidrasi komatiit; mendukung potensi jalur H₂ tetapi tidak menentukan laju untuk sel model ini.</p></div>
 
-</article></section>
-</main><div class="footer"><span>Terra Chemica · World Arkean v1.2 · MSAB regional v0.6</span><span>Preset TINGGI · 12 jam/tick · reaktor regional agregat 1.000 km²</span></div></div>
+</article>
+<article class="card" style="margin-top:14px"><div class="head"><div><div class="smallcaps">Rujukan mekanisme fisika</div><h2>Referensi ilmiah</h2></div></div><div class="source"><a href="https://www.ipcc.ch/report/ar6/wg1/chapter/chapter-8/" target="_blank" rel="noopener">IPCC AR6 · Chapter 8: Water Cycle Changes</a><p>Reservoir, evaporasi, presipitasi, kelembapan tanah, air tanah dan runoff dalam siklus air global.</p></div><div class="source"><a href="https://www.noaa.gov/jetstream/atmosphere/hydro" target="_blank" rel="noopener">NOAA · The Hydrologic Cycle</a><p>Evaporasi, titik embun, kondensasi dan presipitasi.</p></div><div class="source"><a href="https://www.weather.gov/safety/lightning-science-electrification" target="_blank" rel="noopener">NOAA/NWS · Thunderstorm Electrification</a><p>Peran updraft, tetesan superdingin, kristal es, graupel dan pemisahan muatan.</p></div><div class="source"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7043912/" target="_blank" rel="noopener">Catling & Zahnle (2020) · The Archean atmosphere</a><p>Kimia atmosfer Arkean, keterbatasan pembentukan NOx oleh petir dan peran fotokimia.</p></div><div class="source"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11317556/" target="_blank" rel="noopener">Mimicking lightning-induced electrochemistry on the early Earth (2024)</a><p>Eksperimen plasma pada antarmuka udara–air–tanah dan pembentukan feedstock karbon/nitrogen; hasil eksperimen tidak langsung dipakai sebagai yield model.</p></div><div class="source"><a href="https://www.sciencedirect.com/science/article/pii/S037702732100278X" target="_blank" rel="noopener">A review of volcanic electrification of the atmosphere and volcanic lightning (2022)</a><p>Triboelectrification, fracto-electrification dan pengisian muatan partikel dalam plume vulkanik.</p></div></article></section>
+</main><div class="footer"><span>Terra Chemica · World Arkean v1.3 · MSAB regional v0.6</span><span>Preset TINGGI · 12 jam/tick · reaktor regional agregat 1.000 km²</span></div></div>
 <script>
 'use strict';
 const minerals=[{name:"Olivin",formula:"(Mg,Fe)₂SiO₄ · Fo–Fa",category:"Silikat",bulk:47866606.97,reactive:2202262.25,role:"Sumber Mg–Fe; kandidat utama serpentisasi."},{name:"Plagioklas",formula:"(Na,Ca)(Al,Si)₄O₈ · An–Ab",category:"Silikat",bulk:97237278.94,reactive:1912877.99,role:"Sumber Ca, Na, Al dan Si melalui pelarutan."},{name:"Klinopiroksen",formula:"(Ca,Mg,Fe)Si₂O₆ · Di–Hd",category:"Silikat",bulk:67088279.41,reactive:1427512.1,role:"Sumber Ca, Mg, Fe dan Si."},{name:"Ortopiroksen",formula:"(Mg,Fe)SiO₃ · En–Fs",category:"Silikat",bulk:64447245.78,reactive:1912750.6,role:"Sumber Mg, Fe dan Si dalam alterasi."},{name:"Amfibol",formula:"Hornblende proxy · OH struktural",category:"Silikat",bulk:790678.34,reactive:14684.03,role:"Fase hidrat; H struktural bukan air bebas."},{name:"Kuarsa",formula:"SiO₂",category:"Silikat",bulk:9513584.65,reactive:117913.78,role:"Reservoir silika; pelarutan relatif lambat."},{name:"Biotit",formula:"K(Mg,Fe)₃AlSi₃O₁₀(OH)₂ proxy",category:"Silikat",bulk:363754.3,reactive:3637.54,role:"Fase felsik pembawa K, Mg dan Fe."},{name:"K-feldspar",formula:"KAlSi₃O₈",category:"Silikat",bulk:105558.32,reactive:1055.58,role:"Sumber K dan Al melalui pelapukan."},{name:"Magnetit",formula:"Fe₃O₄",category:"Oksida",bulk:3100804.3,reactive:61759.82,role:"Oksida Fe; fase redoks dan mineral primer."},{name:"Ilmenit",formula:"FeTiO₃",category:"Oksida",bulk:2695784.65,reactive:53737.16,role:"Fase Fe–Ti relatif resisten."},{name:"Kromit",formula:"FeCr₂O₄",category:"Oksida",bulk:885985.93,reactive:48729.23,role:"Sumber Cr; fase refrakter."},{name:"Pirotit",formula:"Fe₁₋ₓS · proxy Fe₀.₉S",category:"Sulfida",bulk:1036759.22,reactive:25224.25,role:"Sulfida Fe; reaktif pada lingkungan air-batuan."},{name:"Pentlandit",formula:"(Fe,Ni)₉S₈ proxy",category:"Sulfida",bulk:8325.93,reactive:666.07,role:"Sumber Ni lokal dari sulfida Fe–Ni."},{name:"Apatit",formula:"Ca₅(PO₄)₃(OH) proxy",category:"Fosfat",bulk:222991.75,reactive:4423.28,role:"Sumber fosfor; fosfat terlarut belum ditetapkan."},{name:"Zirkon",formula:"ZrSiO₄",category:"Aksesori",bulk:1455.65,reactive:0,role:"Mineral aksesori refrakter; bukan reaktan awal."}];
@@ -891,15 +986,15 @@ if(oceanSlider){oceanSlider.addEventListener('input',updateHydrosphere);updateHy
   const CELL_ABSORBED_POWER=ABSORBED_FLUX*CELL_AREA_M2;
   const INITIAL_SO2_SU=0.0081;
   const PHOTON_ENERGY_MOLAR=552300; // J/mol, threshold-equivalent for the SO2 -> SO + O channel near 217 nm.
-  const STORAGE_KEY='worldArkeanSolarEngineV02';
+  const STORAGE_KEY='worldArkeanSolarEngineV03';
   const $=id=>document.getElementById(id);
   const number=(v,d=3)=>Number(v).toLocaleString('id-ID',{minimumFractionDigits:d,maximumFractionDigits:d});
   const sci=(v,d=5)=>Number(v).toExponential(d).replace('.',',').replace('e+',' × 10^').replace('e-',' × 10^-');
   const energy=(v)=>{if(!Number.isFinite(v))return '—';const a=Math.abs(v);if(a>=1e21)return number(v/1e21,3)+' × 10²¹ J';if(a>=1e18)return number(v/1e18,3)+' × 10¹⁸ J';if(a>=1e15)return number(v/1e15,3)+' × 10¹⁵ J';if(a>=1e12)return number(v/1e12,3)+' × 10¹² J';return number(v,2)+' J';};
   const jInput=$('solar-j-eff');
   function readJ(){const raw=jInput?Number(jInput.value):1e-8;return Number.isFinite(raw)?Math.max(0,Math.min(1e-5,raw)):1e-8;}
-  function initialState(){return {version:2,ticks:0,initialSO2:INITIAL_SO2_SU,so2Remaining:INITIAL_SO2_SU,soMade:0,oMade:0,photolyzed:0,jEff:1e-8,solarEnergyGlobalJ:0,solarEnergyCellJ:0,photoEnergyJ:0,log:[],audit:{ran:false,ok:true,sulfur:true,oxygen:true,photons:true}};}
-  function load(){try{const x=JSON.parse(localStorage.getItem(STORAGE_KEY)||'null');if(!x||x.version!==2||!Number.isFinite(x.ticks)||!Number.isFinite(x.so2Remaining))return initialState();return x;}catch(e){return initialState();}}
+  function initialState(){return {version:3,ticks:0,initialSO2:INITIAL_SO2_SU,so2Remaining:INITIAL_SO2_SU,soMade:0,oMade:0,photolyzed:0,jEff:1e-8,solarEnergyGlobalJ:0,solarEnergyCellJ:0,photoEnergyJ:0,log:[],audit:{ran:false,ok:true,sulfur:true,oxygen:true,photons:true}};}
+  function load(){try{const x=JSON.parse(localStorage.getItem(STORAGE_KEY)||'null');if(!x||x.version!==3||!Number.isFinite(x.ticks)||!Number.isFinite(x.so2Remaining))return initialState();return x;}catch(e){return initialState();}}
   let state=load();
   function save(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(state));}catch(e){}}
   function audit(){
@@ -968,15 +1063,207 @@ if(oceanSlider){oceanSlider.addEventListener('input',updateHydrosphere);updateHy
     save();render();
     return {ok:a.ok,extent:safeExtent,audit:a};
   }
+  function injectSO2(su){const n=Number(su);if(!Number.isFinite(n)||n<=0)return false;state.initialSO2+=n;state.so2Remaining+=n;save();render();return true;}
   function reset(){const keepJ=readJ();state=initialState();state.jEff=keepJ;save();render();}
-  function restore(snapshot){try{const copy=JSON.parse(JSON.stringify(snapshot));if(!copy||copy.version!==2||!Number.isFinite(copy.ticks)||!Number.isFinite(copy.so2Remaining))return false;state=copy;save();render();return true;}catch(e){return false;}}
+  function restore(snapshot){try{const copy=JSON.parse(JSON.stringify(snapshot));if(!copy||copy.version!==3||!Number.isFinite(copy.ticks)||!Number.isFinite(copy.so2Remaining))return false;state=copy;save();render();return true;}catch(e){return false;}}
   function setRate(value){const j=Number(value);if(!Number.isFinite(j))return;state.jEff=Math.max(0,Math.min(1e-5,j));save();render();}
   if(jInput){jInput.value=String(state.jEff);jInput.addEventListener('change',()=>setRate(readJ()));jInput.addEventListener('input',()=>{const v=Number(jInput.value);if(Number.isFinite(v)&&v>=0&&v<=1e-5){state.jEff=v;save();}});}
   render();
-  window.WorldArkeanSolarEngine={stepTick,reset,restore,render,getState:()=>JSON.parse(JSON.stringify(state)),config:{solarConstant:SOLAR_TOA,globalMeanIncident:GLOBAL_MEAN_INCIDENT,absorbedFlux:ABSORBED_FLUX,globalAbsorbedPower:GLOBAL_ABSORBED_POWER,cellAbsorbedPower:CELL_ABSORBED_POWER,tickSeconds:TICK_SECONDS,initialSO2:INITIAL_SO2_SU,photonEnergyMolar:PHOTON_ENERGY_MOLAR}};
+  window.WorldArkeanSolarEngine={stepTick,reset,restore,injectSO2,render,getState:()=>JSON.parse(JSON.stringify(state)),config:{solarConstant:SOLAR_TOA,globalMeanIncident:GLOBAL_MEAN_INCIDENT,absorbedFlux:ABSORBED_FLUX,globalAbsorbedPower:GLOBAL_ABSORBED_POWER,cellAbsorbedPower:CELL_ABSORBED_POWER,tickSeconds:TICK_SECONDS,initialSO2:INITIAL_SO2_SU,photonEnergyMolar:PHOTON_ENERGY_MOLAR}};
 })();
 
-// ---------------- MSAB regional v0.6 executable simulation core ----------------
+
+// ---------------- World Arkean Earth Systems Engine v0.1 ----------------
+(function initWorldArkeanEarthSystems(){
+  const SU_MOL=1e15, MW_H2O=0.01801528, R_V=461.5, G=9.82;
+  const EARTH_AREA_M2=510064471.90978825*1e6, OCEAN_FRACTION=0.90, LAND_FRACTION=0.10;
+  const OCEAN_AREA_M2=EARTH_AREA_M2*OCEAN_FRACTION, LAND_AREA_M2=EARTH_AREA_M2*LAND_FRACTION;
+  const TICK_SECONDS=43200, LATENT_HEAT=2.45e6, CP_WATER=4200;
+  const SURFACE_TEMP_C=25, SURFACE_TEMP_K=298.15, RH_INITIAL=0.70, VAPOR_SCALE_HEIGHT_M=2000;
+  const SURFACE_VAPOR_PRESSURE_PA=2220, ENV_LAPSE_K_KM=8.0, MOIST_ADIABAT_K_KM=6.5;
+  const OCEAN_LATENT_FLUX_WM2=40, LAND_EVAP_FLUX_WM2=3;
+  const STORM_AREA_KM2=100000, CHARGE_POWER_DENSITY_WM2=0.0002, LIGHTNING_ENERGY_J=1e9;
+  const LIGHTNING_CHEM_EFFICIENCY=0.0001, LIGHTNING_NET_DH_J_MOL=746500;
+  const STORAGE_KEY='worldArkeanEarthSystemsV01';
+  const $=id=>document.getElementById(id);
+  const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+  const fmt=(v,d=2)=>Number(v).toLocaleString('id-ID',{maximumFractionDigits:d,minimumFractionDigits:d});
+  const sci=v=>Number(v).toExponential(4).replace('.',',').replace('e+',' × 10^').replace('e-',' × 10^-');
+  const massKg=su=>su*SU_MOL*MW_H2O;
+  const toSU=kg=>kg/MW_H2O/SU_MOL;
+  const vaporDensity=SURFACE_VAPOR_PRESSURE_PA/(R_V*SURFACE_TEMP_K);
+  const INITIAL_VAPOR_KG=vaporDensity*VAPOR_SCALE_HEIGHT_M*EARTH_AREA_M2;
+  const INITIAL_VAPOR_SU=toSU(INITIAL_VAPOR_KG);
+  const SATURATION_CAPACITY_SU=INITIAL_VAPOR_SU/RH_INITIAL;
+  const EVAP_OCEAN_SU=TICK_SECONDS*OCEAN_LATENT_FLUX_WM2*OCEAN_AREA_M2/LATENT_HEAT/MW_H2O/SU_MOL;
+  const EVAP_LAND_CAP_SU=TICK_SECONDS*LAND_EVAP_FLUX_WM2*LAND_AREA_M2/LATENT_HEAT/MW_H2O/SU_MOL;
+  const MAGMA_DEFAULT={h2oSU:0,co2SU:0,so2SU:0,overpressureMPa:0,pressureBuildMPaYr:0,thresholdMPa:10};
+
+  function initialState(){
+    return {version:1,ticks:0,waterVaporSU:INITIAL_VAPOR_SU,cloudWaterSU:0,landSurfaceSU:0,groundwaterSU:0,
+      gases:{n2SU:55624.8712,co2SU:11802.3136,coSU:7.4175,noSU:0},
+      initialGases:{n2SU:55624.8712,co2SU:11802.3136,coSU:7.4175},
+      cumulative:{evapOceanSU:0,evapLandSU:0,condensedSU:0,rainSU:0,infiltrationSU:0,runoffSU:0,baseflowSU:0,lightning:0,lightningEnergyJ:0,lightningChemExtentSU:0,co2ConsumedSU:0,n2ConsumedSU:0,noMadeSU:0,coMadeSU:0,hydrothermalM3:0,hydrothermalKg:0,hydrothermalHeatJ:0,plumeTicks:0,rainMm:0,volcanicEruptions:0,volcanicAshKg:0,volcanicLightning:0,volcanicGasReleasedSU:0},
+      last:{evapSU:0,condSU:0,rainSU:0,rainMm:0,flowM3s:0,heatW:0,lightning:0,lightningChemSU:0,cloudTopKm:0,cloudBaseKm:0,convectiveIndex:0,updraftMps:0,rh:RH_INITIAL,mixedPhase:false,chargePowerW:0,chargeEnergyJ:0,volcanoEvent:false,waterResidualSU:0},
+      chargeEnergyJ:0,volcanic:{...MAGMA_DEFAULT,magmaH2OSU:0,magmaCO2SU:0,magmaSO2SU:0,ashKg:0,overpressureMPa:0,cooldownTicks:0,lastEventTick:0},audit:{ran:false,ok:true,water:true,chemistry:true},log:[]};
+  }
+  let state=load();
+  function load(){try{const s=JSON.parse(localStorage.getItem(STORAGE_KEY)||'null');if(!s||s.version!==1||!Number.isFinite(s.ticks)||!s.cumulative)return initialState();return s;}catch(e){return initialState();}}
+  function save(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(state));}catch(e){}}
+  function humidity(){return clamp(state.waterVaporSU/SATURATION_CAPACITY_SU,0,1.5);}
+  function dewPoint(tempC,rh){const a=17.625,b=243.04;const r=clamp(rh,0.01,1.5);const gamma=Math.log(r)+a*tempC/(b+tempC);return b*gamma/(a-gamma);}
+  function climate(){
+    const rh=humidity();
+    const instability=clamp((ENV_LAPSE_K_KM-MOIST_ADIABAT_K_KM)/3,0,1);
+    const moisture=clamp(rh/RH_INITIAL,0,1);
+    const convectiveIndex=clamp(instability*moisture,0,1);
+    const td=dewPoint(SURFACE_TEMP_C,rh);
+    const cloudBaseKm=clamp(0.125*(SURFACE_TEMP_C-td),0.05,4.0);
+    const cloudTopKm=clamp(cloudBaseKm+1+9*convectiveIndex,cloudBaseKm,12);
+    const cloudTopTempC=SURFACE_TEMP_C-ENV_LAPSE_K_KM*cloudTopKm;
+    const updraftScale=Math.pow((G/SURFACE_TEMP_K)*(15*1000/(1.0*1004)),1/3);
+    const updraftMps=updraftScale*(1+3*convectiveIndex);
+    const stormCloudCapacitySU=(STORM_AREA_KM2*1e6*1.0)/(MW_H2O*SU_MOL);
+    const stormCloudSU=Math.min(state.cloudWaterSU,stormCloudCapacitySU);
+    const mixedPhase=cloudTopTempC<=-15 && cloudTopKm>=5 && stormCloudSU>=stormCloudCapacitySU*0.8 && convectiveIndex>=0.35;
+    return {rh,instability,convectiveIndex,dewPointC:td,cloudBaseKm,cloudTopKm,cloudTopTempC,updraftMps,mixedPhase,stormCloudSU,stormCloudCapacitySU};
+  }
+  function applyVolcanicInputs(){
+    const val=(id,d)=>{const n=Number($(id)?.value);return Number.isFinite(n)?Math.max(0,n):d;};
+    if(state.ticks>0){setText('volc-config-note','Parameter tidak diubah: reset simulasi terlebih dahulu agar inventaris volatil tidak ditambahkan dua kali.');return false;}
+    const cfg={h2oSU:val('volc-h2o',0),co2SU:val('volc-co2',0),so2SU:val('volc-so2',0),overpressureMPa:val('volc-overpressure',0),pressureBuildMPaYr:val('volc-overpressure-rate',0),thresholdMPa:Math.max(1,val('volc-threshold',10))};
+    state.volcanic={...state.volcanic,...cfg,magmaH2OSU:cfg.h2oSU,magmaCO2SU:cfg.co2SU,magmaSO2SU:cfg.so2SU,ashKg:0,cooldownTicks:0,lastEventTick:0};
+    state.initialGases.co2SU=11802.3136+cfg.co2SU;
+    save();render();setText('volc-config-note','Parameter diterapkan. Erupsi hanya dapat terjadi jika tekanan mencapai ambang dan inventaris volatil tersedia.');return true;
+  }
+  function runVolcanic(tick){
+    const v=state.volcanic;v.overpressureMPa+=v.pressureBuildMPaYr/730.5;
+    if(v.cooldownTicks>0)v.cooldownTicks--;
+    const volatileSU=v.magmaH2OSU+v.magmaCO2SU+v.magmaSO2SU;
+    if(v.cooldownTicks===0 && v.overpressureMPa>=v.thresholdMPa && volatileSU>0){
+      const release=0.01;
+      const h2o=v.magmaH2OSU*release,co2=v.magmaCO2SU*release,so2=v.magmaSO2SU*release;
+      v.magmaH2OSU-=h2o;v.magmaCO2SU-=co2;v.magmaSO2SU-=so2;
+      state.waterVaporSU+=h2o;
+      state.gases.co2SU+=co2;
+      if(so2>0 && window.WorldArkeanSolarEngine?.injectSO2)window.WorldArkeanSolarEngine.injectSO2(so2);
+      // Event-size and ash yield are explicit scenario proxies, not a magma-dynamics solution.
+      const magmaVolumeKm3=0.005, magmaDensity=3000, ashFraction=0.01;
+      const eruptedMass=magmaVolumeKm3*1e9*magmaDensity;
+      const ashKg=eruptedMass*ashFraction;
+      v.ashKg+=ashKg;v.overpressureMPa=Math.max(0,v.overpressureMPa-v.thresholdMPa*0.75);v.cooldownTicks=20;v.lastEventTick=tick;
+      state.cumulative.volcanicEruptions++;state.cumulative.volcanicAshKg+=ashKg;state.cumulative.volcanicGasReleasedSU+=h2o+co2+so2;
+      const volcanicLightningEnergy=ashKg*100; // J/kg effective charging-energy proxy
+      const volcanicLightning=Math.floor(volcanicLightningEnergy/LIGHTNING_ENERGY_J);
+      state.cumulative.volcanicLightning+=volcanicLightning;
+      return {event:true,h2o,co2,so2,ashKg,volcanicLightning,volcanicLightningEnergy};
+    }
+    return {event:false,h2o:0,co2:0,so2:0,ashKg:0,volcanicLightning:0,volcanicLightningEnergy:0};
+  }
+  function stepTick(world,context){
+    if(state.ticks!==context.tick-1)return {ok:false,error:'Earth Systems tick tidak sinkron.',audit:{ok:false,water:false,chemistry:false}};
+    const before=world.oceanWaterSU+state.waterVaporSU+state.cloudWaterSU+state.landSurfaceSU+state.groundwaterSU+state.volcanic.magmaH2OSU;
+    const volcano=runVolcanic(context.tick);
+    const c=climate();
+    const evapOcean=Math.min(Math.max(0,world.oceanWaterSU),EVAP_OCEAN_SU);
+    world.oceanWaterSU-=evapOcean;
+    const soilEvap=Math.min(state.landSurfaceSU,EVAP_LAND_CAP_SU);
+    state.landSurfaceSU-=soilEvap;
+    state.waterVaporSU+=evapOcean+soilEvap;
+    const rhNow=humidity();
+    const baseCond=state.waterVaporSU*(0.01*c.convectiveIndex);
+    const excess=Math.max(0,state.waterVaporSU-SATURATION_CAPACITY_SU);
+    const cond=Math.min(state.waterVaporSU,Math.max(baseCond,excess*0.80));
+    state.waterVaporSU-=cond;
+    state.cloudWaterSU+=cond;
+    const cloudPhase=climate();
+    const precipEfficiency=cloudPhase.mixedPhase?0.25:0.15;
+    const rain=Math.min(state.cloudWaterSU,state.cloudWaterSU*precipEfficiency);
+    state.cloudWaterSU-=rain;
+    const rainOcean=rain*OCEAN_FRACTION;
+    const rainLand=rain*LAND_FRACTION;
+    state.landSurfaceSU+=rainLand;
+    const infiltration=state.landSurfaceSU*0.10;
+    const runoff=state.landSurfaceSU*0.05;
+    state.landSurfaceSU-=infiltration+runoff;
+    state.groundwaterSU+=infiltration;
+    const baseflow=state.groundwaterSU*0.0005;
+    state.groundwaterSU-=baseflow;
+    world.oceanWaterSU+=rainOcean+runoff+baseflow;
+    // Hydrothermal plume: water is recirculated, not created or permanently added to ocean volume.
+    const flowKgS=Math.max(0,context.hydrothermalMassFlowKgS||0);
+    const flowM3S=flowKgS/925;
+    const circulatedM3=flowM3S*TICK_SECONDS;
+    const heatJ=Math.max(0,context.heatUsedJ||0);
+    const plumeTempC=flowKgS>0?(context.hydrothermalTempC||25):25;
+    state.cumulative.hydrothermalM3+=circulatedM3;
+    state.cumulative.hydrothermalKg+=flowKgS*TICK_SECONDS;
+    state.cumulative.hydrothermalHeatJ+=heatJ;
+    if(flowKgS>0)state.cumulative.plumeTicks++;
+    // Atmospheric convection and mixed-phase cloud charging.
+    const mixed=cloudPhase.mixedPhase;
+    const ccnMultiplier=1+Math.min(0.5,state.volcanic.ashKg/1e10);
+    const stormAreaM2=STORM_AREA_KM2*1e6;
+    const chargePower=mixed?CHARGE_POWER_DENSITY_WM2*stormAreaM2*cloudPhase.convectiveIndex*ccnMultiplier:0;
+    state.chargeEnergyJ+=chargePower*TICK_SECONDS;
+    let lightning=Math.floor(state.chargeEnergyJ/LIGHTNING_ENERGY_J);
+    if(lightning>200000)lightning=200000;
+    const lightningEnergy=lightning*LIGHTNING_ENERGY_J;
+    state.chargeEnergyJ=Math.max(0,state.chargeEnergyJ-lightningEnergy);
+    // Balanced net plasma chemistry: N2 + 2 CO2 -> 2 NO + 2 CO.
+    // Yield is energy-limited and uses a small explicit effective efficiency.
+    const chemicalEnergy=lightningEnergy*LIGHTNING_CHEM_EFFICIENCY;
+    const xiMol=chemicalEnergy/LIGHTNING_NET_DH_J_MOL;
+    const xiSU=Math.min(xiMol/SU_MOL,state.gases.n2SU,state.gases.co2SU/2);
+    const n2Used=xiSU,co2Used=2*xiSU,noMade=2*xiSU,coMade=2*xiSU;
+    state.gases.n2SU-=n2Used;state.gases.co2SU-=co2Used;state.gases.noSU+=noMade;state.gases.coSU+=coMade;
+    state.cumulative.lightning+=lightning;state.cumulative.lightningEnergyJ+=lightningEnergy;
+    state.cumulative.lightningChemExtentSU+=xiSU;state.cumulative.co2ConsumedSU+=co2Used;state.cumulative.n2ConsumedSU+=n2Used;state.cumulative.noMadeSU+=noMade;state.cumulative.coMadeSU+=coMade;
+    const after=world.oceanWaterSU+state.waterVaporSU+state.cloudWaterSU+state.landSurfaceSU+state.groundwaterSU+state.volcanic.magmaH2OSU;
+    const residual=after-before;
+    const waterOk=Math.abs(residual)<Math.max(1e-8,Math.abs(before)*1e-12);
+    const chemOk=Math.abs((state.initialGases.n2SU-state.gases.n2SU)-state.cumulative.n2ConsumedSU)<1e-8 && Math.abs((state.initialGases.co2SU-(state.gases.co2SU+state.volcanic.magmaCO2SU))-state.cumulative.co2ConsumedSU)<1e-8 && Math.abs((state.gases.noSU)-state.cumulative.noMadeSU)<1e-8 && Math.abs((state.gases.coSU-state.initialGases.coSU)-state.cumulative.coMadeSU)<1e-8;
+    state.ticks++;
+    const rainfallMm=massKg(rain)/(EARTH_AREA_M2); // kg/m2 = mm
+    state.cumulative.evapOceanSU+=evapOcean;state.cumulative.evapLandSU+=soilEvap;state.cumulative.condensedSU+=cond;state.cumulative.rainSU+=rain;
+    state.cumulative.infiltrationSU+=infiltration;state.cumulative.runoffSU+=runoff;state.cumulative.baseflowSU+=baseflow;state.cumulative.rainMm+=rainfallMm;
+    const cloudIce= mixed?state.cloudWaterSU*0.35:0;const graupel=mixed?state.cloudWaterSU*0.15:0;const cloudLiquid=state.cloudWaterSU-cloudIce-graupel;
+    state.last={evapSU:evapOcean,landEvapSU:soilEvap,condSU:cond,rainSU:rain,rainOceanSU:rainOcean,rainLandSU:rainLand,infiltrationSU:infiltration,runoffSU:runoff,baseflowSU:baseflow,rainMm:rainfallMm,flowM3s:flowM3S,heatW:heatJ/TICK_SECONDS,plumeTempC,lightning,lightningChemSU:xiSU,cloudLiquidSU:cloudLiquid,cloudIceSU:cloudIce,graupelSU:graupel,cloudTopKm:cloudPhase.cloudTopKm,cloudBaseKm:cloudPhase.cloudBaseKm,cloudTopTempC:cloudPhase.cloudTopTempC,convectiveIndex:cloudPhase.convectiveIndex,updraftMps:cloudPhase.updraftMps,rh:cloudPhase.rh,mixedPhase:mixed,chargePowerW:chargePower,chargeEnergyJ:state.chargeEnergyJ,waterResidualSU:residual,volcanoEvent:volcano.event,volcanicLightning:volcano.volcanicLightning,ccnMultiplier};
+    state.audit={ran:true,ok:waterOk&&chemOk,water:waterOk,chemistry:chemOk,residual};
+    const log={tick:state.ticks,rainMm:rainfallMm,evapSU:evapOcean,condSU:cond,lightning,coMadeSU:coMade,noMadeSU:noMade,hydrothermalM3:circulatedM3,volcano:volcano.event?'ERUPSI':'—',audit:waterOk&&chemOk?'OK':'CHECK'};
+    state.log.push(log);if(state.log.length>240)state.log.shift();
+    save();render();
+    return {ok:waterOk&&chemOk,audit:{...state.audit,rainMm:rainfallMm},waterResidualSU:residual,lightning,rainSU:rain,rainMm:rainfallMm,volcano};
+  }
+  function reset(){state=initialState();save();render();}
+  function restore(snapshot){try{const s=JSON.parse(JSON.stringify(snapshot));if(!s||s.version!==1||!Number.isFinite(s.ticks)||!s.cumulative)return false;state=s;save();render();return true;}catch(e){return false;}}
+  function setText(id,value){const e=$(id);if(e)e.textContent=value;}
+  function formatEnergy(j){if(j>=1e15)return fmt(j/1e15,3)+' PJ';if(j>=1e12)return fmt(j/1e12,3)+' TJ';if(j>=1e9)return fmt(j/1e9,3)+' GJ';return fmt(j,2)+' J';}
+  function render(){
+    const c=climate();const mm=state.last.rainMm||0;
+    const vaporKg=massKg(state.waterVaporSU),cloudKg=massKg(state.cloudWaterSU),landKg=massKg(state.landSurfaceSU+state.groundwaterSU);
+    setText('hydro-vapor',fmt(vaporKg/1e15,3)+' × 10¹⁵ kg');setText('hydro-vapor-surface',fmt(state.waterVaporSU,2)+' SU · skala uap 2 km');
+    setText('hydro-cloud',fmt(cloudKg/1e12,3)+' × 10¹² kg');setText('hydro-rain-cum',fmt(state.cumulative.rainMm,3)+' mm');setText('hydro-rain-rate',fmt(mm*2,4)+' mm/hari ekuivalen tick');
+    setText('hydro-land-store',fmt(landKg/1e12,3)+' × 10¹² kg');setText('hydro-cloud-liquid',fmt(state.last.cloudLiquidSU||0,5)+' SU');setText('hydro-cloud-ice',fmt(state.last.cloudIceSU||0,5)+' SU');setText('hydro-cloud-graupel',fmt(state.last.graupelSU||0,5)+' SU');
+    setText('hydro-evap-tick',fmt(state.last.evapSU,6)+' SU');setText('hydro-cond-tick',fmt(state.last.condSU,6)+' SU');setText('hydro-rain-tick',fmt(state.last.rainSU,6)+' SU');setText('hydro-rain-ocean',fmt(state.last.rainSU*OCEAN_FRACTION,6)+' SU');setText('hydro-infiltration',fmt(state.cumulative.infiltrationSU,6)+' SU total');setText('hydro-return',fmt((state.last.runoffSU||0)+(state.last.baseflowSU||0),6)+' SU/tick');
+    setText('hydro-residual',sci(state.audit.residual||0)+' SU');const ha=$('hydro-audit');if(ha){ha.textContent=state.audit.ran?(state.audit.ok?'NERACA LULUS':'AUDIT GAGAL'):'MENUNGGU TICK';ha.className='earth-state '+(state.audit.ran&&!state.audit.ok?'wait':'');}
+    const hs=$('hydro-status');if(hs){hs.textContent=state.ticks?'SIKLUS BERJALAN':'MENUNGGU SIMULASI';hs.className='earth-state '+(!state.ticks?'wait':'');}
+    setText('ocean-circ-flow',fmt(state.last.flowM3s,3)+' m³/s');setText('ocean-circ-volume',fmt(state.cumulative.hydrothermalM3/1e9,6)+' km³');setText('ocean-circ-temp',fmt(state.last.plumeTempC||25,1)+' °C');setText('ocean-circ-heat',formatEnergy(state.last.heatW*TICK_SECONDS));
+    const oceanMass=1.4e21;const dT=state.last.heatW*TICK_SECONDS/(oceanMass*CP_WATER);setText('ocean-circ-global-dt',sci(dT)+' °C/tick');setText('ocean-circ-water-mass',fmt(state.cumulative.hydrothermalKg/1e15,4)+' × 10¹⁵ kg');
+    setText('atm-rh',fmt(c.rh*100,2)+'%');setText('atm-cloud-base',fmt(c.cloudBaseKm,2)+' km');setText('atm-cloud-top',fmt(c.cloudTopKm,2)+' km');setText('atm-conv-index',fmt(c.convectiveIndex,3));setText('atm-surface-temp',SURFACE_TEMP_C+' °C');setText('atm-cloudtop-temp',fmt(c.cloudTopTempC,1)+' °C');setText('atm-updraft',fmt(c.updraftMps,2)+' m/s');setText('atm-cloud-phase',c.mixedPhase?'Campuran superdingin–es–graupel':'Dominan cair / campuran belum siap');setText('atm-storm-cloud',fmt(c.stormCloudSU,6)+' SU / area '+fmt(STORM_AREA_KM2,0)+' km²');
+    const mr=$('elec-mixed-ready');if(mr)mr.textContent=c.mixedPhase?'SIAP':'BELUM';setText('elec-charge-energy',formatEnergy(state.chargeEnergyJ));setText('elec-strikes-tick',fmt(state.last.lightning||0,0));setText('elec-strikes-total',fmt(state.cumulative.lightning,0));setText('elec-co2-used',fmt(state.cumulative.co2ConsumedSU,12)+' SU');setText('elec-n2-used',fmt(state.cumulative.n2ConsumedSU,12)+' SU');setText('elec-no-made',fmt(state.cumulative.noMadeSU,12)+' SU');setText('elec-co-made',fmt(state.cumulative.coMadeSU,12)+' SU');
+    const es=$('elec-status');if(es){es.textContent=c.mixedPhase?'POTENSI PEMISAHAN MUATAN':'MENUNGGU AWAN CAMPURAN';es.className='earth-state '+(c.mixedPhase?'':'wait');}
+    const v=state.volcanic;setText('volcano-status',state.last.volcanoEvent?'ERUPSI TERJADI':(v.magmaH2OSU+v.magmaCO2SU+v.magmaSO2SU>0?'MENUNGGU PEMICU':'DORMAN'));
+    setText('volcano-count',fmt(state.cumulative.volcanicEruptions,0));setText('volcano-ash',fmt(state.cumulative.volcanicAshKg,3)+' kg');setText('volcano-lightning',fmt(state.cumulative.volcanicLightning,0));setText('volcano-h2o-left',fmt(v.magmaH2OSU,6)+' SU');setText('volcano-co2-left',fmt(v.magmaCO2SU,6)+' SU');setText('volcano-so2-left',fmt(v.magmaSO2SU,8)+' SU');setText('volcano-pressure',fmt(v.overpressureMPa,3)+' MPa');setText('volcano-ccn',fmt(1+Math.min(0.5,v.ashKg/1e10),3)+'×');setText('volcano-gas-released',fmt(state.cumulative.volcanicGasReleasedSU,8)+' SU');
+    setText('volcano-pressure',fmt(v.overpressureMPa,3)+' MPa');
+  }
+  const applyBtn=$('volc-apply');if(applyBtn)applyBtn.addEventListener('click',applyVolcanicInputs);
+  render();
+  window.WorldArkeanEarthSystems={stepTick,reset,restore,render,getState:()=>JSON.parse(JSON.stringify(state)),applyVolcanicInputs,config:{tickSeconds:TICK_SECONDS,initialVaporSU:INITIAL_VAPOR_SU,saturationVaporSU:SATURATION_CAPACITY_SU,initialVaporMassKg:INITIAL_VAPOR_KG,vaporScaleHeightM:VAPOR_SCALE_HEIGHT_M,oceanAreaM2:OCEAN_AREA_M2,landAreaM2:LAND_AREA_M2,evapOceanSUPerTick:EVAP_OCEAN_SU,stormAreaKm2:STORM_AREA_KM2,chargePowerDensityWm2:CHARGE_POWER_DENSITY_WM2,lightningEnergyJ:LIGHTNING_ENERGY_J}};
+})();
+
+
+// ---------------- MSAB regional v0.7 + global Earth systems coupled simulation core ----------------
 (function initWorldArkeanSimulation(){
   const TICK_HOURS = 12;
   const TICK_SECONDS = TICK_HOURS * 3600;
@@ -1087,7 +1374,7 @@ if(oceanSlider){oceanSlider.addEventListener('input',updateHydrosphere);updateHy
     const magmaMass=simDefaults.magmaVolumeKm3*1e9*simDefaults.magmaDensity;
     const heatCapacity=magmaMass*simDefaults.cpRock*(simDefaults.magmaStartC-simDefaults.magmaFloorC);
     return {
-      version:10,ticks:0,hours:0,localWaterSU:pore.waterSU,oceanWaterSU:Math.max(0,oceanTotal-pore.waterSU),
+      version:11,ticks:0,hours:0,localWaterSU:pore.waterSU,oceanWaterSU:Math.max(0,oceanTotal-pore.waterSU),
       waterCapacitySU:pore.waterSU,initialOceanWaterSU:oceanTotal,
       minerals:{...alloc},initialMinerals:{...alloc},
       unallocatedGlobal:{maficFo:GLOBAL.maficFo-alloc.maficFo,maficFa:GLOBAL.maficFa-alloc.maficFa,ultraFo:GLOBAL.ultraFo-alloc.ultraFo,ultraFa:GLOBAL.ultraFa-alloc.ultraFa},
@@ -1100,19 +1387,20 @@ if(oceanSlider){oceanSlider.addEventListener('input',updateHydrosphere);updateHy
   }
   let state;
   const runControl={mode:'stopped',resumeMode:null,timer:null,targetTick:null,startTick:0,lastMessage:'Belum berjalan',error:''};
-  const storageKey='worldArkeanMSABv10';
+  const storageKey='worldArkeanMSABv11';
   function loadState(){
     try{
       const raw=localStorage.getItem(storageKey);
       if(!raw) return initialState();
       const parsed=JSON.parse(raw);
-      if(parsed.version!==10 || !parsed.minerals || !parsed.products || !Number.isFinite(parsed.ticks)) return initialState();
+      if(parsed.version!==11 || !parsed.minerals || !parsed.products || !Number.isFinite(parsed.ticks)) return initialState();
       // The world-state snapshot is authoritative if a browser closes between subsystem saves.
       if(parsed.solarSnapshot && window.WorldArkeanSolarEngine) window.WorldArkeanSolarEngine.restore(parsed.solarSnapshot);
+      if(parsed.earthSnapshot && window.WorldArkeanEarthSystems) window.WorldArkeanEarthSystems.restore(parsed.earthSnapshot);
       return parsed;
     }catch(e){return initialState();}
   }
-  function saveState(){try{if(window.WorldArkeanSolarEngine)state.solarSnapshot=window.WorldArkeanSolarEngine.getState();localStorage.setItem(storageKey,JSON.stringify(state));}catch(e){}}
+  function saveState(){try{if(window.WorldArkeanSolarEngine)state.solarSnapshot=window.WorldArkeanSolarEngine.getState();if(window.WorldArkeanEarthSystems)state.earthSnapshot=window.WorldArkeanEarthSystems.getState();localStorage.setItem(storageKey,JSON.stringify(state));}catch(e){}}
   function parameters(){
     const val=(id,fallback)=>{const el=byId(id);const n=el?Number(el.value):fallback;return Number.isFinite(n)?n:fallback;};
     const fracturePerm=Math.max(1e-17,Math.min(1e-12,val('sim-perm',1e-14)));
@@ -1215,6 +1503,7 @@ if(oceanSlider){oceanSlider.addEventListener('input',updateHydrosphere);updateHy
       state.productsByHost[key].h2Ocean+=hostOut;
     }
 
+    const earthStep=window.WorldArkeanEarthSystems?window.WorldArkeanEarthSystems.stepTick(state,{tick:state.ticks+1,hydrothermalMassFlowKgS:actualMass,hydrothermalTempC:actualTemp,heatUsedJ:heatUsed,phase,solarStep}):{ok:false,audit:{ok:false}};
     state.heatRemainingJ=Math.max(0,state.heatRemainingJ-heatUsed);
     state.ticks+=1;
     state.hours+=TICK_HOURS;
@@ -1238,10 +1527,10 @@ if(oceanSlider){oceanSlider.addEventListener('input',updateHydrosphere);updateHy
     const heatBalanceOk=heatResidual<=Math.max(1e-4,state.heatInitialJ*1e-12);
     const hydrogenByHost=state.productsByHost.mafic.h2Aq+state.productsByHost.mafic.h2Ocean+state.productsByHost.ultra.h2Aq+state.productsByHost.ultra.h2Ocean;
     const hydrogenBalanceOk=Math.abs((state.products.h2Aq+state.products.h2Ocean)-state.cumulative.h2Produced)<1e-12 && Math.abs(hydrogenByHost-state.cumulative.h2Produced)<1e-12;
-    const auditOk=CHECK_FO.ok&&CHECK_FA.ok&&MASS_FO.ok&&MASS_FA.ok&&waterBalanceOk&&heatBalanceOk&&mineralBalanceOk&&hydrogenBalanceOk&&solarStep.ok;
-    state.audit={ran:true,ok:auditOk,fo:CHECK_FO.ok&&MASS_FO.ok,fa:CHECK_FA.ok&&MASS_FA.ok,water:waterBalanceOk,heat:heatBalanceOk,mineral:mineralBalanceOk,hydrogen:hydrogenBalanceOk,solar:solarStep.ok};
+    const auditOk=CHECK_FO.ok&&CHECK_FA.ok&&MASS_FO.ok&&MASS_FA.ok&&waterBalanceOk&&heatBalanceOk&&mineralBalanceOk&&hydrogenBalanceOk&&solarStep.ok&&earthStep.ok;
+    state.audit={ran:true,ok:auditOk,fo:CHECK_FO.ok&&MASS_FO.ok,fa:CHECK_FA.ok&&MASS_FA.ok,water:waterBalanceOk,heat:heatBalanceOk,mineral:mineralBalanceOk,hydrogen:hydrogenBalanceOk,solar:solarStep.ok,earth:earthStep.ok};
 
-    const entry={tick:state.ticks,phase,hours:state.hours,tempC:actualTemp,foUsed,faUsed,h2:h2Produced,water:waterConsumed,flow:actualMass,residenceDays:residence/86400,so2Photolyzed:solarStep.extent||0,audit:auditOk?'OK':'CHECK'};
+    const entry={tick:state.ticks,phase,hours:state.hours,tempC:actualTemp,foUsed,faUsed,h2:h2Produced,water:waterConsumed,flow:actualMass,residenceDays:residence/86400,so2Photolyzed:solarStep.extent||0,rainMm:earthStep.rainMm||0,lightning:earthStep.lightning||0,audit:auditOk?'OK':'CHECK'};
     state.log.push(entry);
     if(state.log.length>120)state.log.shift();
     return entry;
@@ -1331,7 +1620,7 @@ if(oceanSlider){oceanSlider.addEventListener('input',updateHydrosphere);updateHy
     clearRunTimer();runControl.mode='stopped';runControl.resumeMode=null;runControl.targetTick=null;setRunMessage('Berhenti atas perintah pengguna; progres tetap tersimpan.');saveState();render();
   }
   function reset(){
-    clearRunTimer();runControl.mode='stopped';runControl.resumeMode=null;runControl.targetTick=null;runControl.startTick=0;runControl.error='';setRunMessage('Seluruh simulasi dunia direset.');if(window.WorldArkeanSolarEngine)window.WorldArkeanSolarEngine.reset();state=initialState();saveState();render();
+    clearRunTimer();runControl.mode='stopped';runControl.resumeMode=null;runControl.targetTick=null;runControl.startTick=0;runControl.error='';setRunMessage('Seluruh simulasi dunia direset.');if(window.WorldArkeanSolarEngine)window.WorldArkeanSolarEngine.reset();if(window.WorldArkeanEarthSystems)window.WorldArkeanEarthSystems.reset();state=initialState();saveState();render();
   }
 
   function render(){
@@ -1420,7 +1709,8 @@ if(oceanSlider){oceanSlider.addEventListener('input',updateHydrosphere);updateHy
     byId('sim-audit-mineral').innerHTML=state.audit.ran?(state.audit.mineral?'<span class="sim-status-ok">OK · pool global = tersisa + terpakai</span>':'<span class="sim-status-bad">GAGAL</span>'):'Menunggu tick';
     byId('sim-audit-hydrogen').innerHTML=state.audit.ran?(state.audit.hydrogen?'<span class="sim-status-ok">OK · H₂ terlarut + H₂ samudra = terbentuk</span>':'<span class="sim-status-bad">GAGAL</span>'):'Menunggu tick';
     const solarAuditEl=byId('sim-audit-solar');if(solarAuditEl&&state.audit.ran)solarAuditEl.innerHTML=(state.audit.solar?'<span class="sim-status-ok">OK · atom S dan O seimbang</span>':'<span class="sim-status-bad">GAGAL · neraca fotokimia</span>');
-    if(window.WorldArkeanSolarEngine)window.WorldArkeanSolarEngine.render();
+    const earthAuditEl=byId('sim-audit-earth');if(earthAuditEl&&state.audit.ran)earthAuditEl.innerHTML=(state.audit.earth?'<span class="sim-status-ok">OK · air atmosfer–samudera tertutup</span>':'<span class="sim-status-bad">GAGAL · sistem Bumi</span>');
+    if(window.WorldArkeanSolarEngine)window.WorldArkeanSolarEngine.render();if(window.WorldArkeanEarthSystems)window.WorldArkeanEarthSystems.render();
     const log=byId('sim-log-body');
     if(state.log.length){
       log.innerHTML=[...state.log].reverse().map(x=>`<tr><td>${x.tick}</td><td>${x.phase}</td><td>${fmt(x.hours,0)} jam</td><td>${fmt(x.tempC,1)} °C</td><td>${sci(x.foUsed)}</td><td>${sci(x.faUsed)}</td><td>${sci(x.h2)}</td><td>${sci(x.water)}</td><td class="${x.audit==='OK'?'sim-status-ok':'sim-status-bad'}">${x.audit}</td></tr>`).join('');
@@ -1428,11 +1718,11 @@ if(oceanSlider){oceanSlider.addEventListener('input',updateHydrosphere);updateHy
     renderRunControls();
   }
   function exportCSV(){
-    const rows=[['tick','fase','jam_kumulatif','temperatur_C','Fo_dipakai_SU','Fa_dipakai_SU','H2_dibuat_SU','H2O_dipakai_SU','SO2_fotolisis_SU','debit_kg_s','waktu_tinggal_hari','audit']];
-    for(const x of state.log)rows.push([x.tick,x.phase,x.hours,x.tempC,x.foUsed,x.faUsed,x.h2,x.water,x.so2Photolyzed,x.flow,x.residenceDays,x.audit]);
+    const rows=[['tick','fase','jam_kumulatif','temperatur_C','Fo_dipakai_SU','Fa_dipakai_SU','H2_dibuat_SU','H2O_dipakai_SU','SO2_fotolisis_SU','hujan_mm','petir','debit_kg_s','waktu_tinggal_hari','audit']];
+    for(const x of state.log)rows.push([x.tick,x.phase,x.hours,x.tempC,x.foUsed,x.faUsed,x.h2,x.water,x.so2Photolyzed,x.rainMm||0,x.lightning||0,x.flow,x.residenceDays,x.audit]);
     const csv=rows.map(r=>r.map(v=>'"'+String(v??'').replace(/"/g,'""')+'"').join(',')).join('\n');
     const blob=new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8;'});
-    const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='World_Arkean_v1.1_log.csv';document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);
+    const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='World_Arkean_v1.3_log.csv';document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);
   }
 
   state=loadState();
@@ -1454,7 +1744,7 @@ if(oceanSlider){oceanSlider.addEventListener('input',updateHydrosphere);updateHy
     for(const id of ['sim-temp','sim-perm','sim-drho','sim-power'])byId(id).addEventListener('change',render);
     render();
   }
-  window.WorldArkeanSim={startAutomatic,startScheduled,pause:pauseSimulation,resume:resumeSimulation,stop:stopSimulation,reset,getState:()=>JSON.parse(JSON.stringify(state)),check:{fo:CHECK_FO,fa:CHECK_FA,massFo:MASS_FO,massFa:MASS_FA},config:{tickHours:TICK_HOURS,regionAreaKm2:CELL_AREA_KM2,cellShare:CELL_SHARE,cellAllocation:localAllocation(),pore:poreData(),kinetics:KINETICS,fractureAreaFraction:0.20,matrixAreaFraction:0.80,matrixPermeability:1200/(500/1e-14+700/1e-17),effectivePermeability:parameters().permeability,fracturePermeability:parameters().fracturePermeability,regionalPowerMW:30000,regionalMagmaVolumeKm3:500,regionalHeatCapacityJ:1.35e21}};
+  window.WorldArkeanSim={startAutomatic,startScheduled,pause:pauseSimulation,resume:resumeSimulation,stop:stopSimulation,reset,getState:()=>JSON.parse(JSON.stringify(state)),check:{fo:CHECK_FO,fa:CHECK_FA,massFo:MASS_FO,massFa:MASS_FA},config:{tickHours:TICK_HOURS,regionAreaKm2:CELL_AREA_KM2,cellShare:CELL_SHARE,cellAllocation:localAllocation(),pore:poreData(),kinetics:KINETICS,fractureAreaFraction:0.20,matrixAreaFraction:0.80,matrixPermeability:1200/(500/1e-14+700/1e-17),effectivePermeability:parameters().permeability,fracturePermeability:parameters().fracturePermeability,regionalPowerMW:30000,regionalMagmaVolumeKm3:500,regionalHeatCapacityJ:1.35e21,earthSystems:window.WorldArkeanEarthSystems?.config||null}};
 })();
 
 </script>
@@ -1493,7 +1783,11 @@ if(oceanSlider){oceanSlider.addEventListener('input',updateHydrosphere);updateHy
     const totalLiquidKg=suKg(s.oceanWaterSU+s.localWaterSU,0.01801528);
     set('world-ocean-water',massText(oceanWaterKg));
     set('world-ocean-water-note',nf(oceanWaterKg/1e21,2)+' miliar km³ air laut');
-    set('world-co2',GAS.co2.bar);
+    const es=window.WorldArkeanEarthSystems?.getState?.();
+    const pbar=(su,mw)=>((su*1e15*mw*9.82/510064471909788.25)/1e5);
+    const fmtBar=(v)=>v>=0.001?nf(v,5)+' bar':v>0?Number(v).toExponential(3)+' bar':'≈ 0 bar';
+    if(es){set('world-co2',fmtBar(pbar(es.gases.co2SU,0.04401)));set('world-co2-gas',fmtBar(pbar(es.gases.co2SU,0.04401)));set('world-co2-mass',massText(suKg(es.gases.co2SU,0.04401))+' · stok dinamis');set('world-n2',fmtBar(pbar(es.gases.n2SU,0.028014)));set('world-co',fmtBar(pbar(es.gases.coSU,0.02801)));set('world-no',fmtBar(pbar(es.gases.noSU,0.030006)));set('world-co2-note',nf(es.gases.co2SU,6)+' SU');set('world-n2-note',nf(es.gases.n2SU,6)+' SU');set('world-co-note',nf(es.gases.coSU,8)+' SU');set('world-no-note',nf(es.gases.noSU,10)+' SU dari petir');set('atmo-n2-pressure',fmtBar(pbar(es.gases.n2SU,0.028014)));set('atmo-n2-stock',nf(es.gases.n2SU,6)+' SU');set('atmo-co2-pressure',fmtBar(pbar(es.gases.co2SU,0.04401)));set('atmo-co2-stock',nf(es.gases.co2SU,6)+' SU');set('atmo-co-pressure',fmtBar(pbar(es.gases.coSU,0.02801)));set('atmo-co-stock',nf(es.gases.coSU,8)+' SU');set('atmo-h2o-stock',nf(es.waterVaporSU,3)+' SU');set('world-no-made',nf(es.cumulative.noMadeSU*1e15,3)+' mol');set('world-vapor',massText(suKg(es.waterVaporSU,0.01801528)));set('world-rain-total',nf(es.cumulative.rainMm,3)+' mm');set('world-lightning-total',nf(es.cumulative.lightning,0));set('atmo-no-pressure',fmtBar(pbar(es.gases.noSU,0.030006)));set('atmo-no-stock',nf(es.gases.noSU,10)+' SU');}
+    else set('world-co2',GAS.co2.bar);
     set('world-co2-mass',massText(GAS.co2.su*1e15*GAS.co2.mw)+' · stok awal');
     set('world-atmo-h2',GAS.h2.bar);
     set('world-atmo-h2-mass',massText(GAS.h2.su*1e15*GAS.h2.mw)+' · stok awal');
@@ -1518,8 +1812,8 @@ if(oceanSlider){oceanSlider.addEventListener('input',updateHydrosphere);updateHy
     if(solar){
       set('world-so',massText(suKg(solar.soMade,0.048063)));
       set('world-o-atom',massText(suKg(solar.oMade,0.015999)));
-      set('world-so2-used',nf(solar.photolyzed,6)+' SU');
-      set('world-so2-state',nf(100*(solar.so2Remaining/GAS.so2.su),4)+'% dari stok SO₂ awal tersisa');
+      set('world-so2-used',nf(solar.photolyzed,6)+' SU');set('world-so2',fmtBar(pbar(solar.so2Remaining,0.064066)));set('atmo-so2-pressure',fmtBar(pbar(solar.so2Remaining,0.064066)));set('atmo-so2-stock',nf(solar.so2Remaining,8)+' SU');
+      set('world-so2-state',nf(100*(solar.so2Remaining/Math.max(1e-30,solar.initialSO2)),4)+'% dari stok SO₂ awal tersisa');
     }
 
     // The hydrosphere page reports all remaining liquid water (ocean + connected pore reservoir).
