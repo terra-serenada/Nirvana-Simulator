@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#0b1719">
-<title>Terra Chemica — World Arkean v2.0 · Global multi-element audit</title>
+<title>Terra Chemica — World Arkean v2.1 · Global multi-element audit</title>
 <style>
 :root{--bg:#091315;--panel:#122427;--panel2:#172e31;--line:rgba(185,220,209,.13);--text:#e9f2ed;--muted:#9bb2aa;--mint:#83d6b2;--gold:#e6bd75;--blue:#82c9da;--coral:#dd967a;--purple:#b4a3da;--red:#d88c83;--r:18px}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(900px 560px at 80% -12%,rgba(59,125,108,.19),transparent 60%),#091315;color:var(--text);font:14px/1.55 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}.app{max-width:1450px;margin:auto;padding:22px 25px 46px}.top{display:flex;justify-content:space-between;gap:16px;align-items:center;margin-bottom:22px}.brand{display:flex;gap:12px;align-items:center}.logo{height:42px;width:42px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(145deg,#a0e5b6,#347c70);color:#123d39;font-size:23px;font-weight:900}.brand strong{font-size:12px;letter-spacing:.16em}.brand small{display:block;color:var(--muted);font-size:10px}.pills{display:flex;gap:8px;flex-wrap:wrap}.pill{border:1px solid var(--line);background:#112326;border-radius:30px;padding:6px 10px;font-size:10px;color:#c6d9d0}.dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--mint);margin-right:6px}.hero{border:1px solid rgba(153,213,190,.18);border-radius:24px;padding:27px 29px;background:linear-gradient(112deg,#193832,#132f32 58%,#132930);display:grid;grid-template-columns:1.2fr .8fr;gap:20px;align-items:center;position:relative;overflow:hidden}.eyebrow{font-size:10px;letter-spacing:.17em;text-transform:uppercase;color:var(--mint);font-weight:800}.hero h1{font-size:clamp(27px,4vw,42px);line-height:1.08;letter-spacing:-.04em;margin:10px 0}.hero p{font-size:13px;color:#bed0c7;max-width:720px;margin:0}.hero-tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:17px}.tag{font-size:10px;padding:5px 8px;border:1px solid rgba(190,226,207,.18);border-radius:8px;color:#d6e9df}.earth-wrap{display:grid;place-items:center;min-height:155px}.earth{height:150px;width:150px;border-radius:50%;background:radial-gradient(circle at 29% 27%,#8ec5a7,#3c8a7e 35%,#1e5359 70%,#0d2934);box-shadow:inset -22px -18px 34px #061d2680,0 0 38px #6db99c25;position:relative}.earth:before{content:"";position:absolute;inset:20px 22px 26px 18px;border-radius:48%;background:#a8b68a88;clip-path:polygon(12% 5%,52% 0,67% 18%,91% 17%,100% 48%,77% 62%,83% 83%,48% 100%,25% 79%,0 59%,14% 35%)}.earth:after{content:"";position:absolute;inset:-10px;border:1px solid #a8e0c440;border-radius:50%;transform:rotate(-18deg) scaleY(.31)}.nav{display:flex;gap:5px;overflow:auto;margin:18px 0;padding:6px;border:1px solid var(--line);border-radius:13px;background:#0d1c1e}.nav button{border:0;background:none;color:#9db4aa;padding:10px 14px;border-radius:9px;white-space:nowrap;font-weight:650;font-size:11px}.nav button.active{background:#83d6b21b;color:#d4f2df;box-shadow:inset 0 0 0 1px #83d6b236}.page{display:none}.page.active{display:block}.grid{display:grid;gap:14px}.kpis{grid-template-columns:repeat(4,minmax(0,1fr));margin-bottom:14px}.card{background:linear-gradient(155deg,#142a2d,#102124);border:1px solid var(--line);border-radius:var(--r);padding:17px;min-width:0}.klabel{font-size:10px;color:var(--muted)}.kvalue{font-size:26px;font-weight:780;letter-spacing:-.035em;margin:7px 0 1px;font-variant-numeric:tabular-nums}.knote{font-size:10px;color:#8da69b}.green{color:var(--mint)}.blue{color:var(--blue)}.gold{color:var(--gold)}.purple{color:var(--purple)}.two{grid-template-columns:1.1fr .9fr}.head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:14px}.head h2{font-size:17px;margin:0}.head p{font-size:10px;color:var(--muted);margin:4px 0 0}.smallcaps{font-size:9px;text-transform:uppercase;letter-spacing:.15em;color:var(--muted);font-weight:750}.metric-line{margin:12px 0}.line-label{display:flex;justify-content:space-between;gap:8px;font-size:10px;color:#c9d9d2;margin-bottom:5px}.track{height:8px;background:#233a3b;border-radius:20px;overflow:hidden}.fill{height:100%;border-radius:20px;background:linear-gradient(90deg,#69a98f,#b2dfb5)}.fill.gold{background:linear-gradient(90deg,#9c7c4a,#ebc47b)}.fill.blue{background:linear-gradient(90deg,#4f91a1,#9ad6e2)}.note{background:#54401f26;border:1px solid #e6bd7535;border-radius:12px;padding:12px 14px;color:#c9bea2;font-size:10px;margin-top:13px}.note strong{color:#f1d39a}.good{color:#9ee3be}.warn{color:#e9c47e}.bad{color:#e69b8a}.page-title{margin:7px 0 17px}.page-title h2{font-size:24px;margin:0;letter-spacing:-.03em}.page-title p{color:var(--muted);font-size:11px;margin:4px 0 0}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:13px}table{width:100%;border-collapse:collapse;min-width:690px;background:#0e2022a8}th,td{font-size:10px;padding:11px 12px;border-bottom:1px solid #bad4c51a;text-align:left}th{background:#193336;color:#a9c2b6;text-transform:uppercase;letter-spacing:.08em;font-size:9px;position:sticky;top:0}td{color:#d8e6df}tr:last-child td{border-bottom:0}.num{text-align:right;font-variant-numeric:tabular-nums}.formula{font-family:ui-monospace,Consolas,monospace;color:#a9cbbc}.barrow{display:grid;grid-template-columns:60px 1fr 110px;gap:10px;align-items:center;margin:10px 0}.barrow strong{font-size:11px}.barrow small{display:block;color:var(--muted);font-size:9px}.tag-status{display:inline-block;font-size:9px;padding:4px 7px;border-radius:20px;background:#d9ad5a17;border:1px solid #d9ad5a36;color:#e9c47e}.tag-off{background:#9ac5d11a;border-color:#9ac5d133;color:#b5d9e2}.energy-grid{grid-template-columns:1fr 1fr}.energy-card{position:relative;overflow:hidden}.energy-card .big{font-size:31px;font-weight:800;letter-spacing:-.04em}.energy-symbol{font-size:24px;color:var(--mint)}.flowbox{border:1px solid var(--line);border-radius:13px;padding:13px;background:#0b1b1d}.flowbox h3{font-size:12px;margin:0 0 5px}.flowbox p{font-size:10px;color:var(--muted);margin:0}.arrow{text-align:center;color:#78978a;font-size:19px;padding:4px}.rx-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.rx{border:1px solid var(--line);background:linear-gradient(155deg,#13292b,#102124);border-radius:15px;padding:15px}.rx h3{font-size:13px;margin:0 0 7px}.equation{padding:10px;background:#09191b;border-radius:9px;color:#d5e8dd;font-family:ui-monospace,Consolas,monospace;font-size:12px;overflow-wrap:anywhere;margin:10px 0}.rx p{font-size:10px;color:var(--muted);margin:6px 0}.rx-foot{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}.chip{font-size:9px;color:#bfd4c8;background:#84bba51a;border:1px solid #84bba52a;border-radius:20px;padding:4px 7px}.assumptions{display:grid;grid-template-columns:1fr 1fr;gap:12px}.assumption{background:#0d1f21;border:1px solid var(--line);border-radius:12px;padding:13px}.assumption strong{font-size:11px;display:block;margin-bottom:4px}.assumption p{font-size:10px;color:var(--muted);margin:0}.filters{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:12px}.filters input{background:#0b1b1d;border:1px solid var(--line);border-radius:9px;padding:9px 11px;color:var(--text);min-width:180px;flex:1}.filters button{background:#132a2d;border:1px solid var(--line);border-radius:8px;color:#b6c9c0;padding:8px 10px;font-size:10px}.filters button.active{border-color:#83d6b255;color:#cff3df;background:#83d6b21a}.source{padding:10px 0;border-bottom:1px solid #bad4c51a}.source:last-child{border-bottom:0}.source a{color:#a9ddc5;font-size:11px;text-decoration:none}.source a:hover{text-decoration:underline}.source p{font-size:10px;color:var(--muted);margin:4px 0 0}.range-wrap{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;margin:12px 0}.range-wrap input{width:100%;accent-color:var(--mint)}.range-value{font-size:19px;font-weight:800;color:var(--mint);font-variant-numeric:tabular-nums;white-space:nowrap}.footer{color:#718b80;font-size:9px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:9px;padding:18px 3px 0}@media(max-width:900px){.kpis{grid-template-columns:repeat(2,1fr)}.two,.energy-grid{grid-template-columns:1fr}.rx-grid{grid-template-columns:1fr}.hero{grid-template-columns:1fr .35fr}}@media(max-width:600px){.app{padding:13px}.hero{grid-template-columns:1fr;padding:20px}.earth-wrap{min-height:125px;order:-1}.earth{width:120px;height:120px}.hero h1{font-size:28px}.kvalue{font-size:22px}.kpis{gap:9px}.card{padding:13px}.assumptions{grid-template-columns:1fr}.nav button{padding:9px 11px}}
@@ -121,7 +121,7 @@
 @media(max-width:700px){.caldera-layout,.caldera-output-grid{grid-template-columns:1fr}.caldera-side-stack{grid-template-columns:1fr}.caldera-side-stack>.caldera-action-card{grid-column:auto}.caldera-image{aspect-ratio:1.15;object-fit:cover}.caldera-actions{grid-template-columns:1fr 1fr}.caldera-impact-list>div{grid-template-columns:28px minmax(0,1fr)}.impact-state{grid-column:2;justify-self:start}}
 
 
-/* World Arkean v2.0 — regional geothermal model and global chemistry dashboard */
+/* World Arkean v2.1 — regional geothermal model and global chemistry dashboard */
 .world-reservoir-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
 .world-reservoir{border:1px solid var(--line);border-radius:12px;background:#0b1c1e;padding:12px;min-width:0}
 .world-reservoir span{display:block;color:var(--muted);font-size:9px}
@@ -173,7 +173,7 @@
 @media(max-width:900px){.chem-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:540px){.chem-grid{grid-template-columns:1fr 1fr}.chem-kpi .kvalue{font-size:17px}}
 </style></head><body><div class="app">
-<header class="top"><div class="brand"><div class="logo">◈</div><div><strong>TERRA CHEMICA</strong><small>World archive · Archean geochemical model</small></div></div><div class="pills"><span class="pill"><i class="dot"></i>World Arkean v2.0</span><span class="pill"><i class="dot" style="background:var(--gold)"></i>Energy + hydrosphere + reaction engine</span><span class="pill">MSAB regional v0.7 + Earth Systems v0.2 + NOx</span></div></header>
+<header class="top"><div class="brand"><div class="logo">◈</div><div><strong>TERRA CHEMICA</strong><small>World archive · Archean geochemical model</small></div></div><div class="pills"><span class="pill"><i class="dot"></i>World Arkean v2.1</span><span class="pill"><i class="dot" style="background:var(--gold)"></i>Energy + hydrosphere + reaction engine</span><span class="pill">MSAB regional v0.7 + Earth Systems v0.2 + NOx</span></div></header>
 <section class="hero"><div><div class="eyebrow">Eoarchean baseline · 4,0 Ga</div><h1>Energi memasuki dunia purba.</h1><p>World Arkean menghubungkan samudera, atmosfer, reaksi hidrotermal, dan fotokimia. Halaman ini merangkum jumlah zat utama di dunia serta produk kimia yang terbentuk selama simulasi.</p><div class="hero-tags"><span class="tag">1 SU = 10¹⁵ mol</span><span class="tag">Atmosfer anoksik</span><span class="tag">Solar + geothermal</span><span class="tag">H₂O cair · baseline 1,0 OM</span><span class="tag">Mesin reaksi · 12 jam/tick</span></div></div><div class="earth-wrap"><div class="earth" aria-label="Ilustrasi konseptual Bumi Arkean"></div></div></section>
 <nav class="nav"><button class="active" data-page="caldera">Kawah geothermal</button><button data-page="energy-reactions">Energi & reaksi</button><button data-page="overview">Ringkasan dunia</button><button data-page="atmosphere">Atmosfer</button><button data-page="hydrosphere">Hidrosfer</button><button data-page="ocean-chemistry">Kimia samudera</button><button data-page="hydrology-cycle">Siklus air</button><button data-page="ocean-circ">Sirkulasi samudera</button><button data-page="atmos-dynamics">Dinamika atmosfer</button><button data-page="electrical">Petir & listrik</button><button data-page="volcanism">Aktivitas vulkanik</button><button data-page="world">Geografi & stok</button><button data-page="circulation">Sirkulasi air–batuan</button><button data-page="geometry">Geometri zona</button><button data-page="simulation">Simulasi</button><button data-page="minerals">Mineral</button><button data-page="notes">Asumsi & sumber</button></nav>
 <main>
@@ -363,7 +363,7 @@
  <div class="barrow"><strong>Geotermal</strong><div class="track"><div class="fill blue" style="width:0.068%"></div></div><div class="num">61,2 TW</div></div>
  <p style="color:var(--muted);font-size:10px;margin:10px 0 0">*Daya surya terserap global dihitung dari fluks rata-rata global dan albedo asumsi. Skala ini tidak berarti seluruh daya surya dapat menggerakkan reaksi; fotokimia terutama bergantung pada foton UV yang diserap oleh molekul tertentu.</p>
 </article>
-<div class="footer"><span>World Arkean v2.0 · reaktor hidrotermal regional + kimia global</span><span>Preset TINGGI · samudera 90% · footprint aktif 1.000 km² · reaktor regional agregat</span></div>
+<div class="footer"><span>World Arkean v2.1 · reaktor hidrotermal regional + kimia global</span><span>Preset TINGGI · samudera 90% · footprint aktif 1.000 km² · reaktor regional agregat</span></div>
 </section>
 
 <section class="page" id="page-energy"><div class="page-title"><div class="eyebrow">Environmental drivers</div><h2>Energi Matahari & panas internal</h2><p>Masukan energi pada level fisik. Mesin Matahari mencatat serapan radiasi global dan menjalankan fotolisis SO₂; mesin geotermal menjalankan reaksi air–batuan.</p></div>
@@ -481,7 +481,7 @@
 <article class="card" style="margin-top:14px"><div class="head"><div><div class="smallcaps">Dasar geologi</div><h2>Apa yang diketahui untuk sekitar 4,0 Ga?</h2></div></div><div class="assumption"><strong>Siklus hidrologi</strong><p>Studi zirkon Jack Hills terbitan 2024 menyimpulkan interaksi air meteorik dengan kerak dangkal kemungkinan sudah terjadi pada atau sebelum 4,0 Ga. Ini mendukung keberadaan air permukaan dan siklus hidrologi, tetapi tidak menentukan massa total samudra secara presisi.</p></div><div class="assumption"><strong>Volume samudra</strong><p>Estimasi berbeda menurut asumsi penyimpanan air di mantel dan evolusi hidrosfer. Satu studi isotop memperkirakan samudra Arkean dapat sampai sekitar 26% lebih besar daripada sekarang; model lain mendapatkan minimum sekitar 1,27–2,27 massa samudra modern pada asumsi tertentu.</p></div><div class="assumption"><strong>Keputusan model</strong><p>Gunakan 90% cakupan samudera dan 1,0 OM sebagai baseline kerja. Luas samudera tetap terpisah dari volume air: slider OM mengubah massa dan kedalaman rata-rata, bukan luas samudera. Keduanya merupakan parameter skenario, bukan rekonstruksi final.</p></div></article></section>
 
 <section class="page" id="page-world">
-  <div class="page-title"><div class="eyebrow">World geometry · regional stock ledger</div><h2>Geografi samudera & alokasi stok kerak</h2><p>Baseline spasial World Arkean v2.0. Inventaris regional dihitung sebagai subset inventaris kerak global, bukan stok baru.</p></div>
+  <div class="page-title"><div class="eyebrow">World geometry · regional stock ledger</div><h2>Geografi samudera & alokasi stok kerak</h2><p>Baseline spasial World Arkean v2.1. Inventaris regional dihitung sebagai subset inventaris kerak global, bukan stok baru.</p></div>
   <div class="grid kpis" style="grid-template-columns:repeat(4,minmax(0,1fr))">
     <article class="card"><div class="klabel">Luas samudera (90%)</div><div class="kvalue blue">459,058 <small style="font-size:11px">juta km²</small></div><div class="knote">Sisa 51,006 juta km² berupa daratan/pulau</div></article>
     <article class="card"><div class="klabel">Provinsi geothermal agregat</div><div class="kvalue gold">10.000 <small style="font-size:11px">km²</small></div><div class="knote">Gabungan pusat/kawah hidrotermal purba</div></article>
@@ -929,7 +929,7 @@
   <div class="page-title"><div class="eyebrow">Earth Systems v0.2 · water transfer</div><h2>Siklus hidrologi global</h2><p>Air berpindah antara samudera, atmosfer, awan, daratan dan air tanah. Semua perpindahan memakai stok air yang sudah ada; tidak ada air yang diciptakan saat hujan.</p></div>
   <div class="earth-grid">
     <div class="earth-kpi"><span>Uap air atmosfer</span><strong id="hydro-vapor">—</strong><small id="hydro-vapor-surface">Profil vertikal eksplisit</small></div>
-    <div class="earth-kpi"><span>Air dalam awan</span><strong id="hydro-cloud">—</strong><small>Liquid + ice + graupel</small></div>
+    <div class="earth-kpi"><span>Air dalam awan</span><strong id="hydro-cloud">—</strong><small>Awan latar + sel badai + presipitasi beku</small></div>
     <div class="earth-kpi"><span>Hujan kumulatif</span><strong id="hydro-rain-cum">—</strong><small id="hydro-rain-rate">Laju presipitasi saat ini</small></div>
     <div class="earth-kpi"><span>Air tersimpan di darat</span><strong id="hydro-land-store">—</strong><small>Permukaan + air tanah</small></div>
   </div>
@@ -943,7 +943,7 @@
     </article>
     <article class="card"><div class="head"><div><div class="smallcaps">Parameter penutupan model</div><h2>Energi dan atmosfer</h2></div></div>
       <table class="earth-table"><tbody>
-        <tr><td>Luas samudera</td><td>459,058 juta km²</td></tr><tr><td>Energi laten evaporasi samudera</td><td>40 W/m² · asumsi</td></tr><tr><td>Panas laten penguapan</td><td>2,45 MJ/kg</td></tr><tr><td>Suhu permukaan skenario</td><td>25 °C</td></tr><tr><td>RH permukaan awal</td><td>70%</td></tr><tr><td>Skala tinggi uap air</td><td>2 km · asumsi</td></tr><tr><td>Laju susut suhu lingkungan</td><td>8 K/km · asumsi</td></tr><tr><td>Fraksi daratan</td><td>10%</td></tr><tr><td>Liquid dalam awan</td><td id="hydro-cloud-liquid">—</td></tr><tr><td>Kristal es</td><td id="hydro-cloud-ice">—</td></tr><tr><td>Graupel</td><td id="hydro-cloud-graupel">—</td></tr>
+        <tr><td>Luas samudera</td><td>459,058 juta km²</td></tr><tr><td>Energi laten evaporasi samudera</td><td>40 W/m² · asumsi</td></tr><tr><td>Panas laten penguapan</td><td>2,45 MJ/kg</td></tr><tr><td>Suhu permukaan skenario</td><td>25 °C</td></tr><tr><td>RH permukaan awal</td><td>70%</td></tr><tr><td>Skala tinggi uap air</td><td>2 km · asumsi</td></tr><tr><td>Laju susut suhu lingkungan</td><td>8 K/km · asumsi</td></tr><tr><td>Fraksi daratan</td><td>10%</td></tr><tr><td>Awan cair latar belakang</td><td id="hydro-cloud-background">—</td></tr><tr><td>Liquid total (latar + badai)</td><td id="hydro-cloud-liquid">—</td></tr><tr><td>Kristal es dalam badai</td><td id="hydro-cloud-ice">—</td></tr><tr><td>Graupel dalam badai</td><td id="hydro-cloud-graupel">—</td></tr><tr><td>Salju tersimpan di permukaan</td><td id="hydro-snowpack">—</td></tr><tr><td>Air sel badai total</td><td id="hydro-storm-total">—</td></tr><tr><td>Pasokan awan → badai / tick</td><td id="hydro-cloud-feed">—</td></tr><tr><td>Konvergensi uap → badai / tick</td><td id="hydro-vapor-feed">—</td></tr>
       </tbody></table>
       <div class="note"><strong>Catatan ilmiah:</strong> 0,0222 bar adalah tekanan uap di permukaan, bukan total kolom. Model mengubahnya menjadi stok atmosfer menggunakan densitas uap ideal-gas dan skala tinggi 2 km yang dinyatakan secara terbuka sebagai asumsi, bukan pengukuran Arkean.</div>
     </article>
@@ -952,7 +952,7 @@
     <article class="card"><div class="head"><div><div class="smallcaps">Anggaran per tick</div><h2>Perpindahan massa air</h2></div></div><table class="earth-table"><tbody>
       <tr><td>Evaporasi samudera</td><td id="hydro-evap-tick">—</td></tr><tr><td>Kondensasi</td><td id="hydro-cond-tick">—</td></tr><tr><td>Hujan total</td><td id="hydro-rain-tick">—</td></tr><tr><td>Hujan langsung ke samudera</td><td id="hydro-rain-ocean">—</td></tr><tr><td>Infiltrasi</td><td id="hydro-infiltration">—</td></tr><tr><td>Runoff + baseflow ke samudera</td><td id="hydro-return">—</td></tr>
     </tbody></table></article>
-    <article class="card"><div class="head"><div><div class="smallcaps">Konservasi</div><h2>Neraca air siklus</h2></div><span class="earth-state" id="hydro-audit">MENUNGGU TICK</span></div><p style="font-size:10px;color:var(--muted)">Audit membandingkan jumlah air di samudera, uap, awan, air permukaan daratan dan air tanah sebelum serta sesudah perpindahan satu tick. Reaksi hidrotermal yang mengikat air ke mineral diaudit terpisah oleh MSAB.</p><div class="earth-kpi"><span>Residual neraca air tick terakhir</span><strong id="hydro-residual">—</strong><small>Idealnya mendekati nol</small></div></article>
+    <article class="card"><div class="head"><div><div class="smallcaps">Konservasi</div><h2>Neraca air siklus</h2></div><span class="earth-state" id="hydro-audit">MENUNGGU TICK</span></div><p style="font-size:10px;color:var(--muted)">Audit membandingkan jumlah air di samudera, uap, awan latar, tiga fase sel badai, salju permukaan, air daratan, air tanah dan air magmatik sebelum serta sesudah satu tick. Reaksi hidrotermal yang mengikat air ke mineral diaudit terpisah oleh MSAB.</p><div class="earth-kpi"><span>Residual neraca air tick terakhir</span><strong id="hydro-residual">—</strong><small>Idealnya mendekati nol</small></div></article>
   </div>
 </section>
 
@@ -965,9 +965,9 @@
 </section>
 
 <section class="page" id="page-atmos-dynamics">
-  <div class="page-title"><div class="eyebrow">Atmospheric convection</div><h2>Dinamika atmosfer dan awan</h2><p>Konveksi dimodelkan sebagai indeks kestabilan kolom atmosfer, kelembapan, dan profil suhu. Awan badai hanya dapat memasuki fase listrik jika konveksi cukup dalam dan lapisan campuran air–es tersedia.</p></div>
+  <div class="page-title"><div class="eyebrow">Atmospheric convection · v2.1</div><h2>Dinamika atmosfer dan awan</h2><p>Awan latar global dipisahkan dari sel badai representatif. Sel badai memiliki inventaris air cair, kristal es, dan graupel tersendiri; petir hanya aktif jika syarat termal, kandungan air cair, es, graupel, dan updraft terpenuhi bersamaan.</p></div>
   <div class="earth-grid"><div class="earth-kpi"><span>Kelembapan relatif model</span><strong id="atm-rh">—</strong><small>Terhadap kapasitas uap pada 25°C</small></div><div class="earth-kpi"><span>Dasar awan (LCL proxy)</span><strong id="atm-cloud-base">—</strong><small>km di atas permukaan</small></div><div class="earth-kpi"><span>Puncak awan proxy</span><strong id="atm-cloud-top">—</strong><small>km di atas permukaan</small></div><div class="earth-kpi"><span>Indeks konveksi</span><strong id="atm-conv-index">—</strong><small>0 = stabil · 1 = kuat pada skema</small></div></div>
-  <div class="grid two"><article class="card"><div class="head"><div><div class="smallcaps">Profil vertikal baseline</div><h2>Struktur termal kolom udara</h2></div></div><table class="earth-table"><tbody><tr><td>Suhu permukaan</td><td id="atm-surface-temp">25 °C</td></tr><tr><td>Lapse rate lingkungan</td><td>8 K/km · asumsi</td></tr><tr><td>Lapse rate adiabatik lembap acuan</td><td>6,5 K/km · pendekatan</td></tr><tr><td>Suhu pada puncak awan proxy</td><td id="atm-cloudtop-temp">—</td></tr><tr><td>Kecepatan updraft skala</td><td id="atm-updraft">—</td></tr><tr><td>Fase awan</td><td id="atm-cloud-phase">—</td></tr><tr><td>Air awan pada area badai proxy</td><td id="atm-storm-cloud">—</td></tr></tbody></table></article>
+  <div class="grid two"><article class="card"><div class="head"><div><div class="smallcaps">Profil vertikal baseline</div><h2>Struktur termal kolom udara</h2></div></div><table class="earth-table"><tbody><tr><td>Suhu permukaan</td><td id="atm-surface-temp">25 °C</td></tr><tr><td>Lapse rate lingkungan</td><td>8 K/km · asumsi</td></tr><tr><td>Lapse rate adiabatik lembap acuan</td><td>6,5 K/km · pendekatan</td></tr><tr><td>Suhu pada puncak awan proxy</td><td id="atm-cloudtop-temp">—</td></tr><tr><td>Kecepatan updraft skala</td><td id="atm-updraft">—</td></tr><tr><td>Fase awan</td><td id="atm-cloud-phase">—</td></tr><tr><td>Air sel badai total</td><td id="atm-storm-cloud">—</td></tr><tr><td>LWC inti pengisian muatan</td><td id="atm-storm-lwc">—</td></tr><tr><td>Lapisan charging</td><td id="atm-charging-layer">—</td></tr><tr><td>Luas inti konvektif</td><td>10.000 km²</td></tr><tr><td>Luas sumber kelembapan</td><td>500.000 km²</td></tr><tr><td>Tutupan awan global</td><td>66% · referensi skenario</td></tr><tr><td>Cloud water path pembanding modern</td><td>0,125 kg/m² · referensi, bukan batas</td></tr><tr><td>Storm condensate path</td><td>1,0 kg/m²</td></tr><tr><td>Transfer awan sumber → badai</td><td>25% dari stok wilayah sumber / tick</td></tr><tr><td>Konvergensi uap → badai</td><td>0,05% stok uap wilayah sumber / tick</td></tr><tr><td>Presipitasi awan latar</td><td>15% / tick</td></tr><tr><td>Presipitasi sel badai</td><td>25% selama 6 jam</td></tr><tr><td>Durasi aktif sel badai</td><td>6 jam · 6 sub-langkah × 1 jam</td></tr><tr><td>Awal nukleasi es heterogen</td><td>−8 °C</td></tr><tr><td>Pembekuan homogen</td><td>−38 °C</td></tr><tr><td>Zona pengisian muatan</td><td>−15 hingga −25 °C</td></tr><tr><td>LWC minimum charging</td><td>0,5 g/m³</td></tr><tr><td>Updraft minimum charging</td><td>5 m/s</td></tr><tr><td>Updraft parameterisasi</td><td>2 + 10 × indeks konveksi</td></tr><tr><td>Laju pembekuan</td><td>0,10 jam⁻¹</td></tr><tr><td>Laju riming</td><td>0,05 jam⁻¹</td></tr><tr><td>Laju pencairan</td><td>1,0 jam⁻¹</td></tr><tr><td>Kecepatan jatuh kristal es</td><td>1 m/s · proxy tambahan</td></tr><tr><td>Kecepatan jatuh graupel</td><td>5 m/s · proxy tambahan</td></tr><tr><td>Daya pemisahan muatan</td><td>0,0002 W/m²</td></tr><tr><td>Energi pelepasan ekuivalen</td><td>1 × 10⁹ J</td></tr><tr><td>Efisiensi energi kimia petir</td><td>0,0001</td></tr></tbody></table></article>
     <article class="card"><div class="head"><div><div class="smallcaps">Pemicu hujan dan badai</div><h2>Kondisi fisik</h2></div></div><div class="earth-stage"><div class="earth-bullet">1</div><div><b>Udara lembap naik</b><p>Udara mendingin mengikuti lapse rate dan mencapai titik kondensasi.</p></div></div><div class="earth-stage"><div class="earth-bullet">2</div><div><b>Awan tumbuh vertikal</b><p>Indeks konveksi dan suplai uap menentukan kedalaman awan proxy.</p></div></div><div class="earth-stage"><div class="earth-bullet">3</div><div><b>Lapisan campuran</b><p>Jika awan mencapai −15 hingga −25°C dan mengandung air superdingin, es serta graupel, pemisahan muatan dapat berjalan.</p></div></div><div class="note"><strong>Batas model:</strong> ini skema global rata-rata dengan penutupan konveksi, bukan model cuaca 3D. Awan dan hujan merupakan hasil perpindahan massa; tidak ada air baru diciptakan.</div></article></div>
 </section>
 
@@ -1065,7 +1065,7 @@
 
 </article>
 <article class="card" style="margin-top:14px"><div class="head"><div><div class="smallcaps">Rujukan mekanisme fisika</div><h2>Referensi ilmiah</h2></div></div><div class="source"><a href="https://www.ipcc.ch/report/ar6/wg1/chapter/chapter-8/" target="_blank" rel="noopener">IPCC AR6 · Chapter 8: Water Cycle Changes</a><p>Reservoir, evaporasi, presipitasi, kelembapan tanah, air tanah dan runoff dalam siklus air global.</p></div><div class="source"><a href="https://www.noaa.gov/jetstream/atmosphere/hydro" target="_blank" rel="noopener">NOAA · The Hydrologic Cycle</a><p>Evaporasi, titik embun, kondensasi dan presipitasi.</p></div><div class="source"><a href="https://www.weather.gov/safety/lightning-science-electrification" target="_blank" rel="noopener">NOAA/NWS · Thunderstorm Electrification</a><p>Peran updraft, tetesan superdingin, kristal es, graupel dan pemisahan muatan.</p></div><div class="source"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7043912/" target="_blank" rel="noopener">Catling & Zahnle (2020) · The Archean atmosphere</a><p>Kimia atmosfer Arkean, keterbatasan pembentukan NOx oleh petir dan peran fotokimia.</p></div><div class="source"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11317556/" target="_blank" rel="noopener">Mimicking lightning-induced electrochemistry on the early Earth (2024)</a><p>Eksperimen plasma pada antarmuka udara–air–tanah dan pembentukan feedstock karbon/nitrogen; hasil eksperimen tidak langsung dipakai sebagai yield model.</p></div><div class="source"><a href="https://www.sciencedirect.com/science/article/pii/S037702732100278X" target="_blank" rel="noopener">A review of volcanic electrification of the atmosphere and volcanic lightning (2022)</a><p>Triboelectrification, fracto-electrification dan pengisian muatan partikel dalam plume vulkanik.</p></div><div class="source"><a href="https://kinetics.nist.gov/kinetics/Detail?id=2004ATK%2FBAU1461-1738%3A67" target="_blank" rel="noopener">NIST · Evaluated NO + O + M → NO₂ + M kinetics</a><p>Reaksi termolekuler oksidasi NO oleh atom oksigen; model ini memakai laju efektif sederhana.</p></div><div class="source"><a href="https://agupubs.onlinelibrary.wiley.com/doi/10.1029/JC086iC12p11971" target="_blank" rel="noopener">Lee & Schwartz (1981) · NO₂ uptake by liquid water</a><p>Reaksi 2NO₂ + H₂O → 2H⁺ + NO₃⁻ + NO₂⁻; laju aktual bergantung tekanan parsial, fase cair, dan transfer massa.</p></div><div class="source"><a href="https://pubmed.ncbi.nlm.nih.gov/11605635/" target="_blank" rel="noopener">Navarro et al. · Production of nitrogen oxides in simulated early-Earth atmospheres</a><p>Eksperimen pelepasan listrik pada campuran CO₂–N₂ dan pembentukan NO.</p></div></article></section>
-</main><div class="footer"><span>Terra Chemica · World Arkean v2.0 · MSAB regional v0.7</span><span>Preset TINGGI · 12 jam/tick · reaktor regional agregat 1.000 km²</span></div></div>
+</main><div class="footer"><span>Terra Chemica · World Arkean v2.1 · MSAB regional v0.7</span><span>Preset TINGGI · 12 jam/tick · mikroﬁsika badai 6 × 1 jam</span></div></div>
 <script>
 'use strict';
 const minerals=[{name:"Olivin",formula:"(Mg,Fe)₂SiO₄ · Fo–Fa",category:"Silikat",bulk:47866606.97,reactive:2202262.25,role:"Sumber Mg–Fe; kandidat utama serpentisasi."},{name:"Plagioklas",formula:"(Na,Ca)(Al,Si)₄O₈ · An–Ab",category:"Silikat",bulk:97237278.94,reactive:1912877.99,role:"Sumber Ca, Na, Al dan Si melalui pelarutan."},{name:"Klinopiroksen",formula:"(Ca,Mg,Fe)Si₂O₆ · Di–Hd",category:"Silikat",bulk:67088279.41,reactive:1427512.1,role:"Sumber Ca, Mg, Fe dan Si."},{name:"Ortopiroksen",formula:"(Mg,Fe)SiO₃ · En–Fs",category:"Silikat",bulk:64447245.78,reactive:1912750.6,role:"Sumber Mg, Fe dan Si dalam alterasi."},{name:"Amfibol",formula:"Hornblende proxy · OH struktural",category:"Silikat",bulk:790678.34,reactive:14684.03,role:"Fase hidrat; H struktural bukan air bebas."},{name:"Kuarsa",formula:"SiO₂",category:"Silikat",bulk:9513584.65,reactive:117913.78,role:"Reservoir silika; pelarutan relatif lambat."},{name:"Biotit",formula:"K(Mg,Fe)₃AlSi₃O₁₀(OH)₂ proxy",category:"Silikat",bulk:363754.3,reactive:3637.54,role:"Fase felsik pembawa K, Mg dan Fe."},{name:"K-feldspar",formula:"KAlSi₃O₈",category:"Silikat",bulk:105558.32,reactive:1055.58,role:"Sumber K dan Al melalui pelapukan."},{name:"Magnetit",formula:"Fe₃O₄",category:"Oksida",bulk:3100804.3,reactive:61759.82,role:"Oksida Fe; fase redoks dan mineral primer."},{name:"Ilmenit",formula:"FeTiO₃",category:"Oksida",bulk:2695784.65,reactive:53737.16,role:"Fase Fe–Ti relatif resisten."},{name:"Kromit",formula:"FeCr₂O₄",category:"Oksida",bulk:885985.93,reactive:48729.23,role:"Sumber Cr; fase refrakter."},{name:"Pirotit",formula:"Fe₁₋ₓS · proxy Fe₀.₉S",category:"Sulfida",bulk:1036759.22,reactive:25224.25,role:"Sulfida Fe; reaktif pada lingkungan air-batuan."},{name:"Pentlandit",formula:"(Fe,Ni)₉S₈ proxy",category:"Sulfida",bulk:8325.93,reactive:666.07,role:"Sumber Ni lokal dari sulfida Fe–Ni."},{name:"Apatit",formula:"Ca₅(PO₄)₃(OH) proxy",category:"Fosfat",bulk:222991.75,reactive:4423.28,role:"Sumber fosfor; fosfat terlarut belum ditetapkan."},{name:"Zirkon",formula:"ZrSiO₄",category:"Aksesori",bulk:1455.65,reactive:0,role:"Mineral aksesori refrakter; bukan reaktan awal."}];
@@ -1224,10 +1224,20 @@ if(oceanSlider){oceanSlider.addEventListener('input',updateHydrosphere);updateHy
   const SURFACE_TEMP_C=25, SURFACE_TEMP_K=298.15, RH_INITIAL=0.70, VAPOR_SCALE_HEIGHT_M=2000;
   const SURFACE_VAPOR_PRESSURE_PA=2220, ENV_LAPSE_K_KM=8.0, MOIST_ADIABAT_K_KM=6.5;
   const OCEAN_LATENT_FLUX_WM2=40, LAND_EVAP_FLUX_WM2=3;
-  const STORM_AREA_KM2=100000, CHARGE_POWER_DENSITY_WM2=0.0002, LIGHTNING_ENERGY_J=1e9;
+  // Atmospheric Water System v2.1: explicit global cloud and storm-cell reservoirs.
+  const CLOUD_COVERAGE_FRACTION=0.66, STORM_AREA_KM2=100000, STORM_CORE_FRACTION=0.10;
+  const STORM_CORE_AREA_KM2=STORM_AREA_KM2*STORM_CORE_FRACTION, STORM_SOURCE_AREA_KM2=500000;
+  const GLOBAL_CLOUD_WATER_PATH_REFERENCE_KG_M2=0.125; // Modern-Earth comparison only; not a hard cap for Archean clouds.
+  const STORM_WATER_PATH_KG_M2=1.0, CLOUD_FEED_FRACTION=0.25, VAPOR_CONVERGENCE_FRACTION=0.0005;
+  const BACKGROUND_PRECIP_EFFICIENCY=0.15, STORM_PRECIP_EFFICIENCY=0.25;
+  const STORM_DURATION_HOURS=6, MICROPHYSICS_SUBSTEP_HOURS=1;
+  const ICE_NUCLEATION_C=-8, HOMOGENEOUS_FREEZING_C=-38, CHARGING_MIN_C=-25, CHARGING_MAX_C=-15;
+  const MIN_CHARGING_LWC_G_M3=0.5, MIN_CHARGING_UPDRAFT_MPS=5, FREEZING_RATE_H=0.10, RIMING_RATE_H=0.05, MELTING_RATE_H=1.0;
+  const ICE_FALL_SPEED_MPS=1.0, GRAUPEL_FALL_SPEED_MPS=5.0;
+  const CHARGE_POWER_DENSITY_WM2=0.0002, LIGHTNING_ENERGY_J=1e9;
   const LIGHTNING_CHEM_EFFICIENCY=0.0001, LIGHTNING_NET_DH_J_MOL=746500;
-  const STORAGE_KEY='worldArkeanEarthSystemsV03';
-  const LEGACY_STORAGE_KEY='worldArkeanEarthSystemsV00';
+  const STORAGE_KEY='worldArkeanEarthSystemsV04';
+  const LEGACY_STORAGE_KEY='worldArkeanEarthSystemsV03';
   const NO_OXIDATION_RATE=1.0e-6; // s^-1 effective atmospheric NO + O oxidation proxy
   const NO2_AQUEOUS_RATE=1.0e-7; // s^-1 pseudo-first-order scenario proxy; characteristic time ~2,778 h
   const $=id=>document.getElementById(id);
@@ -1246,14 +1256,14 @@ if(oceanSlider){oceanSlider.addEventListener('input',updateHydrosphere);updateHy
   const MAGMA_DEFAULT={h2oSU:0,co2SU:0,so2SU:0,overpressureMPa:0,pressureBuildMPaYr:0,thresholdMPa:10};
 
   function initialState(){
-    return {version:2,ticks:0,waterVaporSU:INITIAL_VAPOR_SU,cloudWaterSU:0,landSurfaceSU:0,groundwaterSU:0,
+    return {version:3,ticks:0,waterVaporSU:INITIAL_VAPOR_SU,cloudWaterSU:0,stormLiquidSU:0,stormIceSU:0,stormGraupelSU:0,snowpackSU:0,landSurfaceSU:0,groundwaterSU:0,
       gases:{n2SU:55624.8712,co2SU:11802.3136,ch4SU:INITIAL_CH4_SU,coSU:7.4175,noSU:0,no2SU:0},
       initialGases:{n2SU:55624.8712,co2SU:11802.3136,ch4SU:INITIAL_CH4_SU,coSU:7.4175,noSU:0,no2SU:0},
-      cloudNitriteSU:0,cloudNitrateSU:0,cloudHplusSU:0,
+      cloudNitriteSU:0,cloudNitrateSU:0,cloudHplusSU:0,stormNitriteSU:0,stormNitrateSU:0,stormHplusSU:0,
       landNitriteSU:0,landNitrateSU:0,landHplusSU:0,
       groundwaterNitriteSU:0,groundwaterNitrateSU:0,groundwaterHplusSU:0,
       oceanNitriteSU:0,oceanNitrateSU:0,oceanHplusSU:0,
-      cumulative:{evapOceanSU:0,evapLandSU:0,condensedSU:0,rainSU:0,infiltrationSU:0,runoffSU:0,baseflowSU:0,lightning:0,lightningEnergyJ:0,lightningChemExtentSU:0,co2ConsumedSU:0,co2AirSeaTransferSU:0,n2ConsumedSU:0,noMadeSU:0,coMadeSU:0,noOxidizedSU:0,no2HydrolyzedSU:0,hno2MadeSU:0,hno3MadeSU:0,no2WaterConsumedSU:0,hydrothermalM3:0,hydrothermalKg:0,hydrothermalHeatJ:0,plumeTicks:0,rainMm:0,volcanicEruptions:0,volcanicAshKg:0,volcanicLightning:0,volcanicGasReleasedSU:0},
+      cumulative:{evapOceanSU:0,evapLandSU:0,condensedSU:0,rainSU:0,stormRainSU:0,snowfallSU:0,snowmeltSU:0,cloudToStormSU:0,vaporToStormSU:0,iceFormedSU:0,graupelFormedSU:0,infiltrationSU:0,runoffSU:0,baseflowSU:0,lightning:0,lightningEnergyJ:0,lightningChemExtentSU:0,co2ConsumedSU:0,co2AirSeaTransferSU:0,n2ConsumedSU:0,noMadeSU:0,coMadeSU:0,noOxidizedSU:0,no2HydrolyzedSU:0,hno2MadeSU:0,hno3MadeSU:0,no2WaterConsumedSU:0,hydrothermalM3:0,hydrothermalKg:0,hydrothermalHeatJ:0,plumeTicks:0,rainMm:0,volcanicEruptions:0,volcanicAshKg:0,volcanicLightning:0,volcanicGasReleasedSU:0},
       last:{evapSU:0,condSU:0,rainSU:0,rainMm:0,flowM3s:0,heatW:0,lightning:0,lightningChemSU:0,noOxidizedSU:0,no2HydrolyzedSU:0,cloudTopKm:0,cloudBaseKm:0,convectiveIndex:0,updraftMps:0,rh:RH_INITIAL,mixedPhase:false,chargePowerW:0,chargeEnergyJ:0,volcanoEvent:false,waterResidualSU:0},
       chargeEnergyJ:0,volcanic:{...MAGMA_DEFAULT,magmaH2OSU:0,magmaCO2SU:0,magmaSO2SU:0,ashKg:0,overpressureMPa:0,cooldownTicks:0,lastEventTick:0},audit:{ran:false,ok:true,water:true,chemistry:true,nitrogen:true,oxygen:true,acidity:true},log:[]};
   }
@@ -1265,15 +1275,17 @@ if(oceanSlider){oceanSlider.addEventListener('input',updateHydrosphere);updateHy
       for(const k of ['cloudNitriteSU','cloudNitrateSU','cloudHplusSU','landNitriteSU','landNitrateSU','landHplusSU','groundwaterNitriteSU','groundwaterNitrateSU','groundwaterHplusSU','oceanNitriteSU','oceanNitrateSU','oceanHplusSU'])s[k]=0;
       for(const [k,v] of Object.entries({noOxidizedSU:0,no2HydrolyzedSU:0,hno2MadeSU:0,hno3MadeSU:0,no2WaterConsumedSU:0,co2AirSeaTransferSU:0}))if(!Number.isFinite(s.cumulative[k]))s.cumulative[k]=v;
     }
-    if(s.version!==2)return initialState();
+    if(s.version!==2 && s.version!==3)return initialState();
     s.gases=s.gases||{};s.initialGases=s.initialGases||{};
-    // v1.7 displayed CH4 as an initial atmospheric stock but did not include it in the Earth Systems inventory.
-    // Promote that same baseline stock into both sides of the ledger; no carbon is created by migration.
     if(!Number.isFinite(s.gases.ch4SU))s.gases.ch4SU=INITIAL_CH4_SU;
     if(!Number.isFinite(s.initialGases.ch4SU))s.initialGases.ch4SU=INITIAL_CH4_SU;
     s.gases.no2SU=Number(s.gases.no2SU)||0;
     for(const k of ['cloudNitriteSU','cloudNitrateSU','cloudHplusSU','landNitriteSU','landNitrateSU','landHplusSU','groundwaterNitriteSU','groundwaterNitrateSU','groundwaterHplusSU','oceanNitriteSU','oceanNitrateSU','oceanHplusSU'])if(!Number.isFinite(s[k]))s[k]=0;
+    // v2.1 storm inventories start empty when migrating v2.1: legacy cloudWaterSU remains the global background cloud pool.
+    for(const k of ['stormLiquidSU','stormIceSU','stormGraupelSU','snowpackSU','stormNitriteSU','stormNitrateSU','stormHplusSU'])if(!Number.isFinite(s[k]))s[k]=0;
     for(const [k,v] of Object.entries({noOxidizedSU:0,no2HydrolyzedSU:0,hno2MadeSU:0,hno3MadeSU:0,no2WaterConsumedSU:0}))if(!Number.isFinite(s.cumulative[k]))s.cumulative[k]=v;
+    for(const [k,v] of Object.entries({stormRainSU:0,snowfallSU:0,snowmeltSU:0,cloudToStormSU:0,vaporToStormSU:0,iceFormedSU:0,graupelFormedSU:0}))if(!Number.isFinite(s.cumulative[k]))s.cumulative[k]=v;
+    s.version=3;
     return s;
   }
   let state=load();
@@ -1290,12 +1302,21 @@ if(oceanSlider){oceanSlider.addEventListener('input',updateHydrosphere);updateHy
     const cloudBaseKm=clamp(0.125*(SURFACE_TEMP_C-td),0.05,4.0);
     const cloudTopKm=clamp(cloudBaseKm+1+9*convectiveIndex,cloudBaseKm,12);
     const cloudTopTempC=SURFACE_TEMP_C-ENV_LAPSE_K_KM*cloudTopKm;
-    const updraftScale=Math.pow((G/SURFACE_TEMP_K)*(15*1000/(1.0*1004)),1/3);
-    const updraftMps=updraftScale*(1+3*convectiveIndex);
-    const stormCloudCapacitySU=(STORM_AREA_KM2*1e6*1.0)/(MW_H2O*SU_MOL);
-    const stormCloudSU=Math.min(state.cloudWaterSU,stormCloudCapacitySU);
-    const mixedPhase=cloudTopTempC<=-15 && cloudTopKm>=5 && stormCloudSU>=stormCloudCapacitySU*0.8 && convectiveIndex>=0.35;
-    return {rh,instability,convectiveIndex,dewPointC:td,cloudBaseKm,cloudTopKm,cloudTopTempC,updraftMps,mixedPhase,stormCloudSU,stormCloudCapacitySU};
+    const updraftMps=2+10*convectiveIndex;
+    const stormCapacitySU=(STORM_AREA_KM2*1e6*STORM_WATER_PATH_KG_M2)/(MW_H2O*SU_MOL);
+    const stormWaterSU=state.stormLiquidSU+state.stormIceSU+state.stormGraupelSU;
+    const stormLiquidKg=massKg(state.stormLiquidSU);
+    const coreAreaM2=STORM_CORE_AREA_KM2*1e6;
+    // Liquid is concentrated in the 10% convective core over a 1 km charging layer.
+    const chargingLwcGm3=stormLiquidKg/(coreAreaM2*1000)*1000;
+    const chargingLayerBottomKm=(SURFACE_TEMP_C-CHARGING_MAX_C)/ENV_LAPSE_K_KM;
+    const chargingLayerTopKm=(SURFACE_TEMP_C-CHARGING_MIN_C)/ENV_LAPSE_K_KM;
+    const chargingLayerOverlap=cloudBaseKm<=chargingLayerTopKm && cloudTopKm>=chargingLayerBottomKm;
+    const hasLiquid=state.stormLiquidSU>1e-12;
+    const hasIce=state.stormIceSU>1e-12;
+    const hasGraupel=state.stormGraupelSU>1e-12;
+    const mixedPhase=chargingLayerOverlap && updraftMps>=MIN_CHARGING_UPDRAFT_MPS && chargingLwcGm3>=MIN_CHARGING_LWC_G_M3 && hasLiquid && hasIce && hasGraupel;
+    return {rh,instability,convectiveIndex,dewPointC:td,cloudBaseKm,cloudTopKm,cloudTopTempC,updraftMps,mixedPhase,stormWaterSU,stormCapacitySU,chargingLwcGm3,chargingLayerOverlap,chargingLayerBottomKm,chargingLayerTopKm};
   }
   function applyVolcanicInputs(){
     const val=(id,d)=>{const n=Number($(id)?.value);return Number.isFinite(n)?Math.max(0,n):d;};
@@ -1348,35 +1369,120 @@ if(oceanSlider){oceanSlider.addEventListener('input',updateHydrosphere);updateHy
   }
   function stepTick(world,context){
     if(state.ticks!==context.tick-1)return {ok:false,error:'Earth Systems tick tidak sinkron.',audit:{ok:false,water:false,chemistry:false}};
-    const before=world.oceanWaterSU+state.waterVaporSU+state.cloudWaterSU+state.landSurfaceSU+state.groundwaterSU+state.volcanic.magmaH2OSU+state.cumulative.no2WaterConsumedSU;
+    const waterInventory=()=>world.oceanWaterSU+state.waterVaporSU+state.cloudWaterSU+state.stormLiquidSU+state.stormIceSU+state.stormGraupelSU+state.snowpackSU+state.landSurfaceSU+state.groundwaterSU+state.volcanic.magmaH2OSU+state.cumulative.no2WaterConsumedSU;
+    const before=waterInventory();
     const volcano=runVolcanic(context.tick);
-    const c=climate();
+    const climateBefore=climate();
+    // 1) Evaporation and large-scale condensation feed the global background cloud reservoir.
     const evapOcean=Math.min(Math.max(0,world.oceanWaterSU),EVAP_OCEAN_SU);
     world.oceanWaterSU-=evapOcean;
     const soilEvap=Math.min(state.landSurfaceSU,EVAP_LAND_CAP_SU);
     state.landSurfaceSU-=soilEvap;
     state.waterVaporSU+=evapOcean+soilEvap;
-    const rhNow=humidity();
-    const baseCond=state.waterVaporSU*(0.01*c.convectiveIndex);
+    const baseCond=state.waterVaporSU*(0.01*climateBefore.convectiveIndex);
     const excess=Math.max(0,state.waterVaporSU-SATURATION_CAPACITY_SU);
     const cond=Math.min(state.waterVaporSU,Math.max(baseCond,excess*0.80));
     state.waterVaporSU-=cond;
     state.cloudWaterSU+=cond;
-    const cloudPhase=climate();
-    const precipEfficiency=cloudPhase.mixedPhase?0.25:0.15;
-    const cloudWaterBeforeRain=state.cloudWaterSU;
-    const rain=Math.min(state.cloudWaterSU,state.cloudWaterSU*precipEfficiency);
-    const cloudSoluteFraction=cloudWaterBeforeRain>0?rain/cloudWaterBeforeRain:0;
-    const transferCloudSolute=(cloudKey,oceanKey,landKey)=>{
-      const moved=state[cloudKey]*cloudSoluteFraction;state[cloudKey]-=moved;
+
+    // 2) Explicit source-area sampling: global cloud inventory is never compared directly with one storm cell.
+    const sourceAreaM2=STORM_SOURCE_AREA_KM2*1e6;
+    const sourceCloudAreaM2=EARTH_AREA_M2*CLOUD_COVERAGE_FRACTION;
+    const sourceCloudShare=clamp(sourceAreaM2/sourceCloudAreaM2,0,1);
+    const stormCapacitySU=(STORM_AREA_KM2*1e6*STORM_WATER_PATH_KG_M2)/(MW_H2O*SU_MOL);
+    let stormRoomSU=Math.max(0,stormCapacitySU-(state.stormLiquidSU+state.stormIceSU+state.stormGraupelSU));
+    const cloudSourceSU=state.cloudWaterSU*sourceCloudShare;
+    const cloudFeedRequest=cloudSourceSU*CLOUD_FEED_FRACTION;
+    const vaporSourceSU=state.waterVaporSU*(sourceAreaM2/EARTH_AREA_M2);
+    const vaporFeedRequest=vaporSourceSU*VAPOR_CONVERGENCE_FRACTION;
+    const combinedFeedRequest=cloudFeedRequest+vaporFeedRequest;
+    const feedScale=combinedFeedRequest>0?Math.min(1,stormRoomSU/combinedFeedRequest):0;
+    const cloudFeed=cloudFeedRequest*feedScale;
+    const vaporFeed=vaporFeedRequest*feedScale;
+    if(state.cloudWaterSU>0 && cloudFeed>0){
+      const f=cloudFeed/state.cloudWaterSU;
+      state.cloudWaterSU-=cloudFeed;
+      state.stormLiquidSU+=cloudFeed;
+      for(const [cloudKey,stormKey] of [['cloudNitriteSU','stormNitriteSU'],['cloudNitrateSU','stormNitrateSU'],['cloudHplusSU','stormHplusSU']]){
+        const moved=state[cloudKey]*f;state[cloudKey]-=moved;state[stormKey]+=moved;
+      }
+      state.cumulative.cloudToStormSU+=cloudFeed;
+    }
+    state.waterVaporSU-=vaporFeed;state.stormLiquidSU+=vaporFeed;state.cumulative.vaporToStormSU+=vaporFeed;
+
+    // 3) Background cloud precipitation remains a separate global process.
+    const backgroundRain=Math.min(state.cloudWaterSU,state.cloudWaterSU*BACKGROUND_PRECIP_EFFICIENCY);
+    const backgroundCloudBeforeRain=state.cloudWaterSU;
+    const backgroundSoluteFraction=backgroundCloudBeforeRain>0?backgroundRain/backgroundCloudBeforeRain:0;
+    for(const [cloudKey,oceanKey,landKey] of [['cloudNitriteSU','oceanNitriteSU','landNitriteSU'],['cloudNitrateSU','oceanNitrateSU','landNitrateSU'],['cloudHplusSU','oceanHplusSU','landHplusSU']]){
+      const moved=state[cloudKey]*backgroundSoluteFraction;state[cloudKey]-=moved;
       state[oceanKey]+=moved*OCEAN_FRACTION;state[landKey]+=moved*LAND_FRACTION;
-    };
-    transferCloudSolute('cloudNitriteSU','oceanNitriteSU','landNitriteSU');
-    transferCloudSolute('cloudNitrateSU','oceanNitrateSU','landNitrateSU');
-    transferCloudSolute('cloudHplusSU','oceanHplusSU','landHplusSU');
-    state.cloudWaterSU-=rain;
-    const rainOcean=rain*OCEAN_FRACTION;
-    const rainLand=rain*LAND_FRACTION;
+    }
+    state.cloudWaterSU-=backgroundRain;
+
+    // 4) Six one-hour storm microphysics substeps. Each phase is a real water inventory.
+    const stormLiquidBeforeMicrophysics=state.stormLiquidSU;
+    let stormLiquidPrecipSU=0,stormRain=0,stormSnow=0,stormMelt=0;
+    const precipFractionPerHour=1-Math.pow(1-STORM_PRECIP_EFFICIENCY,1/STORM_DURATION_HOURS);
+    const cloudTopKm=climateBefore.cloudTopKm;
+    const freezingLevelKm=SURFACE_TEMP_C/ENV_LAPSE_K_KM;
+    const chargingMidpointKm=(climateBefore.chargingLayerBottomKm+climateBefore.chargingLayerTopKm)/2;
+    const fallDistanceM=Math.max(0,(chargingMidpointKm-freezingLevelKm)*1000);
+    for(let hour=0;hour<STORM_DURATION_HOURS;hour+=MICROPHYSICS_SUBSTEP_HOURS){
+      if(cloudTopKm>0 && climateBefore.cloudTopTempC<=ICE_NUCLEATION_C){
+        const freezeFraction=climateBefore.cloudTopTempC<=HOMOGENEOUS_FREEZING_C?1:(1-Math.exp(-FREEZING_RATE_H*MICROPHYSICS_SUBSTEP_HOURS));
+        const freeze=state.stormLiquidSU*freezeFraction;
+        state.stormLiquidSU-=freeze;state.stormIceSU+=freeze;state.cumulative.iceFormedSU+=freeze;
+      }
+      if(state.stormIceSU>1e-12 && state.stormLiquidSU>0 && climateBefore.cloudTopTempC<=ICE_NUCLEATION_C){
+        const riming=state.stormLiquidSU*(1-Math.exp(-RIMING_RATE_H*MICROPHYSICS_SUBSTEP_HOURS));
+        state.stormLiquidSU-=riming;state.stormGraupelSU+=riming;state.cumulative.graupelFormedSU+=riming;
+      }
+      const liquidFall=state.stormLiquidSU*precipFractionPerHour;
+      const iceFall=state.stormIceSU*precipFractionPerHour;
+      const graupelFall=state.stormGraupelSU*precipFractionPerHour;
+      state.stormLiquidSU-=liquidFall;state.stormIceSU-=iceFall;state.stormGraupelSU-=graupelFall;
+      stormLiquidPrecipSU+=liquidFall;
+      stormRain+=liquidFall;
+      const iceFallHours=fallDistanceM/ICE_FALL_SPEED_MPS/3600;
+      const graupelFallHours=fallDistanceM/GRAUPEL_FALL_SPEED_MPS/3600;
+      const iceMeltFraction=clamp(1-Math.exp(-MELTING_RATE_H*iceFallHours),0,1);
+      const graupelMeltFraction=clamp(1-Math.exp(-MELTING_RATE_H*graupelFallHours),0,1);
+      const iceMelt=iceFall*iceMeltFraction,graupelMelt=graupelFall*graupelMeltFraction;
+      stormRain+=iceMelt+graupelMelt;
+      stormMelt+=iceMelt+graupelMelt;
+      stormSnow+=(iceFall-iceMelt)+(graupelFall-graupelMelt);
+    }
+    state.snowpackSU+=stormSnow;
+    const surfaceSnowMelt=SURFACE_TEMP_C>0?state.snowpackSU*(1-Math.exp(-MELTING_RATE_H*STORM_DURATION_HOURS)):0;
+    state.snowpackSU-=surfaceSnowMelt;
+    // Surface snowmelt enters the land reservoir directly; it is not counted again as atmospheric rainfall.
+    state.landSurfaceSU+=surfaceSnowMelt;
+
+    // Dissolved cloud solutes follow liquid water; freezing/riming retain solutes in residual liquid.
+    const stormSoluteFraction=stormLiquidBeforeMicrophysics>0?clamp(stormLiquidPrecipSU/stormLiquidBeforeMicrophysics,0,1):0;
+    for(const [stormKey,oceanKey,landKey] of [['stormNitriteSU','oceanNitriteSU','landNitriteSU'],['stormNitrateSU','oceanNitrateSU','landNitrateSU'],['stormHplusSU','oceanHplusSU','landHplusSU']]){
+      const moved=state[stormKey]*stormSoluteFraction;state[stormKey]-=moved;
+      state[oceanKey]+=moved*OCEAN_FRACTION;state[landKey]+=moved*LAND_FRACTION;
+    }
+
+    // 5) NO2 hydrolysis can use liquid water in either background or storm cloud droplets.
+    const aqueousFraction=1-Math.exp(-NO2_AQUEOUS_RATE*TICK_SECONDS);
+    const availableAqueous=state.cloudWaterSU+state.stormLiquidSU;
+    const hydrolysisExtent=Math.min(state.gases.no2SU*aqueousFraction/2,availableAqueous);
+    state.gases.no2SU=Math.max(0,state.gases.no2SU-2*hydrolysisExtent);
+    const hydrolysisFromBackground=Math.min(state.cloudWaterSU,hydrolysisExtent);
+    const hydrolysisFromStorm=hydrolysisExtent-hydrolysisFromBackground;
+    state.cloudWaterSU-=hydrolysisFromBackground;state.stormLiquidSU-=hydrolysisFromStorm;
+    state.cloudNitriteSU+=hydrolysisFromBackground;state.cloudNitrateSU+=hydrolysisFromBackground;state.cloudHplusSU+=2*hydrolysisFromBackground;
+    state.stormNitriteSU+=hydrolysisFromStorm;state.stormNitrateSU+=hydrolysisFromStorm;state.stormHplusSU+=2*hydrolysisFromStorm;
+    state.cumulative.no2HydrolyzedSU+=hydrolysisExtent;
+    state.cumulative.hno2MadeSU+=hydrolysisExtent;state.cumulative.hno3MadeSU+=hydrolysisExtent;
+    state.cumulative.no2WaterConsumedSU+=hydrolysisExtent;
+
+    // 6) Rain and snow reach land/ocean; runoff, infiltration and baseflow close the surface-water loop.
+    const rain=backgroundRain+stormRain;
+    const rainOcean=rain*OCEAN_FRACTION,rainLand=rain*LAND_FRACTION;
     state.landSurfaceSU+=rainLand;
     const infiltration=state.landSurfaceSU*0.10;
     const runoff=state.landSurfaceSU*0.05;
@@ -1389,10 +1495,9 @@ if(oceanSlider){oceanSlider.addEventListener('input',updateHydrosphere);updateHy
       state[landKey]-=toGround+toOcean;state[groundKey]+=toGround;state[oceanKey]+=toOcean;
       const base=state[groundKey]*0.0005;state[groundKey]-=base;state[oceanKey]+=base;
     };
-    moveLandSolute('landNitriteSU','groundwaterNitriteSU','oceanNitriteSU');
-    moveLandSolute('landNitrateSU','groundwaterNitrateSU','oceanNitrateSU');
-    moveLandSolute('landHplusSU','groundwaterHplusSU','oceanHplusSU');
+    for(const [landKey,groundKey,oceanKey] of [['landNitriteSU','groundwaterNitriteSU','oceanNitriteSU'],['landNitrateSU','groundwaterNitrateSU','oceanNitrateSU'],['landHplusSU','groundwaterHplusSU','oceanHplusSU']])moveLandSolute(landKey,groundKey,oceanKey);
     world.oceanWaterSU+=rainOcean+runoff+baseflow;
+
     // Hydrothermal plume: water is recirculated, not created or permanently added to ocean volume.
     const flowKgS=Math.max(0,context.hydrothermalMassFlowKgS||0);
     const flowM3S=flowKgS/925;
@@ -1403,18 +1508,18 @@ if(oceanSlider){oceanSlider.addEventListener('input',updateHydrosphere);updateHy
     state.cumulative.hydrothermalKg+=flowKgS*TICK_SECONDS;
     state.cumulative.hydrothermalHeatJ+=heatJ;
     if(flowKgS>0)state.cumulative.plumeTicks++;
-    // Atmospheric convection and mixed-phase cloud charging.
+
+    // 7) Charging requires actual coexisting liquid, ice and graupel in the correct thermal layer.
+    const cloudPhase=climate();
     const mixed=cloudPhase.mixedPhase;
     const ccnMultiplier=1+Math.min(0.5,state.volcanic.ashKg/1e10);
-    const stormAreaM2=STORM_AREA_KM2*1e6;
-    const chargePower=mixed?CHARGE_POWER_DENSITY_WM2*stormAreaM2*cloudPhase.convectiveIndex*ccnMultiplier:0;
-    state.chargeEnergyJ+=chargePower*TICK_SECONDS;
+    const coreAreaM2=STORM_CORE_AREA_KM2*1e6;
+    const chargePower=mixed?CHARGE_POWER_DENSITY_WM2*coreAreaM2*cloudPhase.convectiveIndex*ccnMultiplier:0;
+    state.chargeEnergyJ+=chargePower*(STORM_DURATION_HOURS*3600);
     let lightning=Math.floor(state.chargeEnergyJ/LIGHTNING_ENERGY_J);
     if(lightning>200000)lightning=200000;
     const lightningEnergy=lightning*LIGHTNING_ENERGY_J;
     state.chargeEnergyJ=Math.max(0,state.chargeEnergyJ-lightningEnergy);
-    // Balanced net plasma chemistry: N2 + 2 CO2 -> 2 NO + 2 CO.
-    // Yield is energy-limited and uses a small explicit effective efficiency.
     const chemicalEnergy=lightningEnergy*LIGHTNING_CHEM_EFFICIENCY;
     const xiMol=chemicalEnergy/LIGHTNING_NET_DH_J_MOL;
     const xiSU=Math.min(xiMol/SU_MOL,state.gases.n2SU,state.gases.co2SU/2);
@@ -1422,8 +1527,8 @@ if(oceanSlider){oceanSlider.addEventListener('input',updateHydrosphere);updateHy
     state.gases.n2SU-=n2Used;state.gases.co2SU-=co2Used;state.gases.noSU+=noMade;state.gases.coSU+=coMade;
     state.cumulative.lightning+=lightning;state.cumulative.lightningEnergyJ+=lightningEnergy;
     state.cumulative.lightningChemExtentSU+=xiSU;state.cumulative.co2ConsumedSU+=co2Used;state.cumulative.n2ConsumedSU+=n2Used;state.cumulative.noMadeSU+=noMade;state.cumulative.coMadeSU+=coMade;
-    // Step 2: photolytic atomic oxygen oxidizes some NO to NO2. O atoms are taken
-    // from the explicit SO2 photolysis reservoir, never created by this step.
+
+    // 8) NO oxidation consumes explicit photolytic atomic oxygen.
     const solarEngine=window.WorldArkeanSolarEngine;
     const solarState=solarEngine?.getState?.();
     const oxygenAvailable=Math.max(0,solarState?.oAvailable||0);
@@ -1433,24 +1538,14 @@ if(oceanSlider){oceanSlider.addEventListener('input',updateHydrosphere);updateHy
     state.gases.noSU=Math.max(0,state.gases.noSU-noOxidized);
     state.gases.no2SU+=noOxidized;
     state.cumulative.noOxidizedSU+=noOxidized;
-    // Step 3: NO2 dissolves/reacts in cloud droplets. Net aqueous transformation:
-    // 2 NO2 + H2O -> NO2- + NO3- + 2 H+. This is a balanced effective pathway.
-    const aqueousFraction=1-Math.exp(-NO2_AQUEOUS_RATE*TICK_SECONDS);
-    const hydrolysisExtent=Math.min(state.gases.no2SU*aqueousFraction/2,state.cloudWaterSU);
-    state.gases.no2SU=Math.max(0,state.gases.no2SU-2*hydrolysisExtent);
-    state.cloudWaterSU=Math.max(0,state.cloudWaterSU-hydrolysisExtent);
-    state.cloudNitriteSU+=hydrolysisExtent;state.cloudNitrateSU+=hydrolysisExtent;state.cloudHplusSU+=2*hydrolysisExtent;
-    state.cumulative.noOxidizedSU+=0;
-    state.cumulative.no2HydrolyzedSU+=hydrolysisExtent;
-    state.cumulative.hno2MadeSU+=hydrolysisExtent;state.cumulative.hno3MadeSU+=hydrolysisExtent;
-    state.cumulative.no2WaterConsumedSU+=hydrolysisExtent;
-    const after=world.oceanWaterSU+state.waterVaporSU+state.cloudWaterSU+state.landSurfaceSU+state.groundwaterSU+state.volcanic.magmaH2OSU+state.cumulative.no2WaterConsumedSU;
+
+    const after=waterInventory();
     const residual=after-before;
     const waterOk=Math.abs(residual)<Math.max(1e-8,Math.abs(before)*1e-12);
     const hydroFluid=window.WorldArkeanOceanChemistryEngine?.getState?.().fluid||{};
-    const nitriteTotal=state.cloudNitriteSU+state.landNitriteSU+state.groundwaterNitriteSU+state.oceanNitriteSU+(Number(hydroFluid.nitriteSU)||0);
-    const nitrateTotal=state.cloudNitrateSU+state.landNitrateSU+state.groundwaterNitrateSU+state.oceanNitrateSU+(Number(hydroFluid.nitrateSU)||0);
-    const acidityTotal=state.cloudHplusSU+state.landHplusSU+state.groundwaterHplusSU+state.oceanHplusSU+(Number(hydroFluid.hplusSU)||0);
+    const nitriteTotal=state.cloudNitriteSU+state.stormNitriteSU+state.landNitriteSU+state.groundwaterNitriteSU+state.oceanNitriteSU+(Number(hydroFluid.nitriteSU)||0);
+    const nitrateTotal=state.cloudNitrateSU+state.stormNitrateSU+state.landNitrateSU+state.groundwaterNitrateSU+state.oceanNitrateSU+(Number(hydroFluid.nitrateSU)||0);
+    const acidityTotal=state.cloudHplusSU+state.stormHplusSU+state.landHplusSU+state.groundwaterHplusSU+state.oceanHplusSU+(Number(hydroFluid.hplusSU)||0);
     const nInventory=state.gases.noSU+state.gases.no2SU+nitriteTotal+nitrateTotal;
     const nResidual=nInventory-2*state.cumulative.n2ConsumedSU;
     const oNoxInventory=state.gases.noSU+2*state.gases.no2SU+2*nitriteTotal+3*nitrateTotal;
@@ -1464,16 +1559,17 @@ if(oceanSlider){oceanSlider.addEventListener('input',updateHydrosphere);updateHy
     const hOk=Math.abs(hResidual)<1e-8;
     const chemOk=carbonOk&&nOk&&oNoxOk&&hOk;
     state.ticks++;
-    const rainfallMm=massKg(rain)/(EARTH_AREA_M2); // kg/m2 = mm
+    const rainfallMm=massKg(rain)/(EARTH_AREA_M2);
     state.cumulative.evapOceanSU+=evapOcean;state.cumulative.evapLandSU+=soilEvap;state.cumulative.condensedSU+=cond;state.cumulative.rainSU+=rain;
+    state.cumulative.stormRainSU+=stormRain;state.cumulative.snowfallSU+=stormSnow;state.cumulative.snowmeltSU+=stormMelt+surfaceSnowMelt;
     state.cumulative.infiltrationSU+=infiltration;state.cumulative.runoffSU+=runoff;state.cumulative.baseflowSU+=baseflow;state.cumulative.rainMm+=rainfallMm;
-    const cloudIce= mixed?state.cloudWaterSU*0.35:0;const graupel=mixed?state.cloudWaterSU*0.15:0;const cloudLiquid=state.cloudWaterSU-cloudIce-graupel;
-    state.last={evapSU:evapOcean,landEvapSU:soilEvap,condSU:cond,rainSU:rain,rainOceanSU:rainOcean,rainLandSU:rainLand,infiltrationSU:infiltration,runoffSU:runoff,baseflowSU:baseflow,rainMm:rainfallMm,flowM3s:flowM3S,heatW:heatJ/TICK_SECONDS,plumeTempC,lightning,lightningChemSU:xiSU,noOxidizedSU:noOxidized,no2HydrolyzedSU:hydrolysisExtent,cloudLiquidSU:cloudLiquid,cloudIceSU:cloudIce,graupelSU:graupel,cloudTopKm:cloudPhase.cloudTopKm,cloudBaseKm:cloudPhase.cloudBaseKm,cloudTopTempC:cloudPhase.cloudTopTempC,convectiveIndex:cloudPhase.convectiveIndex,updraftMps:cloudPhase.updraftMps,rh:cloudPhase.rh,mixedPhase:mixed,chargePowerW:chargePower,chargeEnergyJ:state.chargeEnergyJ,waterResidualSU:residual,volcanoEvent:volcano.event,volcanicLightning:volcano.volcanicLightning,ccnMultiplier};
+    const cloudLiquid=state.cloudWaterSU+state.stormLiquidSU;
+    state.last={evapSU:evapOcean,landEvapSU:soilEvap,condSU:cond,rainSU:rain,rainOceanSU:rainOcean,rainLandSU:rainLand,infiltrationSU:infiltration,runoffSU:runoff,baseflowSU:baseflow,rainMm:rainfallMm,flowM3s:flowM3S,heatW:heatJ/TICK_SECONDS,plumeTempC,lightning,lightningChemSU:xiSU,noOxidizedSU:noOxidized,no2HydrolyzedSU:hydrolysisExtent,cloudLiquidSU:cloudLiquid,cloudIceSU:state.stormIceSU,graupelSU:state.stormGraupelSU,backgroundCloudSU:state.cloudWaterSU,stormLiquidSU:state.stormLiquidSU,stormIceSU:state.stormIceSU,stormGraupelSU:state.stormGraupelSU,snowpackSU:state.snowpackSU,stormWaterSU:state.stormLiquidSU+state.stormIceSU+state.stormGraupelSU,cloudFeedSU:cloudFeed,vaporFeedSU:vaporFeed,chargingLwcGm3:cloudPhase.chargingLwcGm3,cloudTopKm:cloudPhase.cloudTopKm,cloudBaseKm:cloudPhase.cloudBaseKm,cloudTopTempC:cloudPhase.cloudTopTempC,convectiveIndex:cloudPhase.convectiveIndex,updraftMps:cloudPhase.updraftMps,rh:cloudPhase.rh,mixedPhase:mixed,chargePowerW:chargePower,chargeEnergyJ:state.chargeEnergyJ,waterResidualSU:residual,volcanoEvent:volcano.event,volcanicLightning:volcano.volcanicLightning,ccnMultiplier};
     state.audit={ran:true,ok:waterOk&&chemOk,water:waterOk,chemistry:chemOk,carbon:carbonOk,carbonResidual:atmosphereMagmaCarbon.residual,carbonToleranceSU:atmosphereMagmaCarbon.tolerance,coCarbonResidual:atmosphereMagmaCarbon.coResidual,co2CoConversionResidual:atmosphereMagmaCarbon.conversionResidual,nitrogen:nOk,oxygen:oNoxOk,acidity:hOk,nResidual,oNoxResidual,hResidual,residual};
-    const log={tick:state.ticks,rainMm:rainfallMm,evapSU:evapOcean,condSU:cond,lightning,coMadeSU:coMade,noMadeSU:noMade,noOxidizedSU:noOxidized,no2HydrolyzedSU:hydrolysisExtent,hydrothermalM3:circulatedM3,volcano:volcano.event?'ERUPSI':'—',audit:waterOk&&chemOk?'OK':'CHECK'};
+    const log={tick:state.ticks,rainMm:rainfallMm,evapSU:evapOcean,condSU:cond,cloudFeedSU:cloudFeed,vaporFeedSU:vaporFeed,stormLiquidSU:state.stormLiquidSU,stormIceSU:state.stormIceSU,stormGraupelSU:state.stormGraupelSU,lightning,coMadeSU:coMade,noMadeSU:noMade,noOxidizedSU:noOxidized,no2HydrolyzedSU:hydrolysisExtent,hydrothermalM3:circulatedM3,volcano:volcano.event?'ERUPSI':'—',audit:waterOk&&chemOk?'OK':'CHECK'};
     state.log.push(log);if(state.log.length>240)state.log.shift();
     save();render();
-    return {ok:waterOk&&chemOk,audit:{...state.audit,rainMm:rainfallMm},waterResidualSU:residual,lightning,rainSU:rain,rainMm:rainfallMm,volcano};
+    return {ok:waterOk&&chemOk,audit:{...state.audit,rainMm:rainfallMm},waterResidualSU:residual,lightning,rainSU:rain,rainMm:rainfallMm,volcano,cloudPhase: {mixedPhase:mixed,lwcGm3:cloudPhase.chargingLwcGm3,updraftMps:cloudPhase.updraftMps,stormWaterSU:cloudPhase.stormWaterSU}};
   }
   function reset(){state=initialState();save();render();}
   function restore(snapshot){try{const s=migrateState(JSON.parse(JSON.stringify(snapshot)));if(!s||!Number.isFinite(s.ticks)||!s.cumulative)return false;state=s;save();render();return true;}catch(e){return false;}}
@@ -1481,16 +1577,16 @@ if(oceanSlider){oceanSlider.addEventListener('input',updateHydrosphere);updateHy
   function formatEnergy(j){if(j>=1e15)return fmt(j/1e15,3)+' PJ';if(j>=1e12)return fmt(j/1e12,3)+' TJ';if(j>=1e9)return fmt(j/1e9,3)+' GJ';return fmt(j,2)+' J';}
   function render(){
     const c=climate();const mm=state.last.rainMm||0;
-    const vaporKg=massKg(state.waterVaporSU),cloudKg=massKg(state.cloudWaterSU),landKg=massKg(state.landSurfaceSU+state.groundwaterSU);
+    const vaporKg=massKg(state.waterVaporSU),cloudKg=massKg(state.cloudWaterSU+state.stormLiquidSU+state.stormIceSU+state.stormGraupelSU),landKg=massKg(state.landSurfaceSU+state.groundwaterSU+state.snowpackSU);
     setText('hydro-vapor',fmt(vaporKg/1e15,3)+' × 10¹⁵ kg');setText('hydro-vapor-surface',fmt(state.waterVaporSU,2)+' SU · skala uap 2 km');
     setText('hydro-cloud',fmt(cloudKg/1e12,3)+' × 10¹² kg');setText('hydro-rain-cum',fmt(state.cumulative.rainMm,3)+' mm');setText('hydro-rain-rate',fmt(mm*2,4)+' mm/hari ekuivalen tick');
-    setText('hydro-land-store',fmt(landKg/1e12,3)+' × 10¹² kg');setText('hydro-cloud-liquid',fmt(state.last.cloudLiquidSU||0,5)+' SU');setText('hydro-cloud-ice',fmt(state.last.cloudIceSU||0,5)+' SU');setText('hydro-cloud-graupel',fmt(state.last.graupelSU||0,5)+' SU');
+    setText('hydro-land-store',fmt(landKg/1e12,3)+' × 10¹² kg');setText('hydro-cloud-background',fmt(state.cloudWaterSU,6)+' SU');setText('hydro-cloud-liquid',fmt(state.cloudWaterSU+state.stormLiquidSU,6)+' SU');setText('hydro-cloud-ice',fmt(state.stormIceSU,6)+' SU');setText('hydro-cloud-graupel',fmt(state.stormGraupelSU,6)+' SU');setText('hydro-snowpack',fmt(state.snowpackSU,6)+' SU');setText('hydro-storm-total',fmt(state.stormLiquidSU+state.stormIceSU+state.stormGraupelSU,6)+' SU');setText('hydro-cloud-feed',fmt(state.last.cloudFeedSU||0,8)+' SU');setText('hydro-vapor-feed',fmt(state.last.vaporFeedSU||0,8)+' SU');
     setText('hydro-evap-tick',fmt(state.last.evapSU,6)+' SU');setText('hydro-cond-tick',fmt(state.last.condSU,6)+' SU');setText('hydro-rain-tick',fmt(state.last.rainSU,6)+' SU');setText('hydro-rain-ocean',fmt(state.last.rainSU*OCEAN_FRACTION,6)+' SU');setText('hydro-infiltration',fmt(state.cumulative.infiltrationSU,6)+' SU total');setText('hydro-return',fmt((state.last.runoffSU||0)+(state.last.baseflowSU||0),6)+' SU/tick');
     setText('hydro-residual',sci(state.audit.residual||0)+' SU');const ha=$('hydro-audit');if(ha){ha.textContent=state.audit.ran?(state.audit.ok?'NERACA LULUS':'AUDIT GAGAL'):'MENUNGGU TICK';ha.className='earth-state '+(state.audit.ran&&!state.audit.ok?'wait':'');}
     const hs=$('hydro-status');if(hs){hs.textContent=state.ticks?'SIKLUS BERJALAN':'MENUNGGU SIMULASI';hs.className='earth-state '+(!state.ticks?'wait':'');}
     setText('ocean-circ-flow',fmt(state.last.flowM3s,3)+' m³/s');setText('ocean-circ-volume',fmt(state.cumulative.hydrothermalM3/1e9,6)+' km³');setText('ocean-circ-temp',fmt(state.last.plumeTempC||25,1)+' °C');setText('ocean-circ-heat',formatEnergy(state.last.heatW*TICK_SECONDS));
     const oceanMass=1.4e21;const dT=state.last.heatW*TICK_SECONDS/(oceanMass*CP_WATER);setText('ocean-circ-global-dt',sci(dT)+' °C/tick');setText('ocean-circ-water-mass',fmt(state.cumulative.hydrothermalKg/1e15,4)+' × 10¹⁵ kg');
-    setText('atm-rh',fmt(c.rh*100,2)+'%');setText('atm-cloud-base',fmt(c.cloudBaseKm,2)+' km');setText('atm-cloud-top',fmt(c.cloudTopKm,2)+' km');setText('atm-conv-index',fmt(c.convectiveIndex,3));setText('atm-surface-temp',SURFACE_TEMP_C+' °C');setText('atm-cloudtop-temp',fmt(c.cloudTopTempC,1)+' °C');setText('atm-updraft',fmt(c.updraftMps,2)+' m/s');setText('atm-cloud-phase',c.mixedPhase?'Campuran superdingin–es–graupel':'Dominan cair / campuran belum siap');setText('atm-storm-cloud',fmt(c.stormCloudSU,6)+' SU / area '+fmt(STORM_AREA_KM2,0)+' km²');
+    setText('atm-rh',fmt(c.rh*100,2)+'%');setText('atm-cloud-base',fmt(c.cloudBaseKm,2)+' km');setText('atm-cloud-top',fmt(c.cloudTopKm,2)+' km');setText('atm-conv-index',fmt(c.convectiveIndex,3));setText('atm-surface-temp',SURFACE_TEMP_C+' °C');setText('atm-cloudtop-temp',fmt(c.cloudTopTempC,1)+' °C');setText('atm-updraft',fmt(c.updraftMps,2)+' m/s');setText('atm-cloud-phase',c.mixedPhase?'Memenuhi syarat charging: cair + es + graupel':'Belum memenuhi seluruh syarat charging');setText('atm-storm-cloud',fmt(c.stormWaterSU,6)+' SU / '+fmt(STORM_AREA_KM2,0)+' km²');setText('atm-storm-lwc',fmt(c.chargingLwcGm3,3)+' g/m³');setText('atm-charging-layer',c.chargingLayerOverlap?fmt(c.chargingLayerBottomKm,2)+'–'+fmt(c.chargingLayerTopKm,2)+' km · terjangkau':'Tidak beririsan dengan awan');
     const mr=$('elec-mixed-ready');if(mr)mr.textContent=c.mixedPhase?'SIAP':'BELUM';setText('elec-charge-energy',formatEnergy(state.chargeEnergyJ));setText('elec-strikes-tick',fmt(state.last.lightning||0,0));setText('elec-strikes-total',fmt(state.cumulative.lightning,0));setText('elec-co2-used',fmt(state.cumulative.co2ConsumedSU,12)+' SU');setText('elec-n2-used',fmt(state.cumulative.n2ConsumedSU,12)+' SU');setText('elec-no-made',fmt(state.cumulative.noMadeSU,12)+' SU');setText('elec-co-made',fmt(state.cumulative.coMadeSU,12)+' SU');
     const es=$('elec-status');if(es){es.textContent=c.mixedPhase?'POTENSI PEMISAHAN MUATAN':'MENUNGGU AWAN CAMPURAN';es.className='earth-state '+(c.mixedPhase?'':'wait');}
     const dissolvedNitrogen=state.oceanNitriteSU+state.oceanNitrateSU;
@@ -1517,7 +1613,7 @@ if(oceanSlider){oceanSlider.addEventListener('input',updateHydrosphere);updateHy
   function reAuditCarbon(){const a=atmosphereMagmaCarbonAudit();state.audit.carbon=a.ok;state.audit.carbonResidual=a.residual;state.audit.carbonToleranceSU=a.tolerance;state.audit.coCarbonResidual=a.coResidual;state.audit.co2CoConversionResidual=a.conversionResidual;state.audit.chemistry=a.ok&&state.audit.nitrogen&&state.audit.oxygen&&state.audit.acidity;save();return a.ok;}
   const applyBtn=$('volc-apply');if(applyBtn)applyBtn.addEventListener('click',applyVolcanicInputs);
   render();
-  window.WorldArkeanEarthSystems={stepTick,reset,restore,render,getState:()=>JSON.parse(JSON.stringify(state)),applyVolcanicInputs,transferCO2ToOcean,transferCO2ToAtmosphere,transferOceanAqueousToHydrothermal,transferHydrothermalAqueousToOcean,reAuditCarbon,config:{tickSeconds:TICK_SECONDS,initialVaporSU:INITIAL_VAPOR_SU,saturationVaporSU:SATURATION_CAPACITY_SU,initialVaporMassKg:INITIAL_VAPOR_KG,vaporScaleHeightM:VAPOR_SCALE_HEIGHT_M,oceanAreaM2:OCEAN_AREA_M2,landAreaM2:LAND_AREA_M2,evapOceanSUPerTick:EVAP_OCEAN_SU,stormAreaKm2:STORM_AREA_KM2,chargePowerDensityWm2:CHARGE_POWER_DENSITY_WM2,lightningEnergyJ:LIGHTNING_ENERGY_J}};
+  window.WorldArkeanEarthSystems={stepTick,reset,restore,render,getState:()=>JSON.parse(JSON.stringify(state)),applyVolcanicInputs,transferCO2ToOcean,transferCO2ToAtmosphere,transferOceanAqueousToHydrothermal,transferHydrothermalAqueousToOcean,reAuditCarbon,config:{version:'2.1',tickSeconds:TICK_SECONDS,initialVaporSU:INITIAL_VAPOR_SU,saturationVaporSU:SATURATION_CAPACITY_SU,initialVaporMassKg:INITIAL_VAPOR_KG,vaporScaleHeightM:VAPOR_SCALE_HEIGHT_M,oceanAreaM2:OCEAN_AREA_M2,landAreaM2:LAND_AREA_M2,cloudCoverageFraction:CLOUD_COVERAGE_FRACTION,globalCloudWaterPathReferenceKgM2:GLOBAL_CLOUD_WATER_PATH_REFERENCE_KG_M2,stormAreaKm2:STORM_AREA_KM2,stormCoreAreaKm2:STORM_CORE_AREA_KM2,stormSourceAreaKm2:STORM_SOURCE_AREA_KM2,stormWaterPathKgM2:STORM_WATER_PATH_KG_M2,backgroundPrecipEfficiency:BACKGROUND_PRECIP_EFFICIENCY,stormPrecipEfficiency:STORM_PRECIP_EFFICIENCY,cloudFeedFraction:CLOUD_FEED_FRACTION,vaporConvergenceFraction:VAPOR_CONVERGENCE_FRACTION,stormDurationHours:STORM_DURATION_HOURS,microphysicsSubstepHours:MICROPHYSICS_SUBSTEP_HOURS,iceNucleationC:ICE_NUCLEATION_C,homogeneousFreezingC:HOMOGENEOUS_FREEZING_C,chargingMinC:CHARGING_MIN_C,chargingMaxC:CHARGING_MAX_C,minChargingLwcGm3:MIN_CHARGING_LWC_G_M3,minChargingUpdraftMps:MIN_CHARGING_UPDRAFT_MPS,freezingRatePerHour:FREEZING_RATE_H,rimingRatePerHour:RIMING_RATE_H,meltingRatePerHour:MELTING_RATE_H,iceFallSpeedMps:ICE_FALL_SPEED_MPS,graupelFallSpeedMps:GRAUPEL_FALL_SPEED_MPS,evapOceanSUPerTick:EVAP_OCEAN_SU,chargePowerDensityWm2:CHARGE_POWER_DENSITY_WM2,lightningEnergyJ:LIGHTNING_ENERGY_J}};
 })();
 
 
@@ -1916,7 +2012,7 @@ if(oceanSlider){oceanSlider.addEventListener('input',updateHydrosphere);updateHy
     clearRunTimer();runControl.mode='stopped';runControl.resumeMode=null;runControl.targetTick=null;setRunMessage('Berhenti atas perintah pengguna; progres tetap tersimpan.');saveState();render();
   }
   function reset(){
-    clearRunTimer();runControl.mode='stopped';runControl.resumeMode=null;runControl.targetTick=null;runControl.startTick=0;runControl.error='';setRunMessage('Seluruh simulasi dunia direset ke baseline samudera Arkean v2.0.');state=initialState();if(window.WorldArkeanSolarEngine)window.WorldArkeanSolarEngine.reset();if(window.WorldArkeanEarthSystems)window.WorldArkeanEarthSystems.reset();if(window.WorldArkeanOceanChemistryEngine)window.WorldArkeanOceanChemistryEngine.reset();saveState();render();
+    clearRunTimer();runControl.mode='stopped';runControl.resumeMode=null;runControl.targetTick=null;runControl.startTick=0;runControl.error='';setRunMessage('Seluruh simulasi dunia direset ke baseline samudera Arkean v2.1.');state=initialState();if(window.WorldArkeanSolarEngine)window.WorldArkeanSolarEngine.reset();if(window.WorldArkeanEarthSystems)window.WorldArkeanEarthSystems.reset();if(window.WorldArkeanOceanChemistryEngine)window.WorldArkeanOceanChemistryEngine.reset();saveState();render();
   }
 
   function render(){
@@ -2037,7 +2133,7 @@ if(oceanSlider){oceanSlider.addEventListener('input',updateHydrosphere);updateHy
     for(const x of state.log)rows.push([x.tick,x.phase,x.hours,x.tempC,x.foUsed,x.faUsed,x.h2,x.water,x.so2Photolyzed,x.rainMm||0,x.lightning||0,x.flow,x.residenceDays,x.audit]);
     const csv=rows.map(r=>r.map(v=>'"'+String(v??'').replace(/"/g,'""')+'"').join(',')).join('\n');
     const blob=new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8;'});
-    const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='World_Arkean_v2.0_log.csv';document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);
+    const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='World_Arkean_v2.1_log.csv';document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);
   }
 
   state=loadState();
@@ -2473,7 +2569,7 @@ if(oceanSlider){oceanSlider.addEventListener('input',updateHydrosphere);updateHy
     // Water cycle plus the independent hydrothermal water subreservoir.
     for(const [name,value] of [
       ['ocean',sim.oceanWaterSU],['hydrothermalFluid',sim.localWaterSU],['vapor',earth.waterVaporSU],
-      ['cloud',earth.cloudWaterSU],['landSurface',earth.landSurfaceSU],['groundwater',earth.groundwaterSU]
+      ['cloudBackground',earth.cloudWaterSU],['stormLiquid',earth.stormLiquidSU],['stormIce',earth.stormIceSU],['stormGraupel',earth.stormGraupelSU],['snowpack',earth.snowpackSU],['landSurface',earth.landSurfaceSU],['groundwater',earth.groundwaterSU]
     ])add('water.'+name,value,'H2O');
     // Fixed atmospheric baseline gases: present in the initial-atmosphere table but not yet reactive.
     add('atmosphere.fixed.H2',STATIC_ATMOSPHERE.h2SU,'H2');
@@ -2484,9 +2580,9 @@ if(oceanSlider){oceanSlider.addEventListener('input',updateHydrosphere);updateHy
     add('solar.atomicO_available',solar.oAvailable,'O');
     // Atmospheric / hydrological nitrogen and acidity products.
     const nReservoirs=[
-      ['cloudNitriteSU','nitrite'],['landNitriteSU','nitrite'],['groundwaterNitriteSU','nitrite'],['oceanNitriteSU','nitrite'],
-      ['cloudNitrateSU','nitrate'],['landNitrateSU','nitrate'],['groundwaterNitrateSU','nitrate'],['oceanNitrateSU','nitrate'],
-      ['cloudHplusSU','Hplus'],['landHplusSU','Hplus'],['groundwaterHplusSU','Hplus'],['oceanHplusSU','Hplus']
+      ['cloudNitriteSU','nitrite'],['stormNitriteSU','nitrite'],['landNitriteSU','nitrite'],['groundwaterNitriteSU','nitrite'],['oceanNitriteSU','nitrite'],
+      ['cloudNitrateSU','nitrate'],['stormNitrateSU','nitrate'],['landNitrateSU','nitrate'],['groundwaterNitrateSU','nitrate'],['oceanNitrateSU','nitrate'],
+      ['cloudHplusSU','Hplus'],['stormHplusSU','Hplus'],['landHplusSU','Hplus'],['groundwaterHplusSU','Hplus'],['oceanHplusSU','Hplus']
     ];
     for(const [key,formula] of nReservoirs)add('earth.'+key,earth[key],formula);
     // Regional olivine stocks, including the unallocated global remainder exactly once.
