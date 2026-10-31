@@ -843,7 +843,7 @@
         <tr><td>Brusit terbentuk</td><td id="sim-brucite">—</td><td id="sim-brucite-mol">—</td></tr>
         <tr><td>Magnetit sekunder terbentuk</td><td id="sim-mag-secondary">—</td><td id="sim-mag-mol">—</td></tr>
         <tr><td>Silika sekunder terbentuk</td><td id="sim-silica">—</td><td id="sim-silica-mol">—</td></tr>
-        <tr><td>H₂ terlarut lokal</td><td id="sim-h2-aq">—</td><td id="sim-h2-aq-mol">—</td></tr>
+        <tr><td>H₂ dalam subreservoir hidrotermal</td><td id="sim-h2-aq">—</td><td id="sim-h2-aq-mol">—</td></tr>
         <tr><td>H₂ terbawa discharge ke samudra</td><td id="sim-h2-ocean">—</td><td id="sim-h2-ocean-mol">—</td></tr>
       </tbody></table></div>
       <div class="sim-eq"><strong>Reaksi menurut domain inang</strong><table class="sim-table"><thead><tr><th>Domain</th><th>Fo terpakai</th><th>Fa terpakai</th><th>H₂ terbentuk</th></tr></thead><tbody><tr><td>Mafik</td><td id="sim-mafic-fo-used">—</td><td id="sim-mafic-fa-used">—</td><td id="sim-mafic-h2">—</td></tr><tr><td>Ultramafik proxy</td><td id="sim-ultra-fo-used">—</td><td id="sim-ultra-fa-used">—</td><td id="sim-ultra-h2">—</td></tr></tbody></table><small>Debit dan panas dipakai bersama oleh kedua domain; mineral dan extent reaksi tetap dicatat terpisah. Host ultramafik belum dipisah antara komatiit dan peridotit.</small></div>
@@ -972,7 +972,7 @@
 </section>
 
 <section class="page" id="page-ocean-chemistry">
-<div class="page-title"><div class="eyebrow">Ocean chemistry & mineral dissolution · 4,0 Ga</div><h2>Kimia samudera dan pelarutan mineral</h2><p>Reservoir ion samudera dan fluida hidrotermal kini dipisahkan. Pelarutan terjadi pada air yang melewati batuan, lalu sebagian zat terlarut dibawa kembali ke samudera melalui discharge.</p></div>
+<div class="page-title"><div class="eyebrow">Ocean chemistry & mineral dissolution · 4,0 Ga</div><h2>Kimia samudera dan pelarutan mineral</h2><p>Fluida hidrotermal diperlakukan sebagai subreservoir independen di dalam sistem kerak. Air dan spesies kimianya memiliki inventaris tersendiri; pertukaran dengan samudera dicatat sebagai transfer, bukan penambahan stok baru.</p></div>
 <div class="grid kpis">
  <article class="card"><div class="klabel">Karbon anorganik terlarut samudera</div><div class="kvalue blue" id="oc-dic-ocean">0 SU</div><div class="knote">DIC · CO₂(aq) + HCO₃⁻ + CO₃²⁻</div></article>
  <article class="card"><div class="klabel">pH samudera · proxy karbonat</div><div class="kvalue" id="oc-ph">6,600</div><div class="knote">Target awal 6,6; berubah bersama DIC dan alkalinitas</div></article>
@@ -985,7 +985,9 @@
    <tr><td>Tekanan parsial CO₂ atmosfer</td><td id="oc-pco2">0,100000 bar</td></tr>
    <tr><td>DIC total samudera</td><td id="oc-dic-ocean-2">0 SU</td></tr>
    <tr><td>CO₂* terlarut samudera</td><td id="oc-co2star">0 SU</td></tr>
-   <tr><td>Karbon anorganik di fluida hidrotermal</td><td id="oc-dic-fluid">0 SU</td></tr>
+   <tr><td>Karbon anorganik di subreservoir hidrotermal</td><td id="oc-dic-fluid">0 SU</td></tr>
+   <tr><td>H₂ di subreservoir hidrotermal</td><td id="oc-h2-fluid">0 SU</td></tr>
+   <tr><td>H₂ di samudera setelah discharge</td><td id="oc-h2-ocean">0 SU</td></tr>
    <tr><td>pH fluida hidrotermal · proxy</td><td id="oc-ph-fluid">7,000</td></tr>
    <tr><td>Transfer CO₂ atmosfer → samudera (neto)</td><td id="oc-airsea">0 SU net</td></tr>
    <tr><td>Volume fluida terhubung</td><td>54 km³</td></tr>
@@ -1019,7 +1021,7 @@
   <tr><td>Apatit hidroksi</td><td class="formula">Ca₅(PO₄)₃OH → 5 Ca²⁺ + 3 PO₄³⁻ + OH⁻</td><td>Ca, total fosfat, ekuivalen OH</td><td>Fase fosfat proxy</td></tr>
   <tr><td>Presipitasi kalsit</td><td class="formula">Ca²⁺ + CO₃²⁻ → CaCO₃(s)</td><td>Kalsit jika SI &gt; 1</td><td>Bersyarat kejenuhan</td></tr>
  </tbody></table></div>
- <div class="grid two" style="margin-top:12px"><div class="note"><strong>Audit karbon</strong><div id="oc-audit-carbon">Menunggu tick</div><p class="knote">Toleransi audit dihitung relatif terhadap jumlah inventaris karbon, agar pembulatan floating-point tidak dianggap sebagai kehilangan massa.</p><strong>Audit mineral</strong><div id="oc-audit-mineral">Menunggu tick</div></div><div class="note"><strong>Audit air</strong><div id="oc-audit-water">Menunggu tick</div><strong>Audit muatan dari reaksi mineral</strong><div id="oc-audit-charge">Menunggu tick</div></div></div>
+ <div class="grid two" style="margin-top:12px"><div class="note"><strong>Audit karbon</strong><div id="oc-audit-carbon">Menunggu tick</div><p class="knote">Toleransi audit dihitung relatif terhadap jumlah inventaris karbon, agar pembulatan floating-point tidak dianggap sebagai kehilangan massa.</p><strong>Audit mineral</strong><div id="oc-audit-mineral">Menunggu tick</div></div><div class="note"><strong>Audit air</strong><div id="oc-audit-water">Menunggu tick</div><strong>Audit muatan dari reaksi mineral</strong><div id="oc-audit-charge">Menunggu tick</div><strong>Audit H₂ subreservoir</strong><div id="oc-audit-hydrogen">Menunggu tick</div><p class="knote">H₂ dihitung sekali dalam inventaris fluida hidrotermal + samudera; discharge hanya memindahkan lokasi stok.</p></div></div>
 </article>
 </section>
 <section class="page" id="page-minerals"><div class="page-title"><div class="eyebrow">Inventaris kerak</div><h2>Stok mineral bulk & reaktif</h2><p>Inventaris berasal dari model shell kerak global 37,5 km dengan domain mafik, ultramafik dan felsik.</p></div><div class="grid kpis" style="grid-template-columns:repeat(3,minmax(0,1fr))"><article class="card"><div class="klabel">Stok bulk</div><div class="kvalue">295,365 <small style="font-size:12px">juta SU</small></div></article><article class="card"><div class="klabel">Pool reaktif</div><div class="kvalue green">7,787 <small style="font-size:12px">juta SU</small></div></article><article class="card"><div class="klabel">Bagian reaktif</div><div class="kvalue gold">2,636%</div></article></div><article class="card"><div class="filters"><input id="mineral-search" type="search" placeholder="Cari mineral / formula..."><button class="active" data-filter="all">Semua</button><button data-filter="Silikat">Silikat</button><button data-filter="Oksida">Oksida</button><button data-filter="Sulfida">Sulfida</button><button data-filter="Fosfat">Fosfat</button><button data-filter="Aksesori">Aksesori</button></div><div class="table-wrap"><table><thead><tr><th>Mineral</th><th>Formula</th><th>Kelas</th><th class="num">Bulk (SU)</th><th class="num">Reaktif (SU)</th><th class="num">Reaktif/bulk</th></tr></thead><tbody id="mineral-table"></tbody></table></div></article>
@@ -1585,12 +1587,13 @@ if(oceanSlider){oceanSlider.addEventListener('input',updateHydrosphere);updateHy
     const magmaMass=simDefaults.magmaVolumeKm3*1e9*simDefaults.magmaDensity;
     const heatCapacity=magmaMass*simDefaults.cpRock*(simDefaults.magmaStartC-simDefaults.magmaFloorC);
     return {
-      version:13,ticks:0,hours:0,localWaterSU:pore.waterSU,oceanWaterSU:Math.max(0,oceanTotal-pore.waterSU),
+      version:14,ticks:0,hours:0,localWaterSU:pore.waterSU,oceanWaterSU:Math.max(0,oceanTotal-pore.waterSU),
       waterCapacitySU:pore.waterSU,initialOceanWaterSU:oceanTotal,
       minerals:{...alloc},initialMinerals:{...alloc},
       unallocatedGlobal:{maficFo:GLOBAL.maficFo-alloc.maficFo,maficFa:GLOBAL.maficFa-alloc.maficFa,ultraFo:GLOBAL.ultraFo-alloc.ultraFo,ultraFa:GLOBAL.ultraFa-alloc.ultraFa},
-      products:{serpentine:0,brucite:0,magnetite:0,silica:0,h2Aq:0,h2Ocean:0},
-      productsByHost:{mafic:{serpentine:0,brucite:0,magnetite:0,silica:0,h2Aq:0,h2Ocean:0},ultra:{serpentine:0,brucite:0,magnetite:0,silica:0,h2Aq:0,h2Ocean:0}},
+      products:{serpentine:0,brucite:0,magnetite:0,silica:0},
+      // H₂ by host is production attribution only; the physical H₂ inventory lives in Ocean Chemistry pools.
+      productsByHost:{mafic:{serpentine:0,brucite:0,magnetite:0,silica:0,h2Produced:0},ultra:{serpentine:0,brucite:0,magnetite:0,silica:0,h2Produced:0}},
       cumulative:{foUsed:0,faUsed:0,foUsedByDomain:{mafic:0,ultra:0},faUsedByDomain:{mafic:0,ultra:0},waterConsumed:0,h2Produced:0,waterIn:0,waterOut:0,heatUsed:0,foExtent:0,faExtent:0},
       heatInitialJ:heatCapacity,heatRemainingJ:heatCapacity,
       log:[],audit:{ran:false,ok:true,fo:CHECK_FO.ok&&MASS_FO.ok,fa:CHECK_FA.ok&&MASS_FA.ok,water:true,heat:true,mineral:true,hydrogen:true}
@@ -1598,13 +1601,37 @@ if(oceanSlider){oceanSlider.addEventListener('input',updateHydrosphere);updateHy
   }
   let state;
   const runControl={mode:'stopped',resumeMode:null,timer:null,targetTick:null,startTick:0,lastMessage:'Belum berjalan',error:''};
-  const storageKey='worldArkeanMSABv13';
+  const storageKey='worldArkeanMSABv14';
+  const legacyStorageKey='worldArkeanMSABv13';
   function loadState(){
     try{
-      const raw=localStorage.getItem(storageKey);
+      const raw=localStorage.getItem(storageKey)||localStorage.getItem(legacyStorageKey);
       if(!raw) return initialState();
       const parsed=JSON.parse(raw);
-      if(parsed.version!==13 || !parsed.minerals || !parsed.products || !Number.isFinite(parsed.ticks)) return initialState();
+      if(!parsed || ![13,14].includes(parsed.version) || !parsed.minerals || !parsed.products || !Number.isFinite(parsed.ticks)) return initialState();
+      if(parsed.version===13){
+        const oldFluidH2=Math.max(0,Number(parsed.products.h2Aq)||0);
+        const oldOceanH2=Math.max(0,Number(parsed.products.h2Ocean)||0);
+        const oldMafic=parsed.productsByHost?.mafic||{},oldUltra=parsed.productsByHost?.ultra||{};
+        parsed.products={serpentine:Number(parsed.products.serpentine)||0,brucite:Number(parsed.products.brucite)||0,magnetite:Number(parsed.products.magnetite)||0,silica:Number(parsed.products.silica)||0};
+        parsed.productsByHost={
+          mafic:{serpentine:Number(oldMafic.serpentine)||0,brucite:Number(oldMafic.brucite)||0,magnetite:Number(oldMafic.magnetite)||0,silica:Number(oldMafic.silica)||0,h2Produced:(Number(oldMafic.h2Aq)||0)+(Number(oldMafic.h2Ocean)||0)},
+          ultra:{serpentine:Number(oldUltra.serpentine)||0,brucite:Number(oldUltra.brucite)||0,magnetite:Number(oldUltra.magnetite)||0,silica:Number(oldUltra.silica)||0,h2Produced:(Number(oldUltra.h2Aq)||0)+(Number(oldUltra.h2Ocean)||0)}
+        };
+        if(parsed.oceanChemSnapshot?.fluid&&parsed.oceanChemSnapshot?.ocean){
+          parsed.oceanChemSnapshot.fluid.h2SU=(Number(parsed.oceanChemSnapshot.fluid.h2SU)||0)+oldFluidH2;
+          parsed.oceanChemSnapshot.ocean.h2SU=(Number(parsed.oceanChemSnapshot.ocean.h2SU)||0)+oldOceanH2;
+          parsed.oceanChemSnapshot.cumulative=parsed.oceanChemSnapshot.cumulative||{};
+          parsed.oceanChemSnapshot.cumulative.h2ProducedSU=Number(parsed.cumulative?.h2Produced)||oldFluidH2+oldOceanH2;
+        }else if(oldFluidH2>0||oldOceanH2>0){
+          parsed.pendingHydrogenMigration={fluidSU:oldFluidH2,oceanSU:oldOceanH2,producedSU:Number(parsed.cumulative?.h2Produced)||oldFluidH2+oldOceanH2};
+        }
+        parsed.version=14;
+      }
+      for(const host of ['mafic','ultra']){
+        parsed.productsByHost[host]=parsed.productsByHost[host]||{};
+        if(!Number.isFinite(parsed.productsByHost[host].h2Produced))parsed.productsByHost[host].h2Produced=0;
+      }
       // v1.6 could halt on a ~1e-10 SU floating-point residual in the ocean-carbon audit.
       // Preserve every reservoir and cumulative ledger, but re-run the audit on the next tick
       // under the inventory-scaled tolerance. Any real imbalance will still stop the engine.
@@ -1679,7 +1706,6 @@ if(oceanSlider){oceanSlider.addEventListener('input',updateHydrosphere);updateHy
     // Proportional drawdown preserves and reports both host-domain allocations.
     const foUsedByDomain={mafic:foPotentialBy.mafic*waterScale,ultra:foPotentialBy.ultra*waterScale};
     const faUsedByDomain={mafic:faPotentialBy.mafic*waterScale,ultra:faPotentialBy.ultra*waterScale};
-    const h2ProducedByDomain={};
     for(const key of ['mafic','ultra']){
       const foKey=key+'Fo', faKey=key+'Fa';
       state.minerals[foKey]=Math.max(0,state.minerals[foKey]-foUsedByDomain[key]);
@@ -1691,8 +1717,7 @@ if(oceanSlider){oceanSlider.addEventListener('input',updateHydrosphere);updateHy
       state.productsByHost[key].brucite+=xiFoDomain;
       state.productsByHost[key].magnetite+=2*xiFaDomain;
       state.productsByHost[key].silica+=3*xiFaDomain;
-      state.productsByHost[key].h2Aq+=h2Domain;
-      h2ProducedByDomain[key]=h2Domain;
+      state.productsByHost[key].h2Produced+=h2Domain;
       state.cumulative.foUsedByDomain[key]+=foUsedByDomain[key];
       state.cumulative.faUsedByDomain[key]+=faUsedByDomain[key];
     }
@@ -1701,7 +1726,7 @@ if(oceanSlider){oceanSlider.addEventListener('input',updateHydrosphere);updateHy
     state.products.magnetite+=2*xiFa;
     state.products.silica+=3*xiFa;
     const h2Produced=2*xiFa;
-    state.products.h2Aq+=h2Produced;
+    // H₂ inventory is owned by the hydrothermal-fluid subreservoir in Ocean Chemistry.
 
     // Flow-through control: a mixed hydrothermal reactor discharges the incoming throughput, while reaction consumption lowers the local liquid inventory.
     // The outlet is limited by available liquid; residence time controls how much dissolved H2 is exported.
@@ -1711,17 +1736,9 @@ if(oceanSlider){oceanSlider.addEventListener('input',updateHydrosphere);updateHy
     state.localWaterSU=waterAfterOut;
     state.oceanWaterSU=Math.max(0,state.oceanWaterSU-waterIn+waterOut);
     const flushFraction=waterOut>0&&waterAfterReaction>0?Math.min(1,waterOut/waterAfterReaction):0;
-    const h2Out=state.products.h2Aq*flushFraction;
-    state.products.h2Aq-=h2Out;
-    state.products.h2Ocean+=h2Out;
-    for(const key of ['mafic','ultra']){
-      const hostOut=state.productsByHost[key].h2Aq*flushFraction;
-      state.productsByHost[key].h2Aq-=hostOut;
-      state.productsByHost[key].h2Ocean+=hostOut;
-    }
 
     const earthStep=window.WorldArkeanEarthSystems?window.WorldArkeanEarthSystems.stepTick(state,{tick:state.ticks+1,hydrothermalMassFlowKgS:actualMass,hydrothermalTempC:actualTemp,heatUsedJ:heatUsed,phase,solarStep}):{ok:false,audit:{ok:false}};
-    const oceanChemStep=window.WorldArkeanOceanChemistryEngine?window.WorldArkeanOceanChemistryEngine.stepTick(state,{tick:state.ticks+1,hydrothermalMassFlowKgS:actualMass,hydrothermalTempC:actualTemp,waterInSU:waterIn,waterOutSU:waterOut}):{ok:false,waterConsumedSU:0,audit:{ok:false}};
+    const oceanChemStep=window.WorldArkeanOceanChemistryEngine?window.WorldArkeanOceanChemistryEngine.stepTick(state,{tick:state.ticks+1,hydrothermalMassFlowKgS:actualMass,hydrothermalTempC:actualTemp,waterInSU:waterIn,waterOutSU:waterOut,fluidDischargeFraction:flushFraction,h2ProducedSU:h2Produced}):{ok:false,waterConsumedSU:0,audit:{ok:false}};
     const totalWaterConsumed=waterConsumed+Math.max(0,oceanChemStep.waterConsumedSU||0);
     state.heatRemainingJ=Math.max(0,state.heatRemainingJ-heatUsed);
     state.ticks+=1;
@@ -1744,8 +1761,10 @@ if(oceanSlider){oceanSlider.addEventListener('input',updateHydrosphere);updateHy
     const waterBalanceOk=Math.abs(waterResidual)<1e-12 && Math.abs(globalWaterLedgerResidual)<1e-10;
     const heatResidual=Math.abs((state.heatRemainingJ+state.cumulative.heatUsed)-state.heatInitialJ);
     const heatBalanceOk=heatResidual<=Math.max(1e-4,state.heatInitialJ*1e-12);
-    const hydrogenByHost=state.productsByHost.mafic.h2Aq+state.productsByHost.mafic.h2Ocean+state.productsByHost.ultra.h2Aq+state.productsByHost.ultra.h2Ocean;
-    const hydrogenBalanceOk=Math.abs((state.products.h2Aq+state.products.h2Ocean)-state.cumulative.h2Produced)<1e-12 && Math.abs(hydrogenByHost-state.cumulative.h2Produced)<1e-12;
+    const hydrogenByHost=state.productsByHost.mafic.h2Produced+state.productsByHost.ultra.h2Produced;
+    const oceanChemState=window.WorldArkeanOceanChemistryEngine?.getState?.();
+    const hydrogenInSubreservoir=(oceanChemState?.fluid?.h2SU||0)+(oceanChemState?.ocean?.h2SU||0);
+    const hydrogenBalanceOk=Math.abs(hydrogenInSubreservoir-(oceanChemState?.cumulative?.h2ProducedSU||0))<1e-12 && Math.abs((oceanChemState?.cumulative?.h2ProducedSU||0)-state.cumulative.h2Produced)<1e-12 && Math.abs(hydrogenByHost-state.cumulative.h2Produced)<1e-12;
     const auditOk=CHECK_FO.ok&&CHECK_FA.ok&&MASS_FO.ok&&MASS_FA.ok&&waterBalanceOk&&heatBalanceOk&&mineralBalanceOk&&hydrogenBalanceOk&&solarStep.ok&&earthStep.ok&&oceanChemStep.ok;
     state.audit={ran:true,ok:auditOk,fo:CHECK_FO.ok&&MASS_FO.ok,fa:CHECK_FA.ok&&MASS_FA.ok,water:waterBalanceOk,heat:heatBalanceOk,mineral:mineralBalanceOk,hydrogen:hydrogenBalanceOk,solar:solarStep.ok,earth:earthStep.ok,oceanChem:oceanChemStep.ok};
 
@@ -1862,6 +1881,9 @@ if(oceanSlider){oceanSlider.addEventListener('input',updateHydrosphere);updateHy
     byId('sim-engine-tag').textContent=failed?'ENGINE LOCKED':(runControl.mode==='auto'?'AUTO RUN':runControl.mode==='scheduled'?'SCHEDULED':runControl.mode==='paused'?'PAUSED':runControl.mode==='completed'?'TARGET DONE':'ENGINE READY');
 
     const p=parameters(), pore=poreData();
+    const oceanChemState=window.WorldArkeanOceanChemistryEngine?.getState?.();
+    const h2FluidSU=oceanChemState?.fluid?.h2SU||0;
+    const h2OceanSU=oceanChemState?.ocean?.h2SU||0;
     const length=simDefaults.upperDepthM+simDefaults.lowerDepthM;
     const deltaP=p.deltaRho*simDefaults.g*length;
     const qDarcy=(p.permeability*pore.areaM2/simDefaults.viscosity)*(deltaP/length);
@@ -1891,8 +1913,8 @@ if(oceanSlider){oceanSlider.addEventListener('input',updateHydrosphere);updateHy
       'sim-brucite':state.products.brucite,'sim-brucite-mol':state.products.brucite*SU_MOL,
       'sim-mag-secondary':state.products.magnetite,'sim-mag-mol':state.products.magnetite*SU_MOL,
       'sim-silica':state.products.silica,'sim-silica-mol':state.products.silica*SU_MOL,
-      'sim-h2-aq':state.products.h2Aq,'sim-h2-aq-mol':state.products.h2Aq*SU_MOL,
-      'sim-h2-ocean':state.products.h2Ocean,'sim-h2-ocean-mol':state.products.h2Ocean*SU_MOL
+      'sim-h2-aq':h2FluidSU,'sim-h2-aq-mol':h2FluidSU*SU_MOL,
+      'sim-h2-ocean':h2OceanSU,'sim-h2-ocean-mol':h2OceanSU*SU_MOL
     };
     for(const [id,value] of Object.entries(cells)){
       const el=byId(id); if(!el)continue;
@@ -1906,10 +1928,10 @@ if(oceanSlider){oceanSlider.addEventListener('input',updateHydrosphere);updateHy
     byId('sim-fa-used').textContent=sci(state.cumulative.faUsed)+' SU digunakan';
     byId('sim-mafic-fo-used').textContent=sci(state.cumulative.foUsedByDomain.mafic);
     byId('sim-mafic-fa-used').textContent=sci(state.cumulative.faUsedByDomain.mafic);
-    byId('sim-mafic-h2').textContent=sci(state.productsByHost.mafic.h2Aq+state.productsByHost.mafic.h2Ocean);
+    byId('sim-mafic-h2').textContent=sci(state.productsByHost.mafic.h2Produced);
     byId('sim-ultra-fo-used').textContent=sci(state.cumulative.foUsedByDomain.ultra);
     byId('sim-ultra-fa-used').textContent=sci(state.cumulative.faUsedByDomain.ultra);
-    byId('sim-ultra-h2').textContent=sci(state.productsByHost.ultra.h2Aq+state.productsByHost.ultra.h2Ocean);
+    byId('sim-ultra-h2').textContent=sci(state.productsByHost.ultra.h2Produced);
 
     const globalFo=state.unallocatedGlobal.maficFo+state.unallocatedGlobal.ultraFo+foLeft;
     const globalFa=state.unallocatedGlobal.maficFa+state.unallocatedGlobal.ultraFa+faLeft;
@@ -1963,7 +1985,7 @@ if(oceanSlider){oceanSlider.addEventListener('input',updateHydrosphere);updateHy
     for(const id of ['sim-temp','sim-perm','sim-drho','sim-power'])byId(id).addEventListener('change',render);
     render();
   }
-  window.WorldArkeanSim={startAutomatic,startScheduled,pause:pauseSimulation,resume:resumeSimulation,stop:stopSimulation,reset,getState:()=>JSON.parse(JSON.stringify(state)),check:{fo:CHECK_FO,fa:CHECK_FA,massFo:MASS_FO,massFa:MASS_FA},config:{tickHours:TICK_HOURS,regionAreaKm2:CELL_AREA_KM2,cellShare:CELL_SHARE,cellAllocation:localAllocation(),pore:poreData(),kinetics:KINETICS,fractureAreaFraction:0.20,matrixAreaFraction:0.80,matrixPermeability:1200/(500/1e-14+700/1e-17),effectivePermeability:parameters().permeability,fracturePermeability:parameters().fracturePermeability,regionalPowerMW:30000,regionalMagmaVolumeKm3:500,regionalHeatCapacityJ:1.35e21,earthSystems:window.WorldArkeanEarthSystems?.config||null}};
+  window.WorldArkeanSim={startAutomatic,startScheduled,pause:pauseSimulation,resume:resumeSimulation,stop:stopSimulation,reset,getState:()=>JSON.parse(JSON.stringify(state)),completeHydrogenMigration:()=>{delete state.pendingHydrogenMigration;saveState();},check:{fo:CHECK_FO,fa:CHECK_FA,massFo:MASS_FO,massFa:MASS_FA},config:{tickHours:TICK_HOURS,regionAreaKm2:CELL_AREA_KM2,cellShare:CELL_SHARE,cellAllocation:localAllocation(),pore:poreData(),kinetics:KINETICS,fractureAreaFraction:0.20,matrixAreaFraction:0.80,matrixPermeability:1200/(500/1e-14+700/1e-17),effectivePermeability:parameters().permeability,fracturePermeability:parameters().fracturePermeability,regionalPowerMW:30000,regionalMagmaVolumeKm3:500,regionalHeatCapacityJ:1.35e21,earthSystems:window.WorldArkeanEarthSystems?.config||null}};
 })();
 
 </script>
@@ -2003,9 +2025,9 @@ if(oceanSlider){oceanSlider.addEventListener('input',updateHydrosphere);updateHy
     const positiveEq=INITIAL_SEAWATER.Na_M+INITIAL_SEAWATER.K_M+2*INITIAL_SEAWATER.Ca_M+2*INITIAL_SEAWATER.Mg_M+2*INITIAL_SEAWATER.Fe2_M;
     const chlorideM=positiveEq-alkalinityM-2*so4M-3*phosphateM;
     const toSU=m=>m*volumeL/SU_MOL;
-    return {dicSU:toSU(dicM),alkalinitySU:toSU(alkalinityM),naSU:toSU(INITIAL_SEAWATER.Na_M),kSU:toSU(INITIAL_SEAWATER.K_M),caSU:toSU(INITIAL_SEAWATER.Ca_M),mgSU:toSU(INITIAL_SEAWATER.Mg_M),feSU:toSU(INITIAL_SEAWATER.Fe2_M),clSU:toSU(chlorideM),sulfateSU:toSU(so4M),siSU:toSU(INITIAL_SEAWATER.Si_M),phosphatePSU:toSU(phosphateM),hydroxideSU:0,phosphateAlkSU:0,calciteSU:0,derived:{dicM,alkalinityM,co2StarM,chlorideM,positiveEq,pH,phosphateM,so4M}};
+    return {h2SU:0,dicSU:toSU(dicM),alkalinitySU:toSU(alkalinityM),naSU:toSU(INITIAL_SEAWATER.Na_M),kSU:toSU(INITIAL_SEAWATER.K_M),caSU:toSU(INITIAL_SEAWATER.Ca_M),mgSU:toSU(INITIAL_SEAWATER.Mg_M),feSU:toSU(INITIAL_SEAWATER.Fe2_M),clSU:toSU(chlorideM),sulfateSU:toSU(so4M),siSU:toSU(INITIAL_SEAWATER.Si_M),phosphatePSU:toSU(phosphateM),hydroxideSU:0,phosphateAlkSU:0,calciteSU:0,derived:{dicM,alkalinityM,co2StarM,chlorideM,positiveEq,pH,phosphateM,so4M}};
   }
-  function emptyAqueous(){return {dicSU:0,alkalinitySU:0,naSU:0,kSU:0,clSU:0,sulfateSU:0,caSU:0,mgSU:0,feSU:0,siSU:0,phosphatePSU:0,hydroxideSU:0,phosphateAlkSU:0,calciteSU:0};}
+  function emptyAqueous(){return {h2SU:0,dicSU:0,alkalinitySU:0,naSU:0,kSU:0,clSU:0,sulfateSU:0,caSU:0,mgSU:0,feSU:0,siSU:0,phosphatePSU:0,hydroxideSU:0,phosphateAlkSU:0,calciteSU:0};}
   function initialState(){
     const pl=activeStock('plagioclase'),cp=activeStock('clinopyroxene'),op=activeStock('orthopyroxene');
     const minerals={albite:p50(pl),anorthite:p50(pl),diopside:p50(cp),hedenbergite:p50(cp),enstatite:p50(op),ferrosilite:p50(op),apatite:activeStock('apatite')};
@@ -2014,13 +2036,13 @@ if(oceanSlider){oceanSlider.addEventListener('input',updateHydrosphere);updateHy
     const initialCarbonSU=ocean.dicSU;
     const initialChargeEq=(ocean.naSU+ocean.kSU+2*ocean.caSU+2*ocean.mgSU+2*ocean.feSU)-(ocean.clSU+ocean.alkalinitySU+2*ocean.sulfateSU+3*ocean.phosphatePSU);
     return {version:2,ticks:0,initialMinerals:{...minerals},minerals:{...minerals},ocean,fluid:emptyAqueous(),initialCarbonSU,initialChargeEq,initialSeawater:derived,
-      cumulative:{airSeaToOceanSU:0,airSeaToAtmosphereSU:0,airSeaNetSU:0,waterConsumedSU:0,albiteDissolvedSU:0,anorthiteDissolvedSU:0,diopsideDissolvedSU:0,hedenbergiteDissolvedSU:0,enstatiteDissolvedSU:0,ferrosiliteDissolvedSU:0,apatiteDissolvedSU:0,co2WeatheredSU:0,kaoliniteSU:0,calcitePrecipSU:0,fluidDischargedSU:0},
+      cumulative:{airSeaToOceanSU:0,airSeaToAtmosphereSU:0,airSeaNetSU:0,h2ProducedSU:0,waterConsumedSU:0,albiteDissolvedSU:0,anorthiteDissolvedSU:0,diopsideDissolvedSU:0,hedenbergiteDissolvedSU:0,enstatiteDissolvedSU:0,ferrosiliteDissolvedSU:0,apatiteDissolvedSU:0,co2WeatheredSU:0,kaoliniteSU:0,calcitePrecipSU:0,fluidDischargedSU:0},
       last:{airSeaCO2SU:0,rechargeCO2SU:0,waterConsumedSU:0,fluidDischargeFraction:0,calciteSI:0,pHOcean:INITIAL_SEAWATER.pH,pHFluid:7,flowRatio:0},
-      audit:{ran:false,ok:true,carbon:true,mineral:true,water:true,charge:true,carbonResidual:0,waterResidualSU:0,mineralResidual:0,chargeResidual:initialChargeEq},log:[]};
+      audit:{ran:false,ok:true,carbon:true,mineral:true,water:true,charge:true,hydrogen:true,carbonResidual:0,waterResidualSU:0,mineralResidual:0,chargeResidual:initialChargeEq,hydrogenResidualSU:0},log:[]};
   }
   let state=initialState();
   function save(){}
-  function restore(snapshot){try{if(!snapshot||snapshot.version!==2||!Number.isFinite(snapshot.ticks))return false;state=JSON.parse(JSON.stringify(snapshot));return true;}catch(e){return false;}}
+  function restore(snapshot){try{if(!snapshot||snapshot.version!==2||!Number.isFinite(snapshot.ticks))return false;state=JSON.parse(JSON.stringify(snapshot));state.ocean=state.ocean||initialSeawater(oceanVolumeLitres());state.fluid=state.fluid||emptyAqueous();state.ocean.h2SU=Number(state.ocean.h2SU)||0;state.fluid.h2SU=Number(state.fluid.h2SU)||0;state.cumulative=state.cumulative||{};state.cumulative.h2ProducedSU=Number(state.cumulative.h2ProducedSU)||0;return true;}catch(e){return false;}}
   function speciate(dicSU,alkSU,acidSU,volumeL){
     const D=Math.max(0,dicSU)*SU_MOL/Math.max(1,volumeL);
     const A=(alkSU-acidSU)*SU_MOL/Math.max(1,volumeL);
@@ -2067,6 +2089,9 @@ if(oceanSlider){oceanSlider.addEventListener('input',updateHydrosphere);updateHy
     // Seawater recharge transports dissolved species from the ocean into the 54 km³ connected pore reservoir.
     const rechargeWaterSU=Math.max(0,context.waterInSU||0);
     const oceanWaterFraction=clamp(rechargeWaterSU/Math.max(1,world.oceanWaterSU),0,1);
+    const h2ProducedSU=Math.max(0,Number(context.h2ProducedSU)||0);
+    state.fluid.h2SU+=h2ProducedSU;
+    state.cumulative.h2ProducedSU+=h2ProducedSU;
     const rechargeCO2=moveFraction(state.ocean,state.fluid,'dicSU',oceanWaterFraction);
     for(const key of ['alkalinitySU','naSU','kSU','clSU','sulfateSU','caSU','mgSU','feSU','siSU','phosphatePSU','hydroxideSU','phosphateAlkSU'])moveFraction(state.ocean,state.fluid,key,oceanWaterFraction);
 
@@ -2118,8 +2143,8 @@ if(oceanSlider){oceanSlider.addEventListener('input',updateHydrosphere);updateHy
 
     // Hydrothermal discharge flushes a well-mixed fraction of the connected pore-fluid inventory to the ocean.
     const poreSU=Math.max(1,world.waterCapacitySU||3);
-    const dischargeFraction=clamp((context.waterOutSU||0)/poreSU,0,1);
-    for(const key of ['dicSU','alkalinitySU','naSU','kSU','clSU','sulfateSU','caSU','mgSU','feSU','siSU','phosphatePSU','hydroxideSU','phosphateAlkSU'])moveFraction(state.fluid,state.ocean,key,dischargeFraction);
+    const dischargeFraction=Number.isFinite(context.fluidDischargeFraction)?clamp(context.fluidDischargeFraction,0,1):clamp((context.waterOutSU||0)/poreSU,0,1);
+    for(const key of ['h2SU','dicSU','alkalinitySU','naSU','kSU','clSU','sulfateSU','caSU','mgSU','feSU','siSU','phosphatePSU','hydroxideSU','phosphateAlkSU'])moveFraction(state.fluid,state.ocean,key,dischargeFraction);
     state.cumulative.fluidDischargedSU+=dischargeFraction;
 
     // Carbonate speciation and calcite saturation are calculated in the global ocean reservoir.
@@ -2158,7 +2183,11 @@ if(oceanSlider){oceanSlider.addEventListener('input',updateHydrosphere);updateHy
     const chargeResidual=chargePositive-chargeNegative;
     const chargeToleranceSU=Math.max(1e-10,(chargePositive+chargeNegative)*1e-12);
     const chargeOk=Math.abs(chargeResidual)<chargeToleranceSU;
-    const audit={ran:true,ok:mineralOk&&carbonOk&&waterOk&&chargeOk,mineral:mineralOk,carbon:carbonOk,water:waterOk,charge:chargeOk,carbonResidual,carbonToleranceSU,waterResidualSU:waterResidual,mineralResidual,chargeResidual,chargeToleranceSU};
+    const hydrogenResidual=state.fluid.h2SU+state.ocean.h2SU-state.cumulative.h2ProducedSU;
+    const hydrogenScale=Math.abs(state.fluid.h2SU)+Math.abs(state.ocean.h2SU)+Math.abs(state.cumulative.h2ProducedSU);
+    const hydrogenToleranceSU=Math.max(1e-12,(64+8*state.ticks)*Number.EPSILON*hydrogenScale);
+    const hydrogenOk=Math.abs(hydrogenResidual)<=hydrogenToleranceSU;
+    const audit={ran:true,ok:mineralOk&&carbonOk&&waterOk&&chargeOk&&hydrogenOk,mineral:mineralOk,carbon:carbonOk,water:waterOk,charge:chargeOk,hydrogen:hydrogenOk,carbonResidual,carbonToleranceSU,waterResidualSU:waterResidual,mineralResidual,chargeResidual,chargeToleranceSU,hydrogenResidualSU:hydrogenResidual,hydrogenToleranceSU};
     state.ticks++;
     state.last={airSeaCO2SU:airSeaMoved,rechargeCO2SU:rechargeCO2,waterConsumedSU:wUsed,fluidDischargeFraction:dischargeFraction,calciteSI:si,pHOcean:oceanSpecies.pH,pHFluid:carbonateState(state.fluid,0,fluidVolumeL).pH,flowRatio};
     state.audit=audit;state.log.push({tick:state.ticks,airSeaCO2SU:airSeaMoved,rechargeCO2SU:rechargeCO2,waterConsumedSU:wUsed,co2WeatheredSU:cUsed,calciteSU:calciteExtent,audit:audit.ok?'OK':'CHECK'});if(state.log.length>240)state.log.shift();
@@ -2176,7 +2205,7 @@ if(oceanSlider){oceanSlider.addEventListener('input',updateHydrosphere);updateHy
     const molar=(su)=>Math.max(0,Number(su)||0)*SU_MOL/oceanVolumeL;
     const fmtM=(su,unit='M')=>molar(su).toExponential(3).replace('.',',').replace('e-',' × 10⁻').replace('e+',' × 10⁺')+' '+unit;
     co('oc-pco2',fmt((earth?.gases?.co2SU||0)/11802.3136*0.1,6)+' bar');
-    co('oc-dic-ocean',fmt(state.ocean.dicSU,8)+' SU');co('oc-dic-ocean-2',fmt(state.ocean.dicSU,8)+' SU');co('oc-dic-fluid',fmt(state.fluid.dicSU,10)+' SU');
+    co('oc-dic-ocean',fmt(state.ocean.dicSU,8)+' SU');co('oc-dic-ocean-2',fmt(state.ocean.dicSU,8)+' SU');co('oc-dic-fluid',fmt(state.fluid.dicSU,10)+' SU');co('oc-h2-fluid',fmt(state.fluid.h2SU,10)+' SU');co('oc-h2-ocean',fmt(state.ocean.h2SU,10)+' SU');
     co('oc-co2star',fmt(os.co2SU,8)+' SU');co('oc-hco3',fmt(os.hco3SU,8)+' SU');co('oc-co3',fmt(os.co3SU,10)+' SU');
     co('oc-ph',state.ocean.dicSU>1e-25?fmt(os.pH,3):'Belum terhitung');co('oc-ph-fluid',state.fluid.dicSU>1e-25?fmt(fs.pH,3):'Belum terhitung');
     co('oc-ca',fmt(state.ocean.caSU,10)+' SU');co('oc-mg',fmt(state.ocean.mgSU,10)+' SU');co('oc-na',fmt(state.ocean.naSU,10)+' SU');co('oc-fe',fmt(state.ocean.feSU,10)+' SU');co('oc-k',fmt(state.ocean.kSU,10)+' SU');co('oc-cl',fmt(state.ocean.clSU,10)+' SU');co('oc-so4',fmt(state.ocean.sulfateSU,10)+' SU');
@@ -2192,11 +2221,13 @@ if(oceanSlider){oceanSlider.addEventListener('input',updateHydrosphere);updateHy
     co('oc-audit-mineral',state.audit.ran?(state.audit.mineral?'LULUS':'GAGAL')+' · residual '+sci(state.audit.mineralResidual):'Menunggu tick');
     co('oc-audit-water',state.audit.ran?(state.audit.water?'LULUS':'GAGAL')+' · konsumsi '+sci(state.cumulative.waterConsumedSU)+' SU':'Menunggu tick');
     co('oc-audit-charge',state.audit.ran?(state.audit.charge?'LULUS':'PERIKSA')+' · residual '+sci(state.audit.chargeResidual):'Menunggu tick');
+    co('oc-audit-hydrogen',state.audit.ran?(state.audit.hydrogen?'LULUS':'GAGAL')+' · residual '+sci(state.audit.hydrogenResidualSU)+' SU':'Menunggu tick');
   }
   const rate=$('oc-rate-multiplier'),rateOut=$('oc-rate-label');if(rate&&rateOut){rate.addEventListener('input',()=>rateOut.textContent=fmt(rate.value,1)+'×');rateOut.textContent=fmt(rate.value,1)+'×';}
-  const api={stepTick,reset,restore,render,getState:()=>JSON.parse(JSON.stringify(state)),config:{activeAreaKm2:ACTIVE_AREA_KM2,fluidVolumeKm3:FLUID_VOLUME_KM3,activeFactor:ACTIVE_FACTOR,activeMinerals:initialState().initialMinerals,henryCO2:HENRY_CO2_MOL_L_BAR,airSeaKlaS:AIRSEA_KLA_S,initialSeawater:INITIAL_SEAWATER,initialComposition:initialState().initialSeawater,defaultRates:DEFAULT_RATES,assumedEndmembers:{plagioclaseAnorthite:0.5,clinopyroxeneDiopside:0.5,orthopyroxeneEnstatite:0.5}}};
+  const api={stepTick,reset,restore,render,getState:()=>JSON.parse(JSON.stringify(state)),config:{activeAreaKm2:ACTIVE_AREA_KM2,fluidVolumeKm3:FLUID_VOLUME_KM3,activeFactor:ACTIVE_FACTOR,hydrothermalFluid:{role:'independent-subreservoir',parent:'crust',connectedTo:'ocean',waterInventoryOwner:'WorldArkeanSim.localWaterSU',soluteInventoryOwner:'WorldArkeanOceanChemistryEngine.fluid',hydrogenInventoryOwner:'WorldArkeanOceanChemistryEngine.fluid.h2SU'},activeMinerals:initialState().initialMinerals,henryCO2:HENRY_CO2_MOL_L_BAR,airSeaKlaS:AIRSEA_KLA_S,initialSeawater:INITIAL_SEAWATER,initialComposition:initialState().initialSeawater,defaultRates:DEFAULT_RATES,assumedEndmembers:{plagioclaseAnorthite:0.5,clinopyroxeneDiopside:0.5,orthopyroxeneEnstatite:0.5}}};
   window.WorldArkeanOceanChemistryEngine=api;
   const simState=window.WorldArkeanSim?.getState?.();if(simState?.oceanChemSnapshot)restore(simState.oceanChemSnapshot);
+  if(simState?.pendingHydrogenMigration){state.fluid.h2SU+=Math.max(0,Number(simState.pendingHydrogenMigration.fluidSU)||0);state.ocean.h2SU+=Math.max(0,Number(simState.pendingHydrogenMigration.oceanSU)||0);state.cumulative.h2ProducedSU=Math.max(state.cumulative.h2ProducedSU,Number(simState.pendingHydrogenMigration.producedSU)||0);window.WorldArkeanSim?.completeHydrogenMigration?.();}
   render();
 })();
 
@@ -2290,7 +2321,8 @@ if(oceanSlider){oceanSlider.addEventListener('input',updateHydrosphere);updateHy
     set('world-atmo-h2',GAS.h2.bar);
     set('world-atmo-h2-mass',massText(GAS.h2.su*1e15*GAS.h2.mw)+' · stok awal');
     const h2ProducedKg=suKg(s.cumulative?.h2Produced,0.002016);
-    const h2OceanKg=suKg(s.products?.h2Ocean,0.002016);
+    const ocState=window.WorldArkeanOceanChemistryEngine?.getState?.();
+    const h2OceanKg=suKg(ocState?.ocean?.h2SU,0.002016);
     set('world-h2-produced',massText(h2ProducedKg));
     set('world-h2-produced-note','H₂ dari reaksi fayalit');
     set('world-h2-ocean',massText(h2OceanKg));
