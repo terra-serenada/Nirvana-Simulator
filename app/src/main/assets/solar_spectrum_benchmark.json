@@ -1,0 +1,29 @@
+{
+  "benchmark_id": "ARCHAEAN_SOLAR_SPECTRUM_3_8_GA_PDF_PAGE_3",
+  "source": "Archaean of Arus v0.1 Data Mentah: Unsur, Spesifikasi Energi, dan Enam Reservoir",
+  "source_page": 3,
+  "lookback_ga": 3.8,
+  "wavelength_domain_nm": [0.5, 2397.51],
+  "spectral_samples": 26150,
+  "normalization": "not_normalized",
+  "input_flux_unit": "erg s-1 cm-2 nm-1",
+  "output_integral_unit": "W m-2",
+  "bands": [
+    {"id": "XUV", "label": "X-ray / XUV", "minimum_nm": 0.5, "maximum_nm": 10.0, "expected_w_m2": 0.005813707},
+    {"id": "EUV", "label": "EUV", "minimum_nm": 10.0, "maximum_nm": 121.0, "expected_w_m2": 0.035405974},
+    {"id": "FUV", "label": "FUV", "minimum_nm": 121.0, "maximum_nm": 200.0, "expected_w_m2": 0.148874598},
+    {"id": "UVC", "label": "UV-C", "minimum_nm": 200.0, "maximum_nm": 280.0, "expected_w_m2": 4.279050209},
+    {"id": "UVB", "label": "UV-B", "minimum_nm": 280.0, "maximum_nm": 315.0, "expected_w_m2": 11.682507388},
+    {"id": "UVA", "label": "UV-A", "minimum_nm": 315.0, "maximum_nm": 400.0, "expected_w_m2": 59.617487306},
+    {"id": "VISIBLE", "label": "Visible", "minimum_nm": 400.0, "maximum_nm": 700.0, "expected_w_m2": 395.947185897},
+    {"id": "NIR", "label": "NIR", "minimum_nm": 700.0, "maximum_nm": 2397.51, "expected_w_m2": 527.954651519}
+  ],
+  "expected_partial_integral_w_m2": 999.670976598,
+  "expected_global_geometric_mean_w_m2": 249.917744150,
+  "runtime_absolute_tolerance_w_m2": 0.0005,
+  "notes": [
+    "This is an unnormalized partial spectral integral over the printed wavelength domain, not a bolometric total solar irradiance.",
+    "The global geometric mean is the integrated top-of-atmosphere irradiance divided by four.",
+    "Source values are preserved as printed; the runtime comparison uses an explicit absolute tolerance."
+  ]
+}

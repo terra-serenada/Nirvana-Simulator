@@ -1,0 +1,406 @@
+{
+  "dataset_id": "ARCHAEAN_OF_ARUS_V0_1",
+  "title": "Archaean of Arus v0.1 — Data Mentah: Unsur, Spesifikasi Energi, dan Enam Reservoir",
+  "source_file": "Archaean_of_Arus_v0.1_Data_Mentah_Unsur_Energi_6_Reservoir.pdf",
+  "source_note": "Angka inventaris disalin sebagaimana tertulis pada HTML sumber. Tidak dilakukan penghitungan ulang, normalisasi, konversi, atau pembulatan tambahan.",
+  "scope": {
+    "element_count": 14,
+    "energy_sources_count": 4,
+    "reservoir_count": 6,
+    "atmospheric_spatial_cells": 24,
+    "atmospheric_layers": [
+      "Lower Atmosphere 0–10 km",
+      "Middle Atmosphere 10–30 km",
+      "Upper Atmosphere 30–100 km"
+    ]
+  },
+  "solar_reference": {
+    "epoch_lookback_ga": 3.8,
+    "spectrum_file": "Sun3.8Ga.txt",
+    "wavelength_range_nm": [
+      0.5,
+      2397.51
+    ],
+    "spectral_points": 26150,
+    "normalization": "not_normalized",
+    "partial_spectral_integral_W_m2": "999.670976598",
+    "geometric_global_mean_W_m2": "249.917744150",
+    "photon_flux_mol_m2_s": "0.007178396977",
+    "source_reference": "Zenodo record 17981836; VPL Past Solar Spectrum; Claire et al. (2012)"
+  },
+  "elements": [
+    {
+      "symbol": "H",
+      "name": "Hidrogen",
+      "atomic_number": 1,
+      "relative_atomic_mass": "1.008000"
+    },
+    {
+      "symbol": "C",
+      "name": "Karbon",
+      "atomic_number": 6,
+      "relative_atomic_mass": "12.011000"
+    },
+    {
+      "symbol": "N",
+      "name": "Nitrogen",
+      "atomic_number": 7,
+      "relative_atomic_mass": "14.007000"
+    },
+    {
+      "symbol": "O",
+      "name": "Oksigen",
+      "atomic_number": 8,
+      "relative_atomic_mass": "15.999000"
+    },
+    {
+      "symbol": "Na",
+      "name": "Natrium",
+      "atomic_number": 11,
+      "relative_atomic_mass": "22.990000"
+    },
+    {
+      "symbol": "Mg",
+      "name": "Magnesium",
+      "atomic_number": 12,
+      "relative_atomic_mass": "24.305000"
+    },
+    {
+      "symbol": "Al",
+      "name": "Aluminium",
+      "atomic_number": 13,
+      "relative_atomic_mass": "26.982000"
+    },
+    {
+      "symbol": "Si",
+      "name": "Silikon",
+      "atomic_number": 14,
+      "relative_atomic_mass": "28.085000"
+    },
+    {
+      "symbol": "P",
+      "name": "Fosfor",
+      "atomic_number": 15,
+      "relative_atomic_mass": "30.974000"
+    },
+    {
+      "symbol": "S",
+      "name": "Sulfur",
+      "atomic_number": 16,
+      "relative_atomic_mass": "32.060000"
+    },
+    {
+      "symbol": "Cl",
+      "name": "Klor",
+      "atomic_number": 17,
+      "relative_atomic_mass": "35.450000"
+    },
+    {
+      "symbol": "K",
+      "name": "Kalium",
+      "atomic_number": 19,
+      "relative_atomic_mass": "39.098000"
+    },
+    {
+      "symbol": "Ca",
+      "name": "Kalsium",
+      "atomic_number": 20,
+      "relative_atomic_mass": "40.078000"
+    },
+    {
+      "symbol": "Fe",
+      "name": "Besi",
+      "atomic_number": 26,
+      "relative_atomic_mass": "55.845000"
+    }
+  ],
+  "energy_sources": {
+    "solar": {
+      "partial_integral_W_m2": "999.670976598",
+      "geometric_global_mean_W_m2": "249.917744150",
+      "photon_flux_mol_m2_s": "0.007178396977",
+      "normalization": "not_normalized"
+    },
+    "geothermal": {
+      "global_baseline_W_m2": "0.218",
+      "parameter_range_W_m2": [
+        "0.05",
+        "0.50"
+      ],
+      "ocean_share_W_m2": "0.20056",
+      "atmosphere_share_W_m2": "0.01744"
+    },
+    "planetary_rotation": {
+      "radius_km": "6371.000",
+      "moment_of_inertia_factor": "0.3308",
+      "initial_sidereal_period_hours": "14",
+      "initial_angular_velocity_rad_s": "0.000124666375"
+    },
+    "tidal_moon_sun": {
+      "channels": [
+        "Ocean×Moon",
+        "Ocean×Sun",
+        "Solid Earth×Moon",
+        "Solid Earth×Sun"
+      ],
+      "ocean_model": "constant_time_lag_effective",
+      "ocean_love_number_k2": "0.3",
+      "central_effective_lag_s": "22.284375474",
+      "low_mid_high_lag_multipliers": [
+        "0.5",
+        "1",
+        "2"
+      ],
+      "solid_body_model": "Maxwell_effective",
+      "shear_modulus_GPa": "70",
+      "effective_viscosity_Pa_s": "333000000000000064"
+    }
+  },
+  "reservoirs": {
+    "atmospheric": {
+      "description": "Seluruh gas atmosfer, uap air, kondensat cair, hidrometeor es, dan partikel aerosol atmosfer.",
+      "dry_gas_total_mol": "7.77735855e19",
+      "water_total_mol": "9.13609293688928e17",
+      "species_mol": {
+        "N2": "5.56248712e19",
+        "CO2": "1.18023136e19",
+        "H2": "1.03064453e19",
+        "CH4": "3.23774e16",
+        "CO": "7.4175e15",
+        "H2S": "1.524e14",
+        "SO2": "8.1e12"
+      },
+      "water_stores_mol": {
+        "lower_vapor": "8.95337107815e17",
+        "lower_liquid_condensate": "0",
+        "lower_ice_condensate": "0",
+        "middle_vapor": "1.8272185874e16",
+        "middle_liquid_condensate": "0",
+        "middle_ice_condensate": "0",
+        "upper_vapor": "0",
+        "upper_liquid_condensate": "0",
+        "upper_ice_condensate": "0"
+      },
+      "layer_partition": {
+        "lower_dry_gas_mol": "5.5219245705e19",
+        "middle_dry_gas_mol": "2.13877360125e19",
+        "upper_dry_gas_mol": "1.1666037825e18"
+      }
+    },
+    "ocean": {
+      "description": "Air samudra cair, es laut permukaan, dan seluruh spesies terlarut. Zona fotik adalah subdomain, bukan pemilik inventaris terpisah.",
+      "species_mol": {
+        "Cl": "6.05202201530543e20",
+        "Na": "4.899999811e20",
+        "Ca": "2.799999892e19",
+        "Mg": "2.799999892e19",
+        "K": "1.1199999568e19",
+        "HCO3": "8.21565055749e18",
+        "CO2_aq": "4.6199998218e18",
+        "H4SiO4": "9.3799996382e17",
+        "Fe": "1.1199999568e17",
+        "CO3": "1.529825722e15",
+        "SO4": "1.399999946e15",
+        "PO4": "8.8199997e13"
+      },
+      "water_stores_mol": {
+        "surface": "5.096318510939706e21",
+        "intermediate": "2.038527404375882e22",
+        "deep": "7.64447776640956e22",
+        "surface_sea_ice": "0"
+      }
+    },
+    "terrestrial": {
+      "description": "Air daratan: danau/sungai/limpasan, kelembapan tanah zona tak jenuh, air tanah, serta salju dan es daratan.",
+      "water_stores_mol": {
+        "surface_lakes_rivers_runoff": "0",
+        "vadose_soil_moisture": "0",
+        "groundwater": "0",
+        "land_snow_ice": "0"
+      },
+      "note": "Nilai nol adalah nilai eksplisit pada tick awal dokumen, bukan bukti bahwa komponen tersebut tidak ada di Bumi nyata."
+    },
+    "crust": {
+      "description": "Semua mineral padat tanpa memandang lokasinya: batuan, mineral tanah, sedimen, dan produk padat.",
+      "mineral_species_mol": {
+        "forsterite_Mg2SiO4": "1.927800481502777e21",
+        "fayalite_Fe2SiO4": "2.74461768497223e20",
+        "anorthite_CaAl2Si2O8": "9.56438995e20",
+        "albite_NaAlSi3O8": "9.56438995e20",
+        "hedenbergite_CaFeSi2O6": "7.1375605e20",
+        "diopside_CaMgSi2O6": "7.1375605e20",
+        "ferrosilite_FeSiO3": "9.563753e20",
+        "enstatite_MgSiO3": "9.563753e20",
+        "apatite": "2.77504e11",
+        "serpentine": "0",
+        "brucite": "0",
+        "magnetite": "0"
+      }
+    },
+    "hydrothermal_fluid": {
+      "description": "Air pori dan seluruh spesies terlarut fluida hidrotermal. Mineral padat tetap dimiliki Crust Reservoir.",
+      "species_mol": {
+        "Cl": "2.3343514e13",
+        "Na": "1.89e13",
+        "Ca": "1.08e12",
+        "Mg": "1.08e12",
+        "K": "4.32e11",
+        "HCO3": "3.16889e11",
+        "CO2_aq": "1.782e11",
+        "H4SiO4": "3.618e10",
+        "Fe": "4.32e9",
+        "CO3": "5.9e7",
+        "SO4": "5.4e7",
+        "PO4": "3e6",
+        "H2": "0",
+        "SiO2_aq": "0"
+      },
+      "water_stores_mol": {
+        "recharge": "1.498727747e15",
+        "reaction": "5.99491099e14",
+        "discharge": "8.99236648e14"
+      }
+    },
+    "magma": {
+      "description": "Magma dan inventaris volatil yang secara eksplisit dialokasikan ke reservoir magma. Nilai ini bukan komposisi seluruh lelehan silikat.",
+      "water_store_mol": "0"
+    }
+  },
+  "atmosphere_spatial_grid": {
+    "description": "24 sel area × lapisan merupakan subinventori Atmospheric Reservoir, bukan reservoir atau stok tambahan.",
+    "areas": [
+      "A1 Kutub Utara",
+      "A2 Lintang Menengah Utara I",
+      "A3 Lintang Menengah Utara II",
+      "A4 Tropis I",
+      "A5 Tropis II",
+      "A6 Lintang Menengah Selatan I",
+      "A7 Lintang Menengah Selatan II",
+      "A8 Kutub Selatan"
+    ],
+    "layers": [
+      "L 0–10 km",
+      "M 10–30 km",
+      "U 30–100 km"
+    ],
+    "cell_count": 24
+  },
+  "excluded_from_source_document": [
+    "simulation engine code",
+    "process equations",
+    "solver procedures",
+    "allocation methods",
+    "audit and diagnostic tables"
+  ],
+  "elemental_inventory_mol_atom_by_reservoir": {
+    "atmospheric": {
+      "H": "2.2569923587378e19",
+      "C": "1.18421085e19",
+      "N": "1.112497424e20",
+      "O": "2.4525670193689e19",
+      "Na": "0",
+      "Mg": "0",
+      "Al": "0",
+      "Si": "0",
+      "P": "0",
+      "S": "1.605e14",
+      "Cl": "0",
+      "K": "0",
+      "Ca": "0",
+      "Fe": "0"
+    },
+    "ocean": {
+      "H": "2.03864708088001e23",
+      "C": "1.2837180205013e19",
+      "N": "0",
+      "O": "1.019640197122424e23",
+      "Na": "4.899999811e20",
+      "Mg": "2.799999892e19",
+      "Al": "0",
+      "Si": "9.3799996382e17",
+      "P": "8.8199997e13",
+      "S": "1.399999946e15",
+      "Cl": "6.05202201530543e20",
+      "K": "1.1199999568e19",
+      "Ca": "2.799999892e19",
+      "Fe": "1.1199999568e17"
+    },
+    "terrestrial": {
+      "H": "0",
+      "C": "0",
+      "N": "0",
+      "O": "0",
+      "Na": "0",
+      "Mg": "0",
+      "Al": "0",
+      "Si": "0",
+      "P": "0",
+      "S": "0",
+      "Cl": "0",
+      "K": "0",
+      "Ca": "0",
+      "Fe": "0"
+    },
+    "crust": {
+      "H": "2.77504e11",
+      "C": "0",
+      "N": "0",
+      "O": "3.841539732360756e22",
+      "Na": "9.56438995e20",
+      "Mg": "5.525732313005554e21",
+      "Al": "2.869316985e21",
+      "Si": "1.1752232025e22",
+      "P": "8.32512e11",
+      "S": "0",
+      "Cl": "0",
+      "K": "0",
+      "Ca": "2.38395109638752e21",
+      "Fe": "2.219054886994445e21"
+    },
+    "hydrothermal_fluid": {
+      "H": "5.995372596e15",
+      "C": "4.95148e11",
+      "N": "0",
+      "O": "2.998907688e15",
+      "Na": "1.89e13",
+      "Mg": "1.08e12",
+      "Al": "0",
+      "Si": "3.618e10",
+      "P": "3e6",
+      "S": "5.4e7",
+      "Cl": "2.3343514e13",
+      "K": "4.32e11",
+      "Ca": "1.08e12",
+      "Fe": "4.32e9"
+    },
+    "magma": {
+      "H": "0",
+      "C": "0",
+      "N": "0",
+      "O": "0",
+      "Na": "0",
+      "Mg": "0",
+      "Al": "0",
+      "Si": "0",
+      "P": "0",
+      "S": "0",
+      "Cl": "0",
+      "K": "0",
+      "Ca": "0",
+      "Fe": "0"
+    }
+  },
+  "stoichiometry_audit": {
+    "purpose": "Recompute atom inventories from species formulas and H2O sub-stores, then compare with the source element ledger.",
+    "comparisons": 84,
+    "species_count": 45,
+    "positive_water_store_count": 8,
+    "relative_tolerance": "1e-9",
+    "notes": [
+      "Water stores are subordinate stores and are included in H/O composition once; they are not separate reservoirs.",
+      "Formula aliases silicicAcid, sulfate and phosphate are represented as H4SiO4, SO4 and PO4 for stoichiometric parsing.",
+      "The apatite label includes Ca5(PO4)3OH in the source mineral name; serpentine, brucite and magnetite use their mineral formulas.",
+      "Small residuals reflect printed source precision; original source values are not changed."
+    ]
+  }
+}
