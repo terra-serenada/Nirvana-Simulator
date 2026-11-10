@@ -376,7 +376,7 @@ class MainActivity : Activity() {
                         )
                         val equilibriumText = if (luminosity != null) {
                             val grey = AtmosphericRadiativeTransferEngine.calculateGreyLongwaveEquilibrium(
-                                solarAgeGa,
+                                sunAgeGa,
                                 luminosity,
                                 effectivePreset
                             )
