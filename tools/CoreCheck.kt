@@ -46,18 +46,18 @@ fun main() {
 
     val autoJourney = EvolutionClock(initialMode = ClockMode.AUTO_JOURNEY, initialPlaying = true)
     autoJourney.advance(0L)
-    val firstMilestone = autoJourney.advance(28_000_000_000L)
+    val firstMilestone = autoJourney.advance(150_000_000_000L)
     check(abs(firstMilestone.ageSinceFormationMa - 140.0) < 1e-9) {
-        "Auto Journey must reach the first milestone after one fixed 28 s segment"
+        "Auto Journey must reach the first milestone after one fixed 150 s segment"
     }
     check(firstMilestone.waitingAtMilestone)
-    val stillHolding = autoJourney.advance(30_000_000_000L)
+    val stillHolding = autoJourney.advance(160_000_000_000L)
     check(abs(stillHolding.ageSinceFormationMa - 140.0) < 1e-9 && stillHolding.waitingAtMilestone)
-    autoJourney.advance(32_000_000_000L)
-    val nextSegment = autoJourney.advance(33_000_000_000L)
-    val expectedAutoAge = 140.0 + (509.0 - 140.0) / 28.0
+    autoJourney.advance(162_000_000_000L)
+    val nextSegment = autoJourney.advance(163_000_000_000L)
+    val expectedAutoAge = 140.0 + (509.0 - 140.0) / 150.0
     check(abs(nextSegment.ageSinceFormationMa - expectedAutoAge) < 1e-9) {
-        "Auto Journey segment should advance linearly after the milestone hold"
+        "Slower Auto Journey segment should advance linearly after the milestone hold"
     }
 
     val daily = EvolutionClock(initialMode = ClockMode.SCIENTIFIC_DAILY)

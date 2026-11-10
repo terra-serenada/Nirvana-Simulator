@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.8.0 — Archaean cutaway scene and slower geological viewing
+
+- Replaced the main decorative globe scene with a 2D cross-section view showing the early atmosphere, ocean, basaltic crust, mantle, and core in one mobile-friendly scene.
+- Added animated cloud drift driven by the current model cloud fraction and liquid-water state; faint cloud wisps remain visible when cloud fraction is low.
+- Kept rain tied to positive precipitation rate and lightning flashes tied to new model lightning events.
+- Added slow explanatory mantle-convection arrows; these are explicitly visual cues, not a geodynamic solver.
+- On first launch/upgrade, opens at the Archaean 3.8 Ga lookback anchor (740 Ma since formation), paused for inspection.
+- Added a one-tap return to the Archaean 3.8 Ga anchor.
+- Preserved Scientific Daily at exactly one simulated day per real second and the independent weather clock at one weather hour per real second.
+- Slowed Auto Journey from 28 to 150 seconds per milestone segment and extended milestone holds from 4 to 12 seconds.
+- Updated the core timing regression check and Android package version to 0.8.0.
+- Retained the scientific limitation: atmospheric weather is a single representative column; the cutaway is schematic and is not a reconstructed Archaean climate/paleogeography.
+
 ## 0.7.0 — Model-driven water cycle and convective lightning
 
 - Replaced the purely decorative weather overlay with a local atmospheric-column model.

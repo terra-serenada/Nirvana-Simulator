@@ -25,13 +25,13 @@ import org.terrachemica.app.core.WeatherForcing
 import org.terrachemica.app.core.SolarRadiationEngine
 import org.terrachemica.app.core.ReactionNetworkCatalog
 import org.terrachemica.app.data.SolarSpectrumRepository
-import org.terrachemica.app.view.EarthGlobeView
+import org.terrachemica.app.view.EarthCrossSectionView
 import java.util.Locale
 
 class MainActivity : Activity() {
     private val handler = Handler(Looper.getMainLooper())
     private lateinit var clock: EvolutionClock
-    private lateinit var globe: EarthGlobeView
+    private lateinit var crossSection: EarthCrossSectionView
     private lateinit var timeText: TextView
     private lateinit var eonText: TextView
     private lateinit var sunText: TextView
@@ -73,10 +73,10 @@ class MainActivity : Activity() {
             val forcing = weatherForcing
             if (forcing != null && realDeltaSeconds > 0.0) {
                 val weatherState = weatherEngine.advance(realDeltaSeconds * 3600.0, forcing)
-                globe.setWeatherState(weatherState)
+                crossSection.setWeatherState(weatherState)
                 updateWeatherText(weatherState)
             } else if (forcing == null) {
-                globe.setWeatherState(null)
+                crossSection.setWeatherState(null)
             }
             if (now - lastPersistNanos > 5_000_000_000L) {
                 persistState()
@@ -93,17 +93,29 @@ class MainActivity : Activity() {
         window.navigationBarColor = Color.rgb(5, 13, 25)
 
         val prefs = getSharedPreferences("terra_chemica_state", MODE_PRIVATE)
-        // v0.3 persists the Double as text. A Float loses sub-million-year
-        // precision near the end of the 4.54 Ga timeline.
-        val savedAge = prefs.getString("age_ma_exact", null)?.toDoubleOrNull()
-            ?: prefs.getFloat("age_ma", 0f).toDouble() // one-time migration from v0.1
-        val savedMode = runCatching { ClockMode.valueOf(prefs.getString("mode", ClockMode.AUTO_JOURNEY.name)!!) }
-            .getOrDefault(ClockMode.AUTO_JOURNEY)
+        // v0.8 starts at the Archaean reference anchor exactly once, including
+        // upgrades that already have a saved v0.7 Proterozoic/Hadean position.
+        // 740 Ma since formation = 3.800 Ga lookback from the present.
+        val firstCrossSectionLaunch = prefs.getInt("visual_epoch_version", 0) < 8
+        val savedAge = if (firstCrossSectionLaunch) 740.0 else {
+            // Persist the Double as text: Float loses sub-million-year precision.
+            prefs.getString("age_ma_exact", null)?.toDoubleOrNull()
+                ?: prefs.getFloat("age_ma", 0f).toDouble()
+        }
+        val savedMode = if (firstCrossSectionLaunch) ClockMode.SCIENTIFIC_DAILY else {
+            runCatching { ClockMode.valueOf(prefs.getString("mode", ClockMode.SCIENTIFIC_DAILY.name)!!) }
+                .getOrDefault(ClockMode.SCIENTIFIC_DAILY)
+        }
         clock = EvolutionClock(
             initialAgeSinceFormationMa = savedAge,
             initialMode = savedMode,
-            initialPlaying = savedAge < EvolutionClock.EARTH_AGE_MA
+            initialPlaying = false
         )
+        if (firstCrossSectionLaunch) prefs.edit()
+            .putInt("visual_epoch_version", 8)
+            .putString("age_ma_exact", "740.0")
+            .putString("mode", ClockMode.SCIENTIFIC_DAILY.name)
+            .apply()
 
         buildInterface()
         render(clock.ageSinceFormationMa)
@@ -153,8 +165,8 @@ class MainActivity : Activity() {
         subtitle.setPadding(0, 0, 0, dp(5))
         root.addView(subtitle, matchWrap())
 
-        globe = EarthGlobeView(this)
-        root.addView(globe, LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 0, 1f).apply {
+        crossSection = EarthCrossSectionView(this)
+        root.addView(crossSection, LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 0, 1f).apply {
             topMargin = dp(3)
             bottomMargin = dp(7)
         })
@@ -254,7 +266,7 @@ class MainActivity : Activity() {
             setBackgroundTintList(android.content.res.ColorStateList.valueOf(Color.rgb(68, 86, 105)))
             setOnClickListener {
                 weatherEnabled = !weatherEnabled
-                globe.setWeatherEnabled(weatherEnabled)
+                crossSection.setWeatherEnabled(weatherEnabled)
                 weatherButton.text = if (weatherEnabled) "CUACA ON" else "CUACA OFF"
             }
         }
@@ -263,7 +275,27 @@ class MainActivity : Activity() {
         controls.addView(weatherButton, LinearLayout.LayoutParams(0, dp(46), 1f).apply { leftMargin = dp(3) })
         root.addView(controls, matchWrap())
 
-        val footnote = text("Prototipe v0.7 · cuaca kolom sederhana terhubung ke suhu radiasi; bukan prakiraan atau rekonstruksi paleoklimat tervalidasi", 9f, Color.rgb(120, 145, 165), false)
+        val archaeanButton = Button(this).apply {
+            text = "KEMBALI KE ARKEAN · 3,8 Ga"
+            textSize = 11f
+            setTextColor(Color.WHITE)
+            setBackgroundTintList(android.content.res.ColorStateList.valueOf(Color.rgb(30, 91, 94)))
+            setOnClickListener {
+                clock.setPlaying(false)
+                clock.setMode(ClockMode.SCIENTIFIC_DAILY)
+                clock.restoreAge(740.0)
+                weatherEngine.reset()
+                crossSection.setWeatherState(null)
+                lastWeatherTickNanos = 0L
+                render(clock.ageSinceFormationMa)
+                updateButtons()
+            }
+        }
+        root.addView(archaeanButton, LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, dp(42)).apply {
+            topMargin = dp(4)
+        })
+
+        val footnote = text("Prototipe v0.8 · penampang geologi skematik; animasi cuaca mengikuti satu kolom atmosfer representatif, bukan peta cuaca global", 9f, Color.rgb(120, 145, 165), false)
         footnote.setPadding(0, dp(7), 0, 0)
         root.addView(footnote, matchWrap())
         setContentView(root)
@@ -272,7 +304,7 @@ class MainActivity : Activity() {
 
     private fun render(ageMa: Double) {
         val snapshot = EarthEvolutionModel.snapshot(ageMa)
-        globe.setSnapshot(snapshot)
+        crossSection.setSnapshot(snapshot)
         val luminosityForWeather = snapshot.solarLuminosityFraction
         if (luminosityForWeather != null) {
             val greyForWeather = AtmosphericRadiativeTransferEngine.calculateGreyLongwaveEquilibrium(
@@ -295,7 +327,7 @@ class MainActivity : Activity() {
         }
 
         val earthAgeGa = ageMa / 1000.0
-        timeText.text = String.format(Locale.US, "Umur Bumi: %.3f Ga", earthAgeGa)
+        timeText.text = String.format(Locale.US, "Sejak pembentukan Bumi: %.3f Ga", earthAgeGa)
         eonText.text = "${snapshot.eon.displayName}  ·  ${formatLookback(snapshot.lookbackMa)} sebelum sekarang"
         val milestone = EvolutionClock.milestones.lastOrNull { it.ageSinceFormationMa <= ageMa + 1e-7 }
         checkpointText.text = milestone?.let { "${it.title}\n${it.description}" } ?: "Perjalanan dimulai"
@@ -422,7 +454,7 @@ class MainActivity : Activity() {
         weatherButton.text = if (weatherEnabled) "CUACA ON" else "CUACA OFF"
         playButton.text = if (clock.isPlaying) "JEDA" else if (clock.ageSinceFormationMa >= EvolutionClock.EARTH_AGE_MA) "SELESAI" else "LANJUTKAN"
         playButton.isEnabled = clock.ageSinceFormationMa < EvolutionClock.EARTH_AGE_MA
-        modeButton.text = if (clock.mode == ClockMode.AUTO_JOURNEY) "JELAJAH OTOMATIS" else "1 DETIK = 1 HARI"
+        modeButton.text = if (clock.mode == ClockMode.AUTO_JOURNEY) "AUTO LAMBAT" else "1 HARI / DETIK"
     }
 
     private fun persistState() {

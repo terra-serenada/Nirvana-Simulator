@@ -32,8 +32,8 @@ class EvolutionClock(
     companion object {
     const val EARTH_AGE_MA = 4540.0
     private const val DAYS_PER_YEAR = 365.2425
-    private const val AUTO_TRAVEL_SECONDS_PER_SEGMENT = 28.0
-    private const val MILESTONE_HOLD_SECONDS = 4.0
+    private const val AUTO_TRAVEL_SECONDS_PER_SEGMENT = 150.0
+    private const val MILESTONE_HOLD_SECONDS = 12.0
     private const val EPSILON_MA = 1e-7
 
     val milestones = listOf(
